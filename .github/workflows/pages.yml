@@ -1,5 +1,5 @@
 name: "Publicar página"
-run-name: ${{ github.event.head_commit.message || 'Publicación manual' }}
+run-name: ${{ github.event.head_commit.message || format('Publicación manual {0}', github.sha) }}
 
 on:
   push:
@@ -16,11 +16,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v7
@@ -30,6 +27,14 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: "."
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Publicar en GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
