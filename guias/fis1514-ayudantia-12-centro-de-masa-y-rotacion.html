@@ -107,25 +107,6 @@ details[open]{padding-bottom:12px}
 <a href="#cm">Centro de masa</a><a href="#compuestos">Compuestos</a><a href="#continuo">Masa continua</a><a href="#torque">Torque</a><a href="#momentum">Impulso</a><a href="#polares">Polares</a><a href="#polares-h">Polares y H</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
 </div></nav>
 
-<div class="band" style="padding-top:20px"><div class="wrap lab">
-<div class="fig" id="f-cm" aria-label="Tres masas que se pueden arrastrar en un plano y su centro de masa"><svg style="touch-action:none"></svg></div>
-<div class="labside">
-<p style="margin-bottom:6px"><strong>Arrastra las masas y cambia cuánto pesan.</strong> El centro de masa G es un promedio de posiciones en que cada masa pesa según cuánto vale.</p>
-<div class="ctl">
-<div class="row"><label for="c-m0">Masa A</label><input type="range" id="c-m0" min="0" max="10" step="0.5" value="2"><output id="c-o0"></output></div>
-<div class="row"><label for="c-m1">Masa B</label><input type="range" id="c-m1" min="0" max="10" step="0.5" value="3"><output id="c-o1"></output></div>
-<div class="row"><label for="c-m2">Masa C</label><input type="range" id="c-m2" min="0" max="10" step="0.5" value="5"><output id="c-o2"></output></div>
-</div>
-<div class="btns" style="margin-top:12px"><button data-cp="ej">Ejemplo 1</button><button data-cp="eq">Masas iguales</button><button data-cp="big">Una domina</button></div>
-<div class="stats">
-<div class="stat"><span>Masa total M</span><strong id="c-M"></strong></div>
-<div class="stat"><span>x<sub>G</sub> = Σm x / M</span><strong id="c-x"></strong></div>
-<div class="stat"><span>y<sub>G</sub> = Σm y / M</span><strong id="c-y"></strong></div>
-</div>
-<p class="small" style="margin-top:10px">Con masas iguales, G es el baricentro del triángulo. Si una masa vale cero, G queda sobre el segmento que une a las otras dos.</p>
-</div>
-</div></div>
-
 <section class="band" id="cm"><div class="wrap duo">
 <div>
 <h2>1. Centro de masa: el promedio ponderado de la masa</h2>
@@ -139,15 +120,30 @@ details[open]{padding-bottom:12px}
 <li><strong>G puede quedar fuera del cuerpo.</strong> Pasa con un anillo, una L o una herradura. G no tiene por qué ser un punto con masa.</li>
 <li><strong>G se mueve como una partícula.</strong> Σ<b class="vec">F</b><sub>ext</sub> = <i>M</i><b class="vec">a</b><sub>G</sub>: el centro de masa se acelera como si toda la masa estuviera en él y sobre él actuaran todas las fuerzas externas. Las fuerzas internas no lo mueven.</li>
 </ul>
-</div>
-<div>
-<div class="ex"><h3>Ejemplo 1: tres masas (el estado del laboratorio)</h3>
+<div class="ex"><h3>Ejemplo 1: tres masas (el estado inicial de la figura)</h3>
 <p>Masas de 2 kg en (0, 0) m, 3 kg en (4, 0) m y 5 kg en (1, 3) m.</p>
 <ol><li><i>M</i> = 2 + 3 + 5 = 10 kg.</li>
 <li><i>x<sub>G</sub></i> = (2·0 + 3·4 + 5·1)/10 = 17/10 = <strong>1.7 m</strong>.</li>
 <li><i>y<sub>G</sub></i> = (2·0 + 3·0 + 5·3)/10 = 15/10 = <strong>1.5 m</strong>.</li>
 <li>Comprobación: G queda más cerca de la masa de 5 kg que el baricentro geométrico (1.67, 1), como debe ser.</li></ol></div>
 <div class="note"><strong>Para qué sirve en esta unidad.</strong> En la Ayudantía 13 aparecen Σ<i>τ</i><sub>G</sub> = <i>I<sub>G</sub>α</i> y el teorema de Steiner, <i>I</i> = <i>I<sub>G</sub></i> + <i>Md</i>². Ambos necesitan saber dónde está G. El peso de un cuerpo también actúa en G, así que su torque es <i>Mg</i> por la distancia horizontal de G al eje.</div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-cm" style="min-height:clamp(320px,55vw,420px)" aria-label="Tres masas que se pueden arrastrar en un plano y su centro de masa"><svg style="touch-action:none"></svg></div>
+
+<p style="margin:14px 0 6px"><strong>Arrastra las masas y cambia cuánto pesan.</strong> El centro de masa G es un promedio de posiciones en que cada masa pesa según cuánto vale.</p>
+<div class="ctl">
+<div class="row"><label for="c-m0">Masa A</label><input type="range" id="c-m0" min="0" max="10" step="0.5" value="2"><output id="c-o0"></output></div>
+<div class="row"><label for="c-m1">Masa B</label><input type="range" id="c-m1" min="0" max="10" step="0.5" value="3"><output id="c-o1"></output></div>
+<div class="row"><label for="c-m2">Masa C</label><input type="range" id="c-m2" min="0" max="10" step="0.5" value="5"><output id="c-o2"></output></div>
+</div>
+<div class="btns" style="margin-top:12px"><button data-cp="ej">Ejemplo 1</button><button data-cp="eq">Masas iguales</button><button data-cp="big">Una domina</button></div>
+<div class="stats">
+<div class="stat"><span>Masa total M</span><strong id="c-M"></strong></div>
+<div class="stat"><span>x<sub>G</sub> = Σm x / M</span><strong id="c-x"></strong></div>
+<div class="stat"><span>y<sub>G</sub> = Σm y / M</span><strong id="c-y"></strong></div>
+</div>
+<p class="small" style="margin-top:10px">Con masas iguales, G es el baricentro del triángulo. Si una masa vale cero, G queda sobre el segmento que une a las otras dos.</p>
 </div>
 </div></section>
 
