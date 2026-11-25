@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M876QPX4');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leyes de Newton</title>
+<meta name="description" content="Material para estudiar para el examen de FIS1514: leyes de Newton, diagrama de cuerpo libre, peso, normal, tensión, resortes, roce, poleas y fuerza centrípeta, con figuras que se mueven y ejercicios resueltos.">
+<link rel="canonical" href="https://juaincha.github.io/resumen-dinamica/guias/fis1514-apuntes-02-leyes-de-newton.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Guías de estudio">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Leyes de Newton y fuerzas · FIS1514">
+<meta property="og:description" content="Material para estudiar para el examen de FIS1514: leyes de Newton, diagrama de cuerpo libre, peso, normal, tensión, resortes, roce, poleas y fuerza centrípeta, con figuras que se mueven y ejercicios resueltos.">
+<meta property="og:url" content="https://juaincha.github.io/resumen-dinamica/guias/fis1514-apuntes-02-leyes-de-newton.html">
+<meta property="og:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-apuntes-02.jpg">
+<meta property="og:image:secure_url" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-apuntes-02.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bloque en un plano inclinado con roce y sus fuerzas">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Leyes de Newton y fuerzas · FIS1514">
+<meta name="twitter:description" content="Material para estudiar para el examen de FIS1514: leyes de Newton, diagrama de cuerpo libre, peso, normal, tensión, resortes, roce, poleas y fuerza centrípeta, con figuras que se mueven y ejercicios resueltos.">
+<meta name="twitter:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-apuntes-02.jpg">
+<meta name="theme-color" content="#0f5fa8">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="guia-curso" content="FIS1514 Dinámica">
+<meta name="guia-titulo" content="Leyes de Newton y fuerzas">
+<meta name="guia-fuente" content="Apuntes, capítulo 2">
+<meta name="guia-fecha" content="2026-09-03">
+<meta name="guia-temas" content="Leyes de Newton, Diagrama de cuerpo libre, Roce, Poleas, Fuerza centrípeta">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=STIX+Two+Text:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday study: calm, exact, like a good textbook chapter
+   IDEA the course's own Beamer slides and textbook figure plates: blue title band, peach bodies, blue axes
+   PICTURE a draggable force-time graph, a ball off a wall, an exploding projectile
+   COLOUR white ground, Beamer blue band, peach bodies, red forces, green lever arms, violet components
+   TYPE Archivo 800 titles + Source Sans 3 text + STIX Two for equations
+   LAYOUT blue band with title and section links; lab under it (figure left, controls right; stacked on phones) */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0c131d);--ink:light-dark(#14171c,#e6ecf3);--mute:light-dark(#566070,#9aa7b8);
+--line:light-dark(#d8dee7,#2a3749);--panel:light-dark(#f2f6fb,#121c29);--band:light-dark(#0f5fa8,#0d3a6a);
+--blue:light-dark(#1167c4,#62b2ff);--axis:light-dark(#1597dc,#4cc3ff);--body:light-dark(#f6b896,#a8603f);
+--edge:light-dark(#c4673e,#f0a882);--force:light-dark(#d4361c,#ff7a5c);--arm:light-dark(#14844a,#4fd18b);
+--perp:light-dark(#6a3fc8,#b49dff);--ok:light-dark(#e3f5ea,#123222);--bad:light-dark(#fde8e4,#3a1712)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Source Sans 3',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,5vw,50px);font-weight:800}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:600;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px;max-width:68ch}
+.band{padding-block:clamp(28px,4vw,56px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.top{background:var(--band);color:#fff;padding-bottom:22px}
+.top p{color:#dbe9f8;max-width:60ch;margin-top:12px}
+nav{position:sticky;top:0;z-index:5;background:var(--band);padding-inline:max(5vw,16px);border-bottom:1px solid #ffffff22}
+nav .scroll{display:flex;gap:4px;max-width:1240px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+nav a{flex:none;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 10px;border-bottom:3px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:#9fd3ff;outline:none}
+section{border-top:1px solid var(--line)}
+.duo{display:grid;gap:28px}
+@media(min-width:980px){.duo{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}.duo .sticky{position:sticky;top:76px}}
+.fig{position:relative;min-height:340px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.tall{min-height:400px}
+svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round;font:600 14px 'Source Sans 3',sans-serif}
+.eq{font-family:'STIX Two Text',serif;font-size:20px;background:var(--panel);border-radius:8px;padding:12px 16px;margin:12px 0 16px;overflow-x:auto;line-height:1.7}
+.eq i,.v i,td i{font-family:'STIX Two Text',serif}
+b.vec{font-family:'STIX Two Text',serif;font-weight:700;font-style:normal}
+.note{border-left:4px solid var(--blue);background:var(--panel);padding:12px 16px;margin:16px 0;max-width:68ch}
+.ctl{display:grid;gap:12px;margin-top:14px}
+.row{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) 4.8em;gap:12px;align-items:center;font-size:15px}
+.row output{font-weight:600;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;height:44px;accent-color:var(--blue);margin:0}
+button{font:600 15px 'Source Sans 3',sans-serif;min-height:44px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--blue);background:var(--bg);color:var(--blue);cursor:pointer}
+button:hover{background:var(--panel)}button:focus-visible{outline:3px solid var(--axis);outline-offset:2px}
+button.main{background:var(--blue);color:var(--bg)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--panel);border-radius:8px;padding:10px 14px}
+.stat span{display:block;font-size:14px;color:var(--mute)}
+.stat strong{font-size:clamp(20px,2.4vw,24px);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.lab{display:grid;gap:24px;padding-bottom:clamp(28px,4vw,48px);align-items:start}
+@media(min-width:900px){.lab{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.lab .fig{min-height:0;height:clamp(340px,40vw,470px)}
+.labside{background:var(--bg);color:var(--ink);border-radius:10px;padding:18px}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--mute);margin-top:10px}
+.key i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+table{border-collapse:collapse;width:100%;font-size:16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:Archivo,sans-serif;font-weight:600;font-size:15px}
+.scroll{overflow-x:auto}
+details{border:1px solid var(--line);border-radius:10px;padding:0 16px;margin:12px 0}
+summary{cursor:pointer;font-weight:600;padding:12px 0;min-height:44px}
+details[open]{padding-bottom:12px}
+.ex{background:var(--panel);border-radius:10px;padding:16px 18px;margin:16px 0}
+.ex h3{margin-top:0}
+.ex ol{margin:0;padding-left:22px}.ex li{margin-bottom:6px}
+.q{border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px}
+.q p{font-weight:600}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;border-color:var(--line);color:var(--ink)}
+.opts button.right{background:var(--ok);border-color:var(--arm)}
+.opts button.wrong{background:var(--bad);border-color:var(--force)}
+.fb{margin-top:10px;font-size:16px}
+.grid2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(15em,1fr))}
+.small{font-size:14px;color:var(--mute)}
+@media(max-width:600px){table{font-size:14px}th,td{padding:6px 4px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);color:var(--mute);font-weight:600}.row{grid-template-columns:minmax(0,1fr) 4.8em}.row label{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M876QPX4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="band top">
+<div class="wrap">
+<a href="../index.html" style="display:inline-block;color:#dbe9f8;text-decoration:none;font-weight:600;font-size:15px;margin-bottom:14px;padding:10px 0">← Todas las guías</a>
+<h1>Leyes de Newton y fuerzas</h1>
+<p>Material para el examen de FIS1514 Dinámica, basado en el capítulo 2 de los apuntes del curso. Leyes de Newton, diagrama de cuerpo libre, peso, normal, tensión, resortes, roce, poleas con ligaduras y fuerza centrípeta. No incluye roce viscoso ni movimiento armónico simple, que no entran en el examen.</p>
+</div>
+</header>
+<nav aria-label="Secciones"><div class="scroll">
+<a href="#resumen">Resumen</a><a href="#leyes">Leyes de Newton</a><a href="#fuerzas">Fuerzas</a><a href="#roce">Roce</a><a href="#poleas">Poleas</a><a href="#centripeta">Fuerza centrípeta</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
+</div></nav>
+
+<section class="band" id="resumen"><div class="wrap duo">
+<div>
+<h2>Resumen: de las fuerzas a la aceleración</h2>
+<p>La cinemática describe el movimiento; la dinámica explica qué lo causa. Casi todos los problemas siguen el mismo camino: dibujas el diagrama de cuerpo libre, escribes Σ<b class="vec">F</b> = <i>m</i><b class="vec">a</b> por componentes, agregas las condiciones de ligadura (cuerdas, contactos) y resuelves el sistema.</p>
+<p>Esta guía es la base de las demás: el roce y la normal reaparecen en trabajo y energía, y Σ<i>F</i> = <i>ma</i> se generaliza a sistemas y rotación en las guías siguientes.</p>
+</div>
+<div class="scroll"><table class="stack">
+<thead><tr><th>Fuerza o ley</th><th>Ecuación</th><th>Dirección</th></tr></thead>
+<tbody>
+<tr><td data-l="Fuerza o ley">Segunda ley</td><td data-l="Ecuación">Σ<b class="vec">F</b> = <i>m</i><b class="vec">a</b>; Σ<i>F<sub>x</sub></i> = <i>ma<sub>x</sub></i>, Σ<i>F<sub>y</sub></i> = <i>ma<sub>y</sub></i></td><td data-l="Dirección">la de la aceleración</td></tr>
+<tr><td data-l="Fuerza o ley">Tercera ley</td><td data-l="Ecuación"><b class="vec">F</b><sub>12</sub> = −<b class="vec">F</b><sub>21</sub></td><td data-l="Dirección">sobre cuerpos distintos</td></tr>
+<tr><td data-l="Fuerza o ley">Peso</td><td data-l="Ecuación"><i>m</i><b class="vec">g</b></td><td data-l="Dirección">vertical, hacia abajo</td></tr>
+<tr><td data-l="Fuerza o ley">Normal</td><td data-l="Ecuación">sale de las ecuaciones</td><td data-l="Dirección">perpendicular a la superficie</td></tr>
+<tr><td data-l="Fuerza o ley">Tensión (cuerda ideal)</td><td data-l="Ecuación">igual en toda la cuerda</td><td data-l="Dirección">a lo largo de la cuerda, tirando</td></tr>
+<tr><td data-l="Fuerza o ley">Resorte (Hooke)</td><td data-l="Ecuación"><b class="vec">F</b> = −<i>k</i>Δ<b class="vec">x</b></td><td data-l="Dirección">hacia el largo natural</td></tr>
+<tr><td data-l="Fuerza o ley">Roce estático</td><td data-l="Ecuación"><i>f<sub>e</sub></i> ≤ <i>μ<sub>e</sub>N</i></td><td data-l="Dirección">opuesto al deslizamiento que impide</td></tr>
+<tr><td data-l="Fuerza o ley">Roce cinético</td><td data-l="Ecuación"><i>f<sub>c</sub></i> = <i>μ<sub>c</sub>N</i></td><td data-l="Dirección">opuesto al deslizamiento</td></tr>
+<tr><td data-l="Fuerza o ley">Movimiento circular</td><td data-l="Ecuación">Σ<i>F</i> hacia el centro = <i>mv</i>²/<i>r</i></td><td data-l="Dirección">hacia el centro</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="band" id="leyes"><div class="wrap duo">
+<div>
+<h2>1. Las tres leyes de Newton</h2>
+<ul>
+<li><strong>Primera ley:</strong> sin fuerza neta, un objeto mantiene su velocidad constante: sigue en reposo o se mueve en línea recta con rapidez constante.</li>
+<li><strong>Segunda ley:</strong> la fuerza neta (la suma vectorial de todas las fuerzas sobre <em>un</em> cuerpo) produce aceleración: Σ<b class="vec">F</b> = <i>m</i><b class="vec">a</b>. Es una ecuación por componente. Unidad: 1 N = 1 kg·m/s².</li>
+<li><strong>Tercera ley:</strong> si el cuerpo 1 empuja al 2, el 2 empuja al 1 con una fuerza igual y opuesta. Actúan sobre cuerpos <em>distintos</em>, así que nunca se cancelan en el DCL de un mismo cuerpo.</li>
+</ul>
+<h3>Diagrama de cuerpo libre (DCL)</h3>
+<p>Es el dibujo de un solo cuerpo con todas las fuerzas que actúan <em>sobre él</em>. Es el paso que más errores evita:</p>
+<ol>
+<li>Aísla el cuerpo y dibuja solo ese cuerpo.</li>
+<li>Agrega el peso y luego una fuerza por cada cosa que lo toca (superficies, cuerdas, resortes, otros cuerpos).</li>
+<li>Elige ejes cómodos: en un plano inclinado, uno paralelo y otro perpendicular al plano.</li>
+<li>Escribe Σ<i>F</i> = <i>ma</i> en cada eje. Si en un eje no hay movimiento, la aceleración en ese eje es cero.</li>
+</ol>
+<div class="note">"La fuerza del movimiento" no existe. Un cuerpo que se mueve no necesita una fuerza en la dirección en que se mueve; la fuerza neta va en la dirección de la <em>aceleración</em>.</div>
+</div>
+<div>
+<div class="ex" style="margin-top:0"><h3>Ejemplo 1: dos fuerzas sobre un disco</h3>
+<p>Sobre un disco de 0.5 kg, en una mesa sin roce, actúan 6 N hacia el este y 8 N hacia el norte.</p>
+<ol><li>Σ<b class="vec">F</b> = (6, 8) N, de magnitud 10 N, a 53.1° del este hacia el norte.</li>
+<li><b class="vec">a</b> = Σ<b class="vec">F</b>/<i>m</i> = (12, 16) m/s², es decir, <strong>20 m/s²</strong> en esa misma dirección.</li>
+<li>Para que el disco no acelere habría que agregar una tercera fuerza de (−6, −8) N.</li></ol></div>
+<div class="ex"><h3>Ejemplo 2: ascensor</h3>
+<p>Una persona de 70 kg está sobre una balanza en un ascensor que acelera hacia arriba a 2 m/s². ¿Qué marca la balanza?</p>
+<ol><li>DCL de la persona: normal <i>N</i> hacia arriba y peso hacia abajo.</li>
+<li><i>N</i> − <i>mg</i> = <i>ma</i>, así que <i>N</i> = 70·(9.8 + 2) = <strong>826 N</strong>. La balanza mide la normal, no el peso.</li>
+<li>Si el ascensor cayera libremente (<i>a</i> = −<i>g</i>), marcaría cero.</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="fuerzas"><div class="wrap duo">
+<div>
+<h2>2. Fuerzas típicas</h2>
+<ul>
+<li><strong>Peso:</strong> <i>m</i><b class="vec">g</b>, vertical hacia abajo. No es "perpendicular a la superficie" cuando la superficie está inclinada.</li>
+<li><strong>Normal:</strong> la superficie empuja al cuerpo, perpendicular a ella. No tiene fórmula propia: su valor sale de las ecuaciones. Solo es igual a <i>mg</i> en un piso horizontal sin otras fuerzas verticales ni aceleración vertical.</li>
+<li><strong>Tensión:</strong> una cuerda ideal (sin masa, inextensible y flexible) tira a lo largo de sí misma, con la misma tensión en todo su largo, aunque pase por una polea ideal. Solo tira, nunca empuja.</li>
+<li><strong>Resorte (ley de Hooke):</strong> <b class="vec">F</b> = −<i>k</i>(<b class="vec">x</b> − <b class="vec">x</b>₀). Siempre empuja hacia el largo natural, con una fuerza proporcional a cuánto se estiró o comprimió. <i>k</i> se mide en N/m.</li>
+</ul>
+<div class="ex"><h3>Ejemplo 3: resorte que sostiene una masa</h3>
+<p>Una masa de 0.5 kg cuelga en reposo de un resorte de 200 N/m. ¿Cuánto se estira?</p>
+<ol><li>En equilibrio, <i>kx</i> = <i>mg</i>, así que <strong><i>x</i> = 0.5·9.8/200 = 2.45 cm</strong>.</li></ol></div>
+<div class="ex"><h3>Ejemplo 4: bloques en contacto</h3>
+<p>Se empujan con 12 N dos bloques de 2 kg y 4 kg en contacto, sobre un piso sin roce. ¿Qué fuerza hace cada bloque sobre el otro?</p>
+<ol><li>Los dos juntos: <i>a</i> = 12/6 = 2 m/s².</li>
+<li>DCL del de 4 kg: la única fuerza horizontal es la del otro bloque, <i>F</i> = 4·2 = <strong>8 N</strong>. Por la tercera ley, el de 4 kg empuja al de 2 kg con 8 N en sentido contrario.</li></ol></div>
+</div>
+<div class="ex" style="margin-top:0"><h3>Ejemplo 5: plano inclinado sin roce</h3>
+<p>Un auto de 500 kg está en un plano sin roce inclinado 30°, a 500 m de la base, y se suelta desde el reposo.</p>
+<ol><li>Ejes: <i>x</i> a lo largo del plano, hacia abajo, e <i>y</i> perpendicular.</li>
+<li>Eje <i>y</i>: <i>N</i> − <i>mg</i> cos 30° = 0, así que <i>N</i> = 4243 N.</li>
+<li>Eje <i>x</i>: <i>mg</i> sin 30° = <i>ma</i>, así que <i>a</i> = <i>g</i> sin 30° = <strong>4.9 m/s²</strong>, sin importar la masa.</li>
+<li>Con cinemática: 500 = ½·4.9·<i>t</i>², así que <strong><i>t</i> = 14.3 s</strong> y <i>v</i> = 4.9·14.3 = <strong>70 m/s</strong>.</li></ol></div>
+</div></section>
+
+<section class="band" id="roce"><div class="wrap duo">
+<div>
+<h2>3. Roce estático y cinético</h2>
+<p>El roce aparece en el contacto entre superficies y se opone al deslizamiento entre ellas. Hay dos regímenes:</p>
+<div class="eq">estático: <i>f<sub>e</sub></i> ≤ <i>μ<sub>e</sub>N</i>&nbsp;&nbsp; ; &nbsp;&nbsp;cinético: <i>f<sub>c</sub></i> = <i>μ<sub>c</sub>N</i>,&nbsp; con <i>μ<sub>c</sub></i> &lt; <i>μ<sub>e</sub></i></div>
+<ul>
+<li><strong>Estático:</strong> mientras no hay deslizamiento, el roce vale <em>lo justo</em> para impedirlo, hasta un máximo de <i>μ<sub>e</sub>N</i>. Su valor sale de Σ<i>F</i> = 0, no de <i>μ<sub>e</sub>N</i>.</li>
+<li><strong>Cinético:</strong> cuando ya desliza, vale exactamente <i>μ<sub>c</sub>N</i> y apunta contra la velocidad relativa.</li>
+<li>Por eso cuesta más empezar a mover algo que mantenerlo en movimiento.</li>
+<li>Los coeficientes no tienen unidades y dependen de los materiales.</li>
+</ul>
+<p>En un plano inclinado, el bloque empieza a deslizar cuando tan <i>θ</i> &gt; <i>μ<sub>e</sub></i>. Una vez que desliza, baja con <i>a</i> = <i>g</i>(sin <i>θ</i> − <i>μ<sub>c</sub></i> cos <i>θ</i>). Pruébalo en la figura: subiendo el ángulo poco a poco, el roce estático crece hasta que se rompe el equilibrio.</p>
+<div class="ex"><h3>Ejemplo 6: ¿desliza o no?</h3>
+<p>Un bloque de 5 kg está en un plano de 30° con <i>μ<sub>e</sub></i> = 0.4 y <i>μ<sub>c</sub></i> = 0.3.</p>
+<ol><li>tan 30° = 0.577 &gt; 0.4: el roce estático no alcanza, así que <strong>desliza</strong>.</li>
+<li><i>N</i> = <i>mg</i> cos 30° = 42.4 N y <i>f<sub>c</sub></i> = 0.3·42.4 = 12.7 N.</li>
+<li><i>a</i> = 9.8(0.5 − 0.3·0.866) = <strong>2.35 m/s²</strong>.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-inc" aria-label="Bloque en un plano inclinado con roce y sus fuerzas"><svg></svg></div>
+<div class="ctl" data-keep>
+<div class="row"><label for="i-th">Ángulo del plano θ</label><input type="range" id="i-th" min="0" max="60" step="1" value="30"><output id="i-tho"></output></div>
+<div class="row"><label for="i-me">Roce estático μ<sub>e</sub></label><input type="range" id="i-me" min="0" max="1" step="0.05" value="0.4"><output id="i-meo"></output></div>
+<div class="row"><label for="i-mc">Roce cinético μ<sub>c</sub></label><input type="range" id="i-mc" min="0" max="1" step="0.05" value="0.3"><output id="i-mco"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>Estado</span><strong id="i-st" style="font-size:18px"></strong></div>
+<div class="stat"><span>Roce</span><strong id="i-f"></strong></div>
+<div class="stat"><span>Aceleración</span><strong id="i-a"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Bloque de 5 kg que parte del reposo. Si μ<sub>c</sub> es mayor que μ<sub>e</sub>, la figura usa μ<sub>c</sub> = μ<sub>e</sub>.</p>
+</div>
+</div></section>
+
+<section class="band" id="poleas"><div class="wrap duo">
+<div>
+<h2>4. Poleas y condiciones de ligadura</h2>
+<p>Con varios cuerpos unidos por cuerdas, el DCL de cada uno da sus ecuaciones, pero hay más incógnitas que ecuaciones. Las que faltan son las <strong>condiciones de ligadura</strong>, que salen de la geometría:</p>
+<ul>
+<li><strong>Cuerda inextensible:</strong> su largo es constante. Si un extremo sube, el otro baja lo mismo, y las aceleraciones quedan relacionadas (por ejemplo, <i>a</i>₁ = −<i>a</i>₂).</li>
+<li><strong>Cuerda ideal y polea ideal</strong> (sin masa ni roce): la tensión es la misma a ambos lados.</li>
+</ul>
+<p>Si la polea tiene masa, las tensiones a cada lado son distintas, y se necesita la dinámica de rotación de la <a href="fis1514-ayudantia-13-newton-rotacional.html#newton">guía de la Ayudantía 13</a>.</p>
+<div class="ex"><h3>Ejemplo 7: máquina de Atwood</h3>
+<p>Dos masas, <i>m</i> = 2 kg y <i>M</i> = 3 kg, cuelgan de una polea ideal.</p>
+<ol><li>DCL con positivo hacia arriba en ambas: <i>T</i> − <i>mg</i> = <i>ma</i>₁ y <i>T</i> − <i>Mg</i> = <i>Ma</i>₂.</li>
+<li>Ligadura: <i>a</i>₂ = −<i>a</i>₁. Restando las ecuaciones: <i>a</i>₁ = (<i>M</i> − <i>m</i>)<i>g</i>/(<i>m</i> + <i>M</i>) = <strong>1.96 m/s²</strong>; la masa pequeña sube.</li>
+<li><i>T</i> = 2<i>mMg</i>/(<i>m</i> + <i>M</i>) = <strong>23.5 N</strong>, entre los dos pesos (19.6 N y 29.4 N), como debe ser.</li></ol></div>
+</div>
+<div class="ex" style="margin-top:0"><h3>Ejemplo 8: bloque en una mesa y masa colgante</h3>
+<p>Un bloque de 4 kg está sobre una mesa con <i>μ<sub>c</sub></i> = 0.2, unido por una cuerda que pasa por una polea en el borde a una masa de 2 kg que cuelga.</p>
+<ol><li>Bloque (positivo hacia la polea): <i>T</i> − <i>μ<sub>c</sub></i>·4<i>g</i> = 4<i>a</i>.</li>
+<li>Masa colgante (positivo hacia abajo): 2<i>g</i> − <i>T</i> = 2<i>a</i>. La ligadura hace que ambas tengan la misma <i>a</i>.</li>
+<li>Sumando: <i>a</i> = (2·9.8 − 0.2·4·9.8)/6 = <strong>1.96 m/s²</strong> y <i>T</i> = 2(9.8 − 1.96) = <strong>15.7 N</strong>.</li>
+<li>Antes, conviene comprobar que efectivamente se mueve: el peso colgante (19.6 N) debe superar el roce estático máximo del bloque.</li></ol></div>
+</div></section>
+
+<section class="band" id="centripeta"><div class="wrap duo">
+<div>
+<h2>5. Fuerza centrípeta</h2>
+<p>En un movimiento circular siempre hay aceleración hacia el centro, <i>a<sub>c</sub></i> = <i>v</i>²/<i>r</i> = <i>rω</i>². Por la segunda ley, la suma de fuerzas en la dirección radial tiene que producirla:</p>
+<div class="eq">Σ<i>F</i><sub>hacia el centro</sub> = <i>m v</i>²/<i>r</i> = <i>m r ω</i>²</div>
+<p>La "fuerza centrípeta" no es una fuerza nueva que se agrega al DCL. Es el <em>nombre</em> de la suma de las fuerzas reales en la dirección radial: tensión, normal, roce, peso o una combinación.</p>
+<ul>
+<li><strong>Curva plana:</strong> la provee el roce estático. Hace falta <i>μ<sub>e</sub></i> ≥ <i>v</i>²/(<i>rg</i>).</li>
+<li><strong>Curva peraltada:</strong> la normal inclinada aporta una parte. Sin roce, la rapidez ideal cumple tan <i>θ</i> = <i>v</i>²/(<i>rg</i>). Más rápido, el roce apunta hacia abajo del peralte; más lento, hacia arriba. Lo puedes probar en la figura.</li>
+<li><strong>Movimiento vertical</strong> (rizo, balde girando): en el punto más alto el peso ayuda a girar; en el más bajo, se opone.</li>
+</ul>
+<div class="ex"><h3>Ejemplo 9: curvas</h3>
+<ol><li>Un auto a 20 m/s en una curva plana de 50 m de radio necesita <i>μ<sub>e</sub></i> ≥ 20²/(50·9.8) = <strong>0.82</strong>.</li>
+<li>Para tomarla sin roce, el peralte debe ser tan <i>θ</i> = 0.82, es decir <strong><i>θ</i> = 39.2°</strong>.</li></ol></div>
+<div class="ex"><h3>Ejemplo 10: piloto en un rizo</h3>
+<p>Un piloto de 70 kg describe un círculo vertical de 500 m de radio a 100 m/s (<i>v</i>²/<i>r</i> = 20 m/s²).</p>
+<ol><li>Abajo, el centro está arriba: <i>N</i> − <i>mg</i> = <i>mv</i>²/<i>r</i>, así que <strong><i>N</i> = 70(9.8 + 20) = 2086 N</strong>. Se siente unas tres veces más pesado.</li>
+<li>Arriba, el centro está abajo: <i>N</i> + <i>mg</i> = <i>mv</i>²/<i>r</i>, así que <strong><i>N</i> = 70(20 − 9.8) = 714 N</strong>.</li></ol></div>
+<div class="ex"><h3>Ejemplo 11: péndulo cónico</h3>
+<p>Una masa cuelga de una cuerda de 1 m y gira en un círculo horizontal, con la cuerda a 30° de la vertical.</p>
+<ol><li>Vertical: <i>T</i> cos 30° = <i>mg</i>. Radial: <i>T</i> sin 30° = <i>mω</i>²(<i>L</i> sin 30°).</li>
+<li>Dividiendo: <i>ω</i>² = <i>g</i>/(<i>L</i> cos 30°), así que <strong><i>ω</i> = 3.36 rad/s</strong> y el período es 2π/<i>ω</i> = <strong>1.87 s</strong>.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-cur" aria-label="Corte de una curva peraltada con un auto y sus fuerzas"><svg></svg></div>
+<div class="ctl" data-keep>
+<div class="row"><label for="c-v">Rapidez del auto</label><input type="range" id="c-v" min="0" max="40" step="1" value="20"><output id="c-vo"></output></div>
+<div class="row"><label for="c-th">Peralte θ</label><input type="range" id="c-th" min="0" max="45" step="1" value="0"><output id="c-tho"></output></div>
+<div class="row"><label for="c-mu">Roce estático μ<sub>e</sub></label><input type="range" id="c-mu" min="0" max="1.2" step="0.05" value="0.9"><output id="c-muo"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>Roce necesario / normal</span><strong id="c-need"></strong></div>
+<div class="stat"><span>Rapidez ideal sin roce</span><strong id="c-vi"></strong></div>
+<div class="stat"><span>Estado</span><strong id="c-st" style="font-size:18px"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Curva de 50 m de radio vista de frente. El centro de la curva está a la izquierda.</p>
+</div>
+</div></section>
+
+<section class="band" id="errores"><div class="wrap duo">
+<div>
+<h2>Errores típicos</h2>
+<ol>
+<li><strong>Poner <i>N</i> = <i>mg</i> siempre.</strong> En un plano inclinado, con fuerzas inclinadas o con aceleración vertical, la normal es otra.</li>
+<li><strong>Usar <i>f</i> = <i>μ<sub>e</sub>N</i> cuando el cuerpo está en reposo.</strong> Ese es el máximo; el roce estático real sale de las ecuaciones.</li>
+<li><strong>Cancelar un par de acción y reacción</strong> en un mismo DCL: actúan sobre cuerpos distintos.</li>
+<li><strong>Agregar la "fuerza centrípeta"</strong> como una fuerza más en el DCL.</li>
+<li><strong>Dibujar una fuerza en la dirección de la velocidad</strong> ("la fuerza del movimiento").</li>
+<li><strong>Olvidar la ligadura</strong>, o poner signos incompatibles en las aceleraciones de cuerpos unidos por una cuerda.</li>
+</ol>
+</div>
+<div class="ex" style="margin-top:0"><h3>Receta</h3>
+<ol>
+<li>Un DCL por cada cuerpo, con todas las fuerzas reales que actúan sobre él.</li>
+<li>Ejes por cuerpo: uno en la dirección del movimiento o de la aceleración esperada.</li>
+<li>Σ<i>F</i> = <i>ma</i> en cada eje de cada cuerpo.</li>
+<li>Condiciones de ligadura: largo de la cuerda constante, igual tensión en cuerdas ideales, contacto.</li>
+<li>Con roce: primero verifica si desliza (compara la fuerza necesaria con <i>μ<sub>e</sub>N</i>); después usa estático o cinético.</li>
+<li>Si hay curvas, la suma radial es <i>mv</i>²/<i>r</i> hacia el centro.</li>
+</ol></div>
+</div></section>
+
+<section class="band" id="ejercicios"><div class="wrap">
+<h2>Ejercicios para practicar</h2>
+<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<div class="grid2" id="exlist"></div>
+<h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
+<div class="grid2" id="quiz"></div>
+</div></section>
+
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el capítulo 2 (Dinámica) de los apuntes del curso FIS1514 Dinámica, 2-2026. Se omiten el roce viscoso y el movimiento armónico simple, que no entran en el examen. Los ejemplos y ejercicios numéricos son de práctica.</div></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const css=n=>`var(--${n})`;
+const fx=(v,n=1)=>(Math.abs(v)<0.5*10**-n?0:v).toFixed(n).replace(/^-/,'−');
+const defs=(id)=>'<defs>'+['force','blue','arm','perp','mute','ink'].map(c=>`<marker id="${id}${c}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" style="fill:${css(c)}"/></marker>`).join('')+'</defs>';
+const ar=(id,c,x1,y1,x2,y2,w=2.5,dash='')=>Math.hypot(x2-x1,y2-y1)<4?'':`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''} marker-end="url(#${id}${c})"/>`;
+const ln=(x1,y1,x2,y2,c,w=1,dash='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
+const tx=(x,y,t,c='ink',a='start',sz=14)=>`<text x="${x}" y="${y}" text-anchor="${a}" style="fill:${css(c)};font-size:${sz}px">${t}</text>`;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function view(id,draw){const box=$(id),s=box.querySelector('svg');const v={box,s,draw:()=>draw(s,box.clientWidth,box.clientHeight)};const ro=new ResizeObserver(()=>v.draw());ro.observe(box);return v;}
+function renderEx(EX){$('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');}
+function renderQuiz(QZ){$('quiz').innerHTML=QZ.map((q,i)=>`<div class="q" id="q${i}"><p>${q[0]}</p><div class="opts">${q[1].map((o,j)=>`<button data-q="${i}" data-o="${j}">${o}</button>`).join('')}</div><div class="fb" aria-live="polite"></div></div>`).join('');
+ $('quiz').addEventListener('click',e=>{const b=e.target.closest('button[data-q]');if(!b)return;const q=QZ[+b.dataset.q],box=$('q'+b.dataset.q);
+ box.querySelectorAll('button').forEach(x=>x.classList.remove('right','wrong'));const ok=+b.dataset.o===q[2];b.classList.add(ok?'right':'wrong');
+ if(!ok)box.querySelectorAll('button')[q[2]].classList.add('right');box.querySelector('.fb').textContent=(ok?'Correcto. ':'No. ')+q[3];});}
+function fitStickyInit(){const stk=[...document.querySelectorAll('.sticky')];
+const fitSticky=()=>{for(const el of stk){const k=el.querySelector('[data-keep]'),h=k?k.getBoundingClientRect().bottom-el.getBoundingClientRect().top:el.offsetHeight;el.style.top=Math.min(76,innerHeight-h-12)+'px';}};
+const stkRo=new ResizeObserver(fitSticky);stk.forEach(e=>stkRo.observe(e));addEventListener('resize',fitSticky);fitSticky();}
+
+const I={th:30,me:0.4,mc:0.3,m:5,g:9.8,t:0};
+function iS(){const t=I.th*Math.PI/180,mc=Math.min(I.mc,I.me),N=I.m*I.g*Math.cos(t),need=I.m*I.g*Math.sin(t);
+ if(need<=I.me*N+1e-9)return{N,f:need,a:0,sl:false};return{N,f:mc*N,a:I.g*(Math.sin(t)-mc*Math.cos(t)),sl:true};}
+const iv=view('f-inc',(s,W,H)=>{
+ const so=iS(),t=I.th*Math.PI/180,x0=W*0.08,y0=H*0.86,L=Math.min(W*0.84,(H*0.78)/Math.max(Math.sin(t),1e-3)),ux=Math.cos(t),uy=-Math.sin(t),nx=-Math.sin(t),ny=-Math.cos(t);
+ let h=defs('i')+`<polygon points="${x0},${y0} ${x0+L*ux},${y0+L*uy} ${x0+L*ux},${y0}" style="fill:${css('panel')};stroke:${css('mute')};stroke-width:1.5"/>`;
+ const bs=Math.min(56,W*0.1);let u=L*0.62;if(so.sl){u-=((I.t*so.a*30)%(L*0.45));}
+ const Q=(a,b)=>({x:x0+(u+a)*ux+b*nx,y:y0+(u+a)*uy+b*ny});const c=[Q(-bs/2,0),Q(bs/2,0),Q(bs/2,bs),Q(-bs/2,bs)];
+ h+=`<polygon points="${c.map(p=>p.x+','+p.y).join(' ')}" style="fill:${css('body')};stroke:${css('edge')};stroke-width:2"/>`;
+ const C=Q(0,bs/2),k=1.6;h+=ar('i','blue',C.x,C.y,C.x,C.y+I.m*I.g*k,3)+tx(C.x+8,C.y+I.m*I.g*k,'mg','blue','start',14);
+ const B=Q(-bs*0.2,0);h+=ar('i','arm',B.x,B.y,B.x+nx*so.N*k,B.y+ny*so.N*k,3)+tx(B.x+nx*(so.N*k+12),B.y+ny*(so.N*k+12),'N','arm','middle',14);
+ const F=Q(bs/2,0);if(so.f>0.3)h+=ar('i','perp',F.x,F.y,F.x+ux*so.f*k,F.y+uy*so.f*k,3)+tx(F.x+ux*(so.f*k+14),F.y+uy*(so.f*k+14)+4,'f','perp','middle',14);
+ h+=tx(x0+L*ux-6,y0-8,'θ = '+I.th+'°','mute','end',13);
+ s.innerHTML=h;
+});
+function iOut(){I.th=+$('i-th').value;I.me=+$('i-me').value;I.mc=+$('i-mc').value;$('i-tho').textContent=I.th+'°';$('i-meo').textContent=fx(I.me,2);$('i-mco').textContent=fx(I.mc,2);
+ const so=iS();$('i-st').textContent=so.sl?'Desliza':'En reposo';$('i-f').textContent=fx(so.f,1)+' N'+(so.sl?' (cinético)':' (estático)');$('i-a').textContent=fx(so.a,2)+' m/s²';I.t=0;iv.draw();}
+['i-th','i-me','i-mc'].forEach(i=>$(i).addEventListener('input',iOut));
+
+const C={v:20,th:0,mu:0.9,r:50,g:9.8};
+function cS(){const t=C.th*Math.PI/180,ac=C.v*C.v/C.r,N=C.g*Math.cos(t)+ac*Math.sin(t),f=ac*Math.cos(t)-C.g*Math.sin(t);return{N,f,need:Math.abs(f)/N,vi:Math.sqrt(C.r*C.g*Math.tan(t))};}
+const cv=view('f-cur',(s,W,H)=>{
+ const so=cS(),t=C.th*Math.PI/180,cx=W*0.58,cy=H*0.62,L=Math.min(W*0.42,240),ux=Math.cos(t),uy=Math.sin(t);
+ const A={x:cx-L*ux,y:cy+L*uy},B={x:cx+L*ux,y:cy-L*uy};
+ let h=defs('c')+`<polygon points="${A.x},${A.y} ${B.x},${B.y} ${B.x},${H-10} ${A.x},${H-10}" style="fill:${css('panel')};stroke:${css('mute')};stroke-width:1.5"/>`;
+ h+=ar('c','mute',cx-L*0.4,22,W*0.04,22,1.5)+tx(W*0.04,40,'centro de la curva','mute','start',13);
+ const nxx=-Math.sin(t),nyy=-Math.cos(t);
+ const bw=70,bh=34,P=(a,b)=>({x:cx+a*ux+b*nxx,y:cy-a*uy+b*nyy});const c=[P(-bw/2,0),P(bw/2,0),P(bw/2,bh),P(-bw/2,bh)];
+ h+=`<polygon points="${c.map(p=>p.x+','+p.y).join(' ')}" style="fill:${css('body')};stroke:${css('edge')};stroke-width:2"/>`;
+ const G=P(0,bh/2),k=6;h+=ar('c','blue',G.x,G.y,G.x,G.y+C.g*k,3)+tx(G.x+8,G.y+C.g*k,'mg','blue','start',14);
+ const Nb=P(-bw*0.25,0);h+=ar('c','arm',Nb.x,Nb.y,Nb.x+nxx*so.N*k,Nb.y+nyy*so.N*k,3)+tx(Nb.x+nxx*(so.N*k+14)-6,Nb.y+nyy*(so.N*k+14),'N','arm','end',14);
+ const Fb=P(bw*0.3,0);if(Math.abs(so.f)>0.05){const d=so.f>0?-1:1;h+=ar('c','perp',Fb.x,Fb.y,Fb.x+d*ux*Math.abs(so.f)*k,Fb.y-d*uy*Math.abs(so.f)*k,3)+tx(Fb.x+d*ux*(Math.abs(so.f)*k+16),Fb.y-d*uy*(Math.abs(so.f)*k+16)+16,'f','perp','middle',14);}
+ const ac=C.v*C.v/C.r;h+=ar('c','force',G.x-20,G.y-96,G.x-20-ac*k,G.y-96,2.5,'5 4')+tx(G.x-20-ac*k/2,G.y-104,'a = v²/r','force','middle',13);
+ s.innerHTML=h;
+});
+function cOut(){C.v=+$('c-v').value;C.th=+$('c-th').value;C.mu=+$('c-mu').value;$('c-vo').textContent=C.v+' m/s';$('c-tho').textContent=C.th+'°';$('c-muo').textContent=fx(C.mu,2);
+ const so=cS();$('c-need').textContent=fx(so.need,2);$('c-vi').textContent=fx(so.vi,1)+' m/s';
+ $('c-st').textContent=so.need<=C.mu?'Toma la curva':(so.f>0?'Desliza hacia afuera':'Desliza hacia adentro');cv.draw();}
+['c-v','c-th','c-mu'].forEach(i=>$(i).addEventListener('input',cOut));
+
+renderEx([
+['Bloque en reposo en un plano','Un bloque de 3 kg está en reposo en un plano de 20° con μ<sub>e</sub> = 0.5. ¿Cuánto vale la fuerza de roce?','Como está en reposo, el roce equilibra la componente del peso: <i>f</i> = 3·9.8·sin 20° = <strong>10.1 N</strong>. No es μ<sub>e</sub><i>N</i> = 13.8 N: ese es el máximo posible.'],
+['Resorte que tira de un bloque','Un resorte de 150 N/m, estirado 0.1 m, tira de un bloque de 2 kg sobre un piso con μ<sub>e</sub> = 0.5 y μ<sub>c</sub> = 0.4. ¿Se mueve? ¿Con qué aceleración parte?','Fuerza del resorte: 15 N. Roce estático máximo: 0.5·2·9.8 = 9.8 N, así que <strong>se mueve</strong>. Al partir: <i>a</i> = (15 − 0.4·19.6)/2 = <strong>3.58 m/s²</strong>. Esa aceleración cambia a medida que el resorte se acorta.'],
+['Atwood con datos','En una máquina de Atwood con masas de 1 kg y 4 kg, ¿cuánto tarda la masa grande en bajar 1 m desde el reposo?','<i>a</i> = (4 − 1)·9.8/5 = 5.88 m/s². 1 = ½·5.88·<i>t</i>², así que <strong><i>t</i> = 0.58 s</strong>.'],
+['Rapidez máxima en una curva','Un auto toma una curva plana de 80 m de radio con μ<sub>e</sub> = 0.6. ¿Cuál es su rapidez máxima?','<i>μ<sub>e</sub>mg</i> = <i>mv</i>²/<i>r</i>, así que <strong><i>v</i> = √(0.6·9.8·80) = 21.7 m/s</strong>, unos 78 km/h. No depende de la masa.'],
+['Balde girando','Un balde con agua gira en un círculo vertical de 1 m de radio. ¿Cuál es la rapidez mínima en el punto más alto para que el agua no se caiga?','Arriba: <i>N</i> + <i>mg</i> = <i>mv</i>²/<i>r</i>. El límite es <i>N</i> = 0: <i>v</i> = √(<i>gr</i>) = <strong>3.13 m/s</strong>.'],
+['Tirar con una cuerda inclinada','Se tira un bloque de 10 kg con 40 N a 30° sobre la horizontal, sobre un piso con μ<sub>c</sub> = 0.2. ¿Cuál es su aceleración?','Vertical: <i>N</i> = 98 − 40 sin 30° = 78 N. Horizontal: 40 cos 30° − 0.2·78 = 10<i>a</i>, así que <strong><i>a</i> = 1.90 m/s²</strong>. Tirar inclinado reduce la normal y con ella el roce.']
+]);
+renderQuiz([
+['Un auto va a velocidad constante por una carretera recta. La fuerza neta sobre él:',['Apunta hacia adelante','Es cero','Es igual al peso'],1,'Velocidad constante, aceleración cero; por la segunda ley, fuerza neta cero.'],
+['Un bloque en reposo en un plano inclinado: el roce estático vale:',['μₑN siempre','Lo necesario para equilibrarlo, hasta μₑN','Cero'],1,'El estático se ajusta; μₑN es solo su máximo.'],
+['El par de acción y reacción de tu peso (la Tierra te atrae) es:',['La normal del suelo','La fuerza con que tú atraes a la Tierra','El roce'],1,'La normal también actúa sobre ti; el par de tercera ley actúa sobre el otro cuerpo.'],
+['En una máquina de Atwood ideal, la tensión es:',['Igual al peso mayor','Igual al peso menor','Un valor entre los dos pesos'],2,'T = 2mMg/(m + M) está entre mg y Mg.'],
+['En un péndulo que oscila, en el punto más bajo la tensión es:',['Menor que el peso','Igual al peso','Mayor que el peso'],2,'T − mg = mv²/L > 0.'],
+['¿Qué provee la fuerza centrípeta en una curva plana?',['El peso','El roce estático','La normal'],1,'Es la única fuerza horizontal hacia el centro.']
+]);
+let last=null;
+function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;if(!reduce&&iS().sl){I.t+=dt;iv.draw();}requestAnimationFrame(loop);}
+iOut();cOut();fitStickyInit();requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>

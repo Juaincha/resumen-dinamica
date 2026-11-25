@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M876QPX4');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinemática</title>
+<meta name="description" content="Material para estudiar para el examen de FIS1514: velocidad y aceleración, movimiento en una dimensión, caída libre, proyectiles, movimiento circular y movimiento relativo, con figuras que se mueven y ejercicios resueltos.">
+<link rel="canonical" href="https://juaincha.github.io/resumen-dinamica/guias/fis1514-apuntes-01-cinematica.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Guías de estudio">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Cinemática · FIS1514">
+<meta property="og:description" content="Material para estudiar para el examen de FIS1514: velocidad y aceleración, movimiento en una dimensión, caída libre, proyectiles, movimiento circular y movimiento relativo, con figuras que se mueven y ejercicios resueltos.">
+<meta property="og:url" content="https://juaincha.github.io/resumen-dinamica/guias/fis1514-apuntes-01-cinematica.html">
+<meta property="og:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-apuntes-01.jpg">
+<meta property="og:image:secure_url" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-apuntes-01.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trayectoria parabólica de un proyectil con sus componentes de velocidad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cinemática · FIS1514">
+<meta name="twitter:description" content="Material para estudiar para el examen de FIS1514: velocidad y aceleración, movimiento en una dimensión, caída libre, proyectiles, movimiento circular y movimiento relativo, con figuras que se mueven y ejercicios resueltos.">
+<meta name="twitter:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-apuntes-01.jpg">
+<meta name="theme-color" content="#0f5fa8">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="guia-curso" content="FIS1514 Dinámica">
+<meta name="guia-titulo" content="Cinemática">
+<meta name="guia-fuente" content="Apuntes, capítulo 1">
+<meta name="guia-fecha" content="2026-08-20">
+<meta name="guia-temas" content="Velocidad y aceleración, Caída libre, Proyectiles, Movimiento circular, Movimiento relativo">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=STIX+Two+Text:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday study: calm, exact, like a good textbook chapter
+   IDEA the course's own Beamer slides and textbook figure plates: blue title band, peach bodies, blue axes
+   PICTURE a draggable force-time graph, a ball off a wall, an exploding projectile
+   COLOUR white ground, Beamer blue band, peach bodies, red forces, green lever arms, violet components
+   TYPE Archivo 800 titles + Source Sans 3 text + STIX Two for equations
+   LAYOUT blue band with title and section links; lab under it (figure left, controls right; stacked on phones) */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0c131d);--ink:light-dark(#14171c,#e6ecf3);--mute:light-dark(#566070,#9aa7b8);
+--line:light-dark(#d8dee7,#2a3749);--panel:light-dark(#f2f6fb,#121c29);--band:light-dark(#0f5fa8,#0d3a6a);
+--blue:light-dark(#1167c4,#62b2ff);--axis:light-dark(#1597dc,#4cc3ff);--body:light-dark(#f6b896,#a8603f);
+--edge:light-dark(#c4673e,#f0a882);--force:light-dark(#d4361c,#ff7a5c);--arm:light-dark(#14844a,#4fd18b);
+--perp:light-dark(#6a3fc8,#b49dff);--ok:light-dark(#e3f5ea,#123222);--bad:light-dark(#fde8e4,#3a1712)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Source Sans 3',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,5vw,50px);font-weight:800}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:600;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px;max-width:68ch}
+.band{padding-block:clamp(28px,4vw,56px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.top{background:var(--band);color:#fff;padding-bottom:22px}
+.top p{color:#dbe9f8;max-width:60ch;margin-top:12px}
+nav{position:sticky;top:0;z-index:5;background:var(--band);padding-inline:max(5vw,16px);border-bottom:1px solid #ffffff22}
+nav .scroll{display:flex;gap:4px;max-width:1240px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+nav a{flex:none;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 10px;border-bottom:3px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:#9fd3ff;outline:none}
+section{border-top:1px solid var(--line)}
+.duo{display:grid;gap:28px}
+@media(min-width:980px){.duo{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}.duo .sticky{position:sticky;top:76px}}
+.fig{position:relative;min-height:340px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.tall{min-height:400px}
+svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round;font:600 14px 'Source Sans 3',sans-serif}
+.eq{font-family:'STIX Two Text',serif;font-size:20px;background:var(--panel);border-radius:8px;padding:12px 16px;margin:12px 0 16px;overflow-x:auto;line-height:1.7}
+.eq i,.v i,td i{font-family:'STIX Two Text',serif}
+b.vec{font-family:'STIX Two Text',serif;font-weight:700;font-style:normal}
+.note{border-left:4px solid var(--blue);background:var(--panel);padding:12px 16px;margin:16px 0;max-width:68ch}
+.ctl{display:grid;gap:12px;margin-top:14px}
+.row{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) 4.8em;gap:12px;align-items:center;font-size:15px}
+.row output{font-weight:600;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;height:44px;accent-color:var(--blue);margin:0}
+button{font:600 15px 'Source Sans 3',sans-serif;min-height:44px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--blue);background:var(--bg);color:var(--blue);cursor:pointer}
+button:hover{background:var(--panel)}button:focus-visible{outline:3px solid var(--axis);outline-offset:2px}
+button.main{background:var(--blue);color:var(--bg)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--panel);border-radius:8px;padding:10px 14px}
+.stat span{display:block;font-size:14px;color:var(--mute)}
+.stat strong{font-size:clamp(20px,2.4vw,24px);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.lab{display:grid;gap:24px;padding-bottom:clamp(28px,4vw,48px);align-items:start}
+@media(min-width:900px){.lab{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.lab .fig{min-height:0;height:clamp(340px,40vw,470px)}
+.labside{background:var(--bg);color:var(--ink);border-radius:10px;padding:18px}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--mute);margin-top:10px}
+.key i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+table{border-collapse:collapse;width:100%;font-size:16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:Archivo,sans-serif;font-weight:600;font-size:15px}
+.scroll{overflow-x:auto}
+details{border:1px solid var(--line);border-radius:10px;padding:0 16px;margin:12px 0}
+summary{cursor:pointer;font-weight:600;padding:12px 0;min-height:44px}
+details[open]{padding-bottom:12px}
+.ex{background:var(--panel);border-radius:10px;padding:16px 18px;margin:16px 0}
+.ex h3{margin-top:0}
+.ex ol{margin:0;padding-left:22px}.ex li{margin-bottom:6px}
+.q{border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px}
+.q p{font-weight:600}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;border-color:var(--line);color:var(--ink)}
+.opts button.right{background:var(--ok);border-color:var(--arm)}
+.opts button.wrong{background:var(--bad);border-color:var(--force)}
+.fb{margin-top:10px;font-size:16px}
+.grid2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(15em,1fr))}
+.small{font-size:14px;color:var(--mute)}
+@media(max-width:600px){table{font-size:14px}th,td{padding:6px 4px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);color:var(--mute);font-weight:600}.row{grid-template-columns:minmax(0,1fr) 4.8em}.row label{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M876QPX4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="band top">
+<div class="wrap">
+<a href="../index.html" style="display:inline-block;color:#dbe9f8;text-decoration:none;font-weight:600;font-size:15px;margin-bottom:14px;padding:10px 0">← Todas las guías</a>
+<h1>Cinemática</h1>
+<p>Material para el examen de FIS1514 Dinámica, basado en el capítulo 1 de los apuntes del curso. Posición, velocidad y aceleración; movimiento en una dimensión, caída libre, proyectiles, movimiento circular y movimiento relativo.</p>
+</div>
+</header>
+<nav aria-label="Secciones"><div class="scroll">
+<a href="#resumen">Resumen</a><a href="#conceptos">Conceptos</a><a href="#una-dimension">Una dimensión</a><a href="#caida">Caída libre</a><a href="#proyectiles">Proyectiles</a><a href="#circular">Circular</a><a href="#relativo">Relativo</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
+</div></nav>
+
+<section class="band" id="resumen"><div class="wrap duo">
+<div>
+<h2>Resumen: describir el movimiento</h2>
+<p>La cinemática describe cómo se mueve algo, sin preguntarse por qué. Con tres cantidades (posición, velocidad y aceleración) y la relación entre ellas (cada una es la derivada de la anterior) se resuelven todos los problemas de esta unidad.</p>
+<p>Es la base de todo lo que viene: las leyes de Newton dan la aceleración, y la cinemática la convierte en velocidades y posiciones. Las coordenadas polares (velocidad y aceleración con <b class="vec">ê</b><sub>r</sub> y <b class="vec">ê</b><sub>θ</sub>) están desarrolladas en la <a href="fis1514-ayudantia-12-centro-de-masa-y-rotacion.html#polares">guía de la Ayudantía 12</a>.</p>
+</div>
+<div class="scroll"><table class="stack">
+<thead><tr><th>Situación</th><th>Ecuaciones</th></tr></thead>
+<tbody>
+<tr><td data-l="Situación">Definiciones</td><td data-l="Ecuaciones"><b class="vec">v</b> = d<b class="vec">r</b>/dt, <b class="vec">a</b> = d<b class="vec">v</b>/dt</td></tr>
+<tr><td data-l="Situación">Aceleración constante (1D)</td><td data-l="Ecuaciones"><i>x</i> = <i>x</i>₀ + <i>v</i>₀<i>t</i> + ½<i>at</i>², <i>v</i> = <i>v</i>₀ + <i>at</i>, <i>v</i>² = <i>v</i>₀² + 2<i>a</i>Δ<i>x</i></td></tr>
+<tr><td data-l="Situación">Aceleración variable</td><td data-l="Ecuaciones"><i>v</i> − <i>v</i>₀ = ∫<i>a</i> d<i>t</i>, <i>x</i> − <i>x</i>₀ = ∫<i>v</i> d<i>t</i></td></tr>
+<tr><td data-l="Situación">Caída libre (y hacia arriba)</td><td data-l="Ecuaciones"><i>a</i> = −<i>g</i>, <i>g</i> ≈ 9.8 m/s²</td></tr>
+<tr><td data-l="Situación">Proyectil</td><td data-l="Ecuaciones"><i>x</i> = <i>x</i>₀ + <i>v</i>₀ₓ<i>t</i>; <i>y</i> = <i>y</i>₀ + <i>v</i>₀ᵧ<i>t</i> − ½<i>gt</i>²</td></tr>
+<tr><td data-l="Situación">Movimiento circular</td><td data-l="Ecuaciones"><i>v</i> = <i>rω</i>, <i>a<sub>c</sub></i> = <i>rω</i>² = <i>v</i>²/<i>r</i>, <i>a<sub>t</sub></i> = <i>rα</i></td></tr>
+<tr><td data-l="Situación">α constante</td><td data-l="Ecuaciones"><i>ω</i> = <i>ω</i>₀ + <i>αt</i>, <i>θ</i> = <i>θ</i>₀ + <i>ω</i>₀<i>t</i> + ½<i>αt</i>²</td></tr>
+<tr><td data-l="Situación">Movimiento relativo</td><td data-l="Ecuaciones"><b class="vec">r</b><sub>A</sub> = <b class="vec">r</b><sub>B</sub> + <b class="vec">r</b><sub>AB</sub>, <b class="vec">v</b><sub>A</sub> = <b class="vec">v</b><sub>B</sub> + <b class="vec">v</b><sub>AB</sub></td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="band" id="conceptos"><div class="wrap duo">
+<div>
+<h2>1. Posición, velocidad y aceleración</h2>
+<ul>
+<li><strong>Desplazamiento:</strong> el vector Δ<b class="vec">r</b> = <b class="vec">r</b><sub>f</sub> − <b class="vec">r</b><sub>i</sub>, de la posición inicial a la final.</li>
+<li><strong>Distancia recorrida:</strong> un número que depende del camino. No siempre es el módulo del desplazamiento: si das una vuelta a una pista de 400 m, recorres 400 m pero tu desplazamiento es cero.</li>
+<li><strong>Velocidad promedio:</strong> <b class="vec">v</b><sub>prom</sub> = Δ<b class="vec">r</b>/Δ<i>t</i>. Es un vector, y en 1D puede ser positiva o negativa.</li>
+<li><strong>Rapidez promedio:</strong> distancia total dividida por el tiempo. Siempre es positiva o cero.</li>
+<li><strong>Velocidad instantánea:</strong> <b class="vec">v</b> = d<b class="vec">r</b>/dt. En un gráfico <i>x</i>(<i>t</i>) es la pendiente de la tangente. La rapidez instantánea es su módulo.</li>
+<li><strong>Aceleración:</strong> <b class="vec">a</b> = d<b class="vec">v</b>/dt, el cambio de la velocidad. La aceleración promedio es Δ<b class="vec">v</b>/Δ<i>t</i>.</li>
+</ul>
+<div class="ex"><h3>Ejemplo 1: velocidad y rapidez promedio</h3>
+<p>Un corredor avanza 3 km hacia el norte en 15 min y luego vuelve 1 km en 5 min.</p>
+<ol><li>Desplazamiento: 2 km al norte. Velocidad promedio: 2 km/20 min = <strong>6 km/h al norte</strong>.</li>
+<li>Distancia: 4 km. Rapidez promedio: 4 km/20 min = <strong>12 km/h</strong>.</li>
+<li>Ninguna de las dos cuenta que se devolvió: para eso hacen falta los valores instantáneos.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig tall" id="f-xt" aria-label="Gráficos de posición y velocidad en función del tiempo"><svg></svg></div>
+<div class="btns" style="margin-top:14px"><button data-pk="fr">Frenado</button><button data-pk="cte">Velocidad constante</button><button data-pk="vuelta">Se devuelve</button></div>
+<div class="ctl" data-keep>
+<div class="row"><label for="k-v0">Velocidad inicial v₀</label><input type="range" id="k-v0" min="-10" max="10" step="0.5" value="8"><output id="k-v0o"></output></div>
+<div class="row"><label for="k-a">Aceleración a</label><input type="range" id="k-a" min="-4" max="4" step="0.25" value="-2"><output id="k-ao"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>Desplazamiento (0 a 6 s)</span><strong id="k-dx"></strong></div>
+<div class="stat"><span>Distancia recorrida</span><strong id="k-d"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Arriba, <i>x</i>(<i>t</i>): la pendiente de la recta roja es la velocidad en ese instante. Abajo, <i>v</i>(<i>t</i>): el área con signo es el desplazamiento.</p>
+</div>
+</div></section>
+
+<section class="band" id="una-dimension"><div class="wrap duo">
+<div>
+<h2>2. Movimiento en una dimensión</h2>
+<p>En una recta, cada vector tiene una sola componente, con signo según el eje elegido. Con <strong>velocidad constante</strong> (<i>a</i> = 0): <i>x</i>(<i>t</i>) = <i>x</i>₀ + <i>v</i>Δ<i>t</i>.</p>
+<p>Con <strong>aceleración constante</strong>:</p>
+<div class="eq"><i>v</i> = <i>v</i>₀ + <i>at</i>,&nbsp;&nbsp; <i>x</i> = <i>x</i>₀ + <i>v</i>₀<i>t</i> + ½<i>at</i>²,&nbsp;&nbsp; <i>v</i>² = <i>v</i>₀² + 2<i>a</i>(<i>x</i> − <i>x</i>₀)</div>
+<p>La tercera no tiene tiempo: úsala cuando el problema no lo da ni lo pide. Además, solo con <i>a</i> constante la velocidad promedio es el promedio de las velocidades, (<i>v</i>₀ + <i>v</i>)/2.</p>
+<h3>Aceleración variable</h3>
+<p>Si <i>a</i> cambia, las fórmulas anteriores no sirven. Se integra:</p>
+<div class="eq"><i>v</i>(<i>t</i>) = <i>v</i>₀ + ∫₀<sup><i>t</i></sup> <i>a</i>(<i>t</i>') d<i>t</i>',&nbsp;&nbsp; <i>x</i>(<i>t</i>) = <i>x</i>₀ + ∫₀<sup><i>t</i></sup> <i>v</i>(<i>t</i>') d<i>t</i>'</div>
+<p>Gráficamente: la velocidad es la pendiente de <i>x</i>(<i>t</i>) y el desplazamiento es el área bajo <i>v</i>(<i>t</i>). Mira la figura de la sección 1 con el caso "Se devuelve": el área positiva y la negativa se restan en el desplazamiento, pero se suman en la distancia.</p>
+</div>
+<div>
+<div class="ex" style="margin-top:0"><h3>Ejemplo 2: distancia de frenado</h3>
+<p>Un auto a 20 m/s frena con 4 m/s². ¿Qué distancia recorre hasta detenerse y en cuánto tiempo?</p>
+<ol><li>Sin tiempo: 0 = 20² + 2(−4)Δ<i>x</i>, así que <strong>Δ<i>x</i> = 50 m</strong>.</li>
+<li><i>t</i> = (0 − 20)/(−4) = <strong>5 s</strong>.</li>
+<li>Si va al doble de rapidez, la distancia de frenado se cuadruplica: va con <i>v</i>².</li></ol></div>
+<div class="ex"><h3>Ejemplo 3: aceleración que depende del tiempo</h3>
+<p>Una partícula parte de <i>x</i> = 0 con <i>v</i>₀ = 2 m/s y tiene <i>a</i>(<i>t</i>) = 6<i>t</i> m/s². ¿Dónde está y qué velocidad tiene a los 2 s?</p>
+<ol><li><i>v</i>(<i>t</i>) = 2 + ∫₀<sup><i>t</i></sup> 6<i>t</i>' d<i>t</i>' = 2 + 3<i>t</i>², así que <i>v</i>(2) = <strong>14 m/s</strong>.</li>
+<li><i>x</i>(<i>t</i>) = ∫₀<sup><i>t</i></sup> (2 + 3<i>t</i>'²) d<i>t</i>' = 2<i>t</i> + <i>t</i>³, así que <i>x</i>(2) = <strong>12 m</strong>.</li>
+<li>Usar <i>x</i> = <i>v</i>₀<i>t</i> + ½<i>at</i>² aquí daría un resultado incorrecto, porque <i>a</i> no es constante.</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="caida"><div class="wrap duo">
+<div>
+<h2>3. Lanzamiento vertical y caída libre</h2>
+<p>Cerca de la superficie, todo objeto en el aire (sin roce del aire) tiene la misma aceleración: <i>g</i> ≈ 9.8 m/s² hacia abajo. Con <i>y</i> positivo hacia arriba:</p>
+<div class="eq"><i>y</i> = <i>y</i>₀ + <i>v</i>₀<i>t</i> − ½<i>gt</i>²,&nbsp;&nbsp; <i>v</i> = <i>v</i>₀ − <i>gt</i>,&nbsp;&nbsp; <i>v</i>² = <i>v</i>₀² − 2<i>g</i>(<i>y</i> − <i>y</i>₀)</div>
+<ul>
+<li><i>v</i>₀ es positiva si se lanza hacia arriba y negativa si se lanza hacia abajo.</li>
+<li>En la altura máxima la velocidad es cero, pero <strong>la aceleración sigue siendo −<i>g</i></strong>. Si fuera cero ahí, el objeto se quedaría flotando.</li>
+<li>La subida y la bajada hasta la misma altura tardan lo mismo, y el objeto vuelve a esa altura con la misma rapidez.</li>
+</ul>
+</div>
+<div class="ex" style="margin-top:0"><h3>Ejemplo 4: lanzamiento desde un edificio</h3>
+<p>Desde 20 m de altura se lanza una pelota hacia arriba a 15 m/s. ¿Qué altura máxima alcanza, cuándo llega al suelo y con qué velocidad?</p>
+<ol><li>Altura máxima (<i>v</i> = 0): <i>y</i> = 20 + 15²/(2·9.8) = <strong>31.5 m</strong>.</li>
+<li>Suelo (<i>y</i> = 0): 0 = 20 + 15<i>t</i> − 4.9<i>t</i>². La raíz positiva es <strong><i>t</i> = 4.07 s</strong>.</li>
+<li><i>v</i> = 15 − 9.8·4.07 = <strong>−24.8 m/s</strong>, es decir, 24.8 m/s hacia abajo. Comprobación con la ecuación sin tiempo: <i>v</i>² = 15² + 2·9.8·20 = 617, y √617 = 24.8.</li></ol></div>
+</div></section>
+
+<section class="band" id="proyectiles"><div class="wrap duo">
+<div>
+<h2>4. Movimiento en dos dimensiones y proyectiles</h2>
+<p>En 2D, <b class="vec">r</b>(<i>t</i>) = <b class="vec">r</b><sub>i</sub> + <b class="vec">v</b><sub>i</sub><i>t</i> + ½<b class="vec">a</b><i>t</i>² se separa en dos ecuaciones independientes, una por eje. Lo único que comparten es el tiempo.</p>
+<p>En un proyectil (sin roce del aire) la única aceleración es la gravedad, así que:</p>
+<div class="eq"><i>x</i> = <i>x</i>₀ + <i>v</i>₀ₓ<i>t</i>,&nbsp; <i>v<sub>x</sub></i> = <i>v</i>₀ₓ&nbsp;&nbsp; ; &nbsp;&nbsp;<i>y</i> = <i>y</i>₀ + <i>v</i>₀ᵧ<i>t</i> − ½<i>gt</i>²,&nbsp; <i>v<sub>y</sub></i> = <i>v</i>₀ᵧ − <i>gt</i></div>
+<p>con <i>v</i>₀ₓ = <i>v</i>₀ cos <i>θ</i> y <i>v</i>₀ᵧ = <i>v</i>₀ sin <i>θ</i>. La velocidad horizontal nunca cambia; la vertical se comporta exactamente como una caída libre.</p>
+<h3>Resultados para lanzamientos desde el suelo</h3>
+<div class="eq"><i>t</i><sub>vuelo</sub> = 2<i>v</i>₀ sin <i>θ</i>/<i>g</i>,&nbsp;&nbsp; <i>h</i><sub>máx</sub> = (<i>v</i>₀ sin <i>θ</i>)²/2<i>g</i>,&nbsp;&nbsp; <i>R</i> = <i>v</i>₀² sin 2<i>θ</i>/<i>g</i></div>
+<p>El alcance es máximo a 45°, y dos ángulos complementarios (30° y 60°) llegan al mismo punto. Estas fórmulas solo valen si el proyectil sale y cae a la misma altura; si no, plantea las dos ecuaciones y resuelve el sistema.</p>
+<div class="ex"><h3>Ejemplo 5: lanzamiento a 30°</h3>
+<p>Se lanza un objeto desde el suelo a 20 m/s y 30°.</p>
+<ol><li><i>v</i>₀ₓ = 17.3 m/s y <i>v</i>₀ᵧ = 10 m/s.</li>
+<li>Tiempo de vuelo: 2·10/9.8 = <strong>2.04 s</strong>. Altura máxima: 10²/19.6 = <strong>5.10 m</strong>.</li>
+<li>Alcance: 17.3·2.04 = <strong>35.3 m</strong>.</li></ol></div>
+<div class="ex"><h3>Ejemplo 6: lanzamiento horizontal desde altura</h3>
+<p>Desde un acantilado de 45 m se lanza una piedra horizontalmente a 12 m/s.</p>
+<ol><li>Vertical (como si cayera desde el reposo): 45 = 4.9<i>t</i>², así que <i>t</i> = <strong>3.03 s</strong>.</li>
+<li>Horizontal: <i>x</i> = 12·3.03 = <strong>36.4 m</strong>.</li>
+<li>Velocidad al llegar: <i>v<sub>x</sub></i> = 12 y <i>v<sub>y</sub></i> = −29.7 m/s, así que <strong>|<b class="vec">v</b>| = 32.0 m/s</strong>.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-proj" aria-label="Trayectoria de un proyectil con sus componentes de velocidad"><svg></svg></div>
+<div class="btns" style="margin-top:14px"><button class="main" id="p-go">Lanzar</button><button data-pp="e5">Ejemplo 5</button><button data-pp="e6">Ejemplo 6</button></div>
+<div class="ctl" data-keep>
+<div class="row"><label for="p-v">Rapidez inicial v₀</label><input type="range" id="p-v" min="5" max="30" step="1" value="20"><output id="p-vo"></output></div>
+<div class="row"><label for="p-th">Ángulo θ</label><input type="range" id="p-th" min="-30" max="85" step="1" value="30"><output id="p-tho"></output></div>
+<div class="row"><label for="p-h">Altura inicial</label><input type="range" id="p-h" min="0" max="50" step="1" value="0"><output id="p-ho"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>Tiempo de vuelo</span><strong id="p-t"></strong></div>
+<div class="stat"><span>Alcance</span><strong id="p-R"></strong></div>
+<div class="stat"><span>Altura máxima</span><strong id="p-H"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Las flechas muestran las componentes de la velocidad: la horizontal (azul) nunca cambia; la vertical (violeta) cambia a ritmo constante.</p>
+</div>
+</div></section>
+
+<section class="band" id="circular"><div class="wrap duo">
+<div>
+<h2>5. Movimiento circular</h2>
+<p>En un círculo de radio <i>r</i> constante, la posición se describe con el ángulo <i>θ</i>(<i>t</i>). La velocidad angular es <i>ω</i> = d<i>θ</i>/dt (en rad/s) y la aceleración angular, <i>α</i> = d<i>ω</i>/dt.</p>
+<div class="eq"><i>v</i> = <i>rω</i>&nbsp;(tangente)&nbsp;&nbsp; ; &nbsp;&nbsp;<i>a<sub>c</sub></i> = <i>rω</i>² = <i>v</i>²/<i>r</i>&nbsp;(hacia el centro)&nbsp;&nbsp; ; &nbsp;&nbsp;<i>a<sub>t</sub></i> = <i>rα</i>&nbsp;(tangente)</div>
+<ul>
+<li>Siempre hay aceleración centrípeta, aunque la rapidez sea constante: la velocidad cambia de dirección.</li>
+<li>Si además la rapidez cambia, aparece la tangencial <i>rα</i>, y la aceleración total es √(<i>a<sub>c</sub></i>² + <i>a<sub>t</sub></i>²).</li>
+<li>Con <i>α</i> constante, el ángulo cumple las mismas ecuaciones que la posición en 1D: <i>ω</i> = <i>ω</i>₀ + <i>αt</i>, <i>θ</i> = <i>θ</i>₀ + <i>ω</i>₀<i>t</i> + ½<i>αt</i>² y <i>ω</i>² = <i>ω</i>₀² + 2<i>α</i>Δ<i>θ</i>.</li>
+</ul>
+<p>Son el caso <i>r</i> constante de las coordenadas polares: <i>a<sub>r</sub></i> = <i>r̈</i> − <i>rω</i>² y <i>a<sub>θ</sub></i> = <i>rα</i> + 2<i>ṙω</i>. En 3D, las <strong>coordenadas cilíndricas</strong> agregan un eje <i>z</i> a las polares: <b class="vec">r</b> = <i>r</i><b class="vec">ê</b><sub>r</sub> + <i>z</i><b class="vec">k̂</b>, y a la velocidad y la aceleración se les suma <i>ż</i><b class="vec">k̂</b> y <i>z̈</i><b class="vec">k̂</b>. Un ejemplo es una partícula que sube por una hélice.</p>
+</div>
+<div class="ex" style="margin-top:0"><h3>Ejemplo 7: rueda que acelera</h3>
+<p>Una rueda de 0.3 m de radio parte del reposo con <i>α</i> = 2 rad/s². A los 3 s:</p>
+<ol><li><i>ω</i> = 2·3 = <strong>6 rad/s</strong> y <i>θ</i> = ½·2·3² = <strong>9 rad</strong> (1.43 vueltas).</li>
+<li>Un punto del borde va a <i>v</i> = 0.3·6 = <strong>1.8 m/s</strong>.</li>
+<li><i>a<sub>c</sub></i> = 0.3·6² = 10.8 m/s² y <i>a<sub>t</sub></i> = 0.3·2 = 0.6 m/s². La centrípeta domina y crece con <i>ω</i>².</li></ol></div>
+</div></section>
+
+<section class="band" id="relativo"><div class="wrap duo">
+<div>
+<h2>6. Movimiento relativo</h2>
+<p>Dos observadores miden el mismo objeto. Si B se mueve respecto a A (sin rotar), las posiciones, velocidades y aceleraciones se relacionan sumando vectores:</p>
+<div class="eq"><b class="vec">r</b><sub>A</sub> = <b class="vec">r</b><sub>B</sub> + <b class="vec">r</b><sub>AB</sub>,&nbsp;&nbsp; <b class="vec">v</b><sub>A</sub> = <b class="vec">v</b><sub>B</sub> + <b class="vec">v</b><sub>AB</sub>,&nbsp;&nbsp; <b class="vec">a</b><sub>A</sub> = <b class="vec">a</b><sub>B</sub> + <b class="vec">a</b><sub>AB</sub></div>
+<p>Aquí <b class="vec">r</b><sub>AB</sub> es la posición de B vista por A, y <b class="vec">v</b><sub>AB</sub>, <b class="vec">a</b><sub>AB</sub> son su velocidad y aceleración.</p>
+<ul>
+<li>Si B se mueve con velocidad constante respecto a A (<b class="vec">a</b><sub>AB</sub> = 0), es un sistema <strong>inercial</strong>: A y B miden posiciones y velocidades distintas, pero <strong>la misma aceleración</strong>.</li>
+<li>Por eso las leyes de Newton hablan de aceleración y no de velocidad: la velocidad depende del observador; la aceleración, no (entre sistemas inerciales).</li>
+<li>Truco para no perderse: escribe los subíndices como "objeto respecto a observador" y encadénalos: <b class="vec">v</b><sub>bote/tierra</sub> = <b class="vec">v</b><sub>bote/agua</sub> + <b class="vec">v</b><sub>agua/tierra</sub>.</li>
+</ul>
+<div class="ex"><h3>Ejemplo 8: cruzar un río</h3>
+<p>Un bote va a 4 m/s respecto al agua; la corriente es de 3 m/s y el río mide 80 m de ancho.</p>
+<ol><li>Apuntando perpendicular a la orilla: <b class="vec">v</b><sub>bote/tierra</sub> = (3, 4) m/s, con rapidez 5 m/s. Cruza en 80/4 = <strong>20 s</strong> y la corriente lo arrastra 3·20 = <strong>60 m</strong> río abajo.</li>
+<li>Para llegar justo enfrente, debe apuntar río arriba con sin <i>φ</i> = 3/4, o sea <strong><i>φ</i> = 48.6°</strong> respecto a la perpendicular. Avanza a √(16 − 9) = 2.65 m/s y tarda <strong>30.2 s</strong>.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-rio" aria-label="Bote que cruza un río con corriente, con la suma de velocidades"><svg></svg></div>
+<div class="ctl" data-keep>
+<div class="row"><label for="r-phi">Rumbo río arriba φ</label><input type="range" id="r-phi" min="-30" max="80" step="1" value="0"><output id="r-phio"></output></div>
+<div class="row"><label for="r-c">Corriente</label><input type="range" id="r-c" min="0" max="4" step="0.25" value="3"><output id="r-co"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>Rapidez respecto a tierra</span><strong id="r-v"></strong></div>
+<div class="stat"><span>Tiempo para cruzar</span><strong id="r-t"></strong></div>
+<div class="stat"><span>Deriva río abajo</span><strong id="r-d"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Bote a 4 m/s respecto al agua y río de 80 m. Violeta: velocidad del bote respecto al agua; azul: corriente; rojo: suma, respecto a tierra.</p>
+</div>
+</div></section>
+
+<section class="band" id="errores"><div class="wrap duo">
+<div>
+<h2>Errores típicos</h2>
+<ol>
+<li><strong>Confundir distancia con desplazamiento</strong>, o rapidez con velocidad.</li>
+<li><strong>Usar las fórmulas de aceleración constante</strong> cuando <i>a</i> depende del tiempo o de la posición.</li>
+<li><strong>Decir que en la altura máxima la aceleración es cero.</strong> Es la velocidad la que es cero; la aceleración sigue siendo <i>g</i>.</li>
+<li><strong>Mezclar signos:</strong> elige un eje y respétalo. Con <i>y</i> hacia arriba, <i>a</i> = −<i>g</i> siempre.</li>
+<li><strong>Usar <i>R</i> = <i>v</i>₀² sin 2<i>θ</i>/<i>g</i></strong> cuando el proyectil no cae a la misma altura de la que salió.</li>
+<li><strong>Olvidar la aceleración centrípeta</strong> cuando la rapidez es constante en una curva.</li>
+<li><strong>Trabajar ángulos en grados</strong> dentro de <i>v</i> = <i>rω</i> o <i>θ</i>(<i>t</i>): las fórmulas angulares usan radianes.</li>
+</ol>
+</div>
+<div class="ex" style="margin-top:0"><h3>Receta</h3>
+<ol>
+<li>Dibuja la situación, elige el origen y la dirección positiva de cada eje.</li>
+<li>Escribe lo que sabes y lo que buscas, con signos, para cada eje por separado.</li>
+<li>Si la aceleración es constante, usa las tres ecuaciones; elige la que no tiene la incógnita que no conoces.</li>
+<li>Si no es constante, integra.</li>
+<li>En 2D, el tiempo conecta los ejes: despéjalo en uno y reemplázalo en el otro.</li>
+<li>Revisa unidades y que el resultado tenga sentido (tiempos positivos, rapideces razonables).</li>
+</ol></div>
+</div></section>
+
+<section class="band" id="ejercicios"><div class="wrap">
+<h2>Ejercicios para practicar</h2>
+<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<div class="grid2" id="exlist"></div>
+<h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
+<div class="grid2" id="quiz"></div>
+</div></section>
+
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el capítulo 1 (Cinemática) de los apuntes del curso FIS1514 Dinámica, 2-2026. Los ejemplos y ejercicios numéricos son de práctica.</div></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const css=n=>`var(--${n})`;
+const fx=(v,n=1)=>(Math.abs(v)<0.5*10**-n?0:v).toFixed(n).replace(/^-/,'−');
+const defs=(id)=>'<defs>'+['force','blue','arm','perp','mute','ink'].map(c=>`<marker id="${id}${c}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" style="fill:${css(c)}"/></marker>`).join('')+'</defs>';
+const ar=(id,c,x1,y1,x2,y2,w=2.5,dash='')=>Math.hypot(x2-x1,y2-y1)<4?'':`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''} marker-end="url(#${id}${c})"/>`;
+const ln=(x1,y1,x2,y2,c,w=1,dash='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
+const tx=(x,y,t,c='ink',a='start',sz=14)=>`<text x="${x}" y="${y}" text-anchor="${a}" style="fill:${css(c)};font-size:${sz}px">${t}</text>`;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function view(id,draw){const box=$(id),s=box.querySelector('svg');const v={box,s,draw:()=>draw(s,box.clientWidth,box.clientHeight)};const ro=new ResizeObserver(()=>v.draw());ro.observe(box);return v;}
+function renderEx(EX){$('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');}
+function renderQuiz(QZ){$('quiz').innerHTML=QZ.map((q,i)=>`<div class="q" id="q${i}"><p>${q[0]}</p><div class="opts">${q[1].map((o,j)=>`<button data-q="${i}" data-o="${j}">${o}</button>`).join('')}</div><div class="fb" aria-live="polite"></div></div>`).join('');
+ $('quiz').addEventListener('click',e=>{const b=e.target.closest('button[data-q]');if(!b)return;const q=QZ[+b.dataset.q],box=$('q'+b.dataset.q);
+ box.querySelectorAll('button').forEach(x=>x.classList.remove('right','wrong'));const ok=+b.dataset.o===q[2];b.classList.add(ok?'right':'wrong');
+ if(!ok)box.querySelectorAll('button')[q[2]].classList.add('right');box.querySelector('.fb').textContent=(ok?'Correcto. ':'No. ')+q[3];});}
+function fitStickyInit(){const stk=[...document.querySelectorAll('.sticky')];
+const fitSticky=()=>{for(const el of stk){const k=el.querySelector('[data-keep]'),h=k?k.getBoundingClientRect().bottom-el.getBoundingClientRect().top:el.offsetHeight;el.style.top=Math.min(76,innerHeight-h-12)+'px';}};
+const stkRo=new ResizeObserver(fitSticky);stk.forEach(e=>stkRo.observe(e));addEventListener('resize',fitSticky);fitSticky();}
+
+const K={v0:8,a:-2,T:6,t:0};
+const kv=view('f-xt',(s,W,H)=>{
+ const x0=56,x1=W-20,h1=H*0.46,top1=22,top2=h1+40,bot2=H-34,X=t=>x0+(x1-x0)*t/K.T;
+ const xs=t=>K.v0*t+0.5*K.a*t*t,vs=t=>K.v0+K.a*t;let xmin=0,xmax=0,vmin=0,vmax=0;
+ for(let i=0;i<=60;i++){const t=K.T*i/60;xmin=Math.min(xmin,xs(t));xmax=Math.max(xmax,xs(t));vmin=Math.min(vmin,vs(t));vmax=Math.max(vmax,vs(t));}
+ if(xmax-xmin<1){xmax+=1;}if(vmax-vmin<1){vmax+=1;vmin-=1;}
+ const Y1=x=>top1+(h1-top1)*(xmax-x)/(xmax-xmin),Y2=v=>top2+(bot2-top2)*(vmax-v)/(vmax-vmin);
+ let h=ln(x0,Y1(0),x1,Y1(0),'mute',1.2)+ln(x0,Y2(0),x1,Y2(0),'mute',1.2)+tx(x0-6,top1+10,'x (m)','mute','end',12)+tx(x0-6,top2+10,'v (m/s)','mute','end',12);
+ for(let i=0;i<=6;i++)h+=tx(X(i),bot2+18,String(i),'mute','middle',12);h+=tx(x1,bot2+18,'t (s)','mute','end',12);
+ let p1='',pa='',pb='';for(let i=0;i<=80;i++){const t=K.T*i/80;p1+=(i?'L':'M')+X(t)+' '+Y1(xs(t));}
+ for(let i=0;i<80;i++){const t1=K.T*i/80,t2=K.T*(i+1)/80,v1=vs(t1),v2=vs(t2);const c=(v1+v2)>=0?'blue':'force';h+=`<path d="M${X(t1)} ${Y2(0)} L${X(t1)} ${Y2(v1)} L${X(t2)} ${Y2(v2)} L${X(t2)} ${Y2(0)}Z" style="fill:${css(c)};fill-opacity:.22"/>`;}
+ h+=`<path d="${p1}" style="fill:none;stroke:${css('ink')};stroke-width:2.5"/>`+ln(X(0),Y2(vs(0)),X(K.T),Y2(vs(K.T)),'ink',2.5);
+ const t=K.t,xt=xs(t),vt=vs(t),sl=vt*((h1-top1)/(xmax-xmin))/((x1-x0)/K.T),dx=40;
+ h+=`<line x1="${X(t)-dx}" y1="${Y1(xt)+sl*dx}" x2="${X(t)+dx}" y2="${Y1(xt)-sl*dx}" style="stroke:${css('force')};stroke-width:2.5"/>`;
+ h+=`<circle cx="${X(t)}" cy="${Y1(xt)}" r="5" style="fill:${css('force')}"/><circle cx="${X(t)}" cy="${Y2(vt)}" r="5" style="fill:${css('force')}"/>`+ln(X(t),top1,X(t),bot2,'mute',1,'3 4');
+ s.innerHTML=h;
+});
+function kOut(){K.v0=+$('k-v0').value;K.a=+$('k-a').value;$('k-v0o').textContent=fx(K.v0,1)+' m/s';$('k-ao').textContent=fx(K.a,2)+' m/s²';
+ const xs=t=>K.v0*t+0.5*K.a*t*t;let d=0;for(let i=0;i<600;i++){d+=Math.abs(xs(K.T*(i+1)/600)-xs(K.T*i/600));}
+ $('k-dx').textContent=fx(xs(K.T),1)+' m';$('k-d').textContent=fx(d,1)+' m';kv.draw();}
+['k-v0','k-a'].forEach(i=>$(i).addEventListener('input',kOut));
+const pk={fr:[8,-2],cte:[4,0],vuelta:[6,-2.5]};
+document.querySelectorAll('[data-pk]').forEach(b=>b.addEventListener('click',()=>{const q=pk[b.dataset.pk];$('k-v0').value=q[0];$('k-a').value=q[1];kOut();}));
+
+const P={v:20,th:30,h:0,g:9.8,t:0,run:true};
+const pS=()=>{const vx=P.v*Math.cos(P.th*Math.PI/180),vy=P.v*Math.sin(P.th*Math.PI/180),tf=(vy+Math.sqrt(vy*vy+2*P.g*P.h))/P.g;return{vx,vy,tf,R:vx*tf,H:P.h+Math.max(0,vy*vy/(2*P.g))};};
+const pv=view('f-proj',(s,W,H)=>{
+ const so=pS(),pad=34,xm=Math.max(so.R,10)*1.08,ym=Math.max(so.H,5)*1.15,sc=Math.min((W-2*pad)/xm,(H-2*pad)/ym),ox=pad,oy=H-pad,X=x=>ox+x*sc,Y=y=>oy-y*sc;
+ let h=defs('p')+ln(0,oy,W,oy,'mute',2);if(P.h>0)h+=`<rect x="${ox-14}" y="${Y(P.h)}" width="14" height="${P.h*sc}" style="fill:${css('mute')};fill-opacity:.35"/>`;
+ let p='';for(let i=0;i<=60;i++){const t=so.tf*i/60;p+=(i?'L':'M')+X(so.vx*t)+' '+Y(P.h+so.vy*t-0.5*P.g*t*t);}
+ h+=`<path d="${p}" style="fill:none;stroke:${css('mute')};stroke-width:1.5" stroke-dasharray="6 5"/>`;
+ const t=Math.min(P.t,so.tf),x=so.vx*t,y=P.h+so.vy*t-0.5*P.g*t*t,vy=so.vy-P.g*t,K2=2.2;
+ h+=ar('p','blue',X(x),Y(y),X(x)+so.vx*K2,Y(y),3)+ar('p','perp',X(x),Y(y),X(x),Y(y)-vy*K2,3)+ar('p','force',X(x),Y(y),X(x)+so.vx*K2,Y(y)-vy*K2,2,'5 4');
+ h+=`<circle cx="${X(x)}" cy="${Y(y)}" r="8" style="fill:${css('body')};stroke:${css('edge')};stroke-width:2"/>`;
+ h+=tx(X(so.R),oy+20,'R = '+fx(so.R,1)+' m','ink','middle',13);
+ s.innerHTML=h;
+});
+function pOut(){P.v=+$('p-v').value;P.th=+$('p-th').value;P.h=+$('p-h').value;$('p-vo').textContent=P.v+' m/s';$('p-tho').textContent=P.th+'°';$('p-ho').textContent=P.h+' m';
+ const so=pS();$('p-t').textContent=fx(so.tf,2)+' s';$('p-R').textContent=fx(so.R,1)+' m';$('p-H').textContent=fx(so.H,2)+' m';P.t=0;pv.draw();}
+['p-v','p-th','p-h'].forEach(i=>$(i).addEventListener('input',pOut));$('p-go').addEventListener('click',()=>{P.t=0;P.run=true;});
+const pp={e5:[20,30,0],e6:[12,0,45]};
+document.querySelectorAll('[data-pp]').forEach(b=>b.addEventListener('click',()=>{const q=pp[b.dataset.pp];$('p-v').value=q[0];$('p-th').value=q[1];$('p-h').value=q[2];pOut();}));
+
+const RV={phi:0,c:3,vb:4,w:80,t:0};
+const rS=()=>{const ph=RV.phi*Math.PI/180,vy=RV.vb*Math.cos(ph),vx=RV.c-RV.vb*Math.sin(ph);return{vx,vy,T:RV.w/vy,d:vx*RV.w/vy};};
+const rv=view('f-rio',(s,W,H)=>{
+ const so=rS(),pad=24,ext=Math.max(Math.abs(so.d),20),sc=Math.min((W-2*pad)/(ext*2+20),(H-2*pad-20)/RV.w),cx=W/2-Math.sign(so.d||1)*ext*sc*0.4,yb=H-pad-10,yt=yb-RV.w*sc,X=x=>cx+x*sc,Y=y=>yb-y*sc;
+ let h=defs('r')+`<rect x="0" y="${yt}" width="${W}" height="${yb-yt}" style="fill:${css('blue')};fill-opacity:.12"/>`+ln(0,yt,W,yt,'arm',3)+ln(0,yb,W,yb,'arm',3);
+ for(let i=0;i<5;i++){const yy=yt+(yb-yt)*(i+0.5)/5,xx=((RV.t*RV.c*sc*0.6+i*70)%W);h+=ar('r','blue',xx,yy,xx+18+RV.c*4,yy,1.5);}
+ h+=ln(X(0),Y(0),X(so.d),Y(RV.w),'force',2,'6 5');
+ const tt=Math.min(RV.t,so.T),bx=X(so.vx*tt),by=Y(so.vy*tt),k=9;
+ h+=ar('r','perp',bx,by,bx-RV.vb*Math.sin(RV.phi*Math.PI/180)*k,by-RV.vb*Math.cos(RV.phi*Math.PI/180)*k,3)+ar('r','blue',bx,by,bx+RV.c*k,by,3)+ar('r','force',bx,by,bx+so.vx*k,by-so.vy*k,3);
+ h+=`<circle cx="${bx}" cy="${by}" r="8" style="fill:${css('body')};stroke:${css('edge')};stroke-width:2"/>`+tx(X(0),yb+18,'salida','mute','middle',12)+tx(X(0),yt-6,'enfrente','mute','middle',12);
+ s.innerHTML=h;
+});
+function rOut(){RV.phi=+$('r-phi').value;RV.c=+$('r-c').value;$('r-phio').textContent=RV.phi+'°';$('r-co').textContent=fx(RV.c,2)+' m/s';
+ const so=rS();$('r-v').textContent=fx(Math.hypot(so.vx,so.vy),2)+' m/s';$('r-t').textContent=fx(so.T,1)+' s';$('r-d').textContent=fx(so.d,1)+' m';RV.t=0;rv.draw();}
+['r-phi','r-c'].forEach(i=>$(i).addEventListener('input',rOut));
+
+renderEx([
+['Piedra que cae','Se suelta una piedra desde 80 m. ¿Cuánto tarda en llegar al suelo y con qué rapidez llega?','80 = 4.9<i>t</i>², así que <strong><i>t</i> = 4.04 s</strong> y <strong><i>v</i> = 9.8·4.04 = 39.6 m/s</strong>.'],
+['Alcance entre autos','Un auto A parte del reposo con <i>a</i> = 2 m/s² justo cuando lo pasa un auto B a 20 m/s constantes. ¿Cuándo y dónde lo alcanza?','<i>x<sub>A</sub></i> = <i>t</i>² y <i>x<sub>B</sub></i> = 20<i>t</i>. Igualando: <strong><i>t</i> = 20 s</strong> y <strong><i>x</i> = 400 m</strong>. En ese momento A va a 40 m/s, el doble que B.'],
+['Alcance máximo','¿A qué ángulo hay que lanzar desde el suelo para llegar lo más lejos posible, y cuánto se llega con 30 m/s?','<i>R</i> = <i>v</i>₀² sin 2<i>θ</i>/<i>g</i> es máximo con sin 2<i>θ</i> = 1: <strong><i>θ</i> = 45°</strong>. <i>R</i> = 900/9.8 = <strong>91.8 m</strong>.'],
+['Distancia con velocidad que cambia de signo','Una partícula tiene <i>v</i>(<i>t</i>) = 3<i>t</i>² − 12 m/s. ¿Cuándo se detiene? ¿Cuál es su desplazamiento y su distancia recorrida entre 0 y 3 s?','Se detiene cuando 3<i>t</i>² = 12: <strong><i>t</i> = 2 s</strong>. <i>x</i>(<i>t</i>) − <i>x</i>₀ = <i>t</i>³ − 12<i>t</i>. Desplazamiento: 27 − 36 = <strong>−9 m</strong>. Distancia: de 0 a 2 s recorre |8 − 24| = 16 m, y de 2 a 3 s, |−9 − (−16)| = 7 m. Total <strong>23 m</strong>.'],
+['Centrífuga','Una centrífuga gira a 3000 rpm con radio 0.1 m. ¿Qué aceleración siente una muestra?','<i>ω</i> = 3000·2π/60 = 314 rad/s. <i>a<sub>c</sub></i> = 0.1·314² ≈ <strong>9870 m/s²</strong>, unas 1000 veces <i>g</i>.'],
+['Lluvia vista desde un auto','La lluvia cae vertical a 8 m/s. Un auto avanza a 15 m/s. ¿Con qué ángulo y rapidez ve caer la lluvia el conductor?','<b class="vec">v</b><sub>lluvia/auto</sub> = <b class="vec">v</b><sub>lluvia/tierra</sub> − <b class="vec">v</b><sub>auto/tierra</sub> = (−15, −8) m/s. Rapidez <strong>17 m/s</strong>, inclinada <strong>61.9°</strong> respecto a la vertical, viniendo desde adelante.']
+]);
+renderQuiz([
+['En la altura máxima de un lanzamiento vertical:',['La velocidad y la aceleración son cero','La velocidad es cero y la aceleración es g hacia abajo','La aceleración cambia de signo'],1,'La gravedad actúa todo el vuelo; solo la velocidad se anula un instante.'],
+['En un gráfico v(t), el desplazamiento es:',['La pendiente','El área con signo bajo la curva','El valor máximo'],1,'x − x₀ = ∫v dt.'],
+['La componente horizontal de la velocidad de un proyectil (sin roce del aire):',['Disminuye','Es constante','Es cero en la altura máxima'],1,'No hay aceleración horizontal.'],
+['Un auto toma una curva con rapidez constante. Su aceleración es:',['Cero','Hacia el centro de la curva','Tangente a la curva'],1,'La dirección de la velocidad cambia: hay aceleración centrípeta v²/r.'],
+['Dos observadores inerciales miden el mismo objeto. Siempre coinciden en:',['Su posición','Su velocidad','Su aceleración'],2,'Si a_AB = 0, a_A = a_B.'],
+['¿Qué ángulos dan el mismo alcance con la misma rapidez, lanzando desde el suelo?',['30° y 45°','30° y 60°','20° y 40°'],1,'sin 2θ es igual para ángulos complementarios.']
+]);
+let last=null;
+function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;
+ if(!reduce){K.t+=dt;if(K.t>K.T)K.t=0;kv.draw();
+  if(P.run){P.t+=dt*0.8;if(P.t>pS().tf+1)P.t=0;pv.draw();}
+  RV.t+=dt*Math.max(1,rS().T/5);if(RV.t>rS().T+3)RV.t=0;rv.draw();}
+ requestAnimationFrame(loop);}
+kOut();pOut();rOut();fitStickyInit();requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>

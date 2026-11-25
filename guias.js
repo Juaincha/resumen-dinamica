@@ -41,5 +41,21 @@ window.GUIAS = [
     fuente: "Ayudantías 8 y 9",
     fecha: "2026-10-14",
     temas: ["Trabajo", "Fuerza variable", "Energía mecánica", "Roce", "Potencia y eficiencia"]
+  },
+  {
+    archivo: "guias/fis1514-apuntes-01-cinematica.html",
+    curso: "FIS1514 Dinámica",
+    titulo: "Cinemática",
+    fuente: "Apuntes, capítulo 1",
+    fecha: "2026-08-20",
+    temas: ["Velocidad y aceleración", "Caída libre", "Proyectiles", "Movimiento circular", "Movimiento relativo"]
+  },
+  {
+    archivo: "guias/fis1514-apuntes-02-leyes-de-newton.html",
+    curso: "FIS1514 Dinámica",
+    titulo: "Leyes de Newton y fuerzas",
+    fuente: "Apuntes, capítulo 2",
+    fecha: "2026-09-03",
+    temas: ["Leyes de Newton", "Diagrama de cuerpo libre", "Roce", "Poleas", "Fuerza centrípeta"]
   }
 ];
