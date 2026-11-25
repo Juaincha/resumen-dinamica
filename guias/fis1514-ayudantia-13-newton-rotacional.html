@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía de dinámica rotacional</title>
+<meta name="guia-curso" content="FIS1514 Dinámica">
+<meta name="guia-titulo" content="Newton rotacional y momentum angular">
+<meta name="guia-fuente" content="Ayudantía 13">
+<meta name="guia-fecha" content="2026-11-11">
+<meta name="guia-temas" content="Torque, Momentum angular, Momento de inercia, Conservación, Rodadura">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=STIX+Two+Text:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday study: calm, exact, like a good textbook chapter
+   IDEA the course's own Beamer slides and textbook figure plates: blue title band, peach bodies, blue axes
+   PICTURE a hinged bar you push: force, line of action, lever arm and the bar actually swinging
+   COLOUR white ground, Beamer blue band, peach bodies, red forces, green lever arms, violet components
+   TYPE Archivo 800 titles + Source Sans 3 text + STIX Two for equations
+   LAYOUT blue band with title and section links; lab under it (figure left, controls right; stacked on phones) */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0c131d);--ink:light-dark(#14171c,#e6ecf3);--mute:light-dark(#566070,#9aa7b8);
+--line:light-dark(#d8dee7,#2a3749);--panel:light-dark(#f2f6fb,#121c29);--band:light-dark(#0f5fa8,#0d3a6a);
+--blue:light-dark(#1167c4,#62b2ff);--axis:light-dark(#1597dc,#4cc3ff);--body:light-dark(#f6b896,#a8603f);
+--edge:light-dark(#c4673e,#f0a882);--force:light-dark(#d4361c,#ff7a5c);--arm:light-dark(#14844a,#4fd18b);
+--perp:light-dark(#6a3fc8,#b49dff);--ok:light-dark(#e3f5ea,#123222);--bad:light-dark(#fde8e4,#3a1712)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Source Sans 3',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,5vw,50px);font-weight:800}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:600;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px;max-width:68ch}
+.band{padding-block:clamp(28px,4vw,56px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.top{background:var(--band);color:#fff;padding-bottom:22px}
+.top p{color:#dbe9f8;max-width:60ch;margin-top:12px}
+nav{position:sticky;top:0;z-index:5;background:var(--band);padding-inline:max(5vw,16px);border-bottom:1px solid #ffffff22}
+nav .scroll{display:flex;gap:4px;max-width:1240px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+nav a{flex:none;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 10px;border-bottom:3px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:#9fd3ff;outline:none}
+section{border-top:1px solid var(--line)}
+.duo{display:grid;gap:28px}
+@media(min-width:980px){.duo{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}.duo .sticky{position:sticky;top:76px}}
+.fig{position:relative;min-height:340px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.tall{min-height:400px}
+svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round;font:600 14px 'Source Sans 3',sans-serif}
+.eq{font-family:'STIX Two Text',serif;font-size:20px;background:var(--panel);border-radius:8px;padding:12px 16px;margin:12px 0 16px;overflow-x:auto;line-height:1.7}
+.eq i,.v i,td i{font-family:'STIX Two Text',serif}
+b.vec{font-family:'STIX Two Text',serif;font-weight:700;font-style:normal}
+.note{border-left:4px solid var(--blue);background:var(--panel);padding:12px 16px;margin:16px 0;max-width:68ch}
+.ctl{display:grid;gap:12px;margin-top:14px}
+.row{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) 4.8em;gap:12px;align-items:center;font-size:15px}
+.row output{font-weight:600;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;height:44px;accent-color:var(--blue);margin:0}
+button{font:600 15px 'Source Sans 3',sans-serif;min-height:44px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--blue);background:var(--bg);color:var(--blue);cursor:pointer}
+button:hover{background:var(--panel)}button:focus-visible{outline:3px solid var(--axis);outline-offset:2px}
+button.main{background:var(--blue);color:var(--bg)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--panel);border-radius:8px;padding:10px 14px}
+.stat span{display:block;font-size:14px;color:var(--mute)}
+.stat strong{font-size:clamp(20px,2.4vw,24px);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.lab{display:grid;gap:24px;padding-bottom:clamp(28px,4vw,48px);align-items:start}
+@media(min-width:900px){.lab{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.lab .fig{min-height:0;height:clamp(340px,40vw,470px)}
+.labside{background:var(--bg);color:var(--ink);border-radius:10px;padding:18px}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--mute);margin-top:10px}
+.key i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+table{border-collapse:collapse;width:100%;font-size:16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:Archivo,sans-serif;font-weight:600;font-size:15px}
+.scroll{overflow-x:auto}
+details{border:1px solid var(--line);border-radius:10px;padding:0 16px;margin:12px 0}
+summary{cursor:pointer;font-weight:600;padding:12px 0;min-height:44px}
+details[open]{padding-bottom:12px}
+.ex{background:var(--panel);border-radius:10px;padding:16px 18px;margin:16px 0}
+.ex h3{margin-top:0}
+.ex ol{margin:0;padding-left:22px}.ex li{margin-bottom:6px}
+.q{border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px}
+.q p{font-weight:600}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;border-color:var(--line);color:var(--ink)}
+.opts button.right{background:var(--ok);border-color:var(--arm)}
+.opts button.wrong{background:var(--bad);border-color:var(--force)}
+.fb{margin-top:10px;font-size:16px}
+.grid2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(15em,1fr))}
+.small{font-size:14px;color:var(--mute)}
+@media(max-width:600px){table{font-size:14px}th,td{padding:6px 4px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);color:var(--mute);font-weight:600}.row{grid-template-columns:minmax(0,1fr) 4.8em}.row label{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="band top">
+<div class="wrap">
+<a href="../index.html" style="display:inline-block;color:#dbe9f8;text-decoration:none;font-weight:600;font-size:15px;margin-bottom:14px;padding:10px 0">← Todas las guías</a>
+<h1>Newton rotacional y momentum angular</h1>
+<p>Guía interactiva para FIS1514 Dinámica, basada en la Ayudantía 13. Teoría completa, figuras que puedes mover, ejemplos resueltos y ejercicios con solución.</p>
+</div>
+</header>
+<nav aria-label="Secciones"><div class="scroll">
+<a href="#torque">Torque</a><a href="#momentum">Momentum angular</a><a href="#inercia">Inercia</a><a href="#newton">Newton rotacional</a><a href="#impulso">Impulso angular</a><a href="#conservacion">Conservación</a><a href="#rigido">Cuerpo rígido</a><a href="#rodadura">Rodadura</a><a href="#errores">Errores típicos</a><a href="#ejercicios">Ejercicios</a>
+</div></nav>
+
+<div class="band" style="padding-top:20px"><div class="wrap lab" id="torque-lab">
+<div class="fig" id="f-torque" aria-label="Barra con bisagra en O, fuerza aplicada, línea de acción y brazo perpendicular"><svg></svg></div>
+<div class="labside">
+<p style="margin-bottom:6px"><strong>Empuja una barra con bisagra.</strong> Elige dónde y en qué dirección aplicar la fuerza, y suelta la barra para ver cómo gira.</p>
+<div class="ctl">
+<div class="row"><label for="t-r">Punto de aplicación r</label><input type="range" id="t-r" min="0.1" max="2" step="0.05" value="1.5"><output id="t-ro"></output></div>
+<div class="row"><label for="t-p">Ángulo φ entre r y F</label><input type="range" id="t-p" min="0" max="360" step="1" value="60"><output id="t-po"></output></div>
+<div class="row"><label for="t-f">Magnitud F</label><input type="range" id="t-f" min="0" max="20" step="0.5" value="10"><output id="t-fo"></output></div>
+</div>
+<div class="btns" style="margin-top:12px">
+<button class="main" id="t-go">Soltar la barra</button>
+<button data-pre="1.8,90">Perpendicular, lejos</button>
+<button data-pre="0.3,90">Cerca de la bisagra</button>
+<button data-pre="1.5,180">Hacia la bisagra</button>
+</div>
+<label style="display:flex;gap:8px;align-items:center;margin-top:10px;font-size:15px;min-height:44px"><input type="checkbox" id="t-c" checked style="width:20px;height:20px"> Mostrar componentes de F</label>
+<div class="stats">
+<div class="stat"><span>Torque τ = rF sin φ</span><strong id="t-tau"></strong></div>
+<div class="stat"><span>Brazo d⊥</span><strong id="t-d"></strong></div>
+<div class="stat"><span>Aceleración α = τ/I</span><strong id="t-al"></strong></div>
+</div>
+<div class="key"><span><i style="background:var(--force)"></i>Fuerza F</span><span><i style="background:var(--arm)"></i>Brazo d⊥</span><span><i style="background:var(--perp)"></i>F⊥ (hace girar)</span><span><i style="background:var(--mute)"></i>F∥ (no hace girar)</span></div>
+<p class="small" style="margin-top:10px">Barra de 2 m y 3 kg, con I = ML²/3 = 4 kg·m² respecto a la bisagra. Al soltarla, la fuerza gira junto con la barra.</p>
+</div>
+</div></div>
+
+<section class="band" id="mapa"><div class="wrap duo">
+<div>
+<h2>Todo lo de rotación ya lo conoces de traslación</h2>
+<p>Cada idea de este capítulo es la versión "giratoria" de algo que ya usaste con partículas. Si aprendes esta tabla, sabes qué ecuación buscar en cada problema.</p>
+<p>Notación: en negrita van los vectores (<b class="vec">r</b>, <b class="vec">F</b>) y en cursiva sus magnitudes o componentes (<i>r</i>, <i>F</i>). En problemas planos todos los vectores de rotación apuntan en ±<i>z</i>, así que se trabajan como números con signo. La convención es antihorario positivo.</p>
+</div>
+<div class="scroll"><table class="stack">
+<thead><tr><th>Traslación</th><th>Rotación</th><th>Relación</th></tr></thead>
+<tbody>
+<tr><td data-l="Traslación">Fuerza <b class="vec">F</b></td><td data-l="Rotación">Torque <b class="vec">τ</b></td><td data-l="Relación"><b class="vec">τ</b> = <b class="vec">r</b> × <b class="vec">F</b></td></tr>
+<tr><td data-l="Traslación">Momentum <b class="vec">p</b> = m<b class="vec">v</b></td><td data-l="Rotación">Momentum angular <b class="vec">H</b></td><td data-l="Relación"><b class="vec">H</b> = <b class="vec">r</b> × m<b class="vec">v</b> ; eje fijo: <i>H</i> = <i>Iω</i></td></tr>
+<tr><td data-l="Traslación">Masa <i>m</i></td><td data-l="Rotación">Momento de inercia <i>I</i></td><td data-l="Relación"><i>I</i> = Σ <i>m r</i>⊥²</td></tr>
+<tr><td data-l="Traslación">Σ<b class="vec">F</b> = d<b class="vec">p</b>/dt = m<b class="vec">a</b></td><td data-l="Rotación">Newton rotacional</td><td data-l="Relación">Σ<b class="vec">τ</b> = d<b class="vec">H</b>/dt ; eje fijo: Σ<i>τ</i> = <i>Iα</i></td></tr>
+<tr><td data-l="Traslación">Impulso ∫<b class="vec">F</b>dt = Δ<b class="vec">p</b></td><td data-l="Rotación">Impulso angular</td><td data-l="Relación">∫<b class="vec">τ</b>dt = Δ<b class="vec">H</b></td></tr>
+<tr><td data-l="Traslación">Σ<b class="vec">F</b> = 0 ⇒ <b class="vec">p</b> constante</td><td data-l="Rotación">Conservación</td><td data-l="Relación">Σ<b class="vec">τ</b> = 0 ⇒ <b class="vec">H</b> constante</td></tr>
+<tr><td data-l="Traslación"><i>v</i>, <i>a</i></td><td data-l="Rotación"><i>ω</i>, <i>α</i></td><td data-l="Relación">rodadura: <i>v<sub>G</sub></i> = <i>Rω</i>, <i>a<sub>G</sub></i> = <i>Rα</i></td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="band" id="torque"><div class="wrap duo">
+<div>
+<h2>1. Torque: la capacidad de una fuerza para hacer girar</h2>
+<p>El torque respecto a un punto O depende de tres cosas: cuánta fuerza aplicas, dónde la aplicas y en qué dirección. Se define con el producto cruz:</p>
+<div class="eq"><b class="vec">τ</b><sub>O</sub> = <b class="vec">r</b> × <b class="vec">F</b>,&nbsp;&nbsp; |<i>τ</i><sub>O</sub>| = <i>rF</i> sin <i>φ</i></div>
+<p>Aquí <b class="vec">r</b> va desde O hasta el punto donde actúa la fuerza, y <i>φ</i> es el ángulo entre <b class="vec">r</b> y <b class="vec">F</b>. La expresión <i>rF</i> sin <i>φ</i> se puede leer de dos formas equivalentes, y en el laboratorio de arriba ves ambas:</p>
+<ul>
+<li><strong>Con componentes de la fuerza:</strong> <i>τ</i> = <i>r</i> · (<i>F</i> sin <i>φ</i>) = <i>r F</i>⊥. Solo la parte de F perpendicular a la barra (violeta) la hace girar. La parte paralela (gris) tira de la bisagra y no produce giro.</li>
+<li><strong>Con el brazo:</strong> <i>τ</i> = <i>F</i> · (<i>r</i> sin <i>φ</i>) = <i>F d</i>⊥. Prolongas la fuerza hasta formar su línea de acción (punteada) y mides la distancia perpendicular desde O (verde).</li>
+</ul>
+<p>La versión con el brazo es la más rápida en geometrías complicadas. Además muestra algo importante: si deslizas la fuerza a lo largo de su línea de acción, el torque no cambia.</p>
+<h3>Signo en problemas planos</h3>
+<p>Elegimos antihorario positivo. El signo dice hacia dónde haría girar la fuerza al cuerpo si este solo pudiera girar en torno a O. Si conoces las coordenadas, el producto cruz da el signo automáticamente:</p>
+<div class="eq"><i>τ<sub>z</sub></i> = <i>x F<sub>y</sub></i> − <i>y F<sub>x</sub></i></div>
+<p>Aquí (<i>x</i>, <i>y</i>) son las coordenadas del punto de aplicación medidas desde O. Esta fórmula evita la mayoría de los errores de signo.</p>
+<div class="note"><strong>Torque cero.</strong> Si la línea de acción pasa por O, el brazo es cero y τ<sub>O</sub> = 0, aunque la fuerza sea enorme. Esto es una herramienta: si eliges O sobre una fuerza desconocida (una reacción en un pasador, una tensión), esa fuerza desaparece de la ecuación de torques.</div>
+</div>
+<div>
+<div class="ex"><h3>Ejemplo 1: llave inglesa</h3>
+<p>Una llave de 0.25 m se empuja en su extremo con 80 N, formando 60° con la llave. ¿Cuál es el torque sobre la tuerca?</p>
+<ol><li><i>τ</i> = <i>rF</i> sin <i>φ</i> = 0.25 · 80 · sin 60° = <strong>17.3 N·m</strong>.</li>
+<li>Empujando perpendicular (φ = 90°) obtendrías 20 N·m, el máximo. Por eso conviene empujar perpendicular a la llave y lo más lejos posible de la tuerca.</li></ol></div>
+<div class="ex"><h3>Ejemplo 2: con coordenadas</h3>
+<p>Una fuerza <b class="vec">F</b> = (3, −4) N actúa en el punto (2, 1) m. Calcula el torque respecto al origen.</p>
+<ol><li><i>τ<sub>z</sub></i> = <i>x F<sub>y</sub></i> − <i>y F<sub>x</sub></i> = 2·(−4) − 1·3 = <strong>−11 N·m</strong>.</li>
+<li>El signo negativo indica giro horario. Haciendo un dibujo rápido se confirma: la fuerza apunta hacia abajo y a la derecha, y actúa a la derecha y arriba de O.</li></ol></div>
+<div class="ex"><h3>Ejemplo 3: varias fuerzas sobre una barra</h3>
+<p>Una barra de 2 m tiene un pasador en su extremo izquierdo O. Sobre ella actúan 10 N hacia arriba en el extremo derecho, 15 N hacia abajo en el medio y 20 N a lo largo de la barra en el extremo.</p>
+<ol><li>10 N hacia arriba a 2 m: +10·2 = +20 N·m (antihorario).</li>
+<li>15 N hacia abajo a 1 m: −15·1 = −15 N·m (horario).</li>
+<li>20 N a lo largo de la barra: su línea pasa por O, así que aporta 0.</li>
+<li>Torque neto: Σ<i>τ</i><sub>O</sub> = <strong>+5 N·m</strong>. La barra empieza a girar en sentido antihorario.</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="momentum"><div class="wrap duo">
+<div>
+<h2>2. Momentum angular: cuánto está "girando" algo en torno a O</h2>
+<p>El momentum angular de una partícula respecto a O tiene la misma estructura que el torque, pero con el momentum lineal en lugar de la fuerza:</p>
+<div class="eq"><b class="vec">H</b><sub>O</sub> = <b class="vec">r</b> × m<b class="vec">v</b>,&nbsp;&nbsp; |<i>H</i><sub>O</sub>| = <i>m v r</i> sin <i>φ</i>,&nbsp;&nbsp; <i>H<sub>z</sub></i> = <i>m</i>(<i>x v<sub>y</sub></i> − <i>y v<sub>x</sub></i>)</div>
+<p>Solo cuenta la componente de la velocidad perpendicular a <b class="vec">r</b> (violeta en la figura). La componente radial, que acerca o aleja la partícula de O, no aporta. Su unidad es kg·m²/s.</p>
+<h3>Tres casos que conviene tener claros</h3>
+<ul>
+<li><strong>Movimiento hacia O o alejándose de O en línea recta:</strong> toda la velocidad es radial y <i>H</i><sub>O</sub> = 0.</li>
+<li><strong>Movimiento rectilíneo que no pasa por O:</strong> <i>H</i><sub>O</sub> = <i>m v b</i>, donde <i>b</i> es la distancia de O a la recta. Es constante aunque r y φ cambien todo el tiempo. Mira los números en la figura: <i>r</i> crece y sin <i>φ</i> baja en la misma proporción.</li>
+<li><strong>Movimiento circular en torno a O:</strong> la velocidad siempre es perpendicular a <b class="vec">r</b>, así que <i>H</i> = <i>m v R</i> = <i>m R² ω</i>. Este es el origen de <i>I</i> = Σ<i>m r</i>².</li>
+</ul>
+<div class="note"><strong>H depende del punto O.</strong> La misma partícula tiene distinto momentum angular respecto a distintos puntos. Antes de calcular, fija O y úsalo para todo: momentum angular, torques e impulsos.</div>
+<h3>Colección de partículas</h3>
+<p>Para un sistema se suman los aportes respecto al mismo O: <b class="vec">H</b><sub>O</sub> = Σ <b class="vec">r</b><sub>i</sub> × m<sub>i</sub><b class="vec">v</b><sub>i</sub>. En el plano los aportes antihorarios suman y los horarios restan, así que pueden cancelarse.</p>
+<div class="ex"><h3>Ejemplo 4: partícula y sistema</h3>
+<ol><li>Una partícula de 0.5 kg está en (3, 4) m con <b class="vec">v</b> = (2, −1) m/s. Entonces <i>H<sub>z</sub></i> = 0.5·(3·(−1) − 4·2) = <strong>−5.5 kg·m²/s</strong>, que es horario.</li>
+<li>Dos partículas de 1 kg: una en (1, 0) m con <b class="vec">v</b> = (0, 2) m/s, y otra en (−2, 0) m con <b class="vec">v</b> = (0, 3) m/s. Los aportes son +2 y −6, así que <strong><i>H</i> = −4 kg·m²/s</strong>. Ambas suben, pero respecto a O una gira antihorario y la otra horario.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-mom" aria-label="Partícula en línea recta pasando cerca de O, con su velocidad descompuesta"><svg></svg></div>
+<div class="ctl">
+<div class="row"><label for="m-b">Distancia b de O a la recta</label><input type="range" id="m-b" min="0" max="3" step="0.1" value="1.5"><output id="m-bo"></output></div>
+</div>
+<div class="btns" style="margin-top:8px"><button id="m-pp">Pausar</button></div>
+<div class="stats">
+<div class="stat"><span>Distancia r</span><strong id="m-r"></strong></div>
+<div class="stat"><span>sin φ</span><strong id="m-s"></strong></div>
+<div class="stat"><span>H = m v r sin φ</span><strong id="m-h"></strong></div>
+</div>
+<div class="key"><span><i style="background:var(--force)"></i>Velocidad v</span><span><i style="background:var(--perp)"></i>v⊥, aporta a H</span><span><i style="background:var(--mute)"></i>v radial, no aporta</span></div>
+<p class="small" style="margin-top:8px">m = 2 kg, v = 3 m/s hacia la derecha.</p>
+</div>
+</div></section>
+
+<section class="band" id="inercia"><div class="wrap duo">
+<div>
+<h2>3. Eje fijo y momento de inercia</h2>
+<p>Si un cuerpo rígido gira en torno a un eje fijo <i>z</i>, cada partícula describe un círculo de radio <i>r</i><sub>i⊥</sub> (su distancia al eje) con rapidez <i>v</i><sub>i</sub> = <i>ω r</i><sub>i⊥</sub>. Su aporte al momentum angular es <i>m</i><sub>i</sub><i>r</i><sub>i⊥</sub>²<i>ω</i>. Sumando todas las partículas:</p>
+<div class="eq"><i>H<sub>z</sub></i> = <i>I<sub>z</sub> ω</i>,&nbsp;&nbsp; <i>I<sub>z</sub></i> = Σ <i>m</i><sub>i</sub> <i>r</i><sub>i⊥</sub>²</div><p>Para un cuerpo continuo la suma se vuelve integral: <i>I</i> = ∫ <i>r</i>⊥² d<i>m</i>.</p>
+<p><i>I</i> es la "masa rotacional": mide cuánto se resiste un cuerpo a cambiar su giro. No depende solo de cuánta masa hay, sino de dónde está respecto al eje, y la distancia cuenta al cuadrado. Por eso un mismo cuerpo tiene un <i>I</i> distinto para cada eje.</p>
+<h3>Teorema de ejes paralelos (Steiner)</h3>
+<p>Si conoces <i>I<sub>G</sub></i> respecto a un eje que pasa por el centro de masa, el momento de inercia respecto a cualquier eje paralelo a distancia <i>d</i> es:</p>
+<div class="eq"><i>I</i> = <i>I<sub>G</sub></i> + <i>M d</i>²</div>
+<p>El eje por el centro de masa siempre da el menor <i>I</i> de todos los ejes paralelos. Mueve el eje en la figura: con la varilla de la tabla, <i>ML</i>²/12 + <i>M</i>(<i>L</i>/2)² = <i>ML</i>²/3, que es la fórmula del eje en el extremo.</p>
+<div class="scroll"><table>
+<thead><tr><th>Cuerpo (tabla de la ayudantía)</th><th>Eje</th><th>I</th></tr></thead>
+<tbody>
+<tr><td>a) Varilla delgada</td><td>por el centro, ⊥</td><td><i>ML</i>²/12</td></tr>
+<tr><td>b) Varilla delgada</td><td>por un extremo, ⊥</td><td><i>ML</i>²/3</td></tr>
+<tr><td>c) Placa rectangular</td><td>por el centro, ⊥ a la placa</td><td><i>M</i>(<i>a</i>² + <i>b</i>²)/12</td></tr>
+<tr><td>d) Placa delgada</td><td>a lo largo del borde b</td><td><i>Ma</i>²/3</td></tr>
+<tr><td>e) Cilindro hueco</td><td>eje del cilindro</td><td><i>M</i>(<i>R</i>₁² + <i>R</i>₂²)/2</td></tr>
+<tr><td>f) Cilindro sólido o disco</td><td>eje del cilindro</td><td><i>MR</i>²/2</td></tr>
+<tr><td>g) Aro o cilindro de pared delgada</td><td>eje del cilindro</td><td><i>MR</i>²</td></tr>
+<tr><td>h) Esfera sólida</td><td>por el centro</td><td>2<i>MR</i>²/5</td></tr>
+<tr><td>i) Esfera hueca de pared delgada</td><td>por el centro</td><td>2<i>MR</i>²/3</td></tr>
+</tbody></table></div>
+<p class="small" style="margin-top:8px">Patrón útil: en el aro toda la masa está a distancia R (<i>I</i> = <i>MR</i>²). En el disco hay masa más cerca del eje, así que el coeficiente baja a 1/2.</p>
+</div>
+<div class="sticky">
+<div class="fig tall" id="f-st" aria-label="Varilla con eje desplazable y gráfico de I en función de d"><svg></svg></div>
+<div class="ctl"><div class="row"><label for="s-d">Distancia d del eje a G</label><input type="range" id="s-d" min="0" max="1.5" step="0.05" value="0.5"><output id="s-do"></output></div></div>
+<div class="stats">
+<div class="stat"><span>I<sub>G</sub> = ML²/12</span><strong>1.00 kg·m²</strong></div>
+<div class="stat"><span>M d²</span><strong id="s-md"></strong></div>
+<div class="stat"><span>I = I<sub>G</sub> + M d²</span><strong id="s-i"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Varilla de M = 3 kg y L = 2 m.</p>
+</div>
+</div></section>
+
+<section class="band" id="newton"><div class="wrap duo">
+<div>
+<h2>4. Segunda ley de Newton rotacional</h2>
+<p>Si derivas <b class="vec">H</b><sub>O</sub> = Σ <b class="vec">r</b><sub>i</sub> × m<sub>i</sub><b class="vec">v</b><sub>i</sub> respecto al tiempo, el término <b class="vec">v</b> × m<b class="vec">v</b> se anula, y queda Σ <b class="vec">r</b><sub>i</sub> × <b class="vec">F</b><sub>i</sub>. Las fuerzas internas vienen en pares de acción y reacción sobre la misma línea, así que sus torques se cancelan. Solo sobreviven los externos:</p>
+<div class="eq">Σ <b class="vec">τ</b><sub>ext,O</sub> = d<b class="vec">H</b><sub>O</sub>/dt&nbsp;&nbsp; (O fijo en un marco inercial)</div>
+<p>Para un cuerpo que gira en torno a un eje fijo con <i>I</i> constante, <i>H</i> = <i>Iω</i>, y la ley queda en su forma más usada:</p>
+<div class="eq">Σ <i>τ</i><sub>ext,z</sub> = <i>I<sub>z</sub> α</i>,&nbsp;&nbsp; <i>α</i> = d<i>ω</i>/dt</div>
+<p>Es exactamente Σ<i>F</i> = <i>ma</i> con <i>τ</i> en lugar de <i>F</i>, <i>I</i> en lugar de <i>m</i> y <i>α</i> en lugar de <i>a</i>. Más torque produce más aceleración angular, y más inercia produce menos.</p>
+<div class="ex"><h3>Ejemplo 5: polea con masa (la figura)</h3>
+<p>Un bloque de masa <i>m</i> cuelga de una cuerda enrollada en una polea-disco de masa <i>M</i> y radio <i>R</i>, que gira sin roce en un eje fijo. Datos: <i>m</i> = 2 kg, <i>M</i> = 4 kg, <i>R</i> = 0.2 m, <i>g</i> = 9.8 m/s².</p>
+<ol><li><strong>Bloque</strong> (positivo hacia abajo): <i>mg</i> − <i>T</i> = <i>ma</i>.</li>
+<li><strong>Polea</strong> (torques respecto a su eje; la reacción del eje no aporta porque pasa por él): <i>TR</i> = ½<i>MR</i>²<i>α</i>.</li>
+<li><strong>Vínculo</strong> (la cuerda no desliza): <i>a</i> = <i>Rα</i>. Con eso la ecuación de la polea queda <i>T</i> = ½<i>Ma</i>.</li>
+<li>Sumando: <i>mg</i> = (<i>m</i> + <i>M</i>/2)<i>a</i>, así que <strong><i>a</i> = <i>mg</i>/(<i>m</i> + <i>M</i>/2) = 4.9 m/s²</strong>.</li>
+<li><i>T</i> = ½·4·4.9 = <strong>9.8 N</strong> (menor que <i>mg</i> = 19.6 N) y <i>α</i> = 4.9/0.2 = <strong>24.5 rad/s²</strong>.</li></ol>
+<p style="margin:10px 0 0">Comprobación: con <i>M</i> = 0 sale <i>a</i> = <i>g</i>, caída libre. La polea actúa como si sumara <i>I</i>/<i>R</i>² = <i>M</i>/2 de masa extra que hay que acelerar.</p></div>
+</div>
+<div class="sticky">
+<div class="fig tall" id="f-pul" aria-label="Polea con masa y bloque colgante, con flechas de peso y tensión"><svg></svg></div>
+<div class="ctl">
+<div class="row"><label for="p-m">Masa del bloque m</label><input type="range" id="p-m" min="0.5" max="6" step="0.5" value="2"><output id="p-mo"></output></div>
+<div class="row"><label for="p-M">Masa de la polea M</label><input type="range" id="p-M" min="0" max="12" step="0.5" value="4"><output id="p-Mo"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>Aceleración a</span><strong id="p-a"></strong></div>
+<div class="stat"><span>Tensión T</span><strong id="p-t"></strong></div>
+<div class="stat"><span>α = a/R</span><strong id="p-al"></strong></div>
+</div>
+<div class="key"><span><i style="background:var(--force)"></i>Peso mg</span><span><i style="background:var(--blue)"></i>Tensión T</span></div>
+</div>
+</div></section>
+
+<section class="band" id="impulso"><div class="wrap duo">
+<div>
+<h2>5. Impulso angular</h2>
+<p>Si integras la ley de Newton rotacional en el tiempo, obtienes el cambio total de momentum angular. Es el análogo de impulso y momentum lineal:</p>
+<div class="eq"><b class="vec">H</b><sub>O,f</sub> − <b class="vec">H</b><sub>O,i</sub> = ∫<sub>t<sub>i</sub></sub><sup>t<sub>f</sub></sup> Σ <b class="vec">τ</b><sub>ext,O</sub> d<i>t</i>&nbsp;&nbsp; ; si el torque es constante: Δ<b class="vec">H</b><sub>O</sub> = Σ<b class="vec">τ</b> Δ<i>t</i></div>
+<p>Úsalo cuando el problema hable de tiempos (cuánto tarda en frenar, cuánto gira tras aplicar un torque durante cierto tiempo) y no necesites la aceleración en cada instante.</p>
+<div class="note">Todos los torques y momentum angulares van respecto al mismo punto O.</div>
+</div>
+<div>
+<div class="ex"><h3>Ejemplo 6: motor y freno</h3>
+<p>Una rueda con <i>I</i> = 0.8 kg·m² parte del reposo. Un motor le aplica 4 N·m durante 3 s, y después se aplica un freno de 2 N·m.</p>
+<ol><li>Fase motor: Δ<i>H</i> = 4·3 = 12 kg·m²/s, así que <i>ω</i> = 12/0.8 = <strong>15 rad/s</strong>.</li>
+<li>Fase freno: para llevar <i>H</i> de 12 a 0 con −2 N·m hace falta Δ<i>t</i> = 12/2 = <strong>6 s</strong>.</li>
+<li>No fue necesario calcular α ni usar cinemática angular: el impulso conecta directamente torque, tiempo y velocidad.</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="conservacion"><div class="wrap duo">
+<div>
+<h2>6. Conservación del momentum angular</h2>
+<div class="eq">Σ <b class="vec">τ</b><sub>ext,O</sub> = 0 ⇒ <b class="vec">H</b><sub>O,i</sub> = <b class="vec">H</b><sub>O,f</sub>&nbsp;&nbsp; ; eje fijo: <i>I<sub>i</sub> ω<sub>i</sub></i> = <i>I<sub>f</sub> ω<sub>f</sub></i></div>
+<p>La condición es que el torque externo sea nulo respecto a O, no que no haya fuerzas externas. Puede haber fuerzas, siempre que pasen por O. Por eso H se conserva en casos donde el momentum lineal no se conserva.</p>
+<p>Cuando un cuerpo cambia su distribución de masa, I cambia y ω compensa. Alejar las masas del eje aumenta I y reduce ω. Acercarlas tiene el efecto contrario. Es la patinadora de la figura.</p>
+<div class="note"><strong>La energía generalmente no se conserva.</strong> En la figura H es fijo, pero <i>K</i> = <i>H</i>²/2<i>I</i> sube al recoger los brazos. Esa energía la aporta el trabajo de los músculos, que son fuerzas internas: cambian <i>K</i> pero no <i>H</i>. En acoplamientos y choques ocurre al revés: <i>H</i> se conserva y se pierde energía.</div>
+<div class="ex"><h3>Ejemplo 7: dos discos que se acoplan</h3>
+<p>Un disco A (<i>I</i> = 0.6 kg·m²) gira a 10 rad/s. Sobre él cae un disco B (<i>I</i> = 0.4 kg·m²) en reposo, en el mismo eje, y quedan girando juntos.</p>
+<ol><li>Las fuerzas de roce entre los discos son internas al sistema A+B, así que <i>H</i> se conserva: 0.6·10 = (0.6 + 0.4)<i>ω<sub>f</sub></i>, de donde <strong><i>ω<sub>f</sub></i> = 6 rad/s</strong>.</li>
+<li>Energía: <i>K<sub>i</sub></i> = ½·0.6·10² = 30 J y <i>K<sub>f</sub></i> = ½·1.0·6² = 18 J. Se pierden 12 J (40 %) en el roce. Es un "choque inelástico" rotacional.</li></ol></div>
+<div class="ex"><h3>Ejemplo 8: cuerda por un agujero (fuerza central)</h3>
+<p>Una masa de 0.2 kg gira sobre una mesa sin roce, atada a una cuerda que pasa por un agujero O. Gira a 2 m/s en un radio de 0.5 m, y desde abajo tiran la cuerda hasta que el radio es 0.25 m.</p>
+<ol><li>La tensión siempre apunta hacia O, así que su torque respecto a O es cero y <i>H</i><sub>O</sub> = <i>m v r</i> se conserva.</li>
+<li>0.2·2·0.5 = 0.2·<i>v</i>₂·0.25, de donde <strong><i>v</i>₂ = 4 m/s</strong>.</li>
+<li>La energía sube de 0.4 J a 1.6 J: la persona que tira de la cuerda hace 1.2 J de trabajo.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-sk" aria-label="Patinadora vista desde arriba con masas que se acercan o alejan del eje"><svg></svg></div>
+<div class="ctl"><div class="row"><label for="k-d">Distancia de las masas al eje</label><input type="range" id="k-d" min="0.2" max="1" step="0.01" value="1"><output id="k-do"></output></div></div>
+<div class="stats">
+<div class="stat"><span>I = I₀ + 2md²</span><strong id="k-i"></strong></div>
+<div class="stat"><span>ω = H / I</span><strong id="k-w"></strong></div>
+<div class="stat"><span>H = Iω (fijo)</span><strong id="k-h"></strong></div>
+<div class="stat"><span>K = ½Iω²</span><strong id="k-k"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Vista desde arriba, en cámara lenta. Cuerpo con I₀ = 0.5 kg·m², dos masas de 2 kg. Parte con d = 1 m y ω = 2 rad/s.</p>
+</div>
+</div></section>
+
+<section class="band" id="rigido"><div class="wrap duo">
+<div>
+<h2>7. Traslación y rotación de un cuerpo rígido</h2>
+<p>Un cuerpo rígido en movimiento plano hace dos cosas a la vez. Su centro de masa G se mueve como si toda la masa estuviera ahí y sobre él actuaran todas las fuerzas externas, y el cuerpo gira en torno a G:</p>
+<div class="eq">Σ<b class="vec">F</b><sub>ext</sub> = <i>M</i> <b class="vec">a</b><sub>G</sub>&nbsp;&nbsp; ; &nbsp;&nbsp;Σ<i>τ</i><sub>ext,G</sub> = <i>I<sub>G</sub> α</i></div>
+<p>La ecuación de torques se puede escribir respecto a G aunque G se esté acelerando. Esa es la excepción a la regla de "O fijo". Respecto a otros puntos que se mueven, en general no es válida tal cual.</p>
+<h3>Plano inclinado: ¿quién llega primero?</h3>
+<p>Un cuerpo redondo de radio <i>R</i> rueda sin deslizar por un plano de ángulo <i>θ</i>. Escribe su inercia como <i>I<sub>G</sub></i> = <i>k MR</i>², con <i>k</i> = 1/2 para un disco y 2/5 para una esfera sólida.</p>
+<ol><li>A lo largo del plano: <i>Mg</i> sin <i>θ</i> − <i>f</i> = <i>Ma</i>.</li>
+<li>Torques respecto a G (la normal y el peso pasan por G): <i>fR</i> = <i>kMR</i>²<i>α</i>.</li>
+<li>Rodadura: <i>a</i> = <i>Rα</i>, así que <i>f</i> = <i>kMa</i>.</li>
+<li>Resultado: <strong><i>a</i> = <i>g</i> sin <i>θ</i> / (1 + <i>k</i>)</strong> y <i>f</i> = <i>Mg</i> sin <i>θ</i> · <i>k</i>/(1 + <i>k</i>).</li></ol>
+<p>La aceleración no depende de la masa ni del radio, solo de <i>k</i>, es decir, de cómo está repartida la masa. Cuanta más masa lejos del centro, más energía se va en hacer girar el cuerpo y más lento baja. El orden es siempre el mismo: esfera sólida, disco, esfera hueca, aro. Un bloque sin roce, que no gira, les gana a todos.</p>
+<p>Para que pueda rodar sin deslizar, la fricción estática debe alcanzar: <i>f</i> ≤ <i>μ<sub>s</sub>N</i> ⇒ <i>μ<sub>s</sub></i> ≥ tan <i>θ</i> · <i>k</i>/(1 + <i>k</i>). Para un disco a 30°, <i>μ<sub>s</sub></i> ≥ 0.19.</p>
+</div>
+<div class="sticky">
+<div class="fig" id="f-race" style="min-height:360px" aria-label="Carrera de cinco cuerpos bajando un plano inclinado de 3 m"><svg></svg></div>
+<div class="ctl"><div class="row"><label for="r-th">Ángulo del plano θ</label><input type="range" id="r-th" min="5" max="60" step="1" value="30"><output id="r-tho"></output></div></div>
+<div class="btns" style="margin-top:8px"><button class="main" id="r-go">Largar la carrera</button><button id="r-rs">Reiniciar</button></div>
+<p class="small" style="margin-top:8px">Cada pista es el mismo plano de 3 m, dibujado en horizontal para comparar. Cámara lenta ×0.5, tiempos reales.</p>
+</div>
+</div></section>
+
+<section class="band" id="rodadura"><div class="wrap duo">
+<div>
+<h2>8. Rodadura sin deslizamiento</h2>
+<p>La velocidad de cualquier punto P de un cuerpo rígido es la velocidad de G más la que le da el giro en torno a G: <b class="vec">v</b><sub>P</sub> = <b class="vec">v</b><sub>G</sub> + <b class="vec">ω</b> × <b class="vec">r</b><sub>P/G</sub>. En una rueda, el punto de contacto tiene una velocidad de rotación <i>Rω</i> hacia atrás. Rodar sin deslizar significa que esa velocidad cancela exactamente la de avance:</p>
+<div class="eq"><i>v<sub>G</sub></i> = <i>Rω</i>,&nbsp;&nbsp; <i>a<sub>G</sub></i> = <i>Rα</i>&nbsp;&nbsp; (positivo a la derecha y giro positivo horario)</div>
+<p>Consecuencias que se ven en la figura:</p>
+<ul>
+<li>El punto de contacto está quieto por un instante. Por eso la fricción no hace trabajo y es estática: su valor sale de las ecuaciones, no de <i>μN</i>.</li>
+<li>El punto superior va a 2<i>v<sub>G</sub></i>. Un punto del borde traza una cicloide, con una punta cada vez que toca el suelo.</li>
+<li>Si mueves el control lejos de 1, el contacto se mueve y la rueda desliza. Entonces <i>v<sub>G</sub></i> = <i>Rω</i> deja de valer, y la fricción es cinética, <i>f</i> = <i>μ<sub>k</sub>N</i>.</li>
+</ul>
+<div class="note"><strong>Ojo con los signos.</strong> La diapositiva de rodadura usa giro positivo horario para que <i>v</i> y <i>ω</i> tengan el mismo signo cuando la rueda avanza a la derecha. Si usas antihorario positivo, la condición queda <i>v<sub>G</sub></i> = −<i>Rω</i>. Elige una convención al empezar y mantenla.</div>
+<div class="ex"><h3>Ejemplo 9: bola de bowling que desliza y luego rueda</h3>
+<p>Una esfera sólida se lanza a <i>v</i>₀ = 6 m/s sin girar, con <i>μ<sub>k</sub></i> = 0.2. Al principio desliza, la fricción la frena y a la vez la hace girar, hasta que empieza a rodar sin deslizar. ¿Con qué velocidad termina?</p>
+<ol><li>Mientras desliza no se puede usar <i>v</i> = <i>Rω</i>. Las ecuaciones son <i>v</i> = <i>v</i>₀ − <i>μg t</i> y <i>Rω</i> = (5/2)<i>μ g t</i>, que salen de <i>fR</i> = (2/5)<i>MR</i>²<i>α</i>.</li>
+<li>Deja de deslizar cuando <i>v</i> = <i>Rω</i>: <i>t</i> = 2<i>v</i>₀/(7<i>μg</i>) = 0.87 s.</li>
+<li>Atajo elegante: respecto a un punto fijo del suelo, la fricción tiene brazo cero y los torques de peso y normal se cancelan. Por lo tanto <i>H</i> se conserva: <i>Mv</i>₀<i>R</i> = <i>MvR</i> + (2/5)<i>MR</i>²(<i>v</i>/<i>R</i>), así que <strong><i>v</i> = 5<i>v</i>₀/7 ≈ 4.29 m/s</strong>. Esto vale para cualquier <i>μ</i>.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-roll" aria-label="Rueda rodando con vectores velocidad y trayectoria de un punto del borde"><svg></svg></div>
+<div class="ctl"><div class="row"><label for="w-k">Razón Rω / v<sub>G</sub></label><input type="range" id="w-k" min="0" max="2" step="0.05" value="1"><output id="w-ko"></output></div></div>
+<div class="stats">
+<div class="stat"><span>Velocidad del contacto</span><strong id="w-c"></strong></div>
+<div class="stat"><span>Velocidad del punto superior</span><strong id="w-t"></strong></div>
+<div class="stat"><span>Estado</span><strong id="w-s" style="font-size:18px"></strong></div>
+</div>
+<div class="key"><span><i style="background:var(--force)"></i>Velocidad respecto al suelo</span><span><i style="background:var(--perp)"></i>Trayectoria de un punto del borde</span></div>
+</div>
+</div></section>
+
+<section class="band" id="errores"><div class="wrap duo">
+<div>
+<h2>Errores típicos y una receta para resolver</h2>
+<ol>
+<li><strong>Mezclar puntos de referencia.</strong> Torque respecto a un punto y H respecto a otro. Fija O una vez y úsalo para todo.</li>
+<li><strong>Usar la distancia en vez del brazo.</strong> El torque es <i>F d</i>⊥, no <i>F r</i>, salvo que la fuerza sea perpendicular a <b class="vec">r</b>.</li>
+<li><strong>Cambiar la convención de signos a mitad del problema,</strong> sobre todo entre la ecuación de torques y la condición de rodadura.</li>
+<li><strong>Imponer <i>a</i> = <i>Rα</i> cuando hay deslizamiento,</strong> o usar <i>f</i> = <i>μN</i> cuando no lo hay.</li>
+<li><strong>Usar Steiner con un eje que no pasa por G.</strong> <i>I</i> = <i>I<sub>G</sub></i> + <i>Md</i>² solo parte desde el eje por el centro de masa.</li>
+<li><strong>Suponer que se conserva la energía</strong> cuando se conserva H (acoplamientos, impactos que se incrustan, personas que caminan sobre plataformas).</li>
+<li><strong>Usar Σ<i>τ</i> = <i>Iα</i> con un eje que se acelera</strong> y no es G.</li>
+</ol>
+</div>
+<div class="ex" style="margin-top:0"><h3>Receta en cinco pasos</h3>
+<ol>
+<li>Diagrama de cuerpo libre de cada cuerpo, marcando dónde actúa cada fuerza.</li>
+<li>Elige el punto o eje para torques: un eje fijo si existe, si no G. Prefiere un punto por donde pasen fuerzas desconocidas.</li>
+<li>Escribe Σ<i>F</i> = <i>Ma<sub>G</sub></i> y Σ<i>τ</i> = <i>Iα</i>, con una sola convención de signos.</li>
+<li>Agrega los vínculos: cuerdas inextensibles, <i>a</i> = <i>Rα</i>, rodadura.</li>
+<li>Antes de integrar, pregúntate si el torque externo es cero respecto a algún punto. Si lo es, usa conservación de H, que suele ser mucho más corta. Si hay tiempos de por medio, usa impulso angular.</li>
+</ol></div>
+</div></section>
+
+<section class="band" id="ejercicios"><div class="wrap">
+<h2>Ejercicios para practicar</h2>
+<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<div class="grid2" id="exlist"></div>
+<h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
+<div class="grid2" id="quiz"></div>
+</div></section>
+
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 13 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const css=n=>`var(--${n})`;
+const fx=(v,n=1)=>(Math.abs(v)<0.5*10**-n?0:v).toFixed(n).replace(/^-/,'−');
+const defs=(id)=>'<defs>'+['force','blue','arm','perp','mute','ink'].map(c=>`<marker id="${id}${c}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" style="fill:${css(c)}"/></marker>`).join('')+'</defs>';
+const ar=(id,c,x1,y1,x2,y2,w=2.5,dash='')=>Math.hypot(x2-x1,y2-y1)<4?'':`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''} marker-end="url(#${id}${c})"/>`;
+const ln=(x1,y1,x2,y2,c,w=1,dash='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
+const tx=(x,y,t,c='ink',a='start',sz=14)=>`<text x="${x}" y="${y}" text-anchor="${a}" style="fill:${css(c)};font-size:${sz}px">${t}</text>`;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const views=[];
+function view(id,draw){const box=$(id),s=box.querySelector('svg');const v={box,s,draw:()=>draw(s,box.clientWidth,box.clientHeight)};const ro=new ResizeObserver(()=>v.draw());ro.observe(box);views.push(v);return v;}
+
+const T={r:1.5,phi:60,F:10,beta:0,run:false,t:0,I:4};
+const tv=view('f-torque',(s,W,H)=>{
+ const sc=Math.min((W-90)/2.5,(H-40)/3.4),O={x:Math.max(70,W/2-sc*1.05),y:H*0.5};
+ const b=T.beta,e={x:Math.cos(b),y:-Math.sin(b)},n={x:-Math.sin(b),y:-Math.cos(b)};
+ const P={x:O.x+T.r*sc*e.x,y:O.y+T.r*sc*e.y};
+ const a=b+T.phi*Math.PI/180,u={x:Math.cos(a),y:-Math.sin(a)};
+ const Fp=T.F*sc*0.055,ph=T.phi*Math.PI/180;
+ const t=(O.x-P.x)*u.x+(O.y-P.y)*u.y,Q={x:P.x+t*u.x,y:P.y+t*u.y};
+ const tau=T.r*T.F*Math.sin(ph);
+ let h=defs('t');
+ for(let i=0;i<7;i++)h+=ln(O.x-26+i*8,O.y+30,O.x-34+i*8,O.y+42,'mute',1.2);
+ h+=ln(O.x-30,O.y+30,O.x+30,O.y+30,'mute',1.5)+ln(O.x,O.y,O.x,O.y+30,'mute',3);
+ h+=`<g transform="translate(${O.x},${O.y}) rotate(${-b*180/Math.PI})"><rect x="${-0.09*sc}" y="${-0.07*sc}" width="${2.18*sc}" height="${0.14*sc}" rx="${0.07*sc}" style="fill:${css('body')};stroke:${css('edge')};stroke-width:1.5"/></g>`;
+ if(T.F>0)h+=ln(P.x-1200*u.x,P.y-1200*u.y,P.x+1200*u.x,P.y+1200*u.y,'mute',1,'6 6');
+ if(T.F>0&&Math.abs(Math.sin(ph))>0.01)h+=ln(O.x,O.y,Q.x,Q.y,'arm',3.5)+`<rect x="${Q.x-5}" y="${Q.y-5}" width="10" height="10" transform="rotate(${-a*180/Math.PI} ${Q.x} ${Q.y})" style="fill:none;stroke:${css('arm')};stroke-width:1.2"/>`;
+ h+=ar('t','ink',O.x,O.y,P.x,P.y,1.6);
+ if($('t-c').checked&&T.F>0){const fpar=Math.cos(ph)*Fp,fper=Math.sin(ph)*Fp;
+  h+=ar('t','mute',P.x,P.y,P.x+fpar*e.x,P.y+fpar*e.y,2.5,'5 4')+ar('t','perp',P.x,P.y,P.x+fper*n.x,P.y+fper*n.y,2.5,'5 4');}
+ h+=ar('t','force',P.x,P.y,P.x+Fp*u.x,P.y+Fp*u.y,3.5);
+ h+=`<circle cx="${O.x}" cy="${O.y}" r="9" style="fill:${css('bg')};stroke:${css('axis')};stroke-width:3"/><circle cx="${O.x}" cy="${O.y}" r="3" style="fill:${css('axis')}"/><circle cx="${P.x}" cy="${P.y}" r="4" style="fill:${css('ink')}"/>`;
+ if(Math.abs(tau)>0.05){const R=46,g0=b+Math.PI*0.62,g1=b+Math.PI*1.38,p=g=>[O.x+R*Math.cos(g),O.y-R*Math.sin(g)];
+  const [s0,s1]=tau>0?[p(g0),p(g1)]:[p(g1),p(g0)];
+  h+=`<path d="M${s0[0]} ${s0[1]} A${R} ${R} 0 0 ${tau>0?0:1} ${s1[0]} ${s1[1]}" style="fill:none;stroke:${css('blue')};stroke-width:2.5" marker-end="url(#tblue)"/>`;
+  const m=p(b+Math.PI);h+=tx(m[0]-12,m[1]+(Math.cos(b)>0?-0:0)-8,tau>0?'+':'−','blue','end',18);}
+ h+=tx(O.x-14,O.y-14,'O','ink','end',16);
+ const rm={x:(O.x+P.x)/2-n.x*22,y:(O.y+P.y)/2-n.y*22};h+=tx(rm.x,rm.y+5,'r','ink','middle',16);
+ if(T.F>0)h+=tx(P.x+(Fp+18)*u.x,P.y+(Fp+18)*u.y+5,'F','force','middle',16);
+ if(T.F>0&&Math.abs(Math.sin(ph))>0.15){const dm={x:(O.x+Q.x)/2,y:(O.y+Q.y)/2},off={x:-(Q.y-O.y),y:(Q.x-O.x)},L=Math.hypot(off.x,off.y)||1;h+=tx(dm.x+off.x/L*20,dm.y+off.y/L*20+5,'brazo d⊥','arm','middle');}
+ s.innerHTML=h;
+});
+function tStats(){const ph=T.phi*Math.PI/180,tau=T.r*T.F*Math.sin(ph);
+ $('t-ro').textContent=fx(T.r,2)+' m';$('t-po').textContent=T.phi+'°';$('t-fo').textContent=fx(T.F,1)+' N';
+ $('t-tau').textContent=(tau>0.05?'+':'')+fx(tau,1)+' N·m';$('t-d').textContent=fx(T.r*Math.abs(Math.sin(ph)),2)+' m';$('t-al').textContent=fx(tau/T.I,2)+' rad/s²';}
+function tSet(){T.r=+$('t-r').value;T.phi=+$('t-p').value;T.F=+$('t-f').value;T.beta=0;T.run=false;$('t-go').textContent='Soltar la barra';tStats();tv.draw();}
+['t-r','t-p','t-f'].forEach(i=>$(i).addEventListener('input',tSet));$('t-c').addEventListener('change',()=>tv.draw());
+document.querySelectorAll('[data-pre]').forEach(bt=>bt.addEventListener('click',()=>{const [r,p]=bt.dataset.pre.split(',');$('t-r').value=r;$('t-p').value=p;tSet();}));
+$('t-go').addEventListener('click',()=>{if(T.run||T.beta!==0){tSet();return;}T.run=true;T.t=0;$('t-go').textContent='Volver a la posición inicial';});
+
+const M={x:-6,b:1.5,run:!reduce,m:2,v:3};
+const mv=view('f-mom',(s,W,H)=>{
+ const sc=Math.min(W/13,(H-70)/3.6),O={x:W/2,y:H-48},px=O.x+M.x*sc,py=O.y-M.b*sc;
+ let h=defs('m')+ln(0,py,W,py,'mute',1,'5 5');
+ if(M.b>0.05)h+=ln(O.x,O.y,O.x,py,'arm',2.5)+tx(O.x+8,(O.y+py)/2+5,'b','arm');
+ h+=ln(O.x,O.y,px,py,'ink',1.5);
+ const r=Math.hypot(M.x,M.b),K=24;
+ if(r>1e-3){const ux=M.x/r,uy=M.b/r,vr=M.v*ux,rx=vr*ux,ry=vr*uy,qx=M.v-rx,qy=-ry;
+  h+=ar('m','mute',px,py,px+rx*K,py-ry*K,2.5,'5 4')+ar('m','perp',px,py,px+qx*K,py-qy*K,3);}
+ h+=ar('m','force',px,py,px+M.v*K,py,2.5);
+ h+=`<circle cx="${px}" cy="${py}" r="9" style="fill:${css('body')};stroke:${css('edge')};stroke-width:1.5"/><circle cx="${O.x}" cy="${O.y}" r="5" style="fill:${css('ink')}"/>`+tx(O.x-10,O.y+20,'O','ink','end',16);
+ s.innerHTML=h;
+ const sn=r>1e-3?M.b/r:0;$('m-r').textContent=fx(r,2)+' m';$('m-s').textContent=fx(sn,3);$('m-h').textContent=fx(M.m*M.v*r*sn,1)+' kg·m²/s';
+});
+$('m-b').addEventListener('input',e=>{M.b=+e.target.value;$('m-bo').textContent=fx(M.b,1)+' m';mv.draw();});
+$('m-pp').addEventListener('click',()=>{M.run=!M.run;$('m-pp').textContent=M.run?'Pausar':'Reproducir';});
+$('m-pp').textContent=M.run?'Pausar':'Reproducir';
+
+const S={d:0.5,M:3,L:2};
+const sv=view('f-st',(s,W,H)=>{
+ const top=H*0.42,sc=Math.min((W-60)/3.6,110),cx=W/2-0.35*sc,cy=top*0.55,ax=cx+S.d*sc;
+ let h=defs('s');
+ h+=`<rect x="${cx-sc}" y="${cy-9}" width="${2*sc}" height="18" rx="9" style="fill:${css('body')};stroke:${css('edge')};stroke-width:1.5"/>`;
+ h+=`<circle cx="${cx}" cy="${cy}" r="4" style="fill:${css('ink')}"/>`+tx(cx,cy-16,'G','ink','middle');
+ h+=ln(ax,cy-62,ax,cy+62,'axis',3)+`<ellipse cx="${ax}" cy="${cy-46}" rx="18" ry="6" style="fill:none;stroke:${css('axis')};stroke-width:1.5"/>`;
+ if(S.d>0.08)h+=ln(cx,cy+32,ax,cy+32,'arm',2)+ln(cx,cy+26,cx,cy+38,'arm',2)+ln(ax,cy+26,ax,cy+38,'arm',2)+tx((cx+ax)/2,cy+54,'d','arm','middle');
+ h+=tx(cx-sc,cy+32,'L = 2 m','mute','start',13);
+ const x0=56,x1=W-24,y0=H-34,y1=top+18,dm=1.5,Im=8,X=d=>x0+(x1-x0)*d/dm,Y=i=>y0-(y0-y1)*i/Im;
+ for(const i of [0,2,4,6,8])h+=ln(x0,Y(i),x1,Y(i),'line',1)+tx(x0-8,Y(i)+5,String(i),'mute','end',13);
+ for(const d of [0,0.5,1,1.5])h+=tx(X(d),y0+20,fx(d,1),'mute','middle',13);
+ h+=tx(x0,y1-6,'I (kg·m²)','mute','start',13)+tx(x1,y0-8,'d (m)','mute','end',13);
+ let p='';for(let i=0;i<=60;i++){const d=dm*i/60;p+=(i?'L':'M')+X(d)+' '+Y(1+S.M*d*d);}
+ h+=`<path d="${p}" style="fill:none;stroke:${css('blue')};stroke-width:3"/>`;
+ h+=`<circle cx="${X(1)}" cy="${Y(4)}" r="4" style="fill:${css('mute')}"/>`+tx(X(1)-10,Y(4)-10,'extremo: ML²/3 = 4','mute','end',13);
+ const I=1+S.M*S.d*S.d;h+=`<circle cx="${X(S.d)}" cy="${Y(I)}" r="7" style="fill:${css('force')}"/>`;
+ s.innerHTML=h;
+});
+function sStats(){S.d=+$('s-d').value;const md=S.M*S.d*S.d;$('s-do').textContent=fx(S.d,2)+' m';$('s-md').textContent=fx(md,2)+' kg·m²';$('s-i').textContent=fx(1+md,2)+' kg·m²';sv.draw();}
+$('s-d').addEventListener('input',sStats);
+
+const P={m:2,M:4,R:0.2,g:9.8,t:0,y:0,wait:0};
+const pa=()=>P.m*P.g/(P.m+P.M/2);
+const pv=view('f-pul',(s,W,H)=>{
+ const a=pa(),T=P.M/2*a,cx=W*0.38,cy=78,Rp=44,sc=(H-cy-150)/1.4,by=cy+40+P.y*sc,bw=58,bx=cx+Rp;
+ let h=defs('p');
+ h+=ln(cx-90,14,cx+90,14,'mute',2);for(let i=0;i<9;i++)h+=ln(cx-84+i*20,14,cx-94+i*20,4,'mute',1.2);
+ h+=ln(cx,14,cx,cy,'mute',4);
+ const th=P.y/P.R*180/Math.PI;
+ h+=`<g transform="translate(${cx},${cy}) rotate(${th})"><circle r="${Rp}" style="fill:${css('body')};stroke:${css('edge')};stroke-width:2"/>`;
+ for(let i=0;i<3;i++)h+=`<line x1="0" y1="0" x2="${Rp*Math.cos(i*2.094)}" y2="${Rp*Math.sin(i*2.094)}" style="stroke:${css('edge')};stroke-width:2"/>`;
+ h+=`</g><circle cx="${cx}" cy="${cy}" r="6" style="fill:${css('axis')}"/>`;
+ h+=ln(bx,cy,bx,by,'ink',2);
+ h+=`<rect x="${bx-bw/2}" y="${by}" width="${bw}" height="${bw*0.8}" rx="4" style="fill:${css('body')};stroke:${css('edge')};stroke-width:1.5"/>`+tx(bx,by+bw*0.4+5,'m','ink','middle',16);
+ const k=70,mg=P.m*P.g;h+=ar('p','force',bx+bw/2+16,by+bw*0.4,bx+bw/2+16,by+bw*0.4+k,3)+tx(bx+bw/2+26,by+bw*0.4+k,'mg','force');
+ h+=ar('p','blue',bx-bw/2-16,by+bw*0.4,bx-bw/2-16,by+bw*0.4-k*T/mg,3)+tx(bx-bw/2-24,by+bw*0.4-Math.max(18,k*T/mg),'T','blue','end');
+ s.innerHTML=h;
+});
+function pStats(){P.m=+$('p-m').value;P.M=+$('p-M').value;const a=pa();$('p-mo').textContent=fx(P.m,1)+' kg';$('p-Mo').textContent=fx(P.M,1)+' kg';
+ $('p-a').textContent=fx(a,2)+' m/s²';$('p-t').textContent=fx(P.M/2*a,1)+' N';$('p-al').textContent=fx(a/P.R,1)+' rad/s²';P.t=0;P.y=0;pv.draw();}
+['p-m','p-M'].forEach(i=>$(i).addEventListener('input',pStats));
+
+const K={d:1,I0:0.5,m:2,ang:0};K.H=(K.I0+2*K.m)*2;
+const kv=view('f-sk',(s,W,H)=>{
+ const cx=W/2,cy=H/2,sc=Math.min(W,H)*0.4,r=K.d*sc;
+ let h=`<circle cx="${cx}" cy="${cy}" r="${r}" style="fill:none;stroke:${css('mute')};stroke-width:1" stroke-dasharray="4 5"/>`;
+ h+=`<g transform="translate(${cx},${cy}) rotate(${K.ang})"><line x1="${-r}" y1="0" x2="${r}" y2="0" style="stroke:${css('edge')};stroke-width:5;stroke-linecap:round"/>`;
+ h+=`<ellipse rx="26" ry="20" style="fill:${css('body')};stroke:${css('edge')};stroke-width:1.5"/><circle cx="0" cy="-12" r="9" style="fill:${css('edge')}"/>`;
+ h+=`<circle cx="${-r}" r="15" style="fill:${css('force')}"/><circle cx="${r}" r="15" style="fill:${css('force')}"/></g><circle cx="${cx}" cy="${cy}" r="3" style="fill:${css('axis')}"/>`;
+ s.innerHTML=h;
+});
+function kStats(){K.d=+$('k-d').value;const I=K.I0+2*K.m*K.d**2,w=K.H/I;$('k-do').textContent=fx(K.d,2)+' m';
+ $('k-i').textContent=fx(I,2)+' kg·m²';$('k-w').textContent=fx(w,1)+' rad/s';$('k-h').textContent=fx(I*w,1)+' kg·m²/s';$('k-k').textContent=fx(K.H**2/(2*I),1)+' J';kv.draw();}
+$('k-d').addEventListener('input',kStats);
+
+const RC=[{n:'Bloque sin roce',k:0,f:'no gira'},{n:'Esfera sólida',k:0.4,f:'I = 2/5 MR²'},{n:'Disco o cilindro sólido',k:0.5,f:'I = 1/2 MR²'},{n:'Esfera hueca',k:2/3,f:'I = 2/3 MR²'},{n:'Aro',k:1,f:'I = MR²'}];
+const R={th:30,t:0,run:false,D:3};
+const ra=k=>9.8*Math.sin(R.th*Math.PI/180)/(1+k);
+const rv=view('f-race',(s,W,H)=>{
+ const lh=(H-16)/RC.length,x0=26,x1=W-26,rr=Math.min(13,lh*0.22);
+ let h='';
+ RC.forEach((o,i)=>{const y=8+i*lh,ty=y+lh-12,a=ra(o.k),tf=Math.sqrt(2*R.D/a),dist=Math.min(R.D,0.5*a*R.t*R.t),x=x0+rr+(x1-x0-2*rr)*dist/R.D;
+  h+=tx(x0,y+18,o.n,'ink','start',14)+tx(x0+Math.min(W*0.5,190),y+18,o.f,'mute','start',13);
+  h+=ln(x0,ty,x1,ty,'mute',1.5)+ln(x1,ty-24,x1,ty+4,'ink',2);
+  if(R.t>=tf)h+=tx(x1-8,y+18,'t = '+fx(tf,2)+' s','arm','end',14);
+  if(o.k===0)h+=`<rect x="${x-rr}" y="${ty-2*rr}" width="${2*rr}" height="${2*rr}" rx="2" style="fill:${css('body')};stroke:${css('edge')};stroke-width:1.5"/>`;
+  else{const ang=((x-x0-rr)/rr)*180/Math.PI,hol=o.k>=0.6;
+   h+=`<g transform="translate(${x},${ty-rr}) rotate(${ang})"><circle r="${rr}" style="fill:${hol?'none':css('body')};stroke:${css('edge')};stroke-width:${hol?4:1.5}"/><line x1="0" y1="0" x2="${rr}" y2="0" style="stroke:${css('ink')};stroke-width:2"/></g>`;}
+ });
+ s.innerHTML=h;
+});
+function rStats(){R.th=+$('r-th').value;$('r-tho').textContent=R.th+'°';R.t=0;R.run=false;rv.draw();}
+$('r-th').addEventListener('input',rStats);$('r-go').addEventListener('click',()=>{R.t=0;R.run=true;});$('r-rs').addEventListener('click',rStats);
+
+const Wl={k:1,x:0,th:0,pts:[]};
+const wv=view('f-roll',(s,W,H)=>{
+ const R=Math.min(52,H*0.18),gy=H-44,cy=gy-R,V=70,w=Wl.k*V/R,cx=60+Wl.x,SC=0.7;
+ let h=defs('w')+ln(0,gy,W,gy,'mute',2);
+ h+=`<polyline points="${Wl.pts.join(' ')}" style="fill:none;stroke:${css('perp')};stroke-width:2"/>`;
+ h+=`<circle cx="${cx}" cy="${cy}" r="${R}" style="fill:${css('body')};fill-opacity:.55;stroke:${css('edge')};stroke-width:2"/>`;
+ for(let i=0;i<3;i++){const a=Wl.th+i*Math.PI/3;h+=ln(cx-R*Math.cos(a),cy-R*Math.sin(a),cx+R*Math.cos(a),cy+R*Math.sin(a),'edge',1.2);}
+ const a0=Math.PI/2+Wl.th;h+=`<circle cx="${cx+R*Math.cos(a0)}" cy="${cy+R*Math.sin(a0)}" r="6" style="fill:${css('perp')}"/>`;
+ for(const [dx,dy] of [[0,-R],[0,0],[R,0],[-R,0],[0,R]]){const vx=V+w*(-dy),vy=w*dx;h+=ar('w','force',cx+dx,cy+dy,cx+dx+vx*SC,cy+dy+vy*SC,3);}
+ const ok=Math.abs(1-Wl.k)<0.01;h+=`<circle cx="${cx}" cy="${gy}" r="6" style="fill:none;stroke:${css(ok?'arm':'force')};stroke-width:2.5"/>`;
+ s.innerHTML=h;
+});
+function wStats(){Wl.k=+$('w-k').value;const c=1-Wl.k;$('w-ko').textContent=fx(Wl.k,2);
+ $('w-c').innerHTML=Math.abs(c)<0.01?'0':fx(c,2)+' v<sub>G</sub>';$('w-t').innerHTML=fx(1+Wl.k,2)+' v<sub>G</sub>';
+ $('w-s').textContent=Math.abs(c)<0.01?'Rodadura pura':(Wl.k<1?'Desliza (gira poco)':'Patina (gira de más)');Wl.pts=[];wv.draw();}
+$('w-k').addEventListener('input',wStats);
+
+let last=null;
+function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;
+ if(T.run){T.t+=dt;const tau=T.r*T.F*Math.sin(T.phi*Math.PI/180);T.beta=0.5*(tau/T.I)*T.t*T.t;if(Math.abs(T.beta)>0.9){T.beta=Math.sign(T.beta)*0.9;T.run=false;}if(T.t>4)T.run=false;tv.draw();}
+ if(M.run){M.x+=1.4*dt;if(M.x>6.5)M.x=-6.5;mv.draw();}
+ if(!reduce){if(P.wait>0)P.wait-=dt;else{P.t+=dt*0.8;P.y=0.5*pa()*P.t*P.t;if(P.y>1.4){P.y=1.4;P.wait=0.8;P.t=0;}}if(P.wait>0&&P.wait<0.05){P.y=0;}pv.draw();}
+ if(!reduce){K.ang-=K.H/(K.I0+2*K.m*K.d**2)*dt*0.35*180/Math.PI;kv.draw();}
+ if(R.run){R.t+=dt*0.5;if(R.t>Math.sqrt(2*R.D/ra(1))+0.1)R.run=false;rv.draw();}
+ if(!reduce){const box=$('f-roll'),Wd=box.clientWidth,Rr=Math.min(52,box.clientHeight*0.18),gy=box.clientHeight-44;Wl.x+=70*dt;Wl.th+=Wl.k*70/Rr*dt;
+  if(60+Wl.x>Wd-60){Wl.x=0;Wl.th=0;Wl.pts=[];}
+  const a0=Math.PI/2+Wl.th;Wl.pts.push((60+Wl.x+Rr*Math.cos(a0)).toFixed(1)+','+(gy-Rr+Rr*Math.sin(a0)).toFixed(1));wv.draw();}
+ requestAnimationFrame(loop);}
+
+const EX=[
+['Puerta','Empujas una puerta de 0.9 m de ancho con 50 N, a 0.8 m de la bisagra, formando 30° con el plano de la puerta. ¿Qué torque haces? ¿Dónde y cómo empujarías para lograr el mismo torque con la menor fuerza?','<i>τ</i> = <i>rF</i> sin <i>φ</i> = 0.8·50·sin 30° = <strong>20 N·m</strong>. La menor fuerza se logra con el mayor brazo: perpendicular a la puerta y en el borde (0.9 m), con <i>F</i> = 20/0.9 ≈ <strong>22.2 N</strong>.'],
+['Inercia de un sistema','Cuatro masas de 0.5 kg están en las esquinas de un cuadrado de lado 0.4 m, unidas por barras sin masa. Calcula <i>I</i> respecto a un eje perpendicular al cuadrado que pasa (a) por su centro y (b) por una esquina.','(a) Cada masa está a 0.4/√2 = 0.283 m del centro, así que <i>r</i>² = 0.08 m² e <i>I</i> = 4·0.5·0.08 = <strong>0.16 kg·m²</strong>. (b) Por Steiner, con <i>M</i> = 2 kg y <i>d</i>² = 0.08 m²: <i>I</i> = 0.16 + 2·0.08 = <strong>0.32 kg·m²</strong>. Comprobación directa: 0.5·(0 + 0.16 + 0.16 + 0.32) = 0.32.'],
+['Máquina de Atwood con polea pesada','Dos bloques de 3 kg y 1 kg cuelgan a ambos lados de una polea-disco de 2 kg y radio 0.1 m, que gira sin roce. La cuerda no desliza. Calcula la aceleración y las tensiones.','Bloque 1 (baja): 3<i>g</i> − <i>T</i>₁ = 3<i>a</i>. Bloque 2 (sube): <i>T</i>₂ − <i>g</i> = 1·<i>a</i>. Polea: (<i>T</i>₁ − <i>T</i>₂)<i>R</i> = ½<i>MR</i>²(<i>a</i>/<i>R</i>), así que <i>T</i>₁ − <i>T</i>₂ = <i>a</i>. Sumando: 2<i>g</i> = 5<i>a</i>, de donde <strong><i>a</i> = 3.92 m/s²</strong>. <i>T</i>₁ = 3(9.8 − 3.92) = <strong>17.64 N</strong> y <i>T</i>₂ = 9.8 + 3.92 = <strong>13.72 N</strong>. Las tensiones son distintas porque la polea necesita un torque neto para acelerar.'],
+['Niño en un carrusel','Un carrusel con <i>I</i> = 200 kg·m² gira libremente a 1 rad/s con un niño de 40 kg parado a 2 m del eje. El niño camina hasta el centro. ¿Cuál es la nueva ω? ¿Se conserva la energía?','No hay torque externo en el eje, así que <i>H</i> se conserva. <i>I<sub>i</sub></i> = 200 + 40·2² = 360 kg·m² e <i>I<sub>f</sub></i> = 200 kg·m². Entonces <i>ω<sub>f</sub></i> = 360·1/200 = <strong>1.8 rad/s</strong>. La energía no se conserva: sube de 180 J a 324 J. El niño hace trabajo al caminar hacia adentro.'],
+['Esfera en un plano','Una esfera sólida parte del reposo y rueda sin deslizar 2.8 m por un plano de 30°. ¿Con qué rapidez llega abajo? ¿Qué coeficiente de roce mínimo necesita?','<i>a</i> = <i>g</i> sin 30°/(1 + 2/5) = 4.9/1.4 = 3.5 m/s². Con <i>v</i>² = 2<i>ad</i>: <i>v</i> = √(2·3.5·2.8) = <strong>4.43 m/s</strong>. Roce mínimo: <i>μ<sub>s</sub></i> ≥ tan 30°·(2/5)/(7/5) = 0.577·2/7 ≈ <strong>0.165</strong>.'],
+['Yo-yo','Un yo-yo, que puedes tratar como cilindro sólido de masa m y radio R, tiene la cuerda enrollada y el extremo de la cuerda fijo en tu mano quieta. Al soltarlo, ¿con qué aceleración baja y cuánto vale la tensión?','Traslación (abajo positivo): <i>mg</i> − <i>T</i> = <i>ma</i>. Torques respecto a G: <i>TR</i> = ½<i>mR</i>²<i>α</i>. La cuerda se desenrolla sin deslizar: <i>a</i> = <i>Rα</i>. Entonces <i>T</i> = ½<i>ma</i> y <i>mg</i> = (3/2)<i>ma</i>, de donde <strong><i>a</i> = 2<i>g</i>/3 ≈ 6.53 m/s²</strong> y <strong><i>T</i> = <i>mg</i>/3</strong>.'],
+['Bala contra una varilla','Una bala de 10 g a 400 m/s se incrusta en el extremo libre de una varilla de 2 kg y 1 m que cuelga de un pasador en su otro extremo. La bala llega perpendicular a la varilla. ¿Con qué ω queda girando la varilla?','Durante el impacto el pasador hace una fuerza grande y desconocida, así que el momentum lineal no se conserva. Pero esa fuerza pasa por el pasador: respecto a ese punto <i>H</i> sí se conserva. <i>mvL</i> = (<i>ML</i>²/3 + <i>mL</i>²)<i>ω</i>, es decir 0.01·400·1 = (0.667 + 0.01)<i>ω</i>, de donde <strong><i>ω</i> ≈ 5.91 rad/s</strong>.']
+];
+$('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');
+
+const QZ=[
+['Una fuerza actúa en una puerta y su línea de acción pasa por la bisagra. ¿Qué torque produce respecto a la bisagra?',['Depende de la magnitud de F','Cero','F por el ancho de la puerta'],1,'El brazo d⊥ es cero porque la línea de acción pasa por O.'],
+['Una partícula se mueve en línea recta con velocidad constante, sin pasar por O. Su momentum angular respecto a O:',['Es cero','Cambia porque r cambia','Es constante e igual a m v b'],2,'r sin φ es siempre la distancia b de O a la recta.'],
+['Un aro y un disco de igual masa y radio bajan rodando por el mismo plano. ¿Cuál llega primero?',['El disco','El aro','Llegan juntos'],0,'El disco tiene k = 1/2 < 1, así que su a = g sin θ/(1 + k) es mayor.'],
+['Una patinadora recoge los brazos y gira más rápido. ¿Qué se conserva?',['La energía cinética','El momentum angular','Ambas'],1,'No hay torque externo, así que H se conserva. K aumenta gracias al trabajo de sus músculos.'],
+['En rodadura sin deslizamiento, ¿cuál es la velocidad del punto de contacto respecto al suelo?',['v<sub>G</sub>','Cero','2v<sub>G</sub>'],1,'La velocidad de rotación Rω hacia atrás cancela exactamente la velocidad de avance del centro.'],
+['Para la rodadura sin deslizar, la fuerza de roce:',['Siempre vale μN','Es estática y se obtiene de las ecuaciones','No existe'],1,'El contacto no desliza, así que el roce es estático: su valor sale de ΣF y Στ, y solo tiene que cumplir f ≤ μₛN.']
+];
+$('quiz').innerHTML=QZ.map((q,i)=>`<div class="q" id="q${i}"><p>${q[0]}</p><div class="opts">${q[1].map((o,j)=>`<button data-q="${i}" data-o="${j}">${o}</button>`).join('')}</div><div class="fb" aria-live="polite"></div></div>`).join('');
+$('quiz').addEventListener('click',e=>{const b=e.target.closest('button[data-q]');if(!b)return;const q=QZ[+b.dataset.q],box=$('q'+b.dataset.q);
+ box.querySelectorAll('button').forEach(x=>x.classList.remove('right','wrong'));const ok=+b.dataset.o===q[2];b.classList.add(ok?'right':'wrong');
+ if(!ok)box.querySelectorAll('button')[q[2]].classList.add('right');box.querySelector('.fb').textContent=(ok?'Correcto. ':'No. ')+q[3];});
+
+tStats();$('m-bo').textContent=fx(M.b,1)+' m';sStats();pStats();kStats();rStats();wStats();
+requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>
