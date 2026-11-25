@@ -9,5 +9,13 @@ window.GUIAS = [
     fuente: "Ayudantía 13",
     fecha: "2026-11-11",
     temas: ["Torque", "Momentum angular", "Momento de inercia", "Conservación", "Rodadura"]
+  },
+  {
+    archivo: "guias/fis1514-ayudantia-12-centro-de-masa-y-rotacion.html",
+    curso: "FIS1514 Dinámica",
+    titulo: "Centro de masa y dinámica rotacional",
+    fuente: "Ayudantía 12",
+    fecha: "2026-11-03",
+    temas: ["Centro de masa", "Distribución continua", "Torque", "Impulso angular", "Coordenadas polares"]
   }
 ];

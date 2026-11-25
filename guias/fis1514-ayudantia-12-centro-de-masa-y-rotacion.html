@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centro de masa y rotación</title>
+<meta name="guia-curso" content="FIS1514 Dinámica">
+<meta name="guia-titulo" content="Centro de masa y dinámica rotacional">
+<meta name="guia-fuente" content="Ayudantía 12">
+<meta name="guia-fecha" content="2026-11-03">
+<meta name="guia-temas" content="Centro de masa, Distribución continua, Torque, Impulso angular, Coordenadas polares">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=STIX+Two+Text:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday study: calm, exact, like a good textbook chapter
+   IDEA the course's own Beamer slides and textbook figure plates: blue title band, peach bodies, blue axes
+   PICTURE three draggable masses and their centre of mass on a gridded plane
+   COLOUR white ground, Beamer blue band, peach bodies, red forces, green lever arms, violet components
+   TYPE Archivo 800 titles + Source Sans 3 text + STIX Two for equations
+   LAYOUT blue band with title and section links; lab under it (figure left, controls right; stacked on phones) */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0c131d);--ink:light-dark(#14171c,#e6ecf3);--mute:light-dark(#566070,#9aa7b8);
+--line:light-dark(#d8dee7,#2a3749);--panel:light-dark(#f2f6fb,#121c29);--band:light-dark(#0f5fa8,#0d3a6a);
+--blue:light-dark(#1167c4,#62b2ff);--axis:light-dark(#1597dc,#4cc3ff);--body:light-dark(#f6b896,#a8603f);
+--edge:light-dark(#c4673e,#f0a882);--force:light-dark(#d4361c,#ff7a5c);--arm:light-dark(#14844a,#4fd18b);
+--perp:light-dark(#6a3fc8,#b49dff);--ok:light-dark(#e3f5ea,#123222);--bad:light-dark(#fde8e4,#3a1712)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Source Sans 3',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,5vw,50px);font-weight:800}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:600;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px;max-width:68ch}
+.band{padding-block:clamp(28px,4vw,56px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.top{background:var(--band);color:#fff;padding-bottom:22px}
+.top p{color:#dbe9f8;max-width:60ch;margin-top:12px}
+nav{position:sticky;top:0;z-index:5;background:var(--band);padding-inline:max(5vw,16px);border-bottom:1px solid #ffffff22}
+nav .scroll{display:flex;gap:4px;max-width:1240px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+nav a{flex:none;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 10px;border-bottom:3px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:#9fd3ff;outline:none}
+section{border-top:1px solid var(--line)}
+.duo{display:grid;gap:28px}
+@media(min-width:980px){.duo{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}.duo .sticky{position:sticky;top:76px}}
+.fig{position:relative;min-height:340px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.tall{min-height:400px}
+svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round;font:600 14px 'Source Sans 3',sans-serif}
+.eq{font-family:'STIX Two Text',serif;font-size:20px;background:var(--panel);border-radius:8px;padding:12px 16px;margin:12px 0 16px;overflow-x:auto;line-height:1.7}
+.eq i,.v i,td i{font-family:'STIX Two Text',serif}
+b.vec{font-family:'STIX Two Text',serif;font-weight:700;font-style:normal}
+.note{border-left:4px solid var(--blue);background:var(--panel);padding:12px 16px;margin:16px 0;max-width:68ch}
+.ctl{display:grid;gap:12px;margin-top:14px}
+.row{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) 4.8em;gap:12px;align-items:center;font-size:15px}
+.row output{font-weight:600;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;height:44px;accent-color:var(--blue);margin:0}
+button{font:600 15px 'Source Sans 3',sans-serif;min-height:44px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--blue);background:var(--bg);color:var(--blue);cursor:pointer}
+button:hover{background:var(--panel)}button:focus-visible{outline:3px solid var(--axis);outline-offset:2px}
+button.main{background:var(--blue);color:var(--bg)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--panel);border-radius:8px;padding:10px 14px}
+.stat span{display:block;font-size:14px;color:var(--mute)}
+.stat strong{font-size:clamp(20px,2.4vw,24px);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.lab{display:grid;gap:24px;padding-bottom:clamp(28px,4vw,48px);align-items:start}
+@media(min-width:900px){.lab{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.lab .fig{min-height:0;height:clamp(340px,40vw,470px)}
+.labside{background:var(--bg);color:var(--ink);border-radius:10px;padding:18px}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--mute);margin-top:10px}
+.key i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+table{border-collapse:collapse;width:100%;font-size:16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:Archivo,sans-serif;font-weight:600;font-size:15px}
+.scroll{overflow-x:auto}
+details{border:1px solid var(--line);border-radius:10px;padding:0 16px;margin:12px 0}
+summary{cursor:pointer;font-weight:600;padding:12px 0;min-height:44px}
+details[open]{padding-bottom:12px}
+.ex{background:var(--panel);border-radius:10px;padding:16px 18px;margin:16px 0}
+.ex h3{margin-top:0}
+.ex ol{margin:0;padding-left:22px}.ex li{margin-bottom:6px}
+.q{border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px}
+.q p{font-weight:600}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;border-color:var(--line);color:var(--ink)}
+.opts button.right{background:var(--ok);border-color:var(--arm)}
+.opts button.wrong{background:var(--bad);border-color:var(--force)}
+.fb{margin-top:10px;font-size:16px}
+.grid2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(15em,1fr))}
+.small{font-size:14px;color:var(--mute)}
+@media(max-width:600px){table{font-size:14px}th,td{padding:6px 4px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);color:var(--mute);font-weight:600}.row{grid-template-columns:minmax(0,1fr) 4.8em}.row label{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="band top">
+<div class="wrap">
+<a href="../index.html" style="display:inline-block;color:#dbe9f8;text-decoration:none;font-weight:600;font-size:15px;margin-bottom:14px;padding:10px 0">← Todas las guías</a>
+<h1>Centro de masa y dinámica rotacional</h1>
+<p>Guía interactiva para FIS1514 Dinámica, basada en la Ayudantía 12. Centro de masa (discreto, continuo y de cuerpos compuestos), torque, momentum angular, impulso angular y movimiento en coordenadas polares.</p>
+</div>
+</header>
+<nav aria-label="Secciones"><div class="scroll">
+<a href="#cm">Centro de masa</a><a href="#compuestos">Compuestos</a><a href="#continuo">Masa continua</a><a href="#torque">Torque</a><a href="#momentum">Impulso</a><a href="#polares">Polares</a><a href="#polares-h">Polares y H</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
+</div></nav>
+
+<div class="band" style="padding-top:20px"><div class="wrap lab">
+<div class="fig" id="f-cm" aria-label="Tres masas que se pueden arrastrar en un plano y su centro de masa"><svg style="touch-action:none"></svg></div>
+<div class="labside">
+<p style="margin-bottom:6px"><strong>Arrastra las masas y cambia cuánto pesan.</strong> El centro de masa G es un promedio de posiciones en que cada masa pesa según cuánto vale.</p>
+<div class="ctl">
+<div class="row"><label for="c-m0">Masa A</label><input type="range" id="c-m0" min="0" max="10" step="0.5" value="2"><output id="c-o0"></output></div>
+<div class="row"><label for="c-m1">Masa B</label><input type="range" id="c-m1" min="0" max="10" step="0.5" value="3"><output id="c-o1"></output></div>
+<div class="row"><label for="c-m2">Masa C</label><input type="range" id="c-m2" min="0" max="10" step="0.5" value="5"><output id="c-o2"></output></div>
+</div>
+<div class="btns" style="margin-top:12px"><button data-cp="ej">Ejemplo 1</button><button data-cp="eq">Masas iguales</button><button data-cp="big">Una domina</button></div>
+<div class="stats">
+<div class="stat"><span>Masa total M</span><strong id="c-M"></strong></div>
+<div class="stat"><span>x<sub>G</sub> = Σm x / M</span><strong id="c-x"></strong></div>
+<div class="stat"><span>y<sub>G</sub> = Σm y / M</span><strong id="c-y"></strong></div>
+</div>
+<p class="small" style="margin-top:10px">Con masas iguales, G es el baricentro del triángulo. Si una masa vale cero, G queda sobre el segmento que une a las otras dos.</p>
+</div>
+</div></div>
+
+<section class="band" id="cm"><div class="wrap duo">
+<div>
+<h2>1. Centro de masa: el promedio ponderado de la masa</h2>
+<p>El centro de masa G es la posición "promedio" de la masa de un sistema. Es un promedio ponderado: cada parte cuenta según cuánta masa tiene, así que las partes pesadas tiran de G hacia ellas.</p>
+<div class="eq"><i>M</i> = Σ <i>m<sub>i</sub></i>,&nbsp;&nbsp; <b class="vec">r</b><sub>G</sub> = (1/<i>M</i>) Σ <i>m<sub>i</sub></i> <b class="vec">r</b><sub>i</sub></div>
+<p>Es una ecuación vectorial, así que se resuelve por componentes: <i>x<sub>G</sub></i> = Σ<i>m<sub>i</sub>x<sub>i</sub></i>/<i>M</i>, y lo mismo para <i>y</i> y <i>z</i>.</p>
+<h3>Propiedades que ahorran cálculos</h3>
+<ul>
+<li><strong>Simetría.</strong> Si el cuerpo es simétrico respecto a un eje o un plano, y la densidad también, G está sobre ese eje o plano. Una placa uniforme rectangular tiene G en su centro sin calcular nada.</li>
+<li><strong>Escalar todas las masas no cambia G.</strong> Duplicar todas las masas deja G en el mismo lugar. Por eso, en cuerpos uniformes, puedes trabajar con áreas o volúmenes en vez de masas.</li>
+<li><strong>G puede quedar fuera del cuerpo.</strong> Pasa con un anillo, una L o una herradura. G no tiene por qué ser un punto con masa.</li>
+<li><strong>G se mueve como una partícula.</strong> Σ<b class="vec">F</b><sub>ext</sub> = <i>M</i><b class="vec">a</b><sub>G</sub>: el centro de masa se acelera como si toda la masa estuviera en él y sobre él actuaran todas las fuerzas externas. Las fuerzas internas no lo mueven.</li>
+</ul>
+</div>
+<div>
+<div class="ex"><h3>Ejemplo 1: tres masas (el estado del laboratorio)</h3>
+<p>Masas de 2 kg en (0, 0) m, 3 kg en (4, 0) m y 5 kg en (1, 3) m.</p>
+<ol><li><i>M</i> = 2 + 3 + 5 = 10 kg.</li>
+<li><i>x<sub>G</sub></i> = (2·0 + 3·4 + 5·1)/10 = 17/10 = <strong>1.7 m</strong>.</li>
+<li><i>y<sub>G</sub></i> = (2·0 + 3·0 + 5·3)/10 = 15/10 = <strong>1.5 m</strong>.</li>
+<li>Comprobación: G queda más cerca de la masa de 5 kg que el baricentro geométrico (1.67, 1), como debe ser.</li></ol></div>
+<div class="note"><strong>Para qué sirve en esta unidad.</strong> En la Ayudantía 13 aparecen Σ<i>τ</i><sub>G</sub> = <i>I<sub>G</sub>α</i> y el teorema de Steiner, <i>I</i> = <i>I<sub>G</sub></i> + <i>Md</i>². Ambos necesitan saber dónde está G. El peso de un cuerpo también actúa en G, así que su torque es <i>Mg</i> por la distancia horizontal de G al eje.</div>
+</div>
+</div></section>
+
+<section class="band" id="compuestos"><div class="wrap duo">
+<div>
+<h2>2. Cuerpos compuestos y agujeros</h2>
+<p>Un cuerpo hecho de piezas simples se trata como un sistema de "masas puntuales": cada pieza se reemplaza por su masa ubicada en su propio centro de masa.</p>
+<div class="eq"><i>x<sub>G</sub></i> = (<i>m</i>₁<i>x</i>₁ + <i>m</i>₂<i>x</i>₂ + …)/(<i>m</i>₁ + <i>m</i>₂ + …)</div>
+<p>Un agujero se trata como una pieza de <strong>masa negativa</strong>: tomas el cuerpo completo sin agujero y le restas la pieza que falta, tanto en el numerador como en el denominador. Mueve el agujero en la figura: G siempre se aleja del agujero, hacia el lado que tiene más masa.</p>
+<div class="ex"><h3>Ejemplo 2: placa en forma de L</h3>
+<p>Una placa uniforme está formada por un rectángulo A de 4 × 1 m (de x = 0 a 4, y = 0 a 1) y un rectángulo B de 1 × 3 m (de x = 0 a 1, y = 1 a 4). Al ser uniforme, se puede usar el área en lugar de la masa.</p>
+<ol><li>A: área 4, centro (2, 0.5). B: área 3, centro (0.5, 2.5).</li>
+<li><i>x<sub>G</sub></i> = (4·2 + 3·0.5)/7 = <strong>1.36 m</strong> e <i>y<sub>G</sub></i> = (4·0.5 + 3·2.5)/7 = <strong>1.36 m</strong>.</li>
+<li>El punto (1.36, 1.36) queda en el hueco de la L, fuera del material. Y cae sobre la diagonal y = x, porque la L es simétrica respecto a esa recta.</li></ol></div>
+<div class="ex"><h3>Ejemplo 3: disco con un agujero</h3>
+<p>Un disco uniforme de radio 2 m, centrado en el origen, tiene un agujero de radio 1 m centrado en (1, 0) m.</p>
+<ol><li>Disco completo: área 4π, centro en 0. Agujero: área −π, centro en x = 1.</li>
+<li><i>x<sub>G</sub></i> = (4π·0 − π·1)/(4π − π) = <strong>−1/3 m</strong>. G se corre al lado opuesto del agujero.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-hole" aria-label="Disco con un agujero circular y su centro de masa"><svg></svg></div>
+<div class="ctl">
+<div class="row"><label for="h-a">Radio del agujero a</label><input type="range" id="h-a" min="0" max="1.8" step="0.05" value="1"><output id="h-ao"></output></div>
+<div class="row"><label for="h-d">Distancia del agujero al centro d</label><input type="range" id="h-d" min="0" max="1" step="0.01" value="1"><output id="h-do"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>Área que queda</span><strong id="h-A"></strong></div>
+<div class="stat"><span>x<sub>G</sub> = −a²d/(R² − a²)</span><strong id="h-x"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Disco de radio R = 2 m. La distancia d está limitada para que el agujero no se salga del disco.</p>
+</div>
+</div></section>
+
+<section class="band" id="continuo"><div class="wrap duo">
+<div>
+<h2>3. Distribución continua de masa</h2>
+<p>Cuando la masa está repartida de forma continua, la suma se convierte en integral. Divides el cuerpo en elementos pequeños de masa d<i>m</i>, cada uno en la posición <b class="vec">r</b>:</p>
+<div class="eq"><b class="vec">r</b><sub>G</sub> = (1/<i>M</i>) ∫ <b class="vec">r</b> d<i>m</i>,&nbsp;&nbsp; <i>M</i> = ∫ d<i>m</i></div>
+<p>El paso clave es escribir d<i>m</i> en términos de una sola variable de integración, según el tipo de cuerpo:</p>
+<div class="scroll"><table class="stack">
+<thead><tr><th>Cuerpo</th><th>Densidad</th><th>Elemento de masa</th></tr></thead>
+<tbody>
+<tr><td data-l="Cuerpo">Varilla o alambre</td><td data-l="Densidad">lineal <i>λ</i> (kg/m)</td><td data-l="Elemento">d<i>m</i> = <i>λ</i> d<i>x</i></td></tr>
+<tr><td data-l="Cuerpo">Placa delgada</td><td data-l="Densidad">superficial <i>σ</i> (kg/m²)</td><td data-l="Elemento">d<i>m</i> = <i>σ</i> d<i>A</i></td></tr>
+<tr><td data-l="Cuerpo">Sólido</td><td data-l="Densidad">volumétrica <i>ρ</i> (kg/m³)</td><td data-l="Elemento">d<i>m</i> = <i>ρ</i> d<i>V</i></td></tr>
+<tr><td data-l="Cuerpo">Sólido en capas, área A constante</td><td data-l="Densidad"><i>ρ</i>(<i>z</i>)</td><td data-l="Elemento">d<i>m</i> = <i>ρ</i>(<i>z</i>) <i>A</i> d<i>z</i></td></tr>
+<tr><td data-l="Cuerpo">Sólido en capas, área variable</td><td data-l="Densidad"><i>ρ</i></td><td data-l="Elemento">d<i>m</i> = <i>ρ A</i>(<i>z</i>) d<i>z</i></td></tr>
+</tbody></table></div>
+<p style="margin-top:14px">La idea de "capas" es la más usada: cortas el cuerpo en rebanadas delgadas perpendiculares a <i>z</i>. Todos los puntos de una rebanada están a la misma altura, así que cada rebanada aporta <i>z</i> d<i>m</i>. La figura muestra un cilindro cuya densidad cambia con la altura: el color de cada capa indica cuán densa es.</p>
+<div class="ex"><h3>Ejemplo 4: varilla con densidad lineal creciente</h3>
+<p>Una varilla de largo <i>L</i> tiene <i>λ</i>(<i>x</i>) = <i>λ</i>₀<i>x</i>/<i>L</i>: no tiene masa en x = 0 y es más pesada en x = L.</p>
+<ol><li><i>M</i> = ∫₀<sup>L</sup> <i>λ</i>₀<i>x</i>/<i>L</i> d<i>x</i> = <i>λ</i>₀<i>L</i>/2.</li>
+<li>∫ <i>x</i> d<i>m</i> = ∫₀<sup>L</sup> <i>λ</i>₀<i>x</i>²/<i>L</i> d<i>x</i> = <i>λ</i>₀<i>L</i>²/3.</li>
+<li><i>x<sub>G</sub></i> = (<i>λ</i>₀<i>L</i>²/3)/(<i>λ</i>₀<i>L</i>/2) = <strong>2<i>L</i>/3</strong>. Queda desplazado hacia el extremo pesado.</li></ol></div>
+<div class="ex"><h3>Ejemplo 5: cilindro con densidad que cambia con la altura (la figura)</h3>
+<p>Un cilindro de altura <i>H</i> y sección <i>A</i> tiene <i>ρ</i>(<i>z</i>) = <i>ρ</i>₀(1 + <i>kz</i>/<i>H</i>).</p>
+<ol><li>d<i>m</i> = <i>ρ</i>₀(1 + <i>kz</i>/<i>H</i>)<i>A</i> d<i>z</i>, así que <i>M</i> = <i>ρ</i>₀<i>AH</i>(1 + <i>k</i>/2).</li>
+<li>∫ <i>z</i> d<i>m</i> = <i>ρ</i>₀<i>AH</i>²(1/2 + <i>k</i>/3).</li>
+<li><strong><i>z<sub>G</sub></i> = <i>H</i>(3 + 2<i>k</i>)/(6 + 3<i>k</i>)</strong>. Con <i>k</i> = 0 da <i>H</i>/2, y con <i>k</i> = 1 (el fondo con la mitad de la densidad de la parte de arriba) da 5<i>H</i>/9 ≈ 0.556<i>H</i>.</li></ol></div>
+<div class="ex"><h3>Ejemplo 6: placa triangular (área variable)</h3>
+<p>Una placa uniforme tiene forma de triángulo, con base <i>b</i> abajo (en y = 0) y altura <i>h</i>.</p>
+<ol><li>A la altura <i>y</i>, la franja horizontal tiene ancho <i>b</i>(1 − <i>y</i>/<i>h</i>), así que d<i>m</i> = <i>σ b</i>(1 − <i>y</i>/<i>h</i>) d<i>y</i>.</li>
+<li><i>M</i> = <i>σbh</i>/2 y ∫ <i>y</i> d<i>m</i> = <i>σbh</i>²/6.</li>
+<li><strong><i>y<sub>G</sub></i> = <i>h</i>/3</strong> desde la base. La mayor parte del área está abajo.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig tall" id="f-col" aria-label="Cilindro con densidad variable con la altura, su centro de masa y una capa dm"><svg></svg></div>
+<div class="ctl"><div class="row"><label for="d-k">Parámetro k en ρ = ρ₀(1 + kz/H)</label><input type="range" id="d-k" min="-0.9" max="4" step="0.1" value="1"><output id="d-ko"></output></div></div>
+<div class="stats">
+<div class="stat"><span>z<sub>G</sub> / H</span><strong id="d-z"></strong></div>
+<div class="stat"><span>M / (ρ₀AH)</span><strong id="d-M"></strong></div>
+<div class="stat"><span>ρ arriba / ρ abajo</span><strong id="d-r"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Con k negativo, la parte de abajo es más densa y G baja de H/2.</p>
+</div>
+</div></section>
+
+<section class="band" id="torque"><div class="wrap duo">
+<div>
+<h2>4. Torque y su efecto en el momentum angular</h2>
+<p>El torque mide cuánto puede hacer girar una fuerza en torno a un punto O. La guía de la <a href="fis1514-ayudantia-13-newton-rotacional.html#torque">Ayudantía 13</a> lo desarrolla con un laboratorio interactivo; aquí va lo esencial y el caso en tres dimensiones.</p>
+<div class="eq"><b class="vec">τ</b><sub>O</sub> = <b class="vec">r</b> × <b class="vec">F</b>,&nbsp;&nbsp; |<b class="vec">τ</b>| = <i>rF</i> sin <i>φ</i> = <i>F d</i>⊥</div>
+<p><b class="vec">r</b> va desde O hasta el punto donde actúa la fuerza, y <i>φ</i> es el ángulo entre <b class="vec">r</b> y <b class="vec">F</b>.</p>
+<h3>Dirección: regla de la mano derecha</h3>
+<p>El torque es un vector perpendicular al plano que forman <b class="vec">r</b> y <b class="vec">F</b>. Apunta los dedos de la mano derecha en la dirección de <b class="vec">r</b> y dóblalos hacia <b class="vec">F</b>: el pulgar indica la dirección de <b class="vec">τ</b>, que es el eje en torno al cual la fuerza tiende a hacer girar. En problemas planos, el pulgar hacia afuera de la hoja (+<i>z</i>) es giro antihorario.</p>
+<h3>Componentes en 3D</h3>
+<p>Con <b class="vec">r</b> = (<i>x</i>, <i>y</i>, <i>z</i>) y <b class="vec">F</b> = (<i>F<sub>x</sub></i>, <i>F<sub>y</sub></i>, <i>F<sub>z</sub></i>):</p>
+<div class="eq"><i>τ<sub>x</sub></i> = <i>yF<sub>z</sub></i> − <i>zF<sub>y</sub></i>,&nbsp;&nbsp; <i>τ<sub>y</sub></i> = <i>zF<sub>x</sub></i> − <i>xF<sub>z</sub></i>,&nbsp;&nbsp; <i>τ<sub>z</sub></i> = <i>xF<sub>y</sub></i> − <i>yF<sub>x</sub></i></div>
+<p>Truco para recordarlo: cada componente sigue el ciclo x → y → z → x. Para <i>τ<sub>x</sub></i> usas "los otros dos" en orden: <i>y</i>·<i>F<sub>z</sub></i> menos <i>z</i>·<i>F<sub>y</sub></i>.</p>
+<h3>La ley que conecta torque y giro</h3>
+<div class="eq">Σ <b class="vec">τ</b><sub>ext,O</sub> = d<b class="vec">H</b><sub>O</sub>/dt&nbsp;&nbsp; ; eje fijo con <i>I</i> constante: <i>τ<sub>z</sub></i> = <i>I<sub>z</sub> α</i></div>
+<p>O tiene que ser un punto fijo de un marco inercial, o el centro de masa G.</p>
+</div>
+<div>
+<div class="ex"><h3>Ejemplo 7: torque en 3D</h3>
+<p>Una fuerza <b class="vec">F</b> = (0, 3, 4) N actúa en <b class="vec">r</b> = (1, 2, 0) m. Calcula <b class="vec">τ</b><sub>O</sub>.</p>
+<ol><li><i>τ<sub>x</sub></i> = <i>yF<sub>z</sub></i> − <i>zF<sub>y</sub></i> = 2·4 − 0·3 = 8.</li>
+<li><i>τ<sub>y</sub></i> = <i>zF<sub>x</sub></i> − <i>xF<sub>z</sub></i> = 0·0 − 1·4 = −4.</li>
+<li><i>τ<sub>z</sub></i> = <i>xF<sub>y</sub></i> − <i>yF<sub>x</sub></i> = 1·3 − 2·0 = 3.</li>
+<li><strong><b class="vec">τ</b> = (8, −4, 3) N·m</strong>, con magnitud √89 ≈ 9.43 N·m.</li>
+<li>Verificación rápida: <b class="vec">τ</b> debe ser perpendicular a <b class="vec">r</b> y a <b class="vec">F</b>. En efecto, <b class="vec">τ</b>·<b class="vec">r</b> = 8 − 8 + 0 = 0 y <b class="vec">τ</b>·<b class="vec">F</b> = 0 − 12 + 12 = 0.</li></ol></div>
+<div class="ex"><h3>Ejemplo 8: el torque del peso</h3>
+<p>Una varilla uniforme de 3 kg y 1.2 m está horizontal, con un pasador en un extremo. Al soltarla, ¿cuál es su aceleración angular inicial?</p>
+<ol><li>El peso actúa en G, a 0.6 m del pasador: <i>τ</i> = 3·9.8·0.6 = 17.64 N·m.</li>
+<li><i>I</i> respecto al extremo: <i>ML</i>²/3 = 3·1.44/3 = 1.44 kg·m².</li>
+<li><i>α</i> = 17.64/1.44 = <strong>12.25 rad/s²</strong>, que es igual a 3<i>g</i>/(2<i>L</i>).</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="momentum"><div class="wrap duo">
+<div>
+<h2>5. Momentum angular e impulso angular</h2>
+<div class="eq"><b class="vec">H</b><sub>O</sub> = <b class="vec">r</b> × <b class="vec">p</b>,&nbsp;&nbsp; <b class="vec">p</b> = <i>m</i><b class="vec">v</b>&nbsp;&nbsp; ; eje fijo: <i>H<sub>z</sub></i> = <i>I<sub>z</sub> ω</i>,&nbsp; <i>I<sub>z</sub></i> = Σ <i>m<sub>i</sub> r</i><sub>i,⊥</sub>²</div>
+<p>El momentum angular es la "cantidad de giro" respecto a O: depende de la masa, de la velocidad y de qué tan lejos pasa del eje. En la <a href="fis1514-ayudantia-13-newton-rotacional.html#momentum">guía de la Ayudantía 13</a> hay una figura de una partícula que pasa cerca de O y otra de una patinadora.</p>
+<h3>Impulso angular</h3>
+<p>Integrando Σ<b class="vec">τ</b> = d<b class="vec">H</b>/dt entre dos instantes:</p>
+<div class="eq">∫<sub>t<sub>i</sub></sub><sup>t<sub>f</sub></sup> Σ <b class="vec">τ</b><sub>ext,O</sub> d<i>t</i> = <b class="vec">H</b><sub>O,f</sub> − <b class="vec">H</b><sub>O,i</sub>&nbsp;&nbsp; ; torque constante: <b class="vec">τ</b><sub>ext</sub> Δ<i>t</i></div>
+<p>Si el impulso angular externo es cero o despreciable, <b class="vec">H</b><sub>O,i</sub> = <b class="vec">H</b><sub>O,f</sub>. Dos detalles del resumen que conviene no pasar por alto:</p>
+<ul>
+<li><strong>"O despreciable".</strong> En choques muy cortos, fuerzas finitas como el peso producen un impulso casi nulo durante el impacto. Por eso <i>H</i> se conserva en el instante del choque, aunque antes y después el peso sí haga girar al cuerpo.</li>
+<li><strong>"Respecto al punto o eje elegido".</strong> <i>H</i> puede conservarse respecto a un punto y no respecto a otro. Elige O donde actúan las fuerzas desconocidas grandes, como un pasador, para que su torque sea cero.</li>
+</ul>
+</div>
+<div>
+<div class="ex"><h3>Ejemplo 9: torque que varía en el tiempo</h3>
+<p>Una rueda con <i>I</i> = 0.3 kg·m² gira a 5 rad/s. Entre t = 0 y t = 3 s se le aplica un torque <i>τ</i>(<i>t</i>) = 2<i>t</i> N·m. ¿Con qué rapidez gira al final?</p>
+<ol><li>Impulso angular: ∫₀³ 2<i>t</i> d<i>t</i> = 9 N·m·s.</li>
+<li><i>Iω<sub>f</sub></i> = <i>Iω<sub>i</sub></i> + 9, así que 0.3<i>ω<sub>f</sub></i> = 1.5 + 9 y <strong><i>ω<sub>f</sub></i> = 35 rad/s</strong>.</li>
+<li>Con un torque variable, <i>α</i> no es constante y no sirven las fórmulas de cinemática con aceleración constante. El impulso evita resolver la ecuación diferencial.</li></ol></div>
+<div class="ex"><h3>Ejemplo 10: collarín en una barra giratoria</h3>
+<p>Una barra horizontal (<i>I</i> = 0.5 kg·m²) gira libremente a 4 rad/s. Un collarín de 1 kg, a 0.2 m del eje, se suelta y desliza hasta un tope a 0.8 m.</p>
+<ol><li>No hay torque externo en el eje, así que <i>H</i> se conserva: (0.5 + 1·0.2²)·4 = (0.5 + 1·0.8²)<i>ω<sub>f</sub></i>.</li>
+<li>2.16 = 1.14<i>ω<sub>f</sub></i>, de donde <strong><i>ω<sub>f</sub></i> ≈ 1.89 rad/s</strong>.</li>
+<li>La fuerza entre barra y collarín es interna. Más abajo verás que es justamente el término 2<i>ṙω</i> de las coordenadas polares.</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="polares"><div class="wrap duo">
+<div>
+<h2>6. Movimiento en coordenadas polares</h2>
+<p>Cuando una partícula gira y además cambia su distancia al origen (un collarín en una barra que gira, una masa en una cuerda que se recoge, un satélite), conviene describirla con <i>r</i> y <i>θ</i>. Los vectores unitarios son:</p>
+<ul>
+<li><b class="vec">ê</b><sub>r</sub>: apunta hacia afuera, desde O hacia la partícula.</li>
+<li><b class="vec">ê</b><sub>θ</sub>: perpendicular a él, en el sentido en que aumenta <i>θ</i>.</li>
+</ul>
+<p>La diferencia con las coordenadas cartesianas es que estos vectores <em>giran</em> con la partícula, así que sus derivadas no son cero:</p>
+<div class="eq">d<b class="vec">ê</b><sub>r</sub>/dt = <i>ω</i> <b class="vec">ê</b><sub>θ</sub>,&nbsp;&nbsp; d<b class="vec">ê</b><sub>θ</sub>/dt = −<i>ω</i> <b class="vec">ê</b><sub>r</sub>,&nbsp;&nbsp; <i>ω</i> = d<i>θ</i>/dt,&nbsp; <i>α</i> = d<i>ω</i>/dt</div>
+<p>Derivando <b class="vec">r</b> = <i>r</i> <b class="vec">ê</b><sub>r</sub> una vez y otra vez se obtiene:</p>
+<div class="eq"><b class="vec">v</b> = <i>ṙ</i> <b class="vec">ê</b><sub>r</sub> + <i>rω</i> <b class="vec">ê</b><sub>θ</sub></div>
+<div class="eq"><b class="vec">a</b> = (<i>r̈</i> − <i>rω</i>²) <b class="vec">ê</b><sub>r</sub> + (<i>rα</i> + 2<i>ṙω</i>) <b class="vec">ê</b><sub>θ</sub></div>
+<h3>Qué significa cada término</h3>
+<div class="scroll"><table class="stack">
+<thead><tr><th>Término</th><th>Nombre</th><th>Aparece cuando…</th></tr></thead>
+<tbody>
+<tr><td data-l="Término"><i>r̈</i></td><td data-l="Nombre">aceleración radial "de la barra"</td><td data-l="Aparece cuando">la rapidez con que se aleja de O cambia</td></tr>
+<tr><td data-l="Término">−<i>rω</i>²</td><td data-l="Nombre">centrípeta</td><td data-l="Aparece cuando">hay giro, aunque <i>r</i> sea constante; apunta hacia O</td></tr>
+<tr><td data-l="Término"><i>rα</i></td><td data-l="Nombre">tangencial</td><td data-l="Aparece cuando">el giro se acelera o frena</td></tr>
+<tr><td data-l="Término">2<i>ṙω</i></td><td data-l="Nombre">de Coriolis</td><td data-l="Aparece cuando">se aleja o acerca a O mientras gira</td></tr>
+</tbody></table></div>
+<p style="margin-top:14px">El término de Coriolis es el más contraintuitivo. Si te alejas del centro de un carrusel, a mayor <i>r</i> necesitas más rapidez tangencial <i>rω</i> para seguir girando con él. Alguien tiene que darte esa rapidez: la barra te empuja de lado. La mitad del 2 viene del cambio de <i>r</i> en <i>rω</i>, y la otra mitad de que <b class="vec">ê</b><sub>r</sub> gira.</p>
+<p>Con <i>r</i> constante, las fórmulas se reducen al movimiento circular: <i>a<sub>r</sub></i> = −<i>rω</i>² y <i>a<sub>θ</sub></i> = <i>rα</i>.</p>
+</div>
+<div class="sticky">
+<div class="fig tall" id="f-pol" aria-label="Partícula en una barra giratoria con sus vectores velocidad y aceleración en coordenadas polares"><svg></svg></div>
+<div class="btns" style="margin-top:12px" role="group" aria-label="Tipo de movimiento">
+<button data-pm="a" class="main">ṙ y ω constantes</button><button data-pm="b">Cuenta libre en la barra</button><button data-pm="c">Cuerda recogida</button>
+</div>
+<div class="btns" style="margin-top:8px" role="group" aria-label="Qué vectores mostrar">
+<button data-pv="v" class="main">Ver velocidad</button><button data-pv="a">Ver aceleración</button>
+</div>
+<div class="ctl">
+<div class="row"><label for="o-w">ω inicial</label><input type="range" id="o-w" min="0.5" max="3" step="0.1" value="1.5"><output id="o-wo"></output></div>
+<div class="row" id="o-urow"><label for="o-u">Rapidez radial |ṙ|</label><input type="range" id="o-u" min="0.05" max="0.4" step="0.01" value="0.15"><output id="o-uo"></output></div>
+</div>
+<div id="o-bars" style="margin-top:12px"></div>
+<p class="small" id="o-txt" style="margin-top:8px"></p>
+</div>
+</div></section>
+
+<section class="band" id="polares-h"><div class="wrap duo">
+<div>
+<h2>7. Polares y momentum angular: la misma ecuación</h2>
+<p>Esta es la conexión que une toda la ayudantía. Para una partícula, solo la velocidad transversal <i>rω</i> aporta al momentum angular respecto a O, porque la radial es paralela a <b class="vec">r</b>:</p>
+<div class="eq"><i>H</i><sub>O</sub> = <i>r</i> · <i>m</i>(<i>rω</i>) = <i>m r</i>² <i>ω</i></div>
+<p>Si derivas respecto al tiempo:</p>
+<div class="eq">d<i>H</i><sub>O</sub>/dt = <i>m</i>(2<i>rṙω</i> + <i>r</i>²<i>α</i>) = <i>r</i> · <i>m</i>(<i>rα</i> + 2<i>ṙω</i>) = <i>r</i> · <i>m a<sub>θ</sub></i> = <i>r F<sub>θ</sub></i> = <i>τ</i><sub>O</sub></div>
+<p>La componente transversal de la segunda ley de Newton, <i>F<sub>θ</sub></i> = <i>m a<sub>θ</sub></i>, es exactamente la ecuación de torque, Σ<i>τ</i> = d<i>H</i>/dt, multiplicada por <i>r</i>. Son la misma física escrita de dos maneras.</p>
+<div class="note"><strong>Fuerzas centrales.</strong> Si la única fuerza apunta hacia O (una cuerda que pasa por un agujero, la gravedad de un planeta), entonces <i>F<sub>θ</sub></i> = 0, el torque es cero y <i>r</i>²<i>ω</i> es constante. Al acercarse a O, gira más rápido. Es la segunda ley de Kepler y el caso "cuerda recogida" de la figura: el indicador de <i>H</i> no cambia.</div>
+</div>
+<div>
+<div class="ex"><h3>Ejemplo 11: cuenta libre en una barra que gira a ω constante</h3>
+<p>Un motor mantiene una barra horizontal girando a <i>ω</i> = 2 rad/s. Una cuenta de 0.2 kg puede deslizar sin roce por la barra y parte del reposo relativo en <i>r</i>₀ = 0.1 m. Calcula, en t = 1 s, la fuerza de la barra sobre la cuenta y el torque del motor.</p>
+<ol><li>Radial: no hay fuerza a lo largo de la barra (sin roce), así que <i>r̈</i> − <i>rω</i>² = 0. La solución con <i>ṙ</i>(0) = 0 es <i>r</i> = <i>r</i>₀ cosh(<i>ωt</i>).</li>
+<li>En t = 1 s: <i>r</i> = 0.1·cosh 2 = 0.376 m y <i>ṙ</i> = 0.1·2·sinh 2 = 0.725 m/s.</li>
+<li>Transversal: <i>α</i> = 0, así que <i>a<sub>θ</sub></i> = 2<i>ṙω</i> = 2.90 m/s². La barra empuja de lado con <strong><i>N</i> = <i>m a<sub>θ</sub></i> = 0.580 N</strong>.</li>
+<li>Torque del motor sobre la cuenta: <i>τ</i> = <i>rN</i> = <strong>0.218 N·m</strong>. Comprobación: d(<i>mr</i>²<i>ω</i>)/dt = 2<i>mrṙω</i> = 0.218 N·m.</li></ol></div>
+<div class="ex"><h3>Ejemplo 12: cuerda que se recoge por un agujero</h3>
+<p>Una masa de 0.5 kg gira sobre una mesa sin roce a 1 m del agujero, con <i>ω</i>₀ = 2 rad/s. Desde abajo se recoge la cuerda a 0.2 m/s constante. Cuando <i>r</i> = 0.5 m, calcula <i>ω</i>, <i>α</i> y la tensión.</p>
+<ol><li>Fuerza central, así que <i>r</i>²<i>ω</i> se conserva: <i>ω</i> = 2·(1/0.5)² = <strong>8 rad/s</strong>.</li>
+<li><i>a<sub>θ</sub></i> = 0 ⇒ <i>rα</i> + 2<i>ṙω</i> = 0, así que <i>α</i> = −2(−0.2)(8)/0.5 = <strong>6.4 rad/s²</strong>. Acelera su giro sin que nada la empuje de lado.</li>
+<li>Radial: <i>r̈</i> = 0, así que <i>a<sub>r</sub></i> = −<i>rω</i>² = −32 m/s² y <strong><i>T</i> = 0.5·32 = 16 N</strong>.</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="errores"><div class="wrap duo">
+<div>
+<h2>Errores típicos</h2>
+<ol>
+<li><strong>Olvidar dividir por M</strong> o usar una M que no corresponde, por ejemplo no restar el agujero en el denominador.</li>
+<li><strong>Integrar con la variable equivocada:</strong> escribir d<i>m</i> = <i>ρ</i> d<i>z</i> sin el área, o usar un área constante cuando cambia con la altura.</li>
+<li><strong>Suponer que G está en el centro geométrico</strong> cuando la densidad no es uniforme.</li>
+<li><strong>Confundir el orden del producto cruz.</strong> <b class="vec">F</b> × <b class="vec">r</b> = −<b class="vec">r</b> × <b class="vec">F</b>: el signo cambia.</li>
+<li><strong>Olvidar el término 2<i>ṙω</i></strong>, o el −<i>rω</i>² cuando <i>ṙ</i> = 0 en un instante. Que la partícula no se aleje en ese instante no significa que no haya aceleración radial.</li>
+<li><strong>Escribir <i>a<sub>r</sub></i> = <i>r̈</i></strong> como en cartesianas. En polares, la aceleración radial siempre incluye −<i>rω</i>².</li>
+<li><strong>Conservar H respecto a un punto</strong> donde actúa una fuerza con torque, por ejemplo cuando hay un motor o roce en el eje.</li>
+</ol>
+</div>
+<div class="ex" style="margin-top:0"><h3>Receta para problemas con barras y collarines</h3>
+<ol>
+<li>Pon el origen en el eje de giro y usa coordenadas polares para la partícula que se mueve.</li>
+<li>Identifica las fuerzas radiales (resortes, cuerdas, roce a lo largo de la barra) y las transversales (la normal de la barra, que empuja de lado).</li>
+<li>Escribe <i>F<sub>r</sub></i> = <i>m</i>(<i>r̈</i> − <i>rω</i>²) y <i>F<sub>θ</sub></i> = <i>m</i>(<i>rα</i> + 2<i>ṙω</i>).</li>
+<li>Si el eje gira libre (sin motor), usa conservación de <i>H</i> del sistema barra + collarín: (<i>I</i><sub>barra</sub> + <i>mr</i>²)<i>ω</i> = constante.</li>
+<li>Si un motor fija <i>ω</i>, <i>H</i> no se conserva: el torque del motor es d<i>H</i>/dt.</li>
+</ol></div>
+</div></section>
+
+<section class="band" id="ejercicios"><div class="wrap">
+<h2>Ejercicios para practicar</h2>
+<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<div class="grid2" id="exlist"></div>
+<h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
+<div class="grid2" id="quiz"></div>
+</div></section>
+
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 12 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const css=n=>`var(--${n})`;
+const fx=(v,n=1)=>(Math.abs(v)<0.5*10**-n?0:v).toFixed(n).replace(/^-/,'−');
+const defs=(id)=>'<defs>'+['force','blue','arm','perp','mute','ink'].map(c=>`<marker id="${id}${c}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" style="fill:${css(c)}"/></marker>`).join('')+'</defs>';
+const ar=(id,c,x1,y1,x2,y2,w=2.5,dash='')=>Math.hypot(x2-x1,y2-y1)<4?'':`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''} marker-end="url(#${id}${c})"/>`;
+const ln=(x1,y1,x2,y2,c,w=1,dash='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
+const tx=(x,y,t,c='ink',a='start',sz=14)=>`<text x="${x}" y="${y}" text-anchor="${a}" style="fill:${css(c)};font-size:${sz}px">${t}</text>`;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function view(id,draw){const box=$(id),s=box.querySelector('svg');const v={box,s,draw:()=>draw(s,box.clientWidth,box.clientHeight)};const ro=new ResizeObserver(()=>v.draw());ro.observe(box);return v;}
+
+const C={p:[[0,0],[4,0],[1,3]],m:[2,3,5],drag:-1,geo:null};
+const names=['A','B','C'];
+const cv=view('f-cm',(s,W,H)=>{
+ const pad=28,sc=Math.min((W-2*pad)/6.9,(H-2*pad)/5.3),ox=(W-6*sc)/2+0.2*sc,oy=H-(H-4.5*sc)/2-0.4*sc,X=x=>ox+x*sc,Y=y=>oy-y*sc;
+ C.geo={ox,oy,sc};
+ let h='';
+ for(let i=0;i<=6;i++)h+=ln(X(i),Y(0),X(i),Y(4.5),'line',1)+tx(X(i),Y(0)+36,String(i),'mute','middle',13);
+ for(let j=0;j<=4;j++)h+=ln(X(0),Y(j),X(6),Y(j),'line',1)+tx(X(0)-28,Y(j)+5,String(j),'mute','end',13);
+ const M=C.m.reduce((a,b)=>a+b,0);
+ let gx=0,gy=0;if(M>0){C.p.forEach((p,i)=>{gx+=C.m[i]*p[0];gy+=C.m[i]*p[1];});gx/=M;gy/=M;}
+ if(M>0)C.p.forEach(p=>{h+=ln(X(p[0]),Y(p[1]),X(gx),Y(gy),'mute',1.2,'4 4');});
+ C.p.forEach((p,i)=>{const r=8+5*Math.sqrt(C.m[i]);
+  h+=`<g data-i="${i}" style="cursor:grab"><circle cx="${X(p[0])}" cy="${Y(p[1])}" r="${Math.max(r,22)}" style="fill:transparent"/><circle cx="${X(p[0])}" cy="${Y(p[1])}" r="${r}" style="fill:${css('body')};stroke:${css('edge')};stroke-width:2;opacity:${C.m[i]>0?1:0.35}"/></g>`;
+  h+=tx(X(p[0])+r+6,Y(p[1])-r+4,`${names[i]} · ${fx(C.m[i],1)} kg`,'ink','start',13);});
+ if(M>0){const cx=X(gx),cy=Y(gy);h+=`<circle cx="${cx}" cy="${cy}" r="11" style="fill:${css('bg')};stroke:${css('ink')};stroke-width:2"/><path d="M${cx} ${cy-11}A11 11 0 0 1 ${cx+11} ${cy}L${cx} ${cy}Z M${cx} ${cy+11}A11 11 0 0 1 ${cx-11} ${cy}L${cx} ${cy}Z" style="fill:${css('ink')}"/>`+tx(cx+16,cy+20,'G','ink','start',16);}
+ s.innerHTML=h;
+ $('c-M').textContent=fx(M,1)+' kg';$('c-x').textContent=M>0?fx(gx,2)+' m':'–';$('c-y').textContent=M>0?fx(gy,2)+' m':'–';
+});
+function cRead(){C.m=[0,1,2].map(i=>+$('c-m'+i).value);[0,1,2].forEach(i=>$('c-o'+i).textContent=fx(C.m[i],1)+' kg');cv.draw();}
+[0,1,2].forEach(i=>$('c-m'+i).addEventListener('input',cRead));
+const pre={ej:{p:[[0,0],[4,0],[1,3]],m:[2,3,5]},eq:{p:[[0,0],[4,0],[1,3]],m:[4,4,4]},big:{p:[[1,1],[5,1],[3,4]],m:[1,1,10]}};
+document.querySelectorAll('[data-cp]').forEach(b=>b.addEventListener('click',()=>{const q=pre[b.dataset.cp];C.p=q.p.map(p=>p.slice());q.m.forEach((m,i)=>$('c-m'+i).value=m);cRead();}));
+const cs=cv.s;
+cs.addEventListener('pointerdown',e=>{const g=e.target.closest('g[data-i]');if(!g)return;C.drag=+g.dataset.i;cs.setPointerCapture(e.pointerId);e.preventDefault();});
+cs.addEventListener('pointermove',e=>{if(C.drag<0||!C.geo)return;const r=cs.getBoundingClientRect(),{ox,oy,sc}=C.geo;
+ const x=Math.round(Math.min(6,Math.max(0,(e.clientX-r.left-ox)/sc))*4)/4,y=Math.round(Math.min(4.5,Math.max(0,(oy-(e.clientY-r.top))/sc))*4)/4;C.p[C.drag]=[x,y];cv.draw();});
+const endDrag=()=>{C.drag=-1;};cs.addEventListener('pointerup',endDrag);cs.addEventListener('pointercancel',endDrag);
+
+const Hh={a:1,d:1,R:2};
+const hv=view('f-hole',(s,W,H)=>{
+ const sc=Math.min((W-60)/4.6,(H-60)/4.4),cx=W/2,cy=H/2-6,X=x=>cx+x*sc;
+ let h=`<circle cx="${cx}" cy="${cy}" r="${Hh.R*sc}" style="fill:${css('body')};stroke:${css('edge')};stroke-width:2"/>`;
+ if(Hh.a>0)h+=`<circle cx="${X(Hh.d)}" cy="${cy}" r="${Hh.a*sc}" style="fill:${css('bg')};stroke:${css('edge')};stroke-width:1.5" stroke-dasharray="5 4"/>`;
+ h+=ln(X(-2.2),cy,X(2.2),cy,'mute',1,'3 4');
+ h+=`<circle cx="${cx}" cy="${cy}" r="3.5" style="fill:${css('mute')}"/>`+tx(cx,cy+(Hh.R*sc)+22,'centro del disco: x = 0','mute','middle',13);
+ const xg=-(Hh.a**2)*Hh.d/(Hh.R**2-Hh.a**2),gx=X(xg),gy=cy;
+ h+=`<circle cx="${gx}" cy="${gy}" r="10" style="fill:${css('bg')};stroke:${css('ink')};stroke-width:2"/><path d="M${gx} ${gy-10}A10 10 0 0 1 ${gx+10} ${gy}L${gx} ${gy}Z M${gx} ${gy+10}A10 10 0 0 1 ${gx-10} ${gy}L${gx} ${gy}Z" style="fill:${css('ink')}"/>`+tx(gx-6,gy-16,'G','ink','end',16);
+ s.innerHTML=h;
+});
+function hRead(){Hh.a=+$('h-a').value;const mx=Hh.R-Hh.a;$('h-d').max=mx.toFixed(2);Hh.d=Math.min(+$('h-d').value,mx);$('h-d').value=Hh.d;
+ $('h-ao').textContent=fx(Hh.a,2)+' m';$('h-do').textContent=fx(Hh.d,2)+' m';
+ $('h-A').textContent=fx(Math.PI*(Hh.R**2-Hh.a**2),2)+' m²';$('h-x').textContent=fx(-(Hh.a**2)*Hh.d/(Hh.R**2-Hh.a**2),3)+' m';hv.draw();}
+['h-a','h-d'].forEach(i=>$(i).addEventListener('input',hRead));
+
+const D={k:1};
+const dv=view('f-col',(s,W,H)=>{
+ const top=30,bot=H-40,hh=bot-top,cw=Math.min(150,W*0.3),x0=W*0.36-cw/2,N=24,k=D.k;
+ let h='';const rho=z=>1+k*z,rmax=Math.max(rho(0),rho(1));
+ for(let i=0;i<N;i++){const z=(i+0.5)/N,y=bot-(i+1)*hh/N;h+=`<rect x="${x0}" y="${y}" width="${cw}" height="${hh/N+0.5}" style="fill:${css('edge')};fill-opacity:${(0.12+0.78*rho(z)/rmax).toFixed(3)}"/>`;}
+ h+=`<rect x="${x0}" y="${top}" width="${cw}" height="${hh}" style="fill:none;stroke:${css('edge')};stroke-width:1.5"/>`;
+ const zs=0.72,ys=bot-zs*hh;h+=`<rect x="${x0-6}" y="${ys-5}" width="${cw+12}" height="10" style="fill:none;stroke:${css('blue')};stroke-width:2"/>`;
+ h+=tx(x0+cw+16,ys+5,'capa: dm = ρ(z)A dz','blue','start',13);
+ h+=ln(x0-34,bot,x0-34,top,'mute',1.2)+tx(x0-40,top+4,'H','mute','end',13)+tx(x0-40,bot+4,'0','mute','end',13)+tx(x0-34,top-10,'z','mute','middle',13);
+ const yh=bot-0.5*hh;h+=ln(x0-14,yh,x0+cw+14,yh,'mute',1.2,'5 4')+tx(x0+cw+16,yh+20,'H/2 (densidad uniforme)','mute','start',13);
+ const zg=(3+2*k)/(6+3*k),yg=bot-zg*hh,gx=x0+cw/2;
+ h+=ln(x0-14,yg,x0+cw+14,yg,'force',2)+tx(x0+cw+16,yg-6,'G en z = '+fx(zg,3)+' H','force','start',14);
+ h+=`<circle cx="${gx}" cy="${yg}" r="10" style="fill:${css('bg')};stroke:${css('ink')};stroke-width:2"/><path d="M${gx} ${yg-10}A10 10 0 0 1 ${gx+10} ${yg}L${gx} ${yg}Z M${gx} ${yg+10}A10 10 0 0 1 ${gx-10} ${yg}L${gx} ${yg}Z" style="fill:${css('ink')}"/>`;
+ s.innerHTML=h;
+});
+function dRead(){D.k=+$('d-k').value;$('d-ko').textContent=fx(D.k,1);$('d-z').textContent=fx((3+2*D.k)/(6+3*D.k),3);$('d-M').textContent=fx(1+D.k/2,2);$('d-r').textContent=fx(1+D.k,2);dv.draw();}
+$('d-k').addEventListener('input',dRead);
+
+const O={mode:'a',show:'v',w0:1.5,u:0.15,r:0.25,rd:0.15,th:0,w:1.5,trail:[],m:1};
+function oReset(){O.trail=[];O.th=0;O.w=O.w0;if(O.mode==='a'){O.r=0.2;O.rd=O.u;}else if(O.mode==='b'){O.r=0.12;O.rd=0;}else{O.r=0.95;O.rd=-O.u;O.w=O.w0*0.4;}}
+function oAcc(){let rdd=0,al=0;if(O.mode==='b')rdd=O.r*O.w*O.w;if(O.mode==='c')al=-2*O.rd*O.w/O.r;return{rdd,al};}
+const ov=view('f-pol',(s,W,H)=>{
+ const cx=W/2,cy=H/2,sc=Math.min(W,H)/2-34,ux=Math.cos(O.th),uy=-Math.sin(O.th),tx_=-uy,ty=ux;
+ let h=defs('o')+`<circle cx="${cx}" cy="${cy}" r="${sc}" style="fill:none;stroke:${css('line')};stroke-width:1"/>`;
+ h+=`<polyline points="${O.trail.join(' ')}" style="fill:none;stroke:${css('perp')};stroke-width:1.5;opacity:.55"/>`;
+ h+=ln(cx-sc*ux,cy-sc*uy,cx+sc*ux,cy+sc*uy,'edge',5);
+ h+=`<circle cx="${cx}" cy="${cy}" r="7" style="fill:${css('bg')};stroke:${css('axis')};stroke-width:3"/>`+tx(cx-12,cy+22,'O','ink','end',15);
+ const px=cx+O.r*sc*ux,py=cy+O.r*sc*uy;
+ const {rdd,al}=oAcc();
+ const cl=(v,k,mx)=>Math.max(-mx,Math.min(mx,v*k));
+ if(O.show==='v'){const K=sc*0.55,vr=cl(O.rd,K,130),vt=cl(O.r*O.w,K,130);
+  h+=ar('o','blue',px,py,px+vr*ux,py+vr*uy,3)+ar('o','perp',px,py,px+vt*tx_,py+vt*ty,3)+ar('o','force',px,py,px+vr*ux+vt*tx_,py+vr*uy+vt*ty,2,'5 4');}
+ else{const K=sc*0.22,ar_=cl(rdd-O.r*O.w*O.w,K,140),at=cl(O.r*al+2*O.rd*O.w,K,140);
+  h+=ar('o','blue',px,py,px+ar_*ux,py+ar_*uy,3)+ar('o','perp',px,py,px+at*tx_,py+at*ty,3)+ar('o','force',px,py,px+ar_*ux+at*tx_,py+ar_*uy+at*ty,2,'5 4');}
+ h+=`<circle cx="${px}" cy="${py}" r="9" style="fill:${css('body')};stroke:${css('ink')};stroke-width:2"/>`;
+ const lx=12;h+=tx(lx,22,O.show==='v'?'azul: radial · violeta: transversal · rojo: velocidad total':'azul: radial · violeta: transversal · rojo: aceleración total','mute','start',13);
+ s.innerHTML=h;
+ const rows=O.show==='v'?[['ṙ (radial)',O.rd,'blue'],['rω (transversal)',O.r*O.w,'perp']]:[['r̈',rdd,'blue'],['−rω² (centrípeta)',-O.r*O.w*O.w,'blue'],['rα (tangencial)',O.r*al,'perp'],['2ṙω (Coriolis)',2*O.rd*O.w,'perp']];
+ const mx=O.show==='v'?1.5:5;
+ $('o-bars').innerHTML=rows.map(([n,v,c])=>{const p=Math.min(50,Math.abs(v)/mx*50);return `<div style="display:grid;grid-template-columns:minmax(0,10em) minmax(0,1fr) 5.5em;gap:10px;align-items:center;font-size:15px;margin:4px 0"><span>${n}</span><span style="position:relative;height:12px;background:var(--panel);border-radius:6px"><span style="position:absolute;top:0;bottom:0;${v>=0?'left:50%':'right:50%'};width:${p}%;background:var(--${c});border-radius:6px"></span><span style="position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--mute)"></span></span><span style="text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600">${fx(v,2)} ${O.show==='v'?'m/s':'m/s²'}</span></div>`;}).join('')+`<div style="display:grid;grid-template-columns:minmax(0,10em) minmax(0,1fr);gap:10px;font-size:15px;margin-top:8px"><span>H = m r² ω</span><span style="font-weight:600;font-variant-numeric:tabular-nums">${fx(O.m*O.r*O.r*O.w,3)} kg·m²/s (m = 1 kg)</span></div>`;
+});
+const otxt={a:'La barra gira a ω constante y un motor mueve la cuenta hacia afuera a ṙ constante. Solo quedan la centrípeta y Coriolis; la trayectoria es una espiral.',b:'Un motor mantiene ω constante y la cuenta desliza sin roce: no hay fuerza radial, así que r̈ = rω². La barra la empuja de lado con m·2ṙω.',c:'Una cuerda que pasa por O se recoge a rapidez constante. La fuerza es central: a_θ = 0 y H = m r² ω se mantiene constante mientras ω crece.'};
+function oRead(){O.w0=+$('o-w').value;O.u=+$('o-u').value;$('o-wo').textContent=fx(O.w0,1)+' rad/s';$('o-uo').textContent=fx(O.u,2)+' m/s';$('o-urow').style.display=O.mode==='b'?'none':'';$('o-txt').textContent=otxt[O.mode];oReset();ov.draw();}
+['o-w','o-u'].forEach(i=>$(i).addEventListener('input',oRead));
+document.querySelectorAll('[data-pm]').forEach(b=>b.addEventListener('click',()=>{O.mode=b.dataset.pm;document.querySelectorAll('[data-pm]').forEach(x=>x.classList.toggle('main',x===b));oRead();}));
+document.querySelectorAll('[data-pv]').forEach(b=>b.addEventListener('click',()=>{O.show=b.dataset.pv;document.querySelectorAll('[data-pv]').forEach(x=>x.classList.toggle('main',x===b));ov.draw();}));
+
+const EX=[
+['Placa con una esquina recortada','A una placa cuadrada uniforme de 2 × 2 m (de x = 0 a 2, y = 0 a 2) se le recorta el cuadrado de 1 × 1 m de la esquina superior derecha. ¿Dónde queda G?','Placa completa: área 4, centro (1, 1). Recorte: área −1, centro (1.5, 1.5). <i>x<sub>G</sub></i> = (4·1 − 1·1.5)/(4 − 1) = 2.5/3 = <strong>0.833 m</strong>, y por simetría respecto a y = x, <strong><i>y<sub>G</sub></i> = 0.833 m</strong>. G se aleja de la esquina recortada.'],
+['Varilla con densidad cuadrática','Una varilla de largo <i>L</i> tiene <i>λ</i>(<i>x</i>) = <i>λ</i>₀(1 + <i>x</i>²/<i>L</i>²). Encuentra su masa y su centro de masa.','<i>M</i> = ∫₀<sup>L</sup> <i>λ</i>₀(1 + <i>x</i>²/<i>L</i>²) d<i>x</i> = (4/3)<i>λ</i>₀<i>L</i>. ∫ <i>x</i> d<i>m</i> = <i>λ</i>₀(<i>L</i>²/2 + <i>L</i>²/4) = (3/4)<i>λ</i>₀<i>L</i>². <strong><i>x<sub>G</sub></i> = (3/4)/(4/3)·<i>L</i> = 9<i>L</i>/16 ≈ 0.5625<i>L</i></strong>, algo más allá del centro porque el extremo lejano es más denso.'],
+['Cono sólido','Un cono sólido uniforme tiene altura <i>h</i> y radio de base <i>R</i>. Con el vértice en z = 0 y la base en z = <i>h</i>, ¿a qué altura está G?','Por capas: a la altura <i>z</i>, el radio es <i>Rz</i>/<i>h</i>, así que d<i>m</i> = <i>ρπ</i>(<i>Rz</i>/<i>h</i>)² d<i>z</i>. <i>M</i> = <i>ρπR</i>²<i>h</i>/3 y ∫ <i>z</i> d<i>m</i> = <i>ρπR</i>²<i>h</i>²/4. <strong><i>z<sub>G</sub></i> = 3<i>h</i>/4 desde el vértice</strong>, es decir, a <i>h</i>/4 de la base.'],
+['Torque en 3D','Una fuerza <b class="vec">F</b> = (2, −1, 3) N actúa en <b class="vec">r</b> = (1, 0, 2) m. Calcula <b class="vec">τ</b><sub>O</sub> y su magnitud.','<i>τ<sub>x</sub></i> = 0·3 − 2·(−1) = 2. <i>τ<sub>y</sub></i> = 2·2 − 1·3 = 1. <i>τ<sub>z</sub></i> = 1·(−1) − 0·2 = −1. <strong><b class="vec">τ</b> = (2, 1, −1) N·m</strong> y |<b class="vec">τ</b>| = √6 ≈ <strong>2.45 N·m</strong>. Verificación: <b class="vec">τ</b>·<b class="vec">r</b> = 2 + 0 − 2 = 0.'],
+['Collarín con movimiento dado','Un brazo gira con <i>θ</i> = 0.5<i>t</i>² rad, y un collarín se mueve por él con <i>r</i> = 0.2 + 0.1<i>t</i>² m. Calcula la velocidad y la aceleración del collarín en t = 1 s.','En t = 1: <i>ω</i> = <i>t</i> = 1 rad/s, <i>α</i> = 1 rad/s², <i>r</i> = 0.3 m, <i>ṙ</i> = 0.2<i>t</i> = 0.2 m/s y <i>r̈</i> = 0.2 m/s². <strong><b class="vec">v</b> = 0.2 <b class="vec">ê</b><sub>r</sub> + 0.3 <b class="vec">ê</b><sub>θ</sub> m/s</strong>. <i>a<sub>r</sub></i> = 0.2 − 0.3·1² = −0.1 y <i>a<sub>θ</sub></i> = 0.3·1 + 2·0.2·1 = 0.7, así que <strong><b class="vec">a</b> = −0.1 <b class="vec">ê</b><sub>r</sub> + 0.7 <b class="vec">ê</b><sub>θ</sub> m/s²</strong>, con |<b class="vec">a</b>| ≈ 0.707 m/s².'],
+['Dos collarines que se deslizan','Una barra horizontal con <i>I</i> = 2 kg·m² gira libre a 3 rad/s. Lleva dos collarines de 1 kg a 0.2 m del eje, que se sueltan y deslizan hasta topes a 0.8 m. ¿Cuál es la ω final? ¿Se conserva la energía?','<i>H</i> se conserva: (2 + 2·1·0.2²)·3 = 6.24 kg·m²/s. <i>I<sub>f</sub></i> = 2 + 2·0.8² = 3.28 kg·m², así que <strong><i>ω<sub>f</sub></i> = 6.24/3.28 ≈ 1.90 rad/s</strong>. La energía baja de 9.36 J a 5.94 J: <strong>no se conserva</strong>. Se pierde en el choque de los collarines con los topes.'],
+['Impulso con torque variable','Un volante con <i>I</i> = 0.3 kg·m² gira a 5 rad/s. Se le aplica <i>τ</i> = 2<i>t</i> N·m durante 3 s. ¿Cuál es su rapidez angular final?','∫₀³ 2<i>t</i> d<i>t</i> = 9 N·m·s, así que 0.3<i>ω<sub>f</sub></i> = 0.3·5 + 9 y <strong><i>ω<sub>f</sub></i> = 35 rad/s</strong>.']
+];
+$('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');
+
+const QZ=[
+['Si duplicas todas las masas de un sistema, el centro de masa:',['Se mueve hacia la masa mayor','No cambia','Se duplica su distancia al origen'],1,'Al escalar todas las masas por el mismo factor, este se cancela entre numerador y denominador.'],
+['¿Puede el centro de masa quedar en un punto donde no hay material?',['No, siempre está dentro del cuerpo','Sí, por ejemplo en un anillo o una placa en L','Solo si la densidad no es uniforme'],1,'G es un promedio de posiciones, no un punto con masa. En un anillo queda en el centro vacío.'],
+['Un cilindro tiene sección constante y densidad ρ(z). ¿Cuál es el elemento de masa?',['dm = ρ dz','dm = ρ(z) A dz','dm = ρ A z'],1,'Una capa de grosor dz tiene volumen A dz, y su masa es la densidad por el volumen.'],
+['Un collarín gira con la barra a r constante y ω constante. Su aceleración:',['Es cero','Apunta hacia el eje y vale rω²','Es tangencial y vale 2ṙω'],1,'Con ṙ = r̈ = α = 0, solo sobrevive la centrípeta, −rω² en dirección radial.'],
+['¿Qué representa el término 2ṙω?',['La aceleración centrípeta','La aceleración de Coriolis, por moverse radialmente mientras gira','La aceleración angular'],1,'Aparece cuando la partícula se aleja o se acerca a O mientras gira. Es transversal.'],
+['Una masa atada a una cuerda que pasa por un agujero se recoge hacia él. ¿Qué se conserva?',['La rapidez','La energía cinética','r²ω, es decir, el momentum angular respecto al agujero'],2,'La tensión es central: no tiene torque respecto a O, así que H = m r² ω se conserva.']
+];
+$('quiz').innerHTML=QZ.map((q,i)=>`<div class="q" id="q${i}"><p>${q[0]}</p><div class="opts">${q[1].map((o,j)=>`<button data-q="${i}" data-o="${j}">${o}</button>`).join('')}</div><div class="fb" aria-live="polite"></div></div>`).join('');
+$('quiz').addEventListener('click',e=>{const b=e.target.closest('button[data-q]');if(!b)return;const q=QZ[+b.dataset.q],box=$('q'+b.dataset.q);
+ box.querySelectorAll('button').forEach(x=>x.classList.remove('right','wrong'));const ok=+b.dataset.o===q[2];b.classList.add(ok?'right':'wrong');
+ if(!ok)box.querySelectorAll('button')[q[2]].classList.add('right');box.querySelector('.fb').textContent=(ok?'Correcto. ':'No. ')+q[3];});
+
+let last=null;
+function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;
+ if(!reduce){const n=8,h=dt/n;for(let i=0;i<n;i++){const {rdd,al}=oAcc();O.rd+=rdd*h;O.r+=O.rd*h;O.w+=al*h;O.th+=O.w*h;}
+  if(O.r>0.97||O.r<0.12||O.w>40)oReset();
+  const box=$('f-pol'),W=box.clientWidth,H=box.clientHeight,sc=Math.min(W,H)/2-34;
+  O.trail.push((W/2+O.r*sc*Math.cos(O.th)).toFixed(1)+','+(H/2-O.r*sc*Math.sin(O.th)).toFixed(1));if(O.trail.length>700)O.trail.shift();
+  ov.draw();}
+ requestAnimationFrame(loop);}
+
+cRead();hRead();dRead();oRead();
+requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # Página de guías de estudio
 
 Sitio estático publicado con GitHub Pages desde la rama `main` (carpeta raíz).
-Repositorio: `Juaincha/pagina-dinamica`. URL pública: https://juaincha.github.io/pagina-dinamica/
+Repositorio: `Juaincha/resumen-dinamica`. URL pública: https://juaincha.github.io/resumen-dinamica/
 
 No hay paso de compilación: lo que está en `main` es lo que se publica.
 
