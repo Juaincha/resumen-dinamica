@@ -33,6 +33,7 @@ Normalmente Sebastián deja una guía nueva en `guias/` (la hace en el chat de C
      <meta name="guia-temas" content="Torque, Momentum angular, Rodadura">
      ```
    - Al principio del `<header>` hay un enlace `<a href="../index.html">← Todas las guías</a>`. Si no está, agrégalo con el mismo estilo que la guía de ejemplo.
+   - Tiene los dos fragmentos oficiales de Google Tag Manager (`GTM-M876QPX4`), una sola vez cada uno: el `<script>` con `gtm.start` lo más arriba posible dentro de `<head>` (justo después de abrirlo) y el `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M876QPX4" …></noscript>` justo después de abrir `<body>`. Cópialos de una guía existente. Toda página nueva del sitio lleva ambos; no uses la etiqueta antigua `<script async src="…gtm.js…">` con `gtag`.
    - Tiene el bloque de vista previa para compartir (etiquetas `og:` y `twitter:`, favicon y `theme-color`), igual que las guías existentes, con su propia URL, título, descripción e imagen. Las URL deben ser absolutas (`https://juaincha.github.io/resumen-dinamica/...`).
    - Existe su imagen de vista previa en `img/og-<curso>-<fuente>.jpg`, de 1200 × 630 px y menos de 300 KB, con el mismo estilo que las demás (fondo azul, título en blanco, una ilustración del tema a la derecha). Si no puedes generarla, usa `img/og-portada.jpg` y avísale a Sebastián.
 2. Regenera `guias.js` con todas las guías de `guias/` a partir de sus etiquetas meta. Mantén el formato del archivo actual: `archivo`, `curso`, `titulo`, `fuente`, `fecha` y `temas` como lista.
