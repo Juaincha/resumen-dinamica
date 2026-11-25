@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Centro de masa y rotación</title>
-<meta name="description" content="Guía interactiva de FIS1514: centro de masa discreto y continuo, torque en 3D, impulso angular y coordenadas polares, con figuras que se mueven y ejercicios resueltos.">
+<meta name="description" content="Material para estudiar para el examen de FIS1514: centro de masa de sistemas y cuerpos compuestos, torque en 3D, impulso angular y coordenadas polares, con figuras que se mueven y ejercicios resueltos.">
 <link rel="canonical" href="https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-12-centro-de-masa-y-rotacion.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Guías de estudio">
 <meta property="og:locale" content="es_CL">
 <meta property="og:title" content="Centro de masa y dinámica rotacional · Ayudantía 12">
-<meta property="og:description" content="Guía interactiva de FIS1514: centro de masa discreto y continuo, torque en 3D, impulso angular y coordenadas polares, con figuras que se mueven y ejercicios resueltos.">
+<meta property="og:description" content="Material para estudiar para el examen de FIS1514: centro de masa de sistemas y cuerpos compuestos, torque en 3D, impulso angular y coordenadas polares, con figuras que se mueven y ejercicios resueltos.">
 <meta property="og:url" content="https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-12-centro-de-masa-y-rotacion.html">
 <meta property="og:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-ayudantia-12.jpg">
 <meta property="og:image:secure_url" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-ayudantia-12.jpg">
@@ -20,7 +20,7 @@
 <meta property="og:image:alt" content="Tres masas en un plano y su centro de masa G">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Centro de masa y dinámica rotacional · Ayudantía 12">
-<meta name="twitter:description" content="Guía interactiva de FIS1514: centro de masa discreto y continuo, torque en 3D, impulso angular y coordenadas polares, con figuras que se mueven y ejercicios resueltos.">
+<meta name="twitter:description" content="Material para estudiar para el examen de FIS1514: centro de masa de sistemas y cuerpos compuestos, torque en 3D, impulso angular y coordenadas polares, con figuras que se mueven y ejercicios resueltos.">
 <meta name="twitter:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-ayudantia-12.jpg">
 <meta name="theme-color" content="#0f5fa8">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
@@ -29,7 +29,7 @@
 <meta name="guia-titulo" content="Centro de masa y dinámica rotacional">
 <meta name="guia-fuente" content="Ayudantía 12">
 <meta name="guia-fecha" content="2026-11-03">
-<meta name="guia-temas" content="Centro de masa, Distribución continua, Torque, Impulso angular, Coordenadas polares">
+<meta name="guia-temas" content="Centro de masa, Cuerpos compuestos, Torque, Impulso angular, Coordenadas polares">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=STIX+Two+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -121,11 +121,11 @@ details[open]{padding-bottom:12px}
 <div class="wrap">
 <a href="../index.html" style="display:inline-block;color:#dbe9f8;text-decoration:none;font-weight:600;font-size:15px;margin-bottom:14px;padding:10px 0">← Todas las guías</a>
 <h1>Centro de masa y dinámica rotacional</h1>
-<p>Guía interactiva para FIS1514 Dinámica, basada en la Ayudantía 12. Centro de masa (discreto, continuo y de cuerpos compuestos), torque, momentum angular, impulso angular y movimiento en coordenadas polares.</p>
+<p>Guía interactiva para FIS1514 Dinámica, basada en la Ayudantía 12. Centro de masa (de partículas y de cuerpos compuestos), torque, momentum angular, impulso angular y movimiento en coordenadas polares.</p>
 </div>
 </header>
 <nav aria-label="Secciones"><div class="scroll">
-<a href="#cm">Centro de masa</a><a href="#compuestos">Compuestos</a><a href="#continuo">Masa continua</a><a href="#torque">Torque</a><a href="#momentum">Impulso</a><a href="#polares">Polares</a><a href="#polares-h">Polares y H</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
+<a href="#cm">Centro de masa</a><a href="#compuestos">Compuestos</a><a href="#torque">Torque</a><a href="#momentum">Impulso</a><a href="#polares">Polares</a><a href="#polares-h">Polares y H</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
 </div></nav>
 
 <section class="band" id="cm"><div class="wrap duo">
@@ -197,53 +197,9 @@ details[open]{padding-bottom:12px}
 </div>
 </div></section>
 
-<section class="band" id="continuo"><div class="wrap duo">
-<div>
-<h2>3. Distribución continua de masa</h2>
-<p>Cuando la masa está repartida de forma continua, la suma se convierte en integral. Divides el cuerpo en elementos pequeños de masa d<i>m</i>, cada uno en la posición <b class="vec">r</b>:</p>
-<div class="eq"><b class="vec">r</b><sub>G</sub> = (1/<i>M</i>) ∫ <b class="vec">r</b> d<i>m</i>,&nbsp;&nbsp; <i>M</i> = ∫ d<i>m</i></div>
-<p>El paso clave es escribir d<i>m</i> en términos de una sola variable de integración, según el tipo de cuerpo:</p>
-<div class="scroll"><table class="stack">
-<thead><tr><th>Cuerpo</th><th>Densidad</th><th>Elemento de masa</th></tr></thead>
-<tbody>
-<tr><td data-l="Cuerpo">Varilla o alambre</td><td data-l="Densidad">lineal <i>λ</i> (kg/m)</td><td data-l="Elemento">d<i>m</i> = <i>λ</i> d<i>x</i></td></tr>
-<tr><td data-l="Cuerpo">Placa delgada</td><td data-l="Densidad">superficial <i>σ</i> (kg/m²)</td><td data-l="Elemento">d<i>m</i> = <i>σ</i> d<i>A</i></td></tr>
-<tr><td data-l="Cuerpo">Sólido</td><td data-l="Densidad">volumétrica <i>ρ</i> (kg/m³)</td><td data-l="Elemento">d<i>m</i> = <i>ρ</i> d<i>V</i></td></tr>
-<tr><td data-l="Cuerpo">Sólido en capas, área A constante</td><td data-l="Densidad"><i>ρ</i>(<i>z</i>)</td><td data-l="Elemento">d<i>m</i> = <i>ρ</i>(<i>z</i>) <i>A</i> d<i>z</i></td></tr>
-<tr><td data-l="Cuerpo">Sólido en capas, área variable</td><td data-l="Densidad"><i>ρ</i></td><td data-l="Elemento">d<i>m</i> = <i>ρ A</i>(<i>z</i>) d<i>z</i></td></tr>
-</tbody></table></div>
-<p style="margin-top:14px">La idea de "capas" es la más usada: cortas el cuerpo en rebanadas delgadas perpendiculares a <i>z</i>. Todos los puntos de una rebanada están a la misma altura, así que cada rebanada aporta <i>z</i> d<i>m</i>. La figura muestra un cilindro cuya densidad cambia con la altura: el color de cada capa indica cuán densa es.</p>
-<div class="ex"><h3>Ejemplo 4: varilla con densidad lineal creciente</h3>
-<p>Una varilla de largo <i>L</i> tiene <i>λ</i>(<i>x</i>) = <i>λ</i>₀<i>x</i>/<i>L</i>: no tiene masa en x = 0 y es más pesada en x = L.</p>
-<ol><li><i>M</i> = ∫₀<sup>L</sup> <i>λ</i>₀<i>x</i>/<i>L</i> d<i>x</i> = <i>λ</i>₀<i>L</i>/2.</li>
-<li>∫ <i>x</i> d<i>m</i> = ∫₀<sup>L</sup> <i>λ</i>₀<i>x</i>²/<i>L</i> d<i>x</i> = <i>λ</i>₀<i>L</i>²/3.</li>
-<li><i>x<sub>G</sub></i> = (<i>λ</i>₀<i>L</i>²/3)/(<i>λ</i>₀<i>L</i>/2) = <strong>2<i>L</i>/3</strong>. Queda desplazado hacia el extremo pesado.</li></ol></div>
-<div class="ex"><h3>Ejemplo 5: cilindro con densidad que cambia con la altura (la figura)</h3>
-<p>Un cilindro de altura <i>H</i> y sección <i>A</i> tiene <i>ρ</i>(<i>z</i>) = <i>ρ</i>₀(1 + <i>kz</i>/<i>H</i>).</p>
-<ol><li>d<i>m</i> = <i>ρ</i>₀(1 + <i>kz</i>/<i>H</i>)<i>A</i> d<i>z</i>, así que <i>M</i> = <i>ρ</i>₀<i>AH</i>(1 + <i>k</i>/2).</li>
-<li>∫ <i>z</i> d<i>m</i> = <i>ρ</i>₀<i>AH</i>²(1/2 + <i>k</i>/3).</li>
-<li><strong><i>z<sub>G</sub></i> = <i>H</i>(3 + 2<i>k</i>)/(6 + 3<i>k</i>)</strong>. Con <i>k</i> = 0 da <i>H</i>/2, y con <i>k</i> = 1 (el fondo con la mitad de la densidad de la parte de arriba) da 5<i>H</i>/9 ≈ 0.556<i>H</i>.</li></ol></div>
-<div class="ex"><h3>Ejemplo 6: placa triangular (área variable)</h3>
-<p>Una placa uniforme tiene forma de triángulo, con base <i>b</i> abajo (en y = 0) y altura <i>h</i>.</p>
-<ol><li>A la altura <i>y</i>, la franja horizontal tiene ancho <i>b</i>(1 − <i>y</i>/<i>h</i>), así que d<i>m</i> = <i>σ b</i>(1 − <i>y</i>/<i>h</i>) d<i>y</i>.</li>
-<li><i>M</i> = <i>σbh</i>/2 y ∫ <i>y</i> d<i>m</i> = <i>σbh</i>²/6.</li>
-<li><strong><i>y<sub>G</sub></i> = <i>h</i>/3</strong> desde la base. La mayor parte del área está abajo.</li></ol></div>
-</div>
-<div class="sticky">
-<div class="fig tall" id="f-col" aria-label="Cilindro con densidad variable con la altura, su centro de masa y una capa dm"><svg></svg></div>
-<div class="ctl"><div class="row"><label for="d-k">Parámetro k en ρ = ρ₀(1 + kz/H)</label><input type="range" id="d-k" min="-0.9" max="4" step="0.1" value="1"><output id="d-ko"></output></div></div>
-<div class="stats">
-<div class="stat"><span>z<sub>G</sub> / H</span><strong id="d-z"></strong></div>
-<div class="stat"><span>M / (ρ₀AH)</span><strong id="d-M"></strong></div>
-<div class="stat"><span>ρ arriba / ρ abajo</span><strong id="d-r"></strong></div>
-</div>
-<p class="small" style="margin-top:8px">Con k negativo, la parte de abajo es más densa y G baja de H/2.</p>
-</div>
-</div></section>
-
 <section class="band" id="torque"><div class="wrap duo">
 <div>
-<h2>4. Torque y su efecto en el momentum angular</h2>
+<h2>3. Torque y su efecto en el momentum angular</h2>
 <p>El torque mide cuánto puede hacer girar una fuerza en torno a un punto O. La guía de la <a href="fis1514-ayudantia-13-newton-rotacional.html#torque">Ayudantía 13</a> lo desarrolla con un laboratorio interactivo; aquí va lo esencial y el caso en tres dimensiones.</p>
 <div class="eq"><b class="vec">τ</b><sub>O</sub> = <b class="vec">r</b> × <b class="vec">F</b>,&nbsp;&nbsp; |<b class="vec">τ</b>| = <i>rF</i> sin <i>φ</i> = <i>F d</i>⊥</div>
 <p><b class="vec">r</b> va desde O hasta el punto donde actúa la fuerza, y <i>φ</i> es el ángulo entre <b class="vec">r</b> y <b class="vec">F</b>.</p>
@@ -258,14 +214,14 @@ details[open]{padding-bottom:12px}
 <p>O tiene que ser un punto fijo de un marco inercial, o el centro de masa G.</p>
 </div>
 <div>
-<div class="ex"><h3>Ejemplo 7: torque en 3D</h3>
+<div class="ex"><h3>Ejemplo 4: torque en 3D</h3>
 <p>Una fuerza <b class="vec">F</b> = (0, 3, 4) N actúa en <b class="vec">r</b> = (1, 2, 0) m. Calcula <b class="vec">τ</b><sub>O</sub>.</p>
 <ol><li><i>τ<sub>x</sub></i> = <i>yF<sub>z</sub></i> − <i>zF<sub>y</sub></i> = 2·4 − 0·3 = 8.</li>
 <li><i>τ<sub>y</sub></i> = <i>zF<sub>x</sub></i> − <i>xF<sub>z</sub></i> = 0·0 − 1·4 = −4.</li>
 <li><i>τ<sub>z</sub></i> = <i>xF<sub>y</sub></i> − <i>yF<sub>x</sub></i> = 1·3 − 2·0 = 3.</li>
 <li><strong><b class="vec">τ</b> = (8, −4, 3) N·m</strong>, con magnitud √89 ≈ 9.43 N·m.</li>
 <li>Verificación rápida: <b class="vec">τ</b> debe ser perpendicular a <b class="vec">r</b> y a <b class="vec">F</b>. En efecto, <b class="vec">τ</b>·<b class="vec">r</b> = 8 − 8 + 0 = 0 y <b class="vec">τ</b>·<b class="vec">F</b> = 0 − 12 + 12 = 0.</li></ol></div>
-<div class="ex"><h3>Ejemplo 8: el torque del peso</h3>
+<div class="ex"><h3>Ejemplo 5: el torque del peso</h3>
 <p>Una varilla uniforme de 3 kg y 1.2 m está horizontal, con un pasador en un extremo. Al soltarla, ¿cuál es su aceleración angular inicial?</p>
 <ol><li>El peso actúa en G, a 0.6 m del pasador: <i>τ</i> = 3·9.8·0.6 = 17.64 N·m.</li>
 <li><i>I</i> respecto al extremo: <i>ML</i>²/3 = 3·1.44/3 = 1.44 kg·m².</li>
@@ -275,7 +231,7 @@ details[open]{padding-bottom:12px}
 
 <section class="band" id="momentum"><div class="wrap duo">
 <div>
-<h2>5. Momentum angular e impulso angular</h2>
+<h2>4. Momentum angular e impulso angular</h2>
 <div class="eq"><b class="vec">H</b><sub>O</sub> = <b class="vec">r</b> × <b class="vec">p</b>,&nbsp;&nbsp; <b class="vec">p</b> = <i>m</i><b class="vec">v</b>&nbsp;&nbsp; ; eje fijo: <i>H<sub>z</sub></i> = <i>I<sub>z</sub> ω</i>,&nbsp; <i>I<sub>z</sub></i> = Σ <i>m<sub>i</sub> r</i><sub>i,⊥</sub>²</div>
 <p>El momentum angular es la "cantidad de giro" respecto a O: depende de la masa, de la velocidad y de qué tan lejos pasa del eje. En la <a href="fis1514-ayudantia-13-newton-rotacional.html#momentum">guía de la Ayudantía 13</a> hay una figura de una partícula que pasa cerca de O y otra de una patinadora.</p>
 <h3>Impulso angular</h3>
@@ -288,12 +244,12 @@ details[open]{padding-bottom:12px}
 </ul>
 </div>
 <div>
-<div class="ex"><h3>Ejemplo 9: torque que varía en el tiempo</h3>
+<div class="ex"><h3>Ejemplo 6: torque que varía en el tiempo</h3>
 <p>Una rueda con <i>I</i> = 0.3 kg·m² gira a 5 rad/s. Entre t = 0 y t = 3 s se le aplica un torque <i>τ</i>(<i>t</i>) = 2<i>t</i> N·m. ¿Con qué rapidez gira al final?</p>
 <ol><li>Impulso angular: ∫₀³ 2<i>t</i> d<i>t</i> = 9 N·m·s.</li>
 <li><i>Iω<sub>f</sub></i> = <i>Iω<sub>i</sub></i> + 9, así que 0.3<i>ω<sub>f</sub></i> = 1.5 + 9 y <strong><i>ω<sub>f</sub></i> = 35 rad/s</strong>.</li>
 <li>Con un torque variable, <i>α</i> no es constante y no sirven las fórmulas de cinemática con aceleración constante. El impulso evita resolver la ecuación diferencial.</li></ol></div>
-<div class="ex"><h3>Ejemplo 10: collarín en una barra giratoria</h3>
+<div class="ex"><h3>Ejemplo 7: collarín en una barra giratoria</h3>
 <p>Una barra horizontal (<i>I</i> = 0.5 kg·m²) gira libremente a 4 rad/s. Un collarín de 1 kg, a 0.2 m del eje, se suelta y desliza hasta un tope a 0.8 m.</p>
 <ol><li>No hay torque externo en el eje, así que <i>H</i> se conserva: (0.5 + 1·0.2²)·4 = (0.5 + 1·0.8²)<i>ω<sub>f</sub></i>.</li>
 <li>2.16 = 1.14<i>ω<sub>f</sub></i>, de donde <strong><i>ω<sub>f</sub></i> ≈ 1.89 rad/s</strong>.</li>
@@ -303,7 +259,7 @@ details[open]{padding-bottom:12px}
 
 <section class="band" id="polares"><div class="wrap duo">
 <div>
-<h2>6. Movimiento en coordenadas polares</h2>
+<h2>5. Movimiento en coordenadas polares</h2>
 <p>Cuando una partícula gira y además cambia su distancia al origen (un collarín en una barra que gira, una masa en una cuerda que se recoge, un satélite), conviene describirla con <i>r</i> y <i>θ</i>. Los vectores unitarios son:</p>
 <ul>
 <li><b class="vec">ê</b><sub>r</sub>: apunta hacia afuera, desde O hacia la partícula.</li>
@@ -345,7 +301,7 @@ details[open]{padding-bottom:12px}
 
 <section class="band" id="polares-h"><div class="wrap duo">
 <div>
-<h2>7. Polares y momentum angular: la misma ecuación</h2>
+<h2>6. Polares y momentum angular: la misma ecuación</h2>
 <p>Esta es la conexión que une toda la ayudantía. Para una partícula, solo la velocidad transversal <i>rω</i> aporta al momentum angular respecto a O, porque la radial es paralela a <b class="vec">r</b>:</p>
 <div class="eq"><i>H</i><sub>O</sub> = <i>r</i> · <i>m</i>(<i>rω</i>) = <i>m r</i>² <i>ω</i></div>
 <p>Si derivas respecto al tiempo:</p>
@@ -354,13 +310,13 @@ details[open]{padding-bottom:12px}
 <div class="note"><strong>Fuerzas centrales.</strong> Si la única fuerza apunta hacia O (una cuerda que pasa por un agujero, la gravedad de un planeta), entonces <i>F<sub>θ</sub></i> = 0, el torque es cero y <i>r</i>²<i>ω</i> es constante. Al acercarse a O, gira más rápido. Es la segunda ley de Kepler y el caso "cuerda recogida" de la figura: el indicador de <i>H</i> no cambia.</div>
 </div>
 <div>
-<div class="ex"><h3>Ejemplo 11: cuenta libre en una barra que gira a ω constante</h3>
+<div class="ex"><h3>Ejemplo 8: cuenta libre en una barra que gira a ω constante</h3>
 <p>Un motor mantiene una barra horizontal girando a <i>ω</i> = 2 rad/s. Una cuenta de 0.2 kg puede deslizar sin roce por la barra y parte del reposo relativo en <i>r</i>₀ = 0.1 m. Calcula, en t = 1 s, la fuerza de la barra sobre la cuenta y el torque del motor.</p>
 <ol><li>Radial: no hay fuerza a lo largo de la barra (sin roce), así que <i>r̈</i> − <i>rω</i>² = 0. La solución con <i>ṙ</i>(0) = 0 es <i>r</i> = <i>r</i>₀ cosh(<i>ωt</i>).</li>
 <li>En t = 1 s: <i>r</i> = 0.1·cosh 2 = 0.376 m y <i>ṙ</i> = 0.1·2·sinh 2 = 0.725 m/s.</li>
 <li>Transversal: <i>α</i> = 0, así que <i>a<sub>θ</sub></i> = 2<i>ṙω</i> = 2.90 m/s². La barra empuja de lado con <strong><i>N</i> = <i>m a<sub>θ</sub></i> = 0.580 N</strong>.</li>
 <li>Torque del motor sobre la cuenta: <i>τ</i> = <i>rN</i> = <strong>0.218 N·m</strong>. Comprobación: d(<i>mr</i>²<i>ω</i>)/dt = 2<i>mrṙω</i> = 0.218 N·m.</li></ol></div>
-<div class="ex"><h3>Ejemplo 12: cuerda que se recoge por un agujero</h3>
+<div class="ex"><h3>Ejemplo 9: cuerda que se recoge por un agujero</h3>
 <p>Una masa de 0.5 kg gira sobre una mesa sin roce a 1 m del agujero, con <i>ω</i>₀ = 2 rad/s. Desde abajo se recoge la cuerda a 0.2 m/s constante. Cuando <i>r</i> = 0.5 m, calcula <i>ω</i>, <i>α</i> y la tensión.</p>
 <ol><li>Fuerza central, así que <i>r</i>²<i>ω</i> se conserva: <i>ω</i> = 2·(1/0.5)² = <strong>8 rad/s</strong>.</li>
 <li><i>a<sub>θ</sub></i> = 0 ⇒ <i>rα</i> + 2<i>ṙω</i> = 0, así que <i>α</i> = −2(−0.2)(8)/0.5 = <strong>6.4 rad/s²</strong>. Acelera su giro sin que nada la empuje de lado.</li>
@@ -373,8 +329,6 @@ details[open]{padding-bottom:12px}
 <h2>Errores típicos</h2>
 <ol>
 <li><strong>Olvidar dividir por M</strong> o usar una M que no corresponde, por ejemplo no restar el agujero en el denominador.</li>
-<li><strong>Integrar con la variable equivocada:</strong> escribir d<i>m</i> = <i>ρ</i> d<i>z</i> sin el área, o usar un área constante cuando cambia con la altura.</li>
-<li><strong>Suponer que G está en el centro geométrico</strong> cuando la densidad no es uniforme.</li>
 <li><strong>Confundir el orden del producto cruz.</strong> <b class="vec">F</b> × <b class="vec">r</b> = −<b class="vec">r</b> × <b class="vec">F</b>: el signo cambia.</li>
 <li><strong>Olvidar el término 2<i>ṙω</i></strong>, o el −<i>rω</i>² cuando <i>ṙ</i> = 0 en un instante. Que la partícula no se aleje en ese instante no significa que no haya aceleración radial.</li>
 <li><strong>Escribir <i>a<sub>r</sub></i> = <i>r̈</i></strong> como en cartesianas. En polares, la aceleración radial siempre incluye −<i>rω</i>².</li>
@@ -399,7 +353,7 @@ details[open]{padding-bottom:12px}
 <div class="grid2" id="quiz"></div>
 </div></section>
 
-<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 12 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 12 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Se omite el cálculo integral del centro de masa, que no entra en el examen. Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
 
 <script>
 {
@@ -457,23 +411,6 @@ function hRead(){Hh.a=+$('h-a').value;const mx=Hh.R-Hh.a;$('h-d').max=mx.toFixed
  $('h-A').textContent=fx(Math.PI*(Hh.R**2-Hh.a**2),2)+' m²';$('h-x').textContent=fx(-(Hh.a**2)*Hh.d/(Hh.R**2-Hh.a**2),3)+' m';hv.draw();}
 ['h-a','h-d'].forEach(i=>$(i).addEventListener('input',hRead));
 
-const D={k:1};
-const dv=view('f-col',(s,W,H)=>{
- const top=30,bot=H-40,hh=bot-top,cw=Math.min(150,W*0.3),x0=W*0.36-cw/2,N=24,k=D.k;
- let h='';const rho=z=>1+k*z,rmax=Math.max(rho(0),rho(1));
- for(let i=0;i<N;i++){const z=(i+0.5)/N,y=bot-(i+1)*hh/N;h+=`<rect x="${x0}" y="${y}" width="${cw}" height="${hh/N+0.5}" style="fill:${css('edge')};fill-opacity:${(0.12+0.78*rho(z)/rmax).toFixed(3)}"/>`;}
- h+=`<rect x="${x0}" y="${top}" width="${cw}" height="${hh}" style="fill:none;stroke:${css('edge')};stroke-width:1.5"/>`;
- const zs=0.72,ys=bot-zs*hh;h+=`<rect x="${x0-6}" y="${ys-5}" width="${cw+12}" height="10" style="fill:none;stroke:${css('blue')};stroke-width:2"/>`;
- h+=tx(x0+cw+16,ys+5,'capa: dm = ρ(z)A dz','blue','start',13);
- h+=ln(x0-34,bot,x0-34,top,'mute',1.2)+tx(x0-40,top+4,'H','mute','end',13)+tx(x0-40,bot+4,'0','mute','end',13)+tx(x0-34,top-10,'z','mute','middle',13);
- const yh=bot-0.5*hh;h+=ln(x0-14,yh,x0+cw+14,yh,'mute',1.2,'5 4')+tx(x0+cw+16,yh+20,'H/2 (densidad uniforme)','mute','start',13);
- const zg=(3+2*k)/(6+3*k),yg=bot-zg*hh,gx=x0+cw/2;
- h+=ln(x0-14,yg,x0+cw+14,yg,'force',2)+tx(x0+cw+16,yg-6,'G en z = '+fx(zg,3)+' H','force','start',14);
- h+=`<circle cx="${gx}" cy="${yg}" r="10" style="fill:${css('bg')};stroke:${css('ink')};stroke-width:2"/><path d="M${gx} ${yg-10}A10 10 0 0 1 ${gx+10} ${yg}L${gx} ${yg}Z M${gx} ${yg+10}A10 10 0 0 1 ${gx-10} ${yg}L${gx} ${yg}Z" style="fill:${css('ink')}"/>`;
- s.innerHTML=h;
-});
-function dRead(){D.k=+$('d-k').value;$('d-ko').textContent=fx(D.k,1);$('d-z').textContent=fx((3+2*D.k)/(6+3*D.k),3);$('d-M').textContent=fx(1+D.k/2,2);$('d-r').textContent=fx(1+D.k,2);dv.draw();}
-$('d-k').addEventListener('input',dRead);
 
 const O={mode:'a',show:'v',w0:1.5,u:0.15,r:0.25,rd:0.15,th:0,w:1.5,trail:[],m:1};
 function oReset(){O.trail=[];O.th=0;O.w=O.w0;if(O.mode==='a'){O.r=0.2;O.rd=O.u;}else if(O.mode==='b'){O.r=0.12;O.rd=0;}else{O.r=0.95;O.rd=-O.u;O.w=O.w0*0.4;}}
@@ -506,8 +443,6 @@ document.querySelectorAll('[data-pv]').forEach(b=>b.addEventListener('click',()=
 
 const EX=[
 ['Placa con una esquina recortada','A una placa cuadrada uniforme de 2 × 2 m (de x = 0 a 2, y = 0 a 2) se le recorta el cuadrado de 1 × 1 m de la esquina superior derecha. ¿Dónde queda G?','Placa completa: área 4, centro (1, 1). Recorte: área −1, centro (1.5, 1.5). <i>x<sub>G</sub></i> = (4·1 − 1·1.5)/(4 − 1) = 2.5/3 = <strong>0.833 m</strong>, y por simetría respecto a y = x, <strong><i>y<sub>G</sub></i> = 0.833 m</strong>. G se aleja de la esquina recortada.'],
-['Varilla con densidad cuadrática','Una varilla de largo <i>L</i> tiene <i>λ</i>(<i>x</i>) = <i>λ</i>₀(1 + <i>x</i>²/<i>L</i>²). Encuentra su masa y su centro de masa.','<i>M</i> = ∫₀<sup>L</sup> <i>λ</i>₀(1 + <i>x</i>²/<i>L</i>²) d<i>x</i> = (4/3)<i>λ</i>₀<i>L</i>. ∫ <i>x</i> d<i>m</i> = <i>λ</i>₀(<i>L</i>²/2 + <i>L</i>²/4) = (3/4)<i>λ</i>₀<i>L</i>². <strong><i>x<sub>G</sub></i> = (3/4)/(4/3)·<i>L</i> = 9<i>L</i>/16 ≈ 0.5625<i>L</i></strong>, algo más allá del centro porque el extremo lejano es más denso.'],
-['Cono sólido','Un cono sólido uniforme tiene altura <i>h</i> y radio de base <i>R</i>. Con el vértice en z = 0 y la base en z = <i>h</i>, ¿a qué altura está G?','Por capas: a la altura <i>z</i>, el radio es <i>Rz</i>/<i>h</i>, así que d<i>m</i> = <i>ρπ</i>(<i>Rz</i>/<i>h</i>)² d<i>z</i>. <i>M</i> = <i>ρπR</i>²<i>h</i>/3 y ∫ <i>z</i> d<i>m</i> = <i>ρπR</i>²<i>h</i>²/4. <strong><i>z<sub>G</sub></i> = 3<i>h</i>/4 desde el vértice</strong>, es decir, a <i>h</i>/4 de la base.'],
 ['Torque en 3D','Una fuerza <b class="vec">F</b> = (2, −1, 3) N actúa en <b class="vec">r</b> = (1, 0, 2) m. Calcula <b class="vec">τ</b><sub>O</sub> y su magnitud.','<i>τ<sub>x</sub></i> = 0·3 − 2·(−1) = 2. <i>τ<sub>y</sub></i> = 2·2 − 1·3 = 1. <i>τ<sub>z</sub></i> = 1·(−1) − 0·2 = −1. <strong><b class="vec">τ</b> = (2, 1, −1) N·m</strong> y |<b class="vec">τ</b>| = √6 ≈ <strong>2.45 N·m</strong>. Verificación: <b class="vec">τ</b>·<b class="vec">r</b> = 2 + 0 − 2 = 0.'],
 ['Collarín con movimiento dado','Un brazo gira con <i>θ</i> = 0.5<i>t</i>² rad, y un collarín se mueve por él con <i>r</i> = 0.2 + 0.1<i>t</i>² m. Calcula la velocidad y la aceleración del collarín en t = 1 s.','En t = 1: <i>ω</i> = <i>t</i> = 1 rad/s, <i>α</i> = 1 rad/s², <i>r</i> = 0.3 m, <i>ṙ</i> = 0.2<i>t</i> = 0.2 m/s y <i>r̈</i> = 0.2 m/s². <strong><b class="vec">v</b> = 0.2 <b class="vec">ê</b><sub>r</sub> + 0.3 <b class="vec">ê</b><sub>θ</sub> m/s</strong>. <i>a<sub>r</sub></i> = 0.2 − 0.3·1² = −0.1 y <i>a<sub>θ</sub></i> = 0.3·1 + 2·0.2·1 = 0.7, así que <strong><b class="vec">a</b> = −0.1 <b class="vec">ê</b><sub>r</sub> + 0.7 <b class="vec">ê</b><sub>θ</sub> m/s²</strong>, con |<b class="vec">a</b>| ≈ 0.707 m/s².'],
 ['Dos collarines que se deslizan','Una barra horizontal con <i>I</i> = 2 kg·m² gira libre a 3 rad/s. Lleva dos collarines de 1 kg a 0.2 m del eje, que se sueltan y deslizan hasta topes a 0.8 m. ¿Cuál es la ω final? ¿Se conserva la energía?','<i>H</i> se conserva: (2 + 2·1·0.2²)·3 = 6.24 kg·m²/s. <i>I<sub>f</sub></i> = 2 + 2·0.8² = 3.28 kg·m², así que <strong><i>ω<sub>f</sub></i> = 6.24/3.28 ≈ 1.90 rad/s</strong>. La energía baja de 9.36 J a 5.94 J: <strong>no se conserva</strong>. Se pierde en el choque de los collarines con los topes.'],
@@ -518,7 +453,6 @@ $('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejerci
 const QZ=[
 ['Si duplicas todas las masas de un sistema, el centro de masa:',['Se mueve hacia la masa mayor','No cambia','Se duplica su distancia al origen'],1,'Al escalar todas las masas por el mismo factor, este se cancela entre numerador y denominador.'],
 ['¿Puede el centro de masa quedar en un punto donde no hay material?',['No, siempre está dentro del cuerpo','Sí, por ejemplo en un anillo o una placa en L','Solo si la densidad no es uniforme'],1,'G es un promedio de posiciones, no un punto con masa. En un anillo queda en el centro vacío.'],
-['Un cilindro tiene sección constante y densidad ρ(z). ¿Cuál es el elemento de masa?',['dm = ρ dz','dm = ρ(z) A dz','dm = ρ A z'],1,'Una capa de grosor dz tiene volumen A dz, y su masa es la densidad por el volumen.'],
 ['Un collarín gira con la barra a r constante y ω constante. Su aceleración:',['Es cero','Apunta hacia el eje y vale rω²','Es tangencial y vale 2ṙω'],1,'Con ṙ = r̈ = α = 0, solo sobrevive la centrípeta, −rω² en dirección radial.'],
 ['¿Qué representa el término 2ṙω?',['La aceleración centrípeta','La aceleración de Coriolis, por moverse radialmente mientras gira','La aceleración angular'],1,'Aparece cuando la partícula se aleja o se acerca a O mientras gira. Es transversal.'],
 ['Una masa atada a una cuerda que pasa por un agujero se recoge hacia él. ¿Qué se conserva?',['La rapidez','La energía cinética','r²ω, es decir, el momentum angular respecto al agujero'],2,'La tensión es central: no tiene torque respecto a O, así que H = m r² ω se conserva.']
@@ -537,7 +471,7 @@ function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;
   ov.draw();}
  requestAnimationFrame(loop);}
 
-cRead();hRead();dRead();oRead();
+cRead();hRead();oRead();
 const stk=[...document.querySelectorAll('.sticky')];
 const fitSticky=()=>{for(const el of stk){const k=el.querySelector('[data-keep]'),h=k?k.getBoundingClientRect().bottom-el.getBoundingClientRect().top:el.offsetHeight;el.style.top=Math.min(76,innerHeight-h-12)+'px';}};
 const stkRo=new ResizeObserver(fitSticky);stk.forEach(e=>stkRo.observe(e));addEventListener('resize',fitSticky);fitSticky();

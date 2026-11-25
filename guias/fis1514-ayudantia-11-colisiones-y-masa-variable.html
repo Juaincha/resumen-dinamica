@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Colisiones y masa variable</title>
-<meta name="description" content="Guía interactiva de FIS1514: conservación del momentum, coeficiente de restitución, choques oblicuos, energía en los choques y cohetes, con figuras que se mueven y ejercicios resueltos.">
+<title>Colisiones</title>
+<meta name="description" content="Material para estudiar para el examen de FIS1514: conservación del momentum, coeficiente de restitución, choques oblicuos y energía en los choques, con figuras que se mueven y ejercicios resueltos.">
 <link rel="canonical" href="https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-11-colisiones-y-masa-variable.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Guías de estudio">
 <meta property="og:locale" content="es_CL">
-<meta property="og:title" content="Colisiones y masa variable · Ayudantía 11">
-<meta property="og:description" content="Guía interactiva de FIS1514: conservación del momentum, coeficiente de restitución, choques oblicuos, energía en los choques y cohetes, con figuras que se mueven y ejercicios resueltos.">
+<meta property="og:title" content="Colisiones · Ayudantía 11">
+<meta property="og:description" content="Material para estudiar para el examen de FIS1514: conservación del momentum, coeficiente de restitución, choques oblicuos y energía en los choques, con figuras que se mueven y ejercicios resueltos.">
 <meta property="og:url" content="https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-11-colisiones-y-masa-variable.html">
 <meta property="og:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-ayudantia-11.jpg">
 <meta property="og:image:secure_url" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-ayudantia-11.jpg">
@@ -19,17 +19,17 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Dos discos chocando con su línea de impacto">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Colisiones y masa variable · Ayudantía 11">
-<meta name="twitter:description" content="Guía interactiva de FIS1514: conservación del momentum, coeficiente de restitución, choques oblicuos, energía en los choques y cohetes, con figuras que se mueven y ejercicios resueltos.">
+<meta name="twitter:title" content="Colisiones · Ayudantía 11">
+<meta name="twitter:description" content="Material para estudiar para el examen de FIS1514: conservación del momentum, coeficiente de restitución, choques oblicuos y energía en los choques, con figuras que se mueven y ejercicios resueltos.">
 <meta name="twitter:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-ayudantia-11.jpg">
 <meta name="theme-color" content="#0f5fa8">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <meta name="guia-curso" content="FIS1514 Dinámica">
-<meta name="guia-titulo" content="Colisiones y masa variable">
+<meta name="guia-titulo" content="Colisiones">
 <meta name="guia-fuente" content="Ayudantía 11">
 <meta name="guia-fecha" content="2026-10-27">
-<meta name="guia-temas" content="Momentum, Restitución, Choque oblicuo, Energía en choques, Masa variable">
+<meta name="guia-temas" content="Impulso, Restitución, Choque oblicuo, Energía en choques, Péndulo balístico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=STIX+Two+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -120,19 +120,18 @@ details[open]{padding-bottom:12px}
 <header class="band top">
 <div class="wrap">
 <a href="../index.html" style="display:inline-block;color:#dbe9f8;text-decoration:none;font-weight:600;font-size:15px;margin-bottom:14px;padding:10px 0">← Todas las guías</a>
-<h1>Colisiones y masa variable</h1>
-<p>Guía interactiva para FIS1514 Dinámica, basada en la Ayudantía 11. Conservación del momentum, coeficiente de restitución, choques oblicuos, energía en los choques y cuerpos que ganan o pierden masa.</p>
+<h1>Colisiones</h1>
+<p>Guía interactiva para FIS1514 Dinámica, basada en la Ayudantía 11. Conservación del momentum, coeficiente de restitución, choques oblicuos y energía en los choques. No incluye masa variable, que no entra en el examen.</p>
 </div>
 </header>
 <nav aria-label="Secciones"><div class="scroll">
-<a href="#resumen">Resumen</a><a href="#impulso">Impulso</a><a href="#restitucion">Choques en línea</a><a href="#oblicuo">Choque oblicuo</a><a href="#energia">Energía</a><a href="#masa-variable">Masa variable</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
+<a href="#resumen">Resumen</a><a href="#impulso">Impulso</a><a href="#restitucion">Choques en línea</a><a href="#oblicuo">Choque oblicuo</a><a href="#energia">Energía</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
 </div></nav>
 
 <section class="band" id="resumen"><div class="wrap duo">
 <div>
 <h2>Resumen: qué se conserva en cada situación</h2>
 <p>En un choque casi siempre se conserva el momentum total, pero la energía cinética casi nunca. El coeficiente de restitución <i>e</i> es la ecuación que falta para resolver el choque: dice cuánta "rebotabilidad" tiene.</p>
-<p>Cuando un cuerpo gana o pierde masa (un cohete, un carro que recoge arena), la segunda ley necesita un término extra: el momentum que traen o se llevan los flujos de materia.</p>
 <p>Notación: en negrita van los vectores (<b class="vec">v</b>, <b class="vec">p</b>), en cursiva sus componentes o magnitudes. Los subíndices i y f indican antes y después del choque.</p>
 </div>
 <div class="scroll"><table class="stack">
@@ -143,8 +142,6 @@ details[open]{padding-bottom:12px}
 <tr><td data-l="Situación">Choque elástico</td><td data-l="Qué usar"><i>e</i> = 1</td><td data-l="Ecuación">también se conserva <i>K</i></td></tr>
 <tr><td data-l="Situación">Quedan pegados (plástico)</td><td data-l="Qué usar"><i>e</i> = 0</td><td data-l="Ecuación">misma velocidad normal después</td></tr>
 <tr><td data-l="Situación">Choque oblicuo entre cuerpos lisos</td><td data-l="Qué usar">Ejes n (impacto) y t (tangente)</td><td data-l="Ecuación">momentum y <i>e</i> en n; cada <i>v<sub>t</sub></i> no cambia</td></tr>
-<tr><td data-l="Situación">Cuerpo que gana o pierde masa</td><td data-l="Qué usar">Balance de masa variable</td><td data-l="Ecuación"><i>m</i><b class="vec">a</b> = Σ<b class="vec">F</b><sub>ext</sub> + Σ <i>ṁ<sub>k</sub></i> <b class="vec">u</b><sub>rel,k</sub></td></tr>
-<tr><td data-l="Situación">Cohete sin fuerzas externas</td><td data-l="Qué usar">Integrar el balance</td><td data-l="Ecuación">Δ<i>v</i> = <i>u</i> ln(<i>m</i>₀/<i>m<sub>f</sub></i>)</td></tr>
 </tbody></table></div>
 </div></section>
 
@@ -285,70 +282,6 @@ details[open]{padding-bottom:12px}
 </div>
 </div></section>
 
-<section class="band" id="masa-variable"><div class="wrap duo">
-<div>
-<h2>5. Cuerpos con masa variable</h2>
-<p>Cuando un cuerpo incorpora o expulsa materia, <i>F</i> = <i>ma</i> con una masa fija ya no basta. Su momentum cambia por dos motivos: las fuerzas externas y el momentum que traen o se llevan los flujos de materia que cruzan su borde.</p>
-<div class="eq"><i>m</i><b class="vec">a</b> = Σ<b class="vec">F</b><sub>ext</sub> + Σ<sub><i>k</i></sub> <i>ṁ<sub>k</sub></i> <b class="vec">u</b><sub>rel,k</sub>,&nbsp;&nbsp; <b class="vec">u</b><sub>rel,k</sub> = <b class="vec">v</b><sub>flujo,k</sub> − <b class="vec">v</b><sub>cuerpo</sub></div>
-<ul>
-<li><i>m</i> es la masa <em>instantánea</em> del cuerpo.</li>
-<li><i>ṁ<sub>k</sub></i> &gt; 0 si la materia entra y &lt; 0 si sale. La tasa neta es <i>ṁ</i> = Σ<i>ṁ<sub>k</sub></i>.</li>
-<li><b class="vec">u</b><sub>rel</sub> es la velocidad del material <em>relativa al cuerpo</em>. Lo que importa es con qué velocidad relativa entra o sale.</li>
-</ul>
-<p>El término de flujo ya incluye el momentum que cruza el borde, así que no se agrega otra vez como fuerza. En una dimensión:</p>
-<div class="eq"><i>m a</i> = <i>F</i><sub>ext</sub> + <i>ṁ</i>(<i>v</i><sub>flujo</sub> − <i>v</i>)</div>
-<h3>De dónde sale</h3>
-<p>Mira el sistema "cuerpo + porción d<i>m</i> que va a entrar" durante d<i>t</i>. Ese sistema tiene masa constante, así que vale Newton: Σ<i>F</i> d<i>t</i> = (<i>m</i> + d<i>m</i>)(<i>v</i> + d<i>v</i>) − (<i>m v</i> + d<i>m v</i><sub>flujo</sub>). Despreciando d<i>m</i>·d<i>v</i>, queda <i>m</i> d<i>v</i> = Σ<i>F</i> d<i>t</i> + d<i>m</i>(<i>v</i><sub>flujo</sub> − <i>v</i>), que es la ecuación anterior dividida por d<i>t</i>.</p>
-<h3>Tres casos típicos</h3>
-<ul>
-<li><strong>Cohete:</strong> expulsa gases hacia atrás (<i>ṁ</i> &lt; 0, <i>u</i><sub>rel</sub> = −<i>u</i>). El término <i>ṁu</i><sub>rel</sub> = |<i>ṁ</i>|<i>u</i> empuja hacia adelante: es el <strong>empuje</strong>.</li>
-<li><strong>Carro que recoge material en reposo</strong> (arena que cae vertical, lluvia): <i>ṁ</i> &gt; 0 y <i>u</i><sub>rel</sub> = −<i>v</i>. El término frena al carro. Si nada lo empuja, <i>mv</i> se conserva.</li>
-<li><strong>Material que sale con la velocidad del cuerpo</strong> (arena que se cae por un agujero en el fondo de un carro): <i>u</i><sub>rel</sub> = 0. El término es cero y solo cambia <i>m</i> en <i>F</i> = <i>ma</i>.</li>
-</ul>
-</div>
-<div class="sticky">
-<div class="fig tall" id="f-roc" aria-label="Velocidad de un cohete en función del tiempo, con y sin gravedad"><svg></svg></div>
-<div class="btns" style="margin-top:14px"><button id="r-go" class="main">Lanzar</button><label style="display:flex;gap:8px;align-items:center;font-size:15px;min-height:44px;padding:0 6px"><input type="checkbox" id="r-g" checked style="width:20px;height:20px"> Despegue vertical con gravedad</label></div>
-<div class="ctl" data-keep>
-<div class="row"><label for="r-u">Rapidez de los gases u</label><input type="range" id="r-u" min="1000" max="4500" step="100" value="2500"><output id="r-uo"></output></div>
-<div class="row"><label for="r-f">Fracción de combustible</label><input type="range" id="r-f" min="0.1" max="0.9" step="0.05" value="0.6"><output id="r-fo"></output></div>
-<div class="row"><label for="r-t">Tiempo de quemado</label><input type="range" id="r-t" min="20" max="200" step="5" value="60"><output id="r-to"></output></div>
-</div>
-<div class="stats">
-<div class="stat"><span>Empuje / peso inicial</span><strong id="r-tw"></strong></div>
-<div class="stat"><span>Δv sin gravedad = u ln(m₀/m<sub>f</sub>)</span><strong id="r-dv"></strong></div>
-<div class="stat"><span>v al apagar el motor</span><strong id="r-vf"></strong></div>
-</div>
-<p class="small" style="margin-top:8px">Cohete de 1000 kg al despegar. El combustible se quema a ritmo constante. Con gravedad, el cohete no despega hasta que el empuje supera al peso.</p>
-</div>
-</div></section>
-
-<section class="band" id="masa-ejemplos"><div class="wrap duo">
-<div>
-<div class="ex" style="margin-top:0"><h3>Ejemplo 6: cohete en el espacio</h3>
-<p>Un cohete de 1000 kg, 600 de ellos combustible, expulsa gases a 2000 m/s relativos al cohete. Sin fuerzas externas, ¿cuánto aumenta su rapidez?</p>
-<ol><li>Balance: <i>m</i> d<i>v</i>/d<i>t</i> = <i>ṁ</i>(−<i>u</i>), con <i>ṁ</i> = d<i>m</i>/d<i>t</i> &lt; 0. Entonces d<i>v</i> = −<i>u</i> d<i>m</i>/<i>m</i>.</li>
-<li>Integrando: Δ<i>v</i> = <i>u</i> ln(<i>m</i>₀/<i>m<sub>f</sub></i>) = 2000 ln(1000/400) = <strong>1833 m/s</strong>.</li>
-<li>No depende de qué tan rápido se queme el combustible, solo de la razón de masas y de <i>u</i>. Para duplicar Δ<i>v</i> hay que elevar la razón de masas al cuadrado, por eso los cohetes son casi todo combustible.</li></ol></div>
-<div class="ex"><h3>Ejemplo 7: despegue vertical</h3>
-<p>Un cohete de 5000 kg quema 50 kg/s de combustible y expulsa gases a 2500 m/s. ¿Cuál es su aceleración al despegar?</p>
-<ol><li>Empuje: |<i>ṁ</i>|<i>u</i> = 50·2500 = 125 000 N. Peso: 5000·9.8 = 49 000 N.</li>
-<li><i>m a</i> = −<i>mg</i> + |<i>ṁ</i>|<i>u</i>, así que <i>a</i> = (125 000 − 49 000)/5000 = <strong>15.2 m/s²</strong>.</li>
-<li>La aceleración aumenta con el tiempo, porque el empuje es constante y la masa baja.</li></ol></div>
-</div>
-<div>
-<div class="ex" style="margin-top:0"><h3>Ejemplo 8: carro que recoge arena</h3>
-<p>Un carro de 200 kg rueda sin roce a 3 m/s bajo una tolva que le deja caer 20 kg/s de arena en vertical. ¿Qué rapidez tiene a los 10 s? ¿Qué fuerza haría falta para mantenerlo a 3 m/s?</p>
-<ol><li>En la dirección horizontal la arena llega con <i>v</i><sub>flujo</sub> = 0, así que <i>m</i> d<i>v</i>/d<i>t</i> = <i>ṁ</i>(0 − <i>v</i>), es decir d(<i>mv</i>)/d<i>t</i> = 0.</li>
-<li>Se conserva <i>mv</i>: a los 10 s, <i>m</i> = 400 kg y <i>v</i> = 200·3/400 = <strong>1.5 m/s</strong>.</li>
-<li>Para mantener 3 m/s (<i>a</i> = 0): 0 = <i>F</i> + 20(0 − 3), así que <strong><i>F</i> = 60 N</strong>. Esa fuerza no acelera nada: solo da momentum a la arena que llega.</li></ol></div>
-<div class="ex"><h3>Ejemplo 9: cinta transportadora</h3>
-<p>Cae arena a 30 kg/s sobre una cinta que avanza a 2 m/s. ¿Qué fuerza y qué potencia necesita el motor?</p>
-<ol><li>Igual que el carro a velocidad constante: <i>F</i> = <i>ṁv</i> = 30·2 = <strong>60 N</strong>.</li>
-<li>Potencia: <i>Fv</i> = <strong>120 W</strong>. Pero la arena solo gana ½<i>ṁv</i>² = 60 W de energía cinética: la otra mitad se disipa en el roce mientras la arena se acomoda a la velocidad de la cinta. Es un choque plástico continuo.</li></ol></div>
-</div>
-</div></section>
-
 <section class="band" id="errores"><div class="wrap duo">
 <div>
 <h2>Errores típicos</h2>
@@ -357,18 +290,12 @@ details[open]{padding-bottom:12px}
 <li><strong>Olvidar los signos de las velocidades.</strong> Elige un sentido positivo; una velocidad hacia la izquierda va negativa en el momentum y en <i>e</i>.</li>
 <li><strong>Aplicar <i>e</i> a las rapideces totales en un choque oblicuo.</strong> La restitución solo se aplica a las componentes sobre la línea de impacto.</li>
 <li><strong>Conservar momentum cuando hay una fuerza externa impulsiva</strong>, como un pasador o el suelo en un rebote.</li>
-<li><strong>Escribir <i>F</i> = d(<i>mv</i>)/d<i>t</i> = <i>ma</i> + <i>ṁv</i></strong> sin pensar. Esa fórmula solo vale si la materia que entra o sale está en reposo. Usa siempre la velocidad relativa.</li>
-<li><strong>Equivocar el signo de <i>ṁ</i></strong>: positivo si entra masa, negativo si sale.</li>
-<li><strong>Usar la masa inicial</strong> en vez de la instantánea <i>m</i>(<i>t</i>) en el balance de masa variable.</li>
 </ol>
 </div>
 <div class="ex" style="margin-top:0"><h3>Receta</h3>
 <ol>
-<li><strong>Choques:</strong> define el sistema, los ejes (n-t si es oblicuo) y el sentido positivo. Escribe momentum en cada eje, restitución en n y, si son lisos, <i>v<sub>t</sub></i> constante para cada cuerpo.</li>
+<li>Define el sistema, los ejes (n-t si es oblicuo) y el sentido positivo. Escribe momentum en cada eje, restitución en n y, si son lisos, <i>v<sub>t</sub></i> constante para cada cuerpo.</li>
 <li>Si el problema sigue después del choque (sube una rampa, comprime un resorte), usa energía en esa etapa por separado.</li>
-<li><strong>Masa variable:</strong> define el cuerpo y el sentido positivo. Identifica las fuerzas externas y cada flujo con su <i>ṁ</i> y su signo.</li>
-<li>Calcula <i>u</i><sub>rel</sub> = <i>v</i><sub>flujo</sub> − <i>v</i> con ambas velocidades medidas desde el mismo marco.</li>
-<li>Usa <i>m</i>(<i>t</i>). Si piden la velocidad, integra <i>a</i> = d<i>v</i>/d<i>t</i> con las condiciones iniciales.</li>
 </ol></div>
 </div></section>
 
@@ -380,7 +307,7 @@ details[open]{padding-bottom:12px}
 <div class="grid2" id="quiz"></div>
 </div></section>
 
-<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 11 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 11 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Se omite la parte de masa variable, que no entra en el examen. Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
 
 <script>
 {
@@ -472,40 +399,12 @@ function oRead(){O.b=+$('o-b').value;O.mr=+$('o-mr').value;O.e=+$('o-e').value;$
 const P2={b90:[0.9,1,1],head:[0,1,1]};
 document.querySelectorAll('[data-p2]').forEach(b=>b.addEventListener('click',()=>{const q=P2[b.dataset.p2];$('o-b').value=q[0];$('o-mr').value=q[1];$('o-e').value=q[2];oRead();}));
 
-const R={u:2500,f:0.6,tb:60,g:true,t:0,run:false,m0:1000,sim:null};
-function rSim(){const g=R.g?9.8:0,mdot=R.m0*R.f/R.tb,Tr=mdot*R.u,N=600,tmax=R.tb*1.6,dt=tmax/N;let v=0,y=0;const pts=[],ideal=[];
- for(let i=0;i<=N;i++){const t=i*dt,burning=t<R.tb,m=burning?R.m0-mdot*t:R.m0*(1-R.f);pts.push([t,v,y]);ideal.push([t,R.u*Math.log(R.m0/m)]);
-  let a=(burning?Tr/m:0)-g;if(y<=0&&v<=0&&a<0)a=0;v+=a*dt;y+=v*dt;if(y<0){y=0;if(v<0)v=0;}}
- R.sim={pts,ideal,tmax,Tr,mdot};}
-const rv=view('f-roc',(s,W,H)=>{
- const sm=R.sim;if(!sm)return;const x0=58,x1=W-86,y0=H-40,y1=26,vmax=Math.max(...sm.ideal.map(p=>p[1]),100)*1.08,X=t=>x0+(x1-x0)*t/sm.tmax,Y=v=>y0-(y0-y1)*Math.max(v,-vmax*0.05)/vmax;
- let h='';const step=vmax>3000?1000:vmax>1200?500:200;
- for(let v=0;v<=vmax;v+=step)h+=ln(x0,Y(v),x1,Y(v),'line',1)+tx(x0-8,Y(v)+5,String(v),'mute','end',13);
- for(let i=0;i<=4;i++){const t=sm.tmax*i/4;h+=tx(X(t),y0+20,String(Math.round(t)),'mute','middle',13);}
- h+=tx(x0,y1-8,'v (m/s)','mute','start',13)+tx(x1,y0-8,'t (s)','mute','end',13);
- h+=ln(X(R.tb),y1,X(R.tb),y0,'mute',1.2,'4 4')+tx(X(R.tb)+4,y1+12,'motor apagado','mute','start',13);
- const path=a=>a.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(' ');
- h+=`<path d="${path(sm.ideal)}" style="fill:none;stroke:${css('blue')};stroke-width:2" stroke-dasharray="6 5"/>`;
- const shown=R.run?sm.pts.filter(p=>p[0]<=R.t):sm.pts;
- if(R.g)h+=`<path d="${path(shown)}" style="fill:none;stroke:${css('force')};stroke-width:3"/>`;
- const last=sm.ideal[sm.ideal.length-1];h+=tx(x1+6,Y(last[1])+5,'sin g','blue','start',13);
- if(R.g){const lp=sm.pts[sm.pts.length-1];h+=tx(x1+6,Math.max(Y(lp[1])+5,Y(last[1])+22),'con g','force','start',13);}
- if(R.run){const cur=(R.g?sm.pts:sm.ideal).find(p=>p[0]>=R.t)||sm.pts[sm.pts.length-1];h+=`<circle cx="${X(cur[0])}" cy="${Y(cur[1])}" r="7" style="fill:${css(R.g?'force':'blue')}"/>`;}
- s.innerHTML=h;
-});
-function rRead(){R.u=+$('r-u').value;R.f=+$('r-f').value;R.tb=+$('r-t').value;R.g=$('r-g').checked;$('r-uo').textContent=R.u+' m/s';$('r-fo').textContent=Math.round(R.f*100)+' %';$('r-to').textContent=R.tb+' s';
- rSim();const sm=R.sim,tw=sm.Tr/(R.m0*9.8),dv=R.u*Math.log(1/(1-R.f));$('r-tw').textContent=fx(tw,2);$('r-dv').textContent=Math.round(dv)+' m/s';
- const vend=R.g?(sm.pts.find(p=>p[0]>=R.tb)||[0,0])[1]:dv;$('r-vf').textContent=Math.round(vend)+' m/s';R.run=false;rv.draw();}
-['r-u','r-f','r-t'].forEach(i=>$(i).addEventListener('input',rRead));$('r-g').addEventListener('change',rRead);
-$('r-go').addEventListener('click',()=>{R.t=0;R.run=true;});
 
 const EX=[
 ['Medir e con un rebote','Una pelota se suelta desde 1.5 m y rebota hasta 0.96 m. ¿Cuál es el coeficiente de restitución? ¿Hasta qué altura llega en el segundo rebote?','<i>e</i> = √(<i>h</i>\'/<i>h</i>) = √(0.96/1.5) = <strong>0.8</strong>. En cada rebote la altura se multiplica por <i>e</i>² = 0.64: el segundo llega a 0.96·0.64 ≈ <strong>0.61 m</strong>.'],
 ['Choque con un bloque en reposo','A (1 kg) a 6 m/s choca de frente con B (1 kg) en reposo, con <i>e</i> = 0.7. Encuentra las velocidades finales.','Momentum: 6 = <i>v<sub>A</sub></i> + <i>v<sub>B</sub></i>. Restitución: <i>v<sub>B</sub></i> − <i>v<sub>A</sub></i> = 0.7·6 = 4.2. Entonces <strong><i>v<sub>A</sub></i> = 0.9 m/s</strong> y <strong><i>v<sub>B</sub></i> = 5.1 m/s</strong>. Con <i>e</i> = 1 se intercambiarían: A quedaría quieto y B saldría a 6 m/s.'],
 ['Péndulo balístico','Una bala de 10 g se incrusta en un bloque de 2 kg colgado de una cuerda, y el bloque sube 0.202 m. ¿A qué velocidad iba la bala?','Al revés que en el ejemplo 4. Después del choque: <i>V</i> = √(2<i>gh</i>) = √(2·9.8·0.202) ≈ 1.99 m/s. En el choque: 0.01<i>v</i> = 2.01·1.99, así que <strong><i>v</i> ≈ 400 m/s</strong>.'],
 ['Choque en un cruce','Un auto de 1500 kg al este a 20 m/s choca con uno de 2000 kg al norte a 15 m/s, y quedan pegados. ¿Cuánta energía se disipa?','<i>V</i> = 12.12 m/s a 45°. <i>K</i> antes = ½·1500·20² + ½·2000·15² = 525 000 J. <i>K</i> después = ½·3500·12.12² ≈ 257 000 J. Se disipan <strong>≈ 268 000 J (51 %)</strong>.'],
-['Combustible necesario','Un cohete expulsa gases a 2500 m/s. ¿Qué fracción de su masa inicial debe ser combustible para ganar 3000 m/s en el espacio?','<i>m</i>₀/<i>m<sub>f</sub></i> = e<sup>Δv/u</sup> = e<sup>1.2</sup> ≈ 3.32. La fracción de combustible es 1 − 1/3.32 ≈ <strong>70 %</strong>.'],
-['Carro que pierde arena por abajo','Un carro de 100 kg con 50 kg de arena se empuja con 60 N horizontales, sin roce. La arena se cae por un agujero en el fondo a 5 kg/s. ¿Cuál es la aceleración a los 4 s?','La arena sale con la misma velocidad horizontal del carro, así que <i>u</i><sub>rel</sub> = 0 y el término de flujo se anula. Queda <i>ma</i> = <i>F</i>, con <i>m</i> = 150 − 5·4 = 130 kg: <strong><i>a</i> = 60/130 ≈ 0.46 m/s²</strong>. Perder masa así no frena ni empuja; solo hace más fácil acelerar lo que queda.'],
 ['Choque oblicuo, masas iguales','Una bola de billar a 2 m/s golpea a otra igual, en reposo, de modo que la línea de impacto forma 30° con la velocidad inicial. Choque elástico, bolas lisas. ¿Cómo salen?','En n: <i>v<sub>A,n</sub></i> = 2 cos 30° = 1.73 y <i>v<sub>A,t</sub></i> = 2 sin 30° = 1. Con masas iguales y <i>e</i> = 1, las componentes n se intercambian: <strong>B sale a 1.73 m/s</strong> por la línea de impacto y <strong>A sale a 1 m/s</strong> por la tangente. Forman 90°, como dice la regla.']
 ];
 $('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');
@@ -513,9 +412,7 @@ const QZ=[
 ['En un choque perfectamente plástico (e = 0), ¿qué pasa con la energía cinética?',['Se pierde toda','Se pierde la máxima posible, pero queda la del centro de masa','Se conserva'],1,'El centro de masa sigue moviéndose con P/M; esa energía no se puede perder en un choque interno.'],
 ['¿Por qué se puede ignorar el peso durante un choque?',['Porque es interno','Porque su impulso en un tiempo tan corto es despreciable','Porque se anula con la normal'],1,'El peso es finito y el choque dura milisegundos: fuerza por tiempo es casi cero.'],
 ['En un choque oblicuo entre esferas lisas, la restitución se aplica a:',['Las rapideces totales','Las componentes sobre la línea de impacto','Las componentes tangentes'],1,'La fuerza de contacto actúa solo sobre la línea de impacto; en la tangente las velocidades no cambian.'],
-['Dos bolas de igual masa chocan elásticamente y una estaba en reposo. Si no fue de frente, salen:',['En la misma dirección','Formando 90°','Formando 45°'],1,'Es la regla de los 90° para masas iguales y choque elástico.'],
-['En el balance de masa variable, u_rel es:',['La velocidad del cuerpo','La velocidad del material respecto al cuerpo','La velocidad del material respecto al suelo'],1,'u_rel = v_flujo − v_cuerpo, medidas desde el mismo marco.'],
-['El Δv de un cohete en el espacio depende de:',['La rapidez de los gases y la razón de masas','Solo de qué tan rápido quema el combustible','De la masa de la carga solamente'],0,'Δv = u ln(m₀/m_f): no depende del ritmo de quemado.']
+['Dos bolas de igual masa chocan elásticamente y una estaba en reposo. Si no fue de frente, salen:',['En la misma dirección','Formando 90°','Formando 45°'],1,'Es la regla de los 90° para masas iguales y choque elástico.']
 ];
 $('quiz').innerHTML=QZ.map((q,i)=>`<div class="q" id="q${i}"><p>${q[0]}</p><div class="opts">${q[1].map((o,j)=>`<button data-q="${i}" data-o="${j}">${o}</button>`).join('')}</div><div class="fb" aria-live="polite"></div></div>`).join('');
 $('quiz').addEventListener('click',e=>{const b=e.target.closest('button[data-q]');if(!b)return;const q=QZ[+b.dataset.q],box=$('q'+b.dataset.q);
@@ -526,9 +423,8 @@ let last=null;
 function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;
  if(!reduce){C.t+=dt*0.8;const st=cv.draw();if(C.t>6)C.t=0;
   O.t+=dt;if(O.t>7.5)O.t=0;ov.draw();}
- if(R.run){R.t+=dt*R.sim.tmax/4;if(R.t>R.sim.tmax){R.run=false;}rv.draw();}
  requestAnimationFrame(loop);}
-iRead();cRead();oRead();rRead();
+iRead();cRead();oRead();
 const stk=[...document.querySelectorAll('.sticky')];
 const fitSticky=()=>{for(const el of stk){const k=el.querySelector('[data-keep]'),h=k?k.getBoundingClientRect().bottom-el.getBoundingClientRect().top:el.offsetHeight;el.style.top=Math.min(76,innerHeight-h-12)+'px';}};
 const stkRo=new ResizeObserver(fitSticky);stk.forEach(e=>stkRo.observe(e));addEventListener('resize',fitSticky);fitSticky();

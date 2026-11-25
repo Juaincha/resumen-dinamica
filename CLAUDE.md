@@ -55,6 +55,18 @@ Guarda el PDF en `resumenes/` y crea la guía siguiendo el estilo de `guias/fis1
 
 Después sigue los pasos de la sección anterior.
 
+## Alcance: solo lo que entra en el examen
+
+El sitio es material para estudiar para el examen de FIS1514 Dinámica. Las guías incluyen solo contenidos evaluados. No entran, y no deben aparecer en ninguna guía (ni en secciones, ejemplos, ejercicios, preguntas, tablas de resumen o metadatos):
+
+- Movimiento armónico simple.
+- Masa variable.
+- Roce viscoso.
+- Cálculo integral del centro de masa de un cuerpo (sí entra el centro de masa de partículas y de cuerpos compuestos con centroides conocidos).
+- Cálculo integral del momento de inercia respecto a un eje que pasa por el centro de masa (sí entran la tabla de momentos de inercia y el teorema de Steiner).
+
+Si un resumen trae alguno de estos temas, se omite y se indica en una línea al pie de la guía. Las descripciones para compartir (`description`, `og:description`, `twitter:description`) empiezan con "Material para estudiar para el examen de FIS1514:".
+
 ## Reglas
 
 - Nunca subas PDFs ni otro material original del curso. Solo se publican las guías HTML.

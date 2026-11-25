@@ -16,15 +16,15 @@ window.GUIAS = [
     titulo: "Centro de masa y dinámica rotacional",
     fuente: "Ayudantía 12",
     fecha: "2026-11-03",
-    temas: ["Centro de masa", "Distribución continua", "Torque", "Impulso angular", "Coordenadas polares"]
+    temas: ["Centro de masa", "Cuerpos compuestos", "Torque", "Impulso angular", "Coordenadas polares"]
   },
   {
     archivo: "guias/fis1514-ayudantia-11-colisiones-y-masa-variable.html",
     curso: "FIS1514 Dinámica",
-    titulo: "Colisiones y masa variable",
+    titulo: "Colisiones",
     fuente: "Ayudantía 11",
     fecha: "2026-10-27",
-    temas: ["Momentum", "Restitución", "Choque oblicuo", "Energía en choques", "Masa variable"]
+    temas: ["Impulso", "Restitución", "Choque oblicuo", "Energía en choques", "Péndulo balístico"]
   },
   {
     archivo: "guias/fis1514-ayudantia-10-momentum-impulso-colisiones.html",
