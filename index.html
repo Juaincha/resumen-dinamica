@@ -21,11 +21,8 @@ h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
 .band{padding-block:clamp(28px,4vw,56px);padding-inline:max(5vw,16px)}
 .wrap{max-width:1240px;margin:0 auto}
 header{background:var(--band);color:#fff}
-header p{color:#dbe9f8;max-width:58ch;margin:12px 0 22px}
-.find{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-input[type=search]{font:16px 'Source Sans 3',sans-serif;width:min(100%,420px);min-height:46px;padding:10px 14px;border-radius:8px;border:0;background:#fff;color:#14171c}
-input[type=search]:focus-visible{outline:3px solid #9fd3ff;outline-offset:2px}
-.count{color:#dbe9f8;font-size:15px}
+header{text-align:center}
+header p{color:#dbe9f8;max-width:58ch;margin:12px auto 0}
 .course{margin-bottom:36px}
 .cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,20em),1fr))}
 a.card{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;align-items:start;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--bg);transition:border-color .15s}
@@ -44,10 +41,6 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:14px}
 <div class="wrap">
 <h1>Guías de estudio</h1>
 <p>Resúmenes de ayudantía convertidos en guías interactivas: teoría completa, figuras que se mueven, ejemplos resueltos y ejercicios con solución.</p>
-<div class="find">
-<input type="search" id="q" placeholder="Buscar: torque, rodadura, FIS1514…" aria-label="Buscar guías">
-<span class="count" id="n" aria-live="polite"></span>
-</div>
 </div>
 </header>
 <main class="band"><div class="wrap" id="list"></div></main>
@@ -59,16 +52,12 @@ const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const guias=(window.GUIAS||[]).slice().sort((a,b)=>a.curso.localeCompare(b.curso)||String(b.fecha).localeCompare(String(a.fecha)));
 const fmt=f=>{const d=new Date(f+'T12:00:00');return isNaN(d)?f:d.toLocaleDateString('es-CL',{day:'numeric',month:'long',year:'numeric'});};
 const num=g=>{const m=String(g.fuente).match(/\d+/);return m?m[0]:'·';};
-const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
 function render(){
- const q=norm(document.getElementById('q').value.trim());
- const vis=guias.filter(g=>!q||norm([g.curso,g.titulo,g.fuente,...(g.temas||[])].join(' ')).includes(q));
- document.getElementById('n').textContent=vis.length===1?'1 guía':vis.length+' guías';
- if(!vis.length){document.getElementById('list').innerHTML='<p class="empty">No hay guías que coincidan con esa búsqueda.</p>';return;}
+ const vis=guias;
+ if(!vis.length){document.getElementById('list').innerHTML='<p class="empty">Todavía no hay guías publicadas.</p>';return;}
  const cursos=[...new Set(vis.map(g=>g.curso))];
  document.getElementById('list').innerHTML=cursos.map(c=>`<section class="course"><h2>${esc(c)}</h2><div class="cards">${vis.filter(g=>g.curso===c).map(g=>`<a class="card" href="${esc(g.archivo)}"><div class="badge" aria-hidden="true">${esc(num(g))}</div><div><h3>${esc(g.titulo)}</h3><div class="meta">${esc(g.fuente)} · ${esc(fmt(g.fecha))}</div><div class="tags">${(g.temas||[]).map(t=>`<span>${esc(t)}</span>`).join('')}</div></div></a>`).join('')}</div></section>`).join('');
 }
-document.getElementById('q').addEventListener('input',render);
 render();
 }
 </script>
