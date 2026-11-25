@@ -11,6 +11,7 @@ No hay paso de compilación: lo que está en `main` es lo que se publica.
 index.html      Portada: lista las guías leyendo guias.js. No se edita para agregar guías.
 guias.js        Lista de guías (window.GUIAS). Se regenera a partir de las etiquetas meta.
 guias/          Una página HTML autocontenida por guía.
+img/            Favicon e imágenes de vista previa para compartir (1200 × 630).
 resumenes/      PDFs originales de las ayudantías. Está en .gitignore y nunca se sube.
 .nojekyll       Evita que GitHub Pages procese el sitio con Jekyll.
 ```
@@ -30,6 +31,8 @@ Normalmente Sebastián deja una guía nueva en `guias/` (la hace en el chat de C
      <meta name="guia-temas" content="Torque, Momentum angular, Rodadura">
      ```
    - Al principio del `<header>` hay un enlace `<a href="../index.html">← Todas las guías</a>`. Si no está, agrégalo con el mismo estilo que la guía de ejemplo.
+   - Tiene el bloque de vista previa para compartir (etiquetas `og:` y `twitter:`, favicon y `theme-color`), igual que las guías existentes, con su propia URL, título, descripción e imagen. Las URL deben ser absolutas (`https://juaincha.github.io/resumen-dinamica/...`).
+   - Existe su imagen de vista previa en `img/og-<curso>-<fuente>.jpg`, de 1200 × 630 px y menos de 300 KB, con el mismo estilo que las demás (fondo azul, título en blanco, una ilustración del tema a la derecha). Si no puedes generarla, usa `img/og-portada.jpg` y avísale a Sebastián.
 2. Regenera `guias.js` con todas las guías de `guias/` a partir de sus etiquetas meta. Mantén el formato del archivo actual: `archivo`, `curso`, `titulo`, `fuente`, `fecha` y `temas` como lista.
 3. Abre `index.html` y cada guía nueva en un navegador o con una revisión rápida, y verifica que no haya errores de JavaScript en la consola.
 4. Haz commit con un mensaje en español que nombre las guías (por ejemplo, `Agrega guía FIS1514 Ayudantía 14: trabajo y energía`) y luego push a `main`.
