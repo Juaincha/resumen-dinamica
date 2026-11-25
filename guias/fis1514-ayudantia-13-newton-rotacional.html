@@ -104,36 +104,10 @@ details[open]{padding-bottom:12px}
 </div>
 </header>
 <nav aria-label="Secciones"><div class="scroll">
-<a href="#torque">Torque</a><a href="#momentum">Momentum angular</a><a href="#inercia">Inercia</a><a href="#newton">Newton rotacional</a><a href="#impulso">Impulso angular</a><a href="#conservacion">Conservación</a><a href="#rigido">Cuerpo rígido</a><a href="#rodadura">Rodadura</a><a href="#errores">Errores típicos</a><a href="#ejercicios">Ejercicios</a>
+<a href="#resumen">Resumen</a><a href="#torque">Torque</a><a href="#momentum">Momentum angular</a><a href="#inercia">Inercia</a><a href="#newton">Newton rotacional</a><a href="#impulso">Impulso angular</a><a href="#conservacion">Conservación</a><a href="#rigido">Cuerpo rígido</a><a href="#rodadura">Rodadura</a><a href="#errores">Errores típicos</a><a href="#ejercicios">Ejercicios</a>
 </div></nav>
 
-<div class="band" style="padding-top:20px"><div class="wrap lab" id="torque-lab">
-<div class="fig" id="f-torque" aria-label="Barra con bisagra en O, fuerza aplicada, línea de acción y brazo perpendicular"><svg></svg></div>
-<div class="labside">
-<p style="margin-bottom:6px"><strong>Empuja una barra con bisagra.</strong> Elige dónde y en qué dirección aplicar la fuerza, y suelta la barra para ver cómo gira.</p>
-<div class="ctl">
-<div class="row"><label for="t-r">Punto de aplicación r</label><input type="range" id="t-r" min="0.1" max="2" step="0.05" value="1.5"><output id="t-ro"></output></div>
-<div class="row"><label for="t-p">Ángulo φ entre r y F</label><input type="range" id="t-p" min="0" max="360" step="1" value="60"><output id="t-po"></output></div>
-<div class="row"><label for="t-f">Magnitud F</label><input type="range" id="t-f" min="0" max="20" step="0.5" value="10"><output id="t-fo"></output></div>
-</div>
-<div class="btns" style="margin-top:12px">
-<button class="main" id="t-go">Soltar la barra</button>
-<button data-pre="1.8,90">Perpendicular, lejos</button>
-<button data-pre="0.3,90">Cerca de la bisagra</button>
-<button data-pre="1.5,180">Hacia la bisagra</button>
-</div>
-<label style="display:flex;gap:8px;align-items:center;margin-top:10px;font-size:15px;min-height:44px"><input type="checkbox" id="t-c" checked style="width:20px;height:20px"> Mostrar componentes de F</label>
-<div class="stats">
-<div class="stat"><span>Torque τ = rF sin φ</span><strong id="t-tau"></strong></div>
-<div class="stat"><span>Brazo d⊥</span><strong id="t-d"></strong></div>
-<div class="stat"><span>Aceleración α = τ/I</span><strong id="t-al"></strong></div>
-</div>
-<div class="key"><span><i style="background:var(--force)"></i>Fuerza F</span><span><i style="background:var(--arm)"></i>Brazo d⊥</span><span><i style="background:var(--perp)"></i>F⊥ (hace girar)</span><span><i style="background:var(--mute)"></i>F∥ (no hace girar)</span></div>
-<p class="small" style="margin-top:10px">Barra de 2 m y 3 kg, con I = ML²/3 = 4 kg·m² respecto a la bisagra. Al soltarla, la fuerza gira junto con la barra.</p>
-</div>
-</div></div>
-
-<section class="band" id="mapa"><div class="wrap duo">
+<section class="band" id="resumen"><div class="wrap duo">
 <div>
 <h2>Todo lo de rotación ya lo conoces de traslación</h2>
 <p>Cada idea de este capítulo es la versión "giratoria" de algo que ya usaste con partículas. Si aprendes esta tabla, sabes qué ecuación buscar en cada problema.</p>
@@ -157,7 +131,7 @@ details[open]{padding-bottom:12px}
 <h2>1. Torque: la capacidad de una fuerza para hacer girar</h2>
 <p>El torque respecto a un punto O depende de tres cosas: cuánta fuerza aplicas, dónde la aplicas y en qué dirección. Se define con el producto cruz:</p>
 <div class="eq"><b class="vec">τ</b><sub>O</sub> = <b class="vec">r</b> × <b class="vec">F</b>,&nbsp;&nbsp; |<i>τ</i><sub>O</sub>| = <i>rF</i> sin <i>φ</i></div>
-<p>Aquí <b class="vec">r</b> va desde O hasta el punto donde actúa la fuerza, y <i>φ</i> es el ángulo entre <b class="vec">r</b> y <b class="vec">F</b>. La expresión <i>rF</i> sin <i>φ</i> se puede leer de dos formas equivalentes, y en el laboratorio de arriba ves ambas:</p>
+<p>Aquí <b class="vec">r</b> va desde O hasta el punto donde actúa la fuerza, y <i>φ</i> es el ángulo entre <b class="vec">r</b> y <b class="vec">F</b>. La expresión <i>rF</i> sin <i>φ</i> se puede leer de dos formas equivalentes, y en la figura ves ambas:</p>
 <ul>
 <li><strong>Con componentes de la fuerza:</strong> <i>τ</i> = <i>r</i> · (<i>F</i> sin <i>φ</i>) = <i>r F</i>⊥. Solo la parte de F perpendicular a la barra (violeta) la hace girar. La parte paralela (gris) tira de la bisagra y no produce giro.</li>
 <li><strong>Con el brazo:</strong> <i>τ</i> = <i>F</i> · (<i>r</i> sin <i>φ</i>) = <i>F d</i>⊥. Prolongas la fuerza hasta formar su línea de acción (punteada) y mides la distancia perpendicular desde O (verde).</li>
@@ -168,8 +142,6 @@ details[open]{padding-bottom:12px}
 <div class="eq"><i>τ<sub>z</sub></i> = <i>x F<sub>y</sub></i> − <i>y F<sub>x</sub></i></div>
 <p>Aquí (<i>x</i>, <i>y</i>) son las coordenadas del punto de aplicación medidas desde O. Esta fórmula evita la mayoría de los errores de signo.</p>
 <div class="note"><strong>Torque cero.</strong> Si la línea de acción pasa por O, el brazo es cero y τ<sub>O</sub> = 0, aunque la fuerza sea enorme. Esto es una herramienta: si eliges O sobre una fuerza desconocida (una reacción en un pasador, una tensión), esa fuerza desaparece de la ecuación de torques.</div>
-</div>
-<div>
 <div class="ex"><h3>Ejemplo 1: llave inglesa</h3>
 <p>Una llave de 0.25 m se empuja en su extremo con 80 N, formando 60° con la llave. ¿Cuál es el torque sobre la tuerca?</p>
 <ol><li><i>τ</i> = <i>rF</i> sin <i>φ</i> = 0.25 · 80 · sin 60° = <strong>17.3 N·m</strong>.</li>
@@ -184,6 +156,30 @@ details[open]{padding-bottom:12px}
 <li>15 N hacia abajo a 1 m: −15·1 = −15 N·m (horario).</li>
 <li>20 N a lo largo de la barra: su línea pasa por O, así que aporta 0.</li>
 <li>Torque neto: Σ<i>τ</i><sub>O</sub> = <strong>+5 N·m</strong>. La barra empieza a girar en sentido antihorario.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-torque" style="min-height:460px" aria-label="Barra con bisagra en O, fuerza aplicada, línea de acción y brazo perpendicular"><svg></svg></div>
+
+<p style="margin:14px 0 6px"><strong>Empuja una barra con bisagra.</strong> Elige dónde y en qué dirección aplicar la fuerza, y suelta la barra para ver cómo gira.</p>
+<div class="ctl">
+<div class="row"><label for="t-r">Punto de aplicación r</label><input type="range" id="t-r" min="0.1" max="2" step="0.05" value="1.5"><output id="t-ro"></output></div>
+<div class="row"><label for="t-p">Ángulo φ entre r y F</label><input type="range" id="t-p" min="0" max="360" step="1" value="60"><output id="t-po"></output></div>
+<div class="row"><label for="t-f">Magnitud F</label><input type="range" id="t-f" min="0" max="20" step="0.5" value="10"><output id="t-fo"></output></div>
+</div>
+<div class="btns" style="margin-top:12px">
+<button class="main" id="t-go">Soltar la barra</button>
+<button data-pre="1.8,90">Perpendicular, lejos</button>
+<button data-pre="0.3,90">Cerca de la bisagra</button>
+<button data-pre="1.5,180">Hacia la bisagra</button>
+</div>
+<label style="display:flex;gap:8px;align-items:center;margin-top:10px;font-size:15px;min-height:44px"><input type="checkbox" id="t-c" checked style="width:20px;height:20px"> Mostrar componentes de F</label>
+<div class="stats">
+<div class="stat"><span>Torque τ = rF sin φ</span><strong id="t-tau"></strong></div>
+<div class="stat"><span>Brazo d⊥</span><strong id="t-d"></strong></div>
+<div class="stat"><span>Aceleración α = τ/I</span><strong id="t-al"></strong></div>
+</div>
+<div class="key"><span><i style="background:var(--force)"></i>Fuerza F</span><span><i style="background:var(--arm)"></i>Brazo d⊥</span><span><i style="background:var(--perp)"></i>F⊥ (hace girar)</span><span><i style="background:var(--mute)"></i>F∥ (no hace girar)</span></div>
+<p class="small" style="margin-top:10px">Barra de 2 m y 3 kg, con I = ML²/3 = 4 kg·m² respecto a la bisagra. Al soltarla, la fuerza gira junto con la barra.</p>
 </div>
 </div></section>
 
@@ -439,7 +435,7 @@ function view(id,draw){const box=$(id),s=box.querySelector('svg');const v={box,s
 
 const T={r:1.5,phi:60,F:10,beta:0,run:false,t:0,I:4};
 const tv=view('f-torque',(s,W,H)=>{
- const sc=Math.min((W-90)/2.5,(H-40)/3.4),O={x:Math.max(70,W/2-sc*1.05),y:H*0.5};
+ const t0=Math.sin(T.phi*Math.PI/180)*T.F,ox=Math.max(64,W*0.17),sc=Math.min((W-ox-36)/2.2,(H*0.7-34)/2.35),O={x:ox,y:t0<-0.01?H*0.3:H*0.7};
  const b=T.beta,e={x:Math.cos(b),y:-Math.sin(b)},n={x:-Math.sin(b),y:-Math.cos(b)};
  const P={x:O.x+T.r*sc*e.x,y:O.y+T.r*sc*e.y};
  const a=b+T.phi*Math.PI/180,u={x:Math.cos(a),y:-Math.sin(a)};
