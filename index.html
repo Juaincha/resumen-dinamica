@@ -69,14 +69,14 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:14px}
 <script>
 {
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const guias=(window.GUIAS||[]).slice().sort((a,b)=>a.curso.localeCompare(b.curso)||String(b.fecha).localeCompare(String(a.fecha)));
+const guias=(window.GUIAS||[]).slice().sort((a,b)=>a.curso.localeCompare(b.curso)||String(a.fecha).localeCompare(String(b.fecha)));
 const fmt=f=>{const d=new Date(f+'T12:00:00');return isNaN(d)?f:d.toLocaleDateString('es-CL',{day:'numeric',month:'long',year:'numeric'});};
-const num=g=>{const m=String(g.fuente).match(/\d+/);return m?m[0]:'·';};
+const num=g=>{const mismo=guias.filter(x=>x.curso===g.curso);return String(mismo.indexOf(g)+1);};
 function render(){
  const vis=guias;
  if(!vis.length){document.getElementById('list').innerHTML='<p class="empty">Todavía no hay guías publicadas.</p>';return;}
  const cursos=[...new Set(vis.map(g=>g.curso))];
- document.getElementById('list').innerHTML=cursos.map(c=>`<section class="course"><h2>${esc(c)}</h2><div class="cards">${vis.filter(g=>g.curso===c).map(g=>`<a class="card" href="${esc(g.archivo)}"><div class="badge" aria-hidden="true">${esc(num(g))}</div><div><h3>${esc(g.titulo)}</h3><div class="meta">${esc(g.fuente)} · ${esc(fmt(g.fecha))}</div><div class="tags">${(g.temas||[]).map(t=>`<span>${esc(t)}</span>`).join('')}</div></div></a>`).join('')}</div></section>`).join('');
+ document.getElementById('list').innerHTML=cursos.map(c=>`<section class="course"><h2>${esc(c)}</h2><div class="cards">${vis.filter(g=>g.curso===c).map(g=>`<a class="card" href="${esc(g.archivo)}"><div class="badge" aria-label="Guía ${esc(num(g))}">${esc(num(g))}</div><div><h3>${esc(g.titulo)}</h3><div class="meta">${esc(g.fuente)} · ${esc(fmt(g.fecha))}</div><div class="tags">${(g.temas||[]).map(t=>`<span>${esc(t)}</span>`).join('')}</div></div></a>`).join('')}</div></section>`).join('');
 }
 render();
 }

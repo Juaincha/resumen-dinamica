@@ -1,6 +1,6 @@
 // Lista de guías que muestra la portada (index.html).
 // Se regenera a partir de las etiquetas <meta name="guia-..."> de cada archivo en guias/.
-// Orden: por curso y luego por fecha, de la más reciente a la más antigua.
+// La portada las ordena por curso y por fecha, de la más antigua a la más reciente, y las numera 1, 2, 3...
 window.GUIAS = [
   {
     archivo: "guias/fis1514-ayudantia-13-newton-rotacional.html",
@@ -33,5 +33,13 @@ window.GUIAS = [
     fuente: "Ayudantía 10",
     fecha: "2026-10-21",
     temas: ["Momentum", "Impulso", "Fuerza variable", "Retroceso y explosiones", "Restitución"]
+  },
+  {
+    archivo: "guias/fis1514-ayudantia-08-09-trabajo-y-energia.html",
+    curso: "FIS1514 Dinámica",
+    titulo: "Trabajo, energía y potencia",
+    fuente: "Ayudantías 8 y 9",
+    fecha: "2026-10-14",
+    temas: ["Trabajo", "Fuerza variable", "Energía mecánica", "Roce", "Potencia y eficiencia"]
   }
 ];
