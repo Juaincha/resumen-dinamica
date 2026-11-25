@@ -5,6 +5,8 @@ Repositorio: `Juaincha/resumen-dinamica`. URL pública: https://juaincha.github.
 
 No hay paso de compilación: lo que está en `main` es lo que se publica.
 
+El sitio se publica con GitHub Actions mediante `.github/workflows/pages.yml` (cada push a `main` lanza una ejecución titulada con el mensaje del commit). No hay que volver a "Deploy from a branch" en la configuración de Pages.
+
 ## Estructura
 
 ```
