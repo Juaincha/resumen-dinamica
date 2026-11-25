@@ -25,5 +25,13 @@ window.GUIAS = [
     fuente: "Ayudantía 11",
     fecha: "2026-10-27",
     temas: ["Momentum", "Restitución", "Choque oblicuo", "Energía en choques", "Masa variable"]
+  },
+  {
+    archivo: "guias/fis1514-ayudantia-10-momentum-impulso-colisiones.html",
+    curso: "FIS1514 Dinámica",
+    titulo: "Momentum, impulso y colisiones",
+    fuente: "Ayudantía 10",
+    fecha: "2026-10-21",
+    temas: ["Momentum", "Impulso", "Fuerza variable", "Retroceso y explosiones", "Restitución"]
   }
 ];

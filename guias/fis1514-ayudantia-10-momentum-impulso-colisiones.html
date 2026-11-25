@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momentum e impulso</title>
+<meta name="description" content="Guía interactiva de FIS1514: momentum de sistemas, impulso de fuerzas variables, retrocesos, explosiones y choques, con figuras que se mueven y ejercicios resueltos.">
+<link rel="canonical" href="https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-10-momentum-impulso-colisiones.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Guías de estudio">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Momentum, impulso y colisiones · Ayudantía 10">
+<meta property="og:description" content="Guía interactiva de FIS1514: momentum de sistemas, impulso de fuerzas variables, retrocesos, explosiones y choques, con figuras que se mueven y ejercicios resueltos.">
+<meta property="og:url" content="https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-10-momentum-impulso-colisiones.html">
+<meta property="og:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-ayudantia-10.jpg">
+<meta property="og:image:secure_url" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-ayudantia-10.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gráfico de fuerza en el tiempo con el área del impulso">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Momentum, impulso y colisiones · Ayudantía 10">
+<meta name="twitter:description" content="Guía interactiva de FIS1514: momentum de sistemas, impulso de fuerzas variables, retrocesos, explosiones y choques, con figuras que se mueven y ejercicios resueltos.">
+<meta name="twitter:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-ayudantia-10.jpg">
+<meta name="theme-color" content="#0f5fa8">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="guia-curso" content="FIS1514 Dinámica">
+<meta name="guia-titulo" content="Momentum, impulso y colisiones">
+<meta name="guia-fuente" content="Ayudantía 10">
+<meta name="guia-fecha" content="2026-10-21">
+<meta name="guia-temas" content="Momentum, Impulso, Fuerza variable, Retroceso y explosiones, Restitución">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=STIX+Two+Text:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday study: calm, exact, like a good textbook chapter
+   IDEA the course's own Beamer slides and textbook figure plates: blue title band, peach bodies, blue axes
+   PICTURE a draggable force-time graph, a ball off a wall, an exploding projectile
+   COLOUR white ground, Beamer blue band, peach bodies, red forces, green lever arms, violet components
+   TYPE Archivo 800 titles + Source Sans 3 text + STIX Two for equations
+   LAYOUT blue band with title and section links; lab under it (figure left, controls right; stacked on phones) */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0c131d);--ink:light-dark(#14171c,#e6ecf3);--mute:light-dark(#566070,#9aa7b8);
+--line:light-dark(#d8dee7,#2a3749);--panel:light-dark(#f2f6fb,#121c29);--band:light-dark(#0f5fa8,#0d3a6a);
+--blue:light-dark(#1167c4,#62b2ff);--axis:light-dark(#1597dc,#4cc3ff);--body:light-dark(#f6b896,#a8603f);
+--edge:light-dark(#c4673e,#f0a882);--force:light-dark(#d4361c,#ff7a5c);--arm:light-dark(#14844a,#4fd18b);
+--perp:light-dark(#6a3fc8,#b49dff);--ok:light-dark(#e3f5ea,#123222);--bad:light-dark(#fde8e4,#3a1712)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Source Sans 3',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,5vw,50px);font-weight:800}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:600;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px;max-width:68ch}
+.band{padding-block:clamp(28px,4vw,56px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.top{background:var(--band);color:#fff;padding-bottom:22px}
+.top p{color:#dbe9f8;max-width:60ch;margin-top:12px}
+nav{position:sticky;top:0;z-index:5;background:var(--band);padding-inline:max(5vw,16px);border-bottom:1px solid #ffffff22}
+nav .scroll{display:flex;gap:4px;max-width:1240px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+nav a{flex:none;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 10px;border-bottom:3px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:#9fd3ff;outline:none}
+section{border-top:1px solid var(--line)}
+.duo{display:grid;gap:28px}
+@media(min-width:980px){.duo{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}.duo .sticky{position:sticky;top:76px}}
+.fig{position:relative;min-height:340px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.tall{min-height:400px}
+svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round;font:600 14px 'Source Sans 3',sans-serif}
+.eq{font-family:'STIX Two Text',serif;font-size:20px;background:var(--panel);border-radius:8px;padding:12px 16px;margin:12px 0 16px;overflow-x:auto;line-height:1.7}
+.eq i,.v i,td i{font-family:'STIX Two Text',serif}
+b.vec{font-family:'STIX Two Text',serif;font-weight:700;font-style:normal}
+.note{border-left:4px solid var(--blue);background:var(--panel);padding:12px 16px;margin:16px 0;max-width:68ch}
+.ctl{display:grid;gap:12px;margin-top:14px}
+.row{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) 4.8em;gap:12px;align-items:center;font-size:15px}
+.row output{font-weight:600;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;height:44px;accent-color:var(--blue);margin:0}
+button{font:600 15px 'Source Sans 3',sans-serif;min-height:44px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--blue);background:var(--bg);color:var(--blue);cursor:pointer}
+button:hover{background:var(--panel)}button:focus-visible{outline:3px solid var(--axis);outline-offset:2px}
+button.main{background:var(--blue);color:var(--bg)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--panel);border-radius:8px;padding:10px 14px}
+.stat span{display:block;font-size:14px;color:var(--mute)}
+.stat strong{font-size:clamp(20px,2.4vw,24px);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.lab{display:grid;gap:24px;padding-bottom:clamp(28px,4vw,48px);align-items:start}
+@media(min-width:900px){.lab{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.lab .fig{min-height:0;height:clamp(340px,40vw,470px)}
+.labside{background:var(--bg);color:var(--ink);border-radius:10px;padding:18px}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--mute);margin-top:10px}
+.key i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+table{border-collapse:collapse;width:100%;font-size:16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:Archivo,sans-serif;font-weight:600;font-size:15px}
+.scroll{overflow-x:auto}
+details{border:1px solid var(--line);border-radius:10px;padding:0 16px;margin:12px 0}
+summary{cursor:pointer;font-weight:600;padding:12px 0;min-height:44px}
+details[open]{padding-bottom:12px}
+.ex{background:var(--panel);border-radius:10px;padding:16px 18px;margin:16px 0}
+.ex h3{margin-top:0}
+.ex ol{margin:0;padding-left:22px}.ex li{margin-bottom:6px}
+.q{border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px}
+.q p{font-weight:600}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;border-color:var(--line);color:var(--ink)}
+.opts button.right{background:var(--ok);border-color:var(--arm)}
+.opts button.wrong{background:var(--bad);border-color:var(--force)}
+.fb{margin-top:10px;font-size:16px}
+.grid2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(15em,1fr))}
+.small{font-size:14px;color:var(--mute)}
+@media(max-width:600px){table{font-size:14px}th,td{padding:6px 4px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);color:var(--mute);font-weight:600}.row{grid-template-columns:minmax(0,1fr) 4.8em}.row label{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="band top">
+<div class="wrap">
+<a href="../index.html" style="display:inline-block;color:#dbe9f8;text-decoration:none;font-weight:600;font-size:15px;margin-bottom:14px;padding:10px 0">← Todas las guías</a>
+<h1>Momentum, impulso y colisiones</h1>
+<p>Guía interactiva para FIS1514 Dinámica, basada en la Ayudantía 10. Momentum de partículas y sistemas, impulso de fuerzas variables, conservación del momentum (retrocesos y explosiones) y una primera mirada a los choques.</p>
+</div>
+</header>
+<nav aria-label="Secciones"><div class="scroll">
+<a href="#resumen">Resumen</a><a href="#momentum">Momentum</a><a href="#impulso">Impulso</a><a href="#impulso-2d">Impulso en 2D</a><a href="#conservacion">Conservación</a><a href="#choques">Choques</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
+</div></nav>
+
+<section class="band" id="resumen"><div class="wrap duo">
+<div>
+<h2>Resumen: fuerza, impulso y momentum</h2>
+<p>Esta ayudantía reescribe la segunda ley de Newton en términos de momentum. Así se pueden tratar fuerzas que duran muy poco (golpes, choques, explosiones) sin conocer su forma exacta: basta saber cuánto impulso entregan.</p>
+<p>La idea central: el momentum total de un sistema solo cambia por fuerzas <em>externas</em>. Si su impulso es cero o despreciable, el momentum se conserva, pase lo que pase adentro.</p>
+<p>Notación: en negrita van los vectores (<b class="vec">p</b>, <b class="vec">J</b>), en cursiva sus componentes o magnitudes. Esta guía continúa en la de la <a href="fis1514-ayudantia-11-colisiones-y-masa-variable.html">Ayudantía 11</a>, que profundiza en choques y masa variable.</p>
+</div>
+<div class="scroll"><table class="stack">
+<thead><tr><th>Concepto</th><th>Ecuación</th><th>Cuándo usarla</th></tr></thead>
+<tbody>
+<tr><td data-l="Concepto">Momentum de una partícula</td><td data-l="Ecuación"><b class="vec">p</b> = <i>m</i><b class="vec">v</b></td><td data-l="Cuándo">siempre; unidad kg·m/s = N·s</td></tr>
+<tr><td data-l="Concepto">Momentum de un sistema</td><td data-l="Ecuación"><b class="vec">P</b> = Σ<i>m<sub>i</sub></i><b class="vec">v</b><sub>i</sub> = <i>M</i><b class="vec">v</b><sub>CM</sub></td><td data-l="Cuándo">varios cuerpos</td></tr>
+<tr><td data-l="Concepto">Segunda ley para sistemas</td><td data-l="Ecuación">Σ<b class="vec">F</b><sub>ext</sub> = d<b class="vec">P</b>/dt = <i>M</i><b class="vec">a</b><sub>CM</sub></td><td data-l="Cuándo">movimiento del centro de masa</td></tr>
+<tr><td data-l="Concepto">Impulso</td><td data-l="Ecuación"><b class="vec">J</b> = ∫Σ<b class="vec">F</b><sub>ext</sub> d<i>t</i> = Δ<b class="vec">P</b></td><td data-l="Cuándo">fuerzas variables, golpes, tiempos</td></tr>
+<tr><td data-l="Concepto">Fuerza constante</td><td data-l="Ecuación"><b class="vec">J</b> = <b class="vec">F</b>Δ<i>t</i></td><td data-l="Cuándo">empuje uniforme</td></tr>
+<tr><td data-l="Concepto">Conservación</td><td data-l="Ecuación"><b class="vec">P</b><sub>i</sub> = <b class="vec">P</b><sub>f</sub>, por componentes</td><td data-l="Cuándo">impulso externo nulo o despreciable</td></tr>
+<tr><td data-l="Concepto">Restitución</td><td data-l="Ecuación"><i>e</i> = −Δ<i>v</i><sub>n,f</sub>/Δ<i>v</i><sub>n,i</sub></td><td data-l="Cuándo">choques, en la línea de impacto</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="band" id="momentum"><div class="wrap duo">
+<div>
+<h2>1. Momentum lineal de partículas y sistemas</h2>
+<p>El momentum (cantidad de movimiento) combina masa y velocidad: un camión lento y una bala rápida pueden tener el mismo momentum. Es un vector con la dirección de la velocidad.</p>
+<div class="eq"><b class="vec">p</b> = <i>m</i><b class="vec">v</b>&nbsp;&nbsp; [kg·m/s = N·s]</div>
+<p>Para un sistema de partículas, el momentum total es la suma vectorial, y resulta ser la masa total por la velocidad del centro de masa:</p>
+<div class="eq"><b class="vec">P</b> = Σ<i>m<sub>i</sub></i><b class="vec">v</b><sub>i</sub> = <i>M</i><b class="vec">v</b><sub>CM</sub>,&nbsp;&nbsp; <i>M</i> = Σ<i>m<sub>i</sub></i></div>
+<p>Esto sale de derivar <b class="vec">r</b><sub>CM</sub> = Σ<i>m<sub>i</sub></i><b class="vec">r</b><sub>i</sub>/<i>M</i> (lo viste en la <a href="fis1514-ayudantia-12-centro-de-masa-y-rotacion.html#cm">guía de la Ayudantía 12</a>). Significa que el momentum de un sistema cuenta cómo se mueve su centro de masa, no cómo se mueven sus partes entre sí.</p>
+<h3>Segunda ley de Newton para un sistema</h3>
+<p>Al sumar las fuerzas sobre todas las partículas, las internas se cancelan de a pares (acción y reacción). Sobreviven solo las externas:</p>
+<div class="eq">Σ<b class="vec">F</b><sub>ext</sub> = d<b class="vec">P</b>/dt = <i>M</i><b class="vec">a</b><sub>CM</sub></div>
+<p>La segunda igualdad vale si la masa total es constante. El centro de masa se acelera como una sola partícula de masa <i>M</i>, aunque las partes choquen, exploten o vibren entre ellas.</p>
+</div>
+<div>
+<div class="ex" style="margin-top:0"><h3>Ejemplo 1: momentum de un sistema</h3>
+<p>Un cuerpo de 2 kg se mueve a (3, 0) m/s y otro de 3 kg a (0, −2) m/s.</p>
+<ol><li><b class="vec">P</b> = 2·(3, 0) + 3·(0, −2) = <strong>(6, −6) kg·m/s</strong>, con magnitud 8.49 kg·m/s.</li>
+<li><b class="vec">v</b><sub>CM</sub> = <b class="vec">P</b>/<i>M</i> = (6, −6)/5 = <strong>(1.2, −1.2) m/s</strong>.</li>
+<li>Ojo: no se suman las rapideces (3 + 2), se suman vectores.</li></ol></div>
+<div class="ex"><h3>Ejemplo 2: dos bloques unidos por un resorte</h3>
+<p>Dos bloques de 2 y 3 kg, unidos por un resorte, están sobre un piso sin roce. Se empuja el primero con 10 N horizontales, y los bloques oscilan entre sí mientras avanzan.</p>
+<ol><li>El resorte es interno: no aparece en Σ<b class="vec">F</b><sub>ext</sub>.</li>
+<li><i>a</i><sub>CM</sub> = 10/5 = <strong>2 m/s²</strong>, constante, aunque cada bloque acelere y frene por su cuenta.</li>
+<li>Para saber cómo se mueve cada bloque sí hace falta el resorte; para el centro de masa, no.</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="impulso"><div class="wrap duo">
+<div>
+<h2>2. Impulso y teorema impulso-momentum</h2>
+<p>Integrando Σ<b class="vec">F</b> = d<b class="vec">P</b>/dt en el tiempo se obtiene el efecto acumulado de una fuerza durante un intervalo:</p>
+<div class="eq"><b class="vec">J</b><sub>ext</sub> = ∫<sub>t<sub>i</sub></sub><sup>t<sub>f</sub></sup> Σ<b class="vec">F</b><sub>ext</sub> d<i>t</i> = Δ<b class="vec">P</b> = <b class="vec">P</b><sub>f</sub> − <b class="vec">P</b><sub>i</sub></div>
+<p>Si la fuerza es constante, <b class="vec">J</b> = <b class="vec">F</b>Δ<i>t</i>. Si varía, en una dimensión el impulso es el <strong>área con signo</strong> bajo la curva <i>F</i>(<i>t</i>): el área sobre el eje suma y la que está bajo el eje resta. La figura te deja dibujar la fuerza arrastrando los puntos.</p>
+<h3>Para qué sirve</h3>
+<ul>
+<li><strong>Fuerzas que no conoces en detalle.</strong> En un golpe no sabes cómo varía la fuerza, pero sí puedes medir cuánto cambió la velocidad. El impulso conecta ambas cosas.</li>
+<li><strong>Fuerza media.</strong> <i>F</i><sub>media</sub> = <i>J</i>/Δ<i>t</i>. Por eso un airbag o una rodilla flexionada reducen la fuerza: alargan el tiempo para el mismo Δ<i>p</i>.</li>
+<li><strong>Preguntas con tiempos.</strong> "¿Qué velocidad tiene después de 3 s?" con una fuerza variable se resuelve integrando la fuerza, sin pasar por la aceleración.</li>
+</ul>
+<div class="ex"><h3>Ejemplo 3: fuerza dada por una fórmula</h3>
+<p>Sobre un bloque de 3 kg en reposo, sin roce, actúa <i>F</i>(<i>t</i>) = 6<i>t</i>² N entre t = 0 y t = 2 s. ¿Qué velocidad tiene al final?</p>
+<ol><li><i>J</i> = ∫₀² 6<i>t</i>² d<i>t</i> = 2<i>t</i>³|₀² = 16 N·s.</li>
+<li><i>v<sub>f</sub></i> = 0 + 16/3 = <strong>5.33 m/s</strong>.</li></ol></div>
+<div class="ex"><h3>Ejemplo 4: golpe de un bate (el preset "Bate")</h3>
+<p>Una pelota de 0.15 kg llega a 30 m/s hacia el bate. La fuerza del bate crece linealmente hasta 1200 N y vuelve a cero, en total 0.02 s. ¿Con qué velocidad sale?</p>
+<ol><li>Positivo hacia donde sale la pelota: <i>v<sub>i</sub></i> = −30 m/s.</li>
+<li><i>J</i> = área del triángulo = ½·1200·0.02 = 12 N·s.</li>
+<li><i>v<sub>f</sub></i> = −30 + 12/0.15 = <strong>50 m/s</strong>. La fuerza media fue 12/0.02 = 600 N, unas 400 veces el peso de la pelota.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-ft" aria-label="Gráfico de fuerza en función del tiempo con puntos que se pueden arrastrar"><svg style="touch-action:none"></svg></div>
+<div class="btns" style="margin-top:14px"><button data-pf="bate">Bate</button><button data-pf="cte">Constante</button><button data-pf="neg">Con tramo negativo</button></div>
+<div class="ctl" data-keep>
+<div class="row"><label for="f-m">Masa del cuerpo</label><input type="range" id="f-m" min="0.1" max="2" step="0.05" value="0.15"><output id="f-mo"></output></div>
+<div class="row"><label for="f-v0">Velocidad inicial</label><input type="range" id="f-v0" min="-40" max="40" step="1" value="-30"><output id="f-v0o"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>Impulso J (área con signo)</span><strong id="f-J"></strong></div>
+<div class="stat"><span>v final = v₀ + J/m</span><strong id="f-vf"></strong></div>
+<div class="stat"><span>Fuerza media en 20 ms</span><strong id="f-Fm"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Arrastra los puntos hacia arriba o hacia abajo. El área azul suma y la roja resta.</p>
+</div>
+</div></section>
+
+<section class="band" id="impulso-2d"><div class="wrap duo">
+<div>
+<h2>3. El impulso es un vector</h2>
+<p>En dos dimensiones, <b class="vec">J</b> = Δ<b class="vec">p</b> = <i>m</i><b class="vec">v</b><sub>f</sub> − <i>m</i><b class="vec">v</b><sub>i</sub> se calcula restando vectores, no rapideces. Una pelota que rebota en una pared puede salir con la misma rapidez y aun así haber recibido un impulso grande, porque cambió su dirección.</p>
+<p>La figura muestra una pelota que choca con una pared lisa. El triángulo de la derecha es la resta de vectores: <i>m</i><b class="vec">v</b><sub>i</sub> + <b class="vec">J</b> = <i>m</i><b class="vec">v</b><sub>f</sub>.</p>
+<ul>
+<li><strong>Pared lisa:</strong> no hay roce, así que la pared solo empuja en la dirección normal. El impulso <b class="vec">J</b> es perpendicular a la pared y la componente tangencial de la velocidad no cambia.</li>
+<li><strong>Componente normal:</strong> se invierte y se multiplica por el coeficiente de restitución <i>e</i>: <i>v<sub>n,f</sub></i> = −<i>e v<sub>n,i</sub></i>.</li>
+<li>Con <i>e</i> &lt; 1 la pelota sale más "tendida": el ángulo con la normal aumenta.</li>
+</ul>
+<div class="ex"><h3>Ejemplo 5: pelota contra una pared lisa</h3>
+<p>Una pelota de 0.4 kg llega a 10 m/s formando 30° con la normal de una pared lisa. <i>e</i> = 0.8 y el contacto dura 5 ms.</p>
+<ol><li>Componentes: <i>v<sub>n</sub></i> = 10 cos 30° = 8.66 m/s y <i>v<sub>t</sub></i> = 10 sin 30° = 5 m/s.</li>
+<li>Después: <i>v<sub>n</sub></i>' = 0.8·8.66 = 6.93 m/s, alejándose de la pared, y <i>v<sub>t</sub></i>' = 5 m/s.</li>
+<li>Sale a √(6.93² + 5²) = <strong>8.54 m/s</strong>, formando <strong>35.8°</strong> con la normal.</li>
+<li>Impulso: <i>J</i> = 0.4·(8.66 + 6.93) = <strong>6.24 N·s</strong>, perpendicular a la pared. Fuerza media: 6.24/0.005 ≈ <strong>1250 N</strong>.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig tall" id="f-wall" aria-label="Pelota que rebota en una pared lisa y triángulo de vectores del impulso"><svg></svg></div>
+<div class="ctl" data-keep>
+<div class="row"><label for="w-th">Ángulo con la normal</label><input type="range" id="w-th" min="0" max="75" step="1" value="30"><output id="w-tho"></output></div>
+<div class="row"><label for="w-v">Rapidez de llegada</label><input type="range" id="w-v" min="2" max="20" step="0.5" value="10"><output id="w-vo"></output></div>
+<div class="row"><label for="w-e">Restitución e</label><input type="range" id="w-e" min="0" max="1" step="0.05" value="0.8"><output id="w-eo"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>Rapidez de salida</span><strong id="w-vf"></strong></div>
+<div class="stat"><span>Ángulo de salida</span><strong id="w-af"></strong></div>
+<div class="stat"><span>|J| (m = 0.4 kg)</span><strong id="w-J"></strong></div>
+<div class="stat"><span>Fuerza media en 5 ms</span><strong id="w-F"></strong></div>
+</div>
+</div>
+</div></section>
+
+<section class="band" id="conservacion"><div class="wrap duo">
+<div>
+<h2>4. Conservación del momentum</h2>
+<p>Si el impulso externo neto sobre un sistema es cero o despreciable durante el intervalo estudiado, su momentum total no cambia:</p>
+<div class="eq"><b class="vec">P</b><sub>i</sub> = <b class="vec">P</b><sub>f</sub>&nbsp;&nbsp;⇔&nbsp;&nbsp;Σ<i>m<sub>i</sub></i><b class="vec">v</b><sub>i</sub> = Σ<i>m<sub>j</sub></i><b class="vec">v</b><sub>f,j</sub>&nbsp;&nbsp; ; en 2D: <i>P<sub>x,i</sub></i> = <i>P<sub>x,f</sub></i>, <i>P<sub>y,i</sub></i> = <i>P<sub>y,f</sub></i></div>
+<p>Tres situaciones típicas donde se usa:</p>
+<ul>
+<li><strong>Retroceso:</strong> un cañón que dispara, una persona que salta de un bote, un astronauta que lanza una herramienta. Si todo parte del reposo, <b class="vec">P</b> = 0 antes y después: lo que sale para un lado empuja al resto hacia el otro.</li>
+<li><strong>Explosiones:</strong> las fuerzas de la explosión son internas. El centro de masa de los fragmentos sigue exactamente la misma trayectoria que seguía el cuerpo entero. Es lo que muestra la figura.</li>
+<li><strong>Choques:</strong> la sección siguiente.</li>
+</ul>
+<div class="note"><strong>Conservación por componentes.</strong> Puede conservarse una componente y no otra. Un proyectil en el aire tiene la gravedad como fuerza externa vertical: <i>P<sub>y</sub></i> cambia, pero <i>P<sub>x</sub></i> se conserva. Y durante una explosión, que dura un instante, el impulso de la gravedad es despreciable: se conservan ambas componentes justo antes y justo después.</div>
+<div class="ex"><h3>Ejemplo 6: retroceso</h3>
+<ol><li>Un cañón de 1000 kg dispara horizontalmente una bala de 10 kg a 300 m/s (respecto al suelo). 0 = 10·300 + 1000<i>V</i>, así que el cañón retrocede a <strong>3 m/s</strong>.</li>
+<li>Una persona de 70 kg salta desde un bote de 140 kg, en reposo, a 3 m/s hacia adelante. El bote sale a 70·3/140 = <strong>1.5 m/s hacia atrás</strong>, si el roce con el agua es despreciable.</li></ol></div>
+<div class="ex"><h3>Ejemplo 7: explosión en el punto más alto</h3>
+<p>Un proyectil de 6 kg, en el punto más alto de su trayectoria, va a 20 m/s horizontales y explota en dos trozos de 2 y 4 kg. El de 2 kg queda con velocidad cero justo después de la explosión.</p>
+<ol><li>Momentum horizontal: 6·20 = 2·0 + 4<i>v</i>, así que <strong><i>v</i> = 30 m/s</strong>.</li>
+<li>El trozo de 2 kg cae vertical y el de 4 kg sigue más rápido. El centro de masa de ambos cae justo donde habría caído el proyectil entero, siempre que los dos trozos lleguen al suelo a la vez.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-exp" aria-label="Proyectil que explota en dos fragmentos en el punto más alto; el centro de masa sigue la parábola"><svg></svg></div>
+<div class="btns" style="margin-top:14px"><button class="main" id="x-go">Lanzar</button><button data-px="ej7">Ejemplo 7</button><button data-px="sym">Mitades iguales</button></div>
+<div class="ctl" data-keep>
+<div class="row"><label for="x-f">Masa del trozo 1 (de 6 kg)</label><input type="range" id="x-f" min="0.5" max="5.5" step="0.5" value="2"><output id="x-fo"></output></div>
+<div class="row"><label for="x-j">Impulso de la explosión</label><input type="range" id="x-j" min="0" max="120" step="2" value="40"><output id="x-jo"></output></div>
+</div>
+<div class="stats">
+<div class="stat"><span>v trozo 1 después</span><strong id="x-v1"></strong></div>
+<div class="stat"><span>v trozo 2 después</span><strong id="x-v2"></strong></div>
+<div class="stat"><span>P horizontal (antes = después)</span><strong id="x-P"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Proyectil de 6 kg que va a 20 m/s horizontales en el punto más alto (el trozo 2 tiene el resto de la masa). La explosión empuja horizontalmente al trozo 1 hacia atrás y al trozo 2 hacia adelante. La cruz marca el centro de masa.</p>
+</div>
+</div></section>
+
+<section class="band" id="choques"><div class="wrap duo">
+<div>
+<h2>5. Choques: tipos y restitución</h2>
+<p>En un choque aislado se conserva el momentum, pero la energía cinética solo se conserva si el choque es elástico. Para resolver un choque falta una ecuación, y la da el coeficiente de restitución sobre la línea de impacto (con <b class="vec">n̂</b> de A hacia B):</p>
+<div class="eq"><i>e</i> = − (<b class="vec">v</b><sub>B,f</sub> − <b class="vec">v</b><sub>A,f</sub>)·<b class="vec">n̂</b> / (<b class="vec">v</b><sub>B,i</sub> − <b class="vec">v</b><sub>A,i</sub>)·<b class="vec">n̂</b></div>
+<ul>
+<li><strong><i>e</i> = 1, elástico:</strong> se conservan el momentum y la energía cinética.</li>
+<li><strong>0 &lt; <i>e</i> &lt; 1, inelástico:</strong> se conserva el momentum, pero se pierde energía.</li>
+<li><strong><i>e</i> = 0:</strong> no hay velocidad relativa normal después del choque; en una dimensión quedan unidos.</li>
+</ul>
+<h3>Choques oblicuos entre partículas lisas</h3>
+<p>Se separa cada velocidad en una componente normal (n, sobre la línea de impacto) y una tangencial (t). Como las partículas son lisas, no hay impulso tangencial: <i>v<sub>A,t</sub></i> y <i>v<sub>B,t</sub></i> no cambian. En la dirección n se usan momentum y restitución, exactamente como en un choque en línea.</p>
+<div class="note">La guía de la <a href="fis1514-ayudantia-11-colisiones-y-masa-variable.html#restitucion">Ayudantía 11</a> tiene laboratorios para estos choques: carros en un riel donde eliges masas, velocidades y <i>e</i>, y dos discos que chocan oblicuamente. También trae la fórmula de la energía perdida.</div>
+</div>
+<div>
+<div class="ex" style="margin-top:0"><h3>Ejemplo 8: bala que atraviesa un bloque</h3>
+<p>Una bala de 20 g a 500 m/s atraviesa un bloque de 1 kg en reposo, sobre una superficie sin roce, y sale a 200 m/s.</p>
+<ol><li>Momentum: 0.02·500 = 0.02·200 + 1·<i>V</i>, así que <strong><i>V</i> = 6 m/s</strong>.</li>
+<li>Energía: la bala pierde ½·0.02·(500² − 200²) = 2100 J y el bloque gana solo 18 J. Casi toda la energía se va en romper y calentar el bloque.</li>
+<li>No se usa <i>e</i>: aquí no hay rebote, y el dato de la velocidad de salida reemplaza a la restitución.</li></ol></div>
+<div class="ex"><h3>Ejemplo 9: rebote frontal en una pared</h3>
+<p>Una pelota de 0.2 kg golpea una pared perpendicularmente a 12 m/s, con <i>e</i> = 0.75. El contacto dura 0.01 s.</p>
+<ol><li>Sale a 0.75·12 = 9 m/s en sentido contrario.</li>
+<li><i>J</i> = 0.2·(9 − (−12)) = <strong>4.2 N·s</strong>. Las velocidades tienen signos opuestos, así que sus magnitudes se suman.</li>
+<li>Fuerza media: 4.2/0.01 = <strong>420 N</strong>.</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="errores"><div class="wrap duo">
+<div>
+<h2>Errores típicos</h2>
+<ol>
+<li><strong>Restar rapideces en vez de vectores.</strong> Una pelota que rebota a la misma rapidez tiene Δ<i>p</i> = 2<i>mv</i>, no cero.</li>
+<li><strong>Olvidar el signo</strong> de la velocidad inicial o de un tramo de fuerza negativo en el gráfico.</li>
+<li><strong>Conservar momentum con una fuerza externa grande actuando,</strong> como el suelo o un pasador en un choque.</li>
+<li><strong>Usar energía a través de un choque o una explosión.</strong> Primero momentum; la energía, solo antes o después.</li>
+<li><strong>Mezclar marcos de referencia</strong> en los retrocesos: "a 3 m/s respecto al bote" no es lo mismo que "a 3 m/s respecto al agua".</li>
+<li><strong>Aplicar la restitución a rapideces totales</strong> en un choque oblicuo, en vez de solo a las componentes normales.</li>
+</ol>
+</div>
+<div class="ex" style="margin-top:0"><h3>Receta (la del resumen de la ayudantía)</h3>
+<ol>
+<li>Define el sistema de cuerpos y el intervalo de tiempo.</li>
+<li>Dibuja las fuerzas externas relevantes y fija ejes y signos.</li>
+<li>Calcula el impulso externo o verifica que sea despreciable.</li>
+<li>Aplica <b class="vec">J</b><sub>ext</sub> = Δ<b class="vec">P</b>; usa conservación solo cuando corresponde.</li>
+<li>En choques, distingue qué componente se conserva y usa <i>e</i> en la línea de impacto.</li>
+<li>Revisa unidades, direcciones y que las velocidades tengan el signo esperado.</li>
+</ol></div>
+</div></section>
+
+<section class="band" id="ejercicios"><div class="wrap">
+<h2>Ejercicios para practicar</h2>
+<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<div class="grid2" id="exlist"></div>
+<h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
+<div class="grid2" id="quiz"></div>
+</div></section>
+
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 10 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const css=n=>`var(--${n})`;
+const fx=(v,n=1)=>(Math.abs(v)<0.5*10**-n?0:v).toFixed(n).replace(/^-/,'−');
+const defs=(id)=>'<defs>'+['force','blue','arm','perp','mute','ink'].map(c=>`<marker id="${id}${c}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" style="fill:${css(c)}"/></marker>`).join('')+'</defs>';
+const ar=(id,c,x1,y1,x2,y2,w=2.5,dash='')=>Math.hypot(x2-x1,y2-y1)<4?'':`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''} marker-end="url(#${id}${c})"/>`;
+const ln=(x1,y1,x2,y2,c,w=1,dash='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
+const tx=(x,y,t,c='ink',a='start',sz=14)=>`<text x="${x}" y="${y}" text-anchor="${a}" style="fill:${css(c)};font-size:${sz}px">${t}</text>`;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function view(id,draw){const box=$(id),s=box.querySelector('svg');const v={box,s,draw:()=>draw(s,box.clientWidth,box.clientHeight)};const ro=new ResizeObserver(()=>v.draw());ro.observe(box);return v;}
+
+const FT={T:0.02,ts:[0,0.005,0.01,0.015,0.02],F:[0,600,1200,600,0],m:0.15,v0:-30,drag:-1,geo:null,Fmin:-600,Fmax:1400};
+const fpre={bate:[0,600,1200,600,0],cte:[600,600,600,600,600],neg:[0,1200,600,-400,0]};
+function Jsum(){let J=0;for(let i=0;i<FT.ts.length-1;i++)J+=(FT.F[i]+FT.F[i+1])/2*(FT.ts[i+1]-FT.ts[i]);return J;}
+const fv=view('f-ft',(s,W,H)=>{
+ const x0=62,x1=W-22,y0=H-40,y1=24,X=t=>x0+(x1-x0)*t/FT.T,Y=f=>y1+(y0-y1)*(FT.Fmax-f)/(FT.Fmax-FT.Fmin);FT.geo={x0,x1,y0,y1};
+ let h='';
+ for(const f of [-500,0,500,1000])h+=ln(x0,Y(f),x1,Y(f),f===0?'mute':'line',f===0?1.5:1)+tx(x0-16,Y(f)+5,String(f),'mute','end',13);
+ for(let i=0;i<=4;i++){const t=FT.T*i/4;h+=tx(X(t),y0+20,String(Math.round(t*1000)),'mute','middle',13);}
+ h+=tx(x0,y1-8,'F (N)','mute','start',13)+tx(x1,y0-8,'t (ms)','mute','end',13);
+ for(let i=0;i<FT.ts.length-1;i++){const a=[FT.ts[i],FT.F[i]],b=[FT.ts[i+1],FT.F[i+1]];const segs=[];
+  if(a[1]*b[1]<0){const tz=a[0]+(b[0]-a[0])*a[1]/(a[1]-b[1]);segs.push([a,[tz,0]],[[tz,0],b]);}else segs.push([a,b]);
+  for(const [p,q] of segs){const pos=(p[1]+q[1])>=0;h+=`<path d="M${X(p[0])} ${Y(0)} L${X(p[0])} ${Y(p[1])} L${X(q[0])} ${Y(q[1])} L${X(q[0])} ${Y(0)} Z" style="fill:${css(pos?'blue':'force')};fill-opacity:.22"/>`;}}
+ h+=`<polyline points="${FT.ts.map((t,i)=>X(t)+','+Y(FT.F[i])).join(' ')}" style="fill:none;stroke:${css('ink')};stroke-width:2.5"/>`;
+ FT.ts.forEach((t,i)=>{h+=`<g data-i="${i}" style="cursor:ns-resize"><circle cx="${X(t)}" cy="${Y(FT.F[i])}" r="20" style="fill:transparent"/><circle cx="${X(t)}" cy="${Y(FT.F[i])}" r="8" style="fill:${css('bg')};stroke:${css('blue')};stroke-width:3"/></g>`;});
+ s.innerHTML=h;
+});
+function fOut(){FT.m=+$('f-m').value;FT.v0=+$('f-v0').value;const J=Jsum();$('f-mo').textContent=fx(FT.m,2)+' kg';$('f-v0o').textContent=fx(FT.v0,0)+' m/s';
+ $('f-J').textContent=fx(J,2)+' N·s';$('f-vf').textContent=fx(FT.v0+J/FT.m,1)+' m/s';$('f-Fm').textContent=fx(J/FT.T,0)+' N';fv.draw();}
+['f-m','f-v0'].forEach(i=>$(i).addEventListener('input',fOut));
+document.querySelectorAll('[data-pf]').forEach(b=>b.addEventListener('click',()=>{FT.F=fpre[b.dataset.pf].slice();fOut();}));
+const fs=fv.s;
+fs.addEventListener('pointerdown',e=>{const g=e.target.closest('g[data-i]');if(!g)return;FT.drag=+g.dataset.i;fs.setPointerCapture(e.pointerId);e.preventDefault();});
+fs.addEventListener('pointermove',e=>{if(FT.drag<0||!FT.geo)return;const r=fs.getBoundingClientRect(),{y0,y1}=FT.geo,y=e.clientY-r.top;
+ let f=FT.Fmax-(y-y1)/(y0-y1)*(FT.Fmax-FT.Fmin);f=Math.round(Math.max(-500,Math.min(1300,f))/20)*20;FT.F[FT.drag]=f;fOut();});
+const fEnd=()=>{FT.drag=-1;};fs.addEventListener('pointerup',fEnd);fs.addEventListener('pointercancel',fEnd);
+
+const Wl={th:30,v:10,e:0.8,m:0.4,t:0};
+function wSolve(){const th=Wl.th*Math.PI/180,vn=Wl.v*Math.cos(th),vt=Wl.v*Math.sin(th),vn2=Wl.e*vn;return{vn,vt,vn2,vf:Math.hypot(vn2,vt),af:Math.atan2(vt,vn2)*180/Math.PI,J:Wl.m*(vn+vn2)};}
+const wv=view('f-wall',(s,W,H)=>{
+ const so=wSolve(),wx=W*0.48,cy=H*0.42,L=Math.min(W*0.36,H*0.34),th=Wl.th*Math.PI/180;
+ let h=defs('w');
+ h+=`<rect x="${wx}" y="16" width="14" height="${H*0.78}" style="fill:${css('mute')};fill-opacity:.45"/>`;
+ for(let i=0;i<12;i++){const y=22+i*(H*0.78-12)/12;h+=ln(wx+14,y,wx+26,y-10,'mute',1.2);}
+ h+=ln(wx-L*1.1,cy,wx,cy,'mute',1,'4 5')+tx(wx-L*1.1,cy-8,'normal','mute','start',13);
+ const bx=wx-11,ix=bx-L*Math.cos(th),iy=cy+L*Math.sin(th);
+ const ang=so.af*Math.PI/180,Lo=L*so.vf/Math.max(Wl.v,0.01),ox=bx-Lo*Math.cos(ang),oy=cy-Lo*Math.sin(ang);
+ h+=ar('w','force',ix,iy,bx-4,cy+2,3)+ar('w','blue',bx,cy,ox,oy,3);
+ const ph=Wl.t%3,pf=ph<1.2?ph/1.2:null,pb=ph>=1.2&&ph<2.6?(ph-1.2)/1.4:null;
+ let px=bx,py=cy;if(pf!==null){px=ix+(bx-ix)*pf;py=iy+(cy-iy)*pf;}else if(pb!==null){px=bx+(ox-bx)*pb;py=cy+(oy-cy)*pb;}
+ h+=`<circle cx="${px}" cy="${py}" r="10" style="fill:${css('body')};stroke:${css('edge')};stroke-width:2"/>`;
+ h+=tx(ix,iy+20,'llega','force','middle',13)+tx(ox,oy-12,'sale','blue','middle',13);
+ const right=W-wx-26,Ox=wx+26+right/2,Oy=H*0.9,k=Math.min(right*0.42,H*0.32)/Math.max(Wl.m*Wl.v,0.01);
+ const Pi_end={x:Ox+k*Wl.m*so.vn,y:Oy-k*Wl.m*so.vt},Pf_end={x:Ox-k*Wl.m*so.vn2,y:Oy-k*Wl.m*so.vt};
+ h+=tx(Ox,Math.min(Pi_end.y,Oy-20)-30,'vectores de momentum','mute','middle',13);
+ h+=ar('w','force',Ox,Oy,Pi_end.x,Pi_end.y,2.5)+ar('w','blue',Ox,Oy,Pf_end.x,Pf_end.y,2.5)+ar('w','perp',Pi_end.x,Pi_end.y,Pf_end.x,Pf_end.y,3);
+ h+=tx(Pi_end.x+8,Pi_end.y+16,'m v<tspan dy="4" font-size="11">i</tspan>','force','start',13)+tx(Pf_end.x-8,Pf_end.y+16,'m v<tspan dy="4" font-size="11">f</tspan>','blue','end',13)+tx((Pi_end.x+Pf_end.x)/2,Pi_end.y-10,'J','perp','middle',15);
+ s.innerHTML=h;
+});
+function wOut(){Wl.th=+$('w-th').value;Wl.v=+$('w-v').value;Wl.e=+$('w-e').value;const so=wSolve();$('w-tho').textContent=Wl.th+'°';$('w-vo').textContent=fx(Wl.v,1)+' m/s';$('w-eo').textContent=fx(Wl.e,2);
+ $('w-vf').textContent=fx(so.vf,2)+' m/s';$('w-af').textContent=fx(so.af,1)+'°';$('w-J').textContent=fx(so.J,2)+' N·s';$('w-F').textContent=fx(so.J/0.005,0)+' N';wv.draw();}
+['w-th','w-v','w-e'].forEach(i=>$(i).addEventListener('input',wOut));
+
+const X={f:1/3,J:40,M:6,vx:20,vy0:24,g:9.8,t:0,run:true};
+function xState(t){const ta=X.vy0/X.g,m1=X.M*X.f,m2=X.M-m1;const ymax=X.vy0*ta-0.5*X.g*ta*ta;const tl=ta+Math.sqrt(2*ymax/X.g);
+ const cm={x:X.vx*t,y:Math.max(0,X.vy0*t-0.5*X.g*t*t)};
+ if(t<ta)return{ta,tl,ymax,cm,one:true};
+ const v1=X.vx-X.J/m1,v2=X.vx+X.J/m2,d=t-ta,y=Math.max(0,ymax-0.5*X.g*d*d),xa=X.vx*ta;
+ return{ta,tl,ymax,cm,one:false,p1:{x:xa+v1*d,y},p2:{x:xa+v2*d,y},v1,v2};}
+const xv=view('f-exp',(s,W,H)=>{
+ const st0=xState(0),tl=st0.tl,ta=st0.ta,m1=X.M*X.f,m2=X.M-m1,v1=X.vx-X.J/m1,v2=X.vx+X.J/m2;
+ const xmin=Math.min(0,X.vx*ta+v1*(tl-ta))-4,xmax=Math.max(X.vx*tl,X.vx*ta+v2*(tl-ta))+4,ymax=st0.ymax*1.2;
+ const pad=34,sc=Math.min((W-2*pad)/(xmax-xmin),(H-2*pad-20)/ymax),gx=x=>pad+(x-xmin)*sc+((W-2*pad)-(xmax-xmin)*sc)/2,gy=y=>H-pad-y*sc;
+ let h=ln(0,gy(0),W,gy(0),'mute',2);
+ let p='';for(let i=0;i<=60;i++){const t=tl*i/60,x=X.vx*t,y=Math.max(0,X.vy0*t-0.5*X.g*t*t);p+=(i?'L':'M')+gx(x)+' '+gy(y);}
+ h+=`<path d="${p}" style="fill:none;stroke:${css('mute')};stroke-width:1.5" stroke-dasharray="6 5"/>`;
+ const trace=(sel)=>{let q='';for(let i=0;i<=40;i++){const t=ta+(tl-ta)*i/40,S=xState(t);q+=(i?'L':'M')+gx(S[sel].x)+' '+gy(S[sel].y);}return q;};
+ h+=`<path d="${trace('p1')}" style="fill:none;stroke:${css('force')};stroke-width:1.5;opacity:.5"/><path d="${trace('p2')}" style="fill:none;stroke:${css('blue')};stroke-width:1.5;opacity:.5"/>`;
+ const S=xState(Math.min(X.t,tl));const cross=(x,y)=>`<g style="stroke:${css('ink')};stroke-width:2.5"><line x1="${x-9}" y1="${y-9}" x2="${x+9}" y2="${y+9}"/><line x1="${x-9}" y1="${y+9}" x2="${x+9}" y2="${y-9}"/></g>`;
+ if(S.one)h+=`<circle cx="${gx(S.cm.x)}" cy="${gy(S.cm.y)}" r="11" style="fill:${css('body')};stroke:${css('edge')};stroke-width:2"/>`;
+ else{const r1=6+8*Math.sqrt(X.f),r2=6+8*Math.sqrt(1-X.f);
+  h+=`<circle cx="${gx(S.p1.x)}" cy="${gy(S.p1.y)}" r="${r1}" style="fill:${css('force')};fill-opacity:.8"/><circle cx="${gx(S.p2.x)}" cy="${gy(S.p2.y)}" r="${r2}" style="fill:${css('blue')};fill-opacity:.8"/>`;
+  h+=cross(gx(S.cm.x),gy(S.cm.y));
+  if(X.t<ta+0.25)h+=`<circle cx="${gx(X.vx*ta)}" cy="${gy(S.ymax)}" r="${18+40*(X.t-ta)}" style="fill:none;stroke:${css('force')};stroke-width:2;opacity:${Math.max(0,1-(X.t-ta)*4)}"/>`;}
+ h+=tx(gx(X.vx*ta),gy(S.ymax)-18,'explosión','mute','middle',13);
+ h+=tx(12,22,'línea punteada: trayectoria sin explosión','mute','start',13);
+ s.innerHTML=h;
+});
+function xOut(){X.f=+$('x-f').value/X.M;X.J=+$('x-j').value;const m1=X.M*X.f,m2=X.M-m1;$('x-fo').textContent=fx(X.f*X.M,1)+' kg';$('x-jo').textContent=fx(X.J,0)+' N·s';
+ $('x-v1').textContent=fx(X.vx-X.J/m1,1)+' m/s';$('x-v2').textContent=fx(X.vx+X.J/m2,1)+' m/s';$('x-P').textContent=fx(X.M*X.vx,0)+' kg·m/s';X.t=0;xv.draw();}
+['x-f','x-j'].forEach(i=>$(i).addEventListener('input',xOut));$('x-go').addEventListener('click',()=>{X.t=0;X.run=true;});
+const xp={ej7:[2,40],sym:[3,30]};
+document.querySelectorAll('[data-px]').forEach(b=>b.addEventListener('click',()=>{const q=xp[b.dataset.px];$('x-f').value=q[0];$('x-j').value=q[1];xOut();X.t=0;}));
+
+const EX=[
+['Fuerza por tramos','Una fuerza sobre una pelota de 0.5 kg en reposo sube linealmente de 0 a 800 N en 0.01 s, se mantiene en 800 N durante 0.02 s y baja linealmente a 0 en 0.01 s. ¿Con qué velocidad sale la pelota? ¿Cuál fue la fuerza media?','<i>J</i> = área: ½·800·0.01 + 800·0.02 + ½·800·0.01 = 4 + 16 + 4 = 24 N·s. <strong><i>v</i> = 24/0.5 = 48 m/s</strong>. Fuerza media: 24/0.04 = <strong>600 N</strong>.'],
+['Fuerza que cambia de signo','Sobre un cuerpo de 2 kg que va a 1 m/s actúa <i>F</i>(<i>t</i>) = 20 − 5<i>t</i> N entre 0 y 6 s. ¿Qué velocidad tiene a los 6 s?','<i>J</i> = ∫₀⁶ (20 − 5<i>t</i>) d<i>t</i> = 120 − 90 = 30 N·s. Ojo: después de t = 4 s la fuerza es negativa y ese tramo resta. <strong><i>v</i> = 1 + 30/2 = 16 m/s</strong>.'],
+['Golpe a un disco de hockey','Un disco de 0.16 kg pasa de (4, 0) m/s a (0, 3) m/s tras un golpe con el palo que dura 0.05 s. ¿Cuál es el impulso y la fuerza media?','Δ<b class="vec">p</b> = 0.16·[(0, 3) − (4, 0)] = (−0.64, 0.48) N·s. |<b class="vec">J</b>| = <strong>0.8 N·s</strong>, apuntando hacia atrás y hacia arriba. Fuerza media: 0.8/0.05 = <strong>16 N</strong>, en la misma dirección que <b class="vec">J</b>.'],
+['Astronauta que lanza una herramienta','Un astronauta de 80 kg, en reposo, lanza una herramienta de 2 kg a 5 m/s. ¿Con qué velocidad se mueve él?','<b class="vec">P</b> = 0 antes y después: 0 = 2·5 + 80<i>V</i>, así que <strong><i>V</i> = −0.125 m/s</strong>, en sentido opuesto a la herramienta.'],
+['Explosión en tres trozos','Un cuerpo de 3 kg en reposo explota en tres trozos de 1 kg. Uno sale a 10 m/s en +x y otro a 10 m/s en +y. ¿Cómo sale el tercero?','Momentum cero: <b class="vec">v</b>₃ = −[(10, 0) + (0, 10)] = (−10, −10) m/s. Rapidez <strong>14.1 m/s</strong>, a 225° (hacia abajo y a la izquierda).'],
+['Bala que atraviesa un bloque','Una bala de 20 g a 500 m/s atraviesa un bloque de 1 kg en reposo y sale a 200 m/s. ¿Qué velocidad toma el bloque y cuánta energía se disipa?','0.02·500 = 0.02·200 + <i>V</i>, así que <strong><i>V</i> = 6 m/s</strong>. Energía disipada: ½·0.02·(500² − 200²) − ½·1·6² = 2100 − 18 = <strong>2082 J</strong>.'],
+['Rebote frontal','Una pelota de 0.2 kg golpea una pared de frente a 12 m/s con <i>e</i> = 0.75, y el contacto dura 0.01 s. Calcula el impulso y la fuerza media.','Sale a 9 m/s en sentido contrario. <i>J</i> = 0.2·(9 + 12) = <strong>4.2 N·s</strong> y <strong><i>F</i><sub>media</sub> = 420 N</strong>.']
+];
+$('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');
+const QZ=[
+['¿Qué unidad es equivalente a kg·m/s?',['N·s','N/s','J·s'],0,'Un newton es kg·m/s², así que N·s = kg·m/s.'],
+['Las fuerzas internas de un sistema:',['Cambian su momentum total','No cambian su momentum total','Solo lo cambian si son grandes'],1,'Vienen en pares de acción y reacción que se cancelan al sumar.'],
+['Una pelota rebota en una pared con la misma rapidez. Su cambio de momentum es:',['Cero','2mv','mv'],1,'La velocidad pasa de +v a −v: Δp = m(−v − v), de magnitud 2mv.'],
+['Un proyectil explota en el aire. Justo después, el centro de masa de los fragmentos:',['Sigue la misma trayectoria que traía','Se detiene','Sube'],0,'La explosión es interna y la gravedad sigue igual: el CM no se entera.'],
+['En un gráfico F(t), el impulso es:',['La pendiente','El área con signo bajo la curva','El valor máximo'],1,'J = ∫F dt, el área; los tramos bajo el eje restan.'],
+['¿Por qué un airbag reduce la fuerza sobre el pasajero?',['Reduce el cambio de momentum','Alarga el tiempo del frenado para el mismo cambio de momentum','Reduce la masa del pasajero'],1,'Con el mismo Δp y más Δt, la fuerza media J/Δt es menor.']
+];
+$('quiz').innerHTML=QZ.map((q,i)=>`<div class="q" id="q${i}"><p>${q[0]}</p><div class="opts">${q[1].map((o,j)=>`<button data-q="${i}" data-o="${j}">${o}</button>`).join('')}</div><div class="fb" aria-live="polite"></div></div>`).join('');
+$('quiz').addEventListener('click',e=>{const b=e.target.closest('button[data-q]');if(!b)return;const q=QZ[+b.dataset.q],box=$('q'+b.dataset.q);
+ box.querySelectorAll('button').forEach(x=>x.classList.remove('right','wrong'));const ok=+b.dataset.o===q[2];b.classList.add(ok?'right':'wrong');
+ if(!ok)box.querySelectorAll('button')[q[2]].classList.add('right');box.querySelector('.fb').textContent=(ok?'Correcto. ':'No. ')+q[3];});
+
+let last=null;
+function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;
+ if(!reduce){Wl.t+=dt;wv.draw();}
+ if(X.run&&!reduce){X.t+=dt*0.9;const tl=xState(0).tl;if(X.t>tl+1.2)X.t=0;xv.draw();}
+ requestAnimationFrame(loop);}
+fOut();wOut();xOut();
+const stk=[...document.querySelectorAll('.sticky')];
+const fitSticky=()=>{for(const el of stk){const k=el.querySelector('[data-keep]'),h=k?k.getBoundingClientRect().bottom-el.getBoundingClientRect().top:el.offsetHeight;el.style.top=Math.min(76,innerHeight-h-12)+'px';}};
+const stkRo=new ResizeObserver(fitSticky);stk.forEach(e=>stkRo.observe(e));addEventListener('resize',fitSticky);fitSticky();
+requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>

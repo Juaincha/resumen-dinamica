@@ -9,5 +9,6 @@ Sitio: https://juaincha.github.io/resumen-dinamica/
 | FIS1514 Dinámica | [Ayudantía 13: Newton rotacional y momentum angular](https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-13-newton-rotacional.html) |
 | FIS1514 Dinámica | [Ayudantía 12: Centro de masa y dinámica rotacional](https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-12-centro-de-masa-y-rotacion.html) |
 | FIS1514 Dinámica | [Ayudantía 11: Colisiones y masa variable](https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-11-colisiones-y-masa-variable.html) |
+| FIS1514 Dinámica | [Ayudantía 10: Momentum, impulso y colisiones](https://juaincha.github.io/resumen-dinamica/guias/fis1514-ayudantia-10-momentum-impulso-colisiones.html) |
 
 Es material de estudio personal y puede contener errores. Compáralo siempre con el material oficial del curso.
