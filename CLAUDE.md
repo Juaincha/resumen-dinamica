@@ -46,6 +46,7 @@ Guarda el PDF en `resumenes/` y crea la guía siguiendo el estilo de `guias/fis1
 - Banda azul de título, navegación por secciones, modo claro y oscuro, y que funcione bien en celular (400 px).
 - Teoría completa del resumen, ampliada para que se pueda estudiar solo con la guía.
 - Cada figura interactiva va dentro de su sección, en la columna derecha junto al texto que explica (nunca suelta arriba de la página, antes de la primera sección).
+- En el panel de cada figura, los botones y controles van justo debajo de la figura, y las tarjetas de resultados después. El último control lleva el atributo `data-keep`, y la guía incluye el script `fitSticky` (cópialo de una guía existente) para que la figura y sus controles queden siempre a la vista mientras el panel acompaña la lectura.
 - Figuras interactivas que muestren el mecanismo, ejemplos resueltos paso a paso, una sección de errores típicos, ejercicios con solución en `<details>` y preguntas rápidas de concepto.
 - Verifica la aritmética de cada ejemplo y ejercicio ejecutando el cálculo, no de memoria.
 - Al pie, indica de qué ayudantía sale y aclara que los ejemplos numéricos son de práctica.

@@ -179,28 +179,27 @@ details[open]{padding-bottom:12px}
 <li>Torque neto: Σ<i>τ</i><sub>O</sub> = <strong>+5 N·m</strong>. La barra empieza a girar en sentido antihorario.</li></ol></div>
 </div>
 <div class="sticky">
-<div class="fig" id="f-torque" style="min-height:460px" aria-label="Barra con bisagra en O, fuerza aplicada, línea de acción y brazo perpendicular"><svg></svg></div>
-
-<p style="margin:14px 0 6px"><strong>Empuja una barra con bisagra.</strong> Elige dónde y en qué dirección aplicar la fuerza, y suelta la barra para ver cómo gira.</p>
-<div class="ctl">
-<div class="row"><label for="t-r">Punto de aplicación r</label><input type="range" id="t-r" min="0.1" max="2" step="0.05" value="1.5"><output id="t-ro"></output></div>
-<div class="row"><label for="t-p">Ángulo φ entre r y F</label><input type="range" id="t-p" min="0" max="360" step="1" value="60"><output id="t-po"></output></div>
-<div class="row"><label for="t-f">Magnitud F</label><input type="range" id="t-f" min="0" max="20" step="0.5" value="10"><output id="t-fo"></output></div>
-</div>
-<div class="btns" style="margin-top:12px">
+<div class="fig" id="f-torque" style="min-height:clamp(320px,52vh,460px)" aria-label="Barra con bisagra en O, fuerza aplicada, línea de acción y brazo perpendicular"><svg></svg></div>
+<div class="btns" style="margin-top:14px">
 <button class="main" id="t-go">Soltar la barra</button>
 <button data-pre="1.8,90">Perpendicular, lejos</button>
 <button data-pre="0.3,90">Cerca de la bisagra</button>
 <button data-pre="1.5,180">Hacia la bisagra</button>
 </div>
-<label style="display:flex;gap:8px;align-items:center;margin-top:10px;font-size:15px;min-height:44px"><input type="checkbox" id="t-c" checked style="width:20px;height:20px"> Mostrar componentes de F</label>
+<div class="ctl">
+<div class="row"><label for="t-r">Punto de aplicación r</label><input type="range" id="t-r" min="0.1" max="2" step="0.05" value="1.5"><output id="t-ro"></output></div>
+<div class="row"><label for="t-p">Ángulo φ entre r y F</label><input type="range" id="t-p" min="0" max="360" step="1" value="60"><output id="t-po"></output></div>
+<div class="row"><label for="t-f">Magnitud F</label><input type="range" id="t-f" min="0" max="20" step="0.5" value="10"><output id="t-fo"></output></div>
+</div>
+<label data-keep style="display:flex;gap:8px;align-items:center;margin-top:10px;font-size:15px;min-height:44px"><input type="checkbox" id="t-c" checked style="width:20px;height:20px"> Mostrar componentes de F</label>
 <div class="stats">
 <div class="stat"><span>Torque τ = rF sin φ</span><strong id="t-tau"></strong></div>
 <div class="stat"><span>Brazo d⊥</span><strong id="t-d"></strong></div>
 <div class="stat"><span>Aceleración α = τ/I</span><strong id="t-al"></strong></div>
 </div>
 <div class="key"><span><i style="background:var(--force)"></i>Fuerza F</span><span><i style="background:var(--arm)"></i>Brazo d⊥</span><span><i style="background:var(--perp)"></i>F⊥ (hace girar)</span><span><i style="background:var(--mute)"></i>F∥ (no hace girar)</span></div>
-<p class="small" style="margin-top:10px">Barra de 2 m y 3 kg, con I = ML²/3 = 4 kg·m² respecto a la bisagra. Al soltarla, la fuerza gira junto con la barra.</p>
+<p style="margin:14px 0 0;font-size:15px;color:var(--mute)"><strong>Empuja una barra con bisagra.</strong> Elige dónde y en qué dirección aplicar la fuerza, y suelta la barra para ver cómo gira.</p>
+<p class="small" style="margin-top:6px">Barra de 2 m y 3 kg, con I = ML²/3 = 4 kg·m² respecto a la bisagra. Al soltarla, la fuerza gira junto con la barra.</p>
 </div>
 </div></section>
 
@@ -639,6 +638,9 @@ $('quiz').addEventListener('click',e=>{const b=e.target.closest('button[data-q]'
  if(!ok)box.querySelectorAll('button')[q[2]].classList.add('right');box.querySelector('.fb').textContent=(ok?'Correcto. ':'No. ')+q[3];});
 
 tStats();$('m-bo').textContent=fx(M.b,1)+' m';sStats();pStats();kStats();rStats();wStats();
+const stk=[...document.querySelectorAll('.sticky')];
+const fitSticky=()=>{for(const el of stk){const k=el.querySelector('[data-keep]'),h=k?k.getBoundingClientRect().bottom-el.getBoundingClientRect().top:el.offsetHeight;el.style.top=Math.min(76,innerHeight-h-12)+'px';}};
+const stkRo=new ResizeObserver(fitSticky);stk.forEach(e=>stkRo.observe(e));addEventListener('resize',fitSticky);fitSticky();
 requestAnimationFrame(loop);
 }
 </script>

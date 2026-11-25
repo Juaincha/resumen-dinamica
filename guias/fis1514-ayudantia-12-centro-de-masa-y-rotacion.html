@@ -150,21 +150,20 @@ details[open]{padding-bottom:12px}
 <div class="note"><strong>Para qué sirve en esta unidad.</strong> En la Ayudantía 13 aparecen Σ<i>τ</i><sub>G</sub> = <i>I<sub>G</sub>α</i> y el teorema de Steiner, <i>I</i> = <i>I<sub>G</sub></i> + <i>Md</i>². Ambos necesitan saber dónde está G. El peso de un cuerpo también actúa en G, así que su torque es <i>Mg</i> por la distancia horizontal de G al eje.</div>
 </div>
 <div class="sticky">
-<div class="fig" id="f-cm" style="min-height:clamp(320px,55vw,420px)" aria-label="Tres masas que se pueden arrastrar en un plano y su centro de masa"><svg style="touch-action:none"></svg></div>
-
-<p style="margin:14px 0 6px"><strong>Arrastra las masas y cambia cuánto pesan.</strong> El centro de masa G es un promedio de posiciones en que cada masa pesa según cuánto vale.</p>
-<div class="ctl">
+<div class="fig" id="f-cm" style="min-height:clamp(320px,50vh,420px)" aria-label="Tres masas que se pueden arrastrar en un plano y su centro de masa"><svg style="touch-action:none"></svg></div>
+<div class="btns" style="margin-top:14px"><button data-cp="ej">Ejemplo 1</button><button data-cp="eq">Masas iguales</button><button data-cp="big">Una domina</button></div>
+<div class="ctl" data-keep>
 <div class="row"><label for="c-m0">Masa A</label><input type="range" id="c-m0" min="0" max="10" step="0.5" value="2"><output id="c-o0"></output></div>
 <div class="row"><label for="c-m1">Masa B</label><input type="range" id="c-m1" min="0" max="10" step="0.5" value="3"><output id="c-o1"></output></div>
 <div class="row"><label for="c-m2">Masa C</label><input type="range" id="c-m2" min="0" max="10" step="0.5" value="5"><output id="c-o2"></output></div>
 </div>
-<div class="btns" style="margin-top:12px"><button data-cp="ej">Ejemplo 1</button><button data-cp="eq">Masas iguales</button><button data-cp="big">Una domina</button></div>
 <div class="stats">
 <div class="stat"><span>Masa total M</span><strong id="c-M"></strong></div>
 <div class="stat"><span>x<sub>G</sub> = Σm x / M</span><strong id="c-x"></strong></div>
 <div class="stat"><span>y<sub>G</sub> = Σm y / M</span><strong id="c-y"></strong></div>
 </div>
-<p class="small" style="margin-top:10px">Con masas iguales, G es el baricentro del triángulo. Si una masa vale cero, G queda sobre el segmento que une a las otras dos.</p>
+<p style="margin:14px 0 0;font-size:15px;color:var(--mute)"><strong>Arrastra las masas y cambia cuánto pesan.</strong> El centro de masa G es un promedio de posiciones en que cada masa pesa según cuánto vale.</p>
+<p class="small" style="margin-top:6px">Con masas iguales, G es el baricentro del triángulo. Si una masa vale cero, G queda sobre el segmento que une a las otras dos.</p>
 </div>
 </div></section>
 
@@ -539,6 +538,9 @@ function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;
  requestAnimationFrame(loop);}
 
 cRead();hRead();dRead();oRead();
+const stk=[...document.querySelectorAll('.sticky')];
+const fitSticky=()=>{for(const el of stk){const k=el.querySelector('[data-keep]'),h=k?k.getBoundingClientRect().bottom-el.getBoundingClientRect().top:el.offsetHeight;el.style.top=Math.min(76,innerHeight-h-12)+'px';}};
+const stkRo=new ResizeObserver(fitSticky);stk.forEach(e=>stkRo.observe(e));addEventListener('resize',fitSticky);fitSticky();
 requestAnimationFrame(loop);
 }
 </script>
