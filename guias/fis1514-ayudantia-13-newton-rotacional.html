@@ -177,11 +177,11 @@ details[open]{padding-bottom:12px}
 <ol><li><strong><i>τ</i> = <i>rF</i> sin <i>φ</i></strong>.</li>
 <li>Empujando perpendicular (φ = 90°) obtendrías <i>rF</i>, el máximo. Por eso conviene empujar perpendicular a la llave y lo más lejos posible de la tuerca.</li></ol></div>
 <div class="ex"><h3>Ejemplo 2: con coordenadas</h3>
-<p>Una fuerza <b class="vec">F</b> = (<i>F</i>, −2<i>F</i>) actúa en el punto (2<i>a</i>, <i>a</i>). Calcula el torque respecto al origen.</p>
+<p>Una fuerza <b class="vec">F</b> = (<i>F</i>, −2<i>F</i>) actúa en el punto (2<i>a</i>, <i>a</i>). ¿Cuánto vale el torque respecto al origen y en qué sentido hace girar?</p>
 <ol><li><i>τ<sub>z</sub></i> = <i>x F<sub>y</sub></i> − <i>y F<sub>x</sub></i> = 2<i>a</i>·(−2<i>F</i>) − <i>a</i>·<i>F</i> = <strong>−5<i>aF</i></strong>.</li>
 <li>El signo negativo indica giro horario. Haciendo un dibujo rápido se confirma: la fuerza apunta hacia abajo y a la derecha, y actúa a la derecha y arriba de O.</li></ol></div>
 <div class="ex"><h3>Ejemplo 3: varias fuerzas sobre una barra</h3>
-<p>Una barra de largo <i>L</i> tiene un pasador en su extremo izquierdo O. Sobre ella actúan una fuerza <i>F</i> hacia arriba en el extremo derecho, una fuerza 3<i>F</i>/2 hacia abajo en el medio y una fuerza <i>P</i> a lo largo de la barra en el extremo.</p>
+<p>Una barra de largo <i>L</i> tiene un pasador en su extremo izquierdo O. Sobre ella actúan una fuerza <i>F</i> hacia arriba en el extremo derecho, una fuerza 3<i>F</i>/2 hacia abajo en el medio y una fuerza <i>P</i> a lo largo de la barra en el extremo. ¿Cuál es el torque neto respecto a O y hacia dónde empieza a girar la barra?</p>
 <ol><li><i>F</i> hacia arriba a distancia <i>L</i>: +<i>FL</i> (antihorario).</li>
 <li>3<i>F</i>/2 hacia abajo a distancia <i>L</i>/2: −3<i>FL</i>/4 (horario).</li>
 <li><i>P</i> a lo largo de la barra: su línea pasa por O, así que aporta 0, sin importar cuánto valga.</li>
@@ -228,6 +228,7 @@ details[open]{padding-bottom:12px}
 <h3>Colección de partículas</h3>
 <p>Para un sistema se suman los aportes respecto al mismo O: <b class="vec">H</b><sub>O</sub> = Σ <b class="vec">r</b><sub>i</sub> × m<sub>i</sub><b class="vec">v</b><sub>i</sub>. En el plano los aportes antihorarios suman y los horarios restan, así que pueden cancelarse.</p>
 <div class="ex"><h3>Ejemplo 4: partícula y sistema</h3>
+<p>¿Cuánto vale el momentum angular respecto al origen de una partícula, y el de un sistema de dos partículas?</p>
 <ol><li>Una partícula de masa <i>m</i> está en (3<i>d</i>, 4<i>d</i>) con <b class="vec">v</b> = (2<i>u</i>, −<i>u</i>). Entonces <i>H<sub>z</sub></i> = <i>m</i>(<i>xv<sub>y</sub></i> − <i>yv<sub>x</sub></i>) = <i>m</i>(3<i>d</i>·(−<i>u</i>) − 4<i>d</i>·2<i>u</i>) = <strong>−11<i>mdu</i></strong>, que es horario.</li>
 <li>Dos partículas de masa <i>m</i>: una en (<i>d</i>, 0) con <b class="vec">v</b> = (0, 2<i>u</i>), y otra en (−2<i>d</i>, 0) con <b class="vec">v</b> = (0, 3<i>u</i>). Los aportes son +2<i>mdu</i> y −6<i>mdu</i>, así que <strong><i>H</i> = −4<i>mdu</i></strong>. Ambas suben, pero respecto a O una gira antihorario y la otra horario.</li></ol></div>
 </div>
@@ -278,7 +279,7 @@ details[open]{padding-bottom:12px}
 <h3>Cuerpos compuestos</h3>
 <p>El momento de inercia se suma: el de un cuerpo formado por piezas es la suma de los de cada pieza, <strong>todos respecto al mismo eje</strong>. Para cada pieza tomas su <i>I<sub>G</sub></i> de la tabla y lo trasladas al eje con Steiner.</p>
 <div class="ex"><h3>Ejemplo: péndulo de varilla y disco</h3>
-<p>Una varilla de masa <i>M</i> y largo <i>L</i> gira en torno a un eje en un extremo. En el otro extremo lleva soldado un disco de masa <i>m</i> y radio <i>r</i>, con su centro justo en la punta de la varilla (el disco gira junto con la varilla, en el mismo plano).</p>
+<p>Una varilla de masa <i>M</i> y largo <i>L</i> gira en torno a un eje en un extremo. En el otro extremo lleva soldado un disco de masa <i>m</i> y radio <i>r</i>, con su centro justo en la punta de la varilla (el disco gira junto con la varilla, en el mismo plano). ¿Cuánto vale el momento de inercia del conjunto respecto al eje, y su radio de giro?</p>
 <ol><li>Varilla respecto a su extremo: <i>ML</i>²/3.</li>
 <li>Disco: su <i>I<sub>G</sub></i> = ½<i>mr</i>², y su centro está a distancia <i>L</i> del eje. Steiner: ½<i>mr</i>² + <i>mL</i>².</li>
 <li>Total: <strong><i>I</i> = <i>ML</i>²/3 + ½<i>mr</i>² + <i>mL</i>²</strong>. Radio de giro del conjunto: <strong><i>k</i> = √(<i>I</i>/(<i>M</i> + <i>m</i>))</strong>.</li>
@@ -305,7 +306,7 @@ details[open]{padding-bottom:12px}
 <div class="eq">Σ <i>τ</i><sub>ext,z</sub> = <i>I<sub>z</sub> α</i>,&nbsp;&nbsp; <i>α</i> = d<i>ω</i>/dt</div>
 <p>Es exactamente Σ<i>F</i> = <i>ma</i> con <i>τ</i> en lugar de <i>F</i>, <i>I</i> en lugar de <i>m</i> y <i>α</i> en lugar de <i>a</i>. Más torque produce más aceleración angular, y más inercia produce menos.</p>
 <div class="ex"><h3>Ejemplo 5: polea con masa (la figura)</h3>
-<p>Un bloque de masa <i>m</i> cuelga de una cuerda enrollada en una polea-disco de masa <i>M</i> y radio <i>R</i>, que gira sin roce en un eje fijo.</p>
+<p>Un bloque de masa <i>m</i> cuelga de una cuerda enrollada en una polea-disco de masa <i>M</i> y radio <i>R</i>, que gira sin roce en un eje fijo. ¿Cuánto valen la aceleración del bloque, la tensión de la cuerda y la aceleración angular de la polea?</p>
 <ol><li><strong>Bloque</strong> (positivo hacia abajo): <i>mg</i> − <i>T</i> = <i>ma</i>.</li>
 <li><strong>Polea</strong> (torques respecto a su eje; la reacción del eje no aporta porque pasa por él): <i>TR</i> = ½<i>MR</i>²<i>α</i>.</li>
 <li><strong>Vínculo</strong> (la cuerda no desliza): <i>a</i> = <i>Rα</i>. Con eso la ecuación de la polea queda <i>T</i> = ½<i>Ma</i>.</li>
@@ -338,7 +339,7 @@ details[open]{padding-bottom:12px}
 </div>
 <div>
 <div class="ex"><h3>Ejemplo 6: motor y freno</h3>
-<p>Una rueda con momento de inercia <i>I</i> parte del reposo. Un motor le aplica un torque <i>τ<sub>m</sub></i> durante un tiempo <i>t</i><sub>1</sub>, y después se aplica un freno de torque <i>τ<sub>f</sub></i>.</p>
+<p>Una rueda con momento de inercia <i>I</i> parte del reposo. Un motor le aplica un torque <i>τ<sub>m</sub></i> durante un tiempo <i>t</i><sub>1</sub>, y después se aplica un freno de torque <i>τ<sub>f</sub></i>. ¿Qué velocidad angular alcanza con el motor, y cuánto tarda el freno en detenerla?</p>
 <ol><li>Fase motor: Δ<i>H</i> = <i>τ<sub>m</sub>t</i><sub>1</sub>, así que <strong><i>ω</i> = <i>τ<sub>m</sub>t</i><sub>1</sub>/<i>I</i></strong>.</li>
 <li>Fase freno: para llevar <i>H</i> de <i>τ<sub>m</sub>t</i><sub>1</sub> a 0 con −<i>τ<sub>f</sub></i> hace falta <strong>Δ<i>t</i> = <i>τ<sub>m</sub>t</i><sub>1</sub>/<i>τ<sub>f</sub></i></strong>, sin importar <i>I</i>.</li>
 <li>No fue necesario calcular α ni usar cinemática angular: el impulso conecta directamente torque, tiempo y velocidad.</li></ol></div>
@@ -353,11 +354,11 @@ details[open]{padding-bottom:12px}
 <p>Cuando un cuerpo cambia su distribución de masa, I cambia y ω compensa. Alejar las masas del eje aumenta I y reduce ω. Acercarlas tiene el efecto contrario. Es la patinadora de la figura.</p>
 <div class="note"><strong>La energía generalmente no se conserva.</strong> En la figura H es fijo, pero <i>K</i> = <i>H</i>²/2<i>I</i> sube al recoger los brazos. Esa energía la aporta el trabajo de los músculos, que son fuerzas internas: cambian <i>K</i> pero no <i>H</i>. En acoplamientos y choques ocurre al revés: <i>H</i> se conserva y se pierde energía.</div>
 <div class="ex"><h3>Ejemplo 7: dos discos que se acoplan</h3>
-<p>Un disco A (momento de inercia <i>I<sub>A</sub></i>) gira con <i>ω</i><sub>0</sub>. Sobre él cae un disco B (momento de inercia <i>I<sub>B</sub></i>) en reposo, en el mismo eje, y quedan girando juntos.</p>
+<p>Un disco A (momento de inercia <i>I<sub>A</sub></i>) gira con <i>ω</i><sub>0</sub>. Sobre él cae un disco B (momento de inercia <i>I<sub>B</sub></i>) en reposo, en el mismo eje, y quedan girando juntos. ¿Con qué velocidad angular quedan girando y qué fracción de la energía se pierde?</p>
 <ol><li>Las fuerzas de roce entre los discos son internas al sistema A+B, así que <i>H</i> se conserva: <i>I<sub>A</sub>ω</i><sub>0</sub> = (<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>)<i>ω<sub>f</sub></i>, de donde <strong><i>ω<sub>f</sub></i> = <i>I<sub>A</sub>ω</i><sub>0</sub>/(<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>)</strong>.</li>
 <li>Energía: <i>K<sub>i</sub></i> = ½<i>I<sub>A</sub>ω</i><sub>0</sub>² y <i>K<sub>f</sub></i> = ½(<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>)<i>ω<sub>f</sub></i>² = <i>K<sub>i</sub></i>·<i>I<sub>A</sub></i>/(<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>). Se pierde la fracción <strong><i>I<sub>B</sub></i>/(<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>)</strong> en el roce. Es un "choque inelástico" rotacional.</li></ol></div>
 <div class="ex"><h3>Ejemplo 8: cuerda por un agujero (fuerza central)</h3>
-<p>Una masa <i>m</i> gira sobre una mesa sin roce, atada a una cuerda que pasa por un agujero O. Gira con rapidez <i>v</i>₁ en un radio <i>r</i>₁, y desde abajo tiran la cuerda hasta que el radio es <i>r</i>₂.</p>
+<p>Una masa <i>m</i> gira sobre una mesa sin roce, atada a una cuerda que pasa por un agujero O. Gira con rapidez <i>v</i>₁ en un radio <i>r</i>₁, y desde abajo tiran la cuerda hasta que el radio es <i>r</i>₂. ¿Con qué rapidez gira al final y cuánto trabajo hace quien tira de la cuerda?</p>
 <ol><li>La tensión siempre apunta hacia O, así que su torque respecto a O es cero y <i>H</i><sub>O</sub> = <i>m v r</i> se conserva.</li>
 <li><i>mv</i>₁<i>r</i>₁ = <i>mv</i>₂<i>r</i>₂, de donde <strong><i>v</i>₂ = <i>v</i>₁<i>r</i>₁/<i>r</i>₂</strong>. Si el radio baja a la mitad, la rapidez se duplica.</li>
 <li>La energía cinética se multiplica por (<i>r</i>₁/<i>r</i>₂)²: la persona que tira de la cuerda hace un trabajo <strong><i>W</i> = ½<i>mv</i>₁²[(<i>r</i>₁/<i>r</i>₂)² − 1]</strong>.</li></ol></div>
@@ -412,7 +413,7 @@ details[open]{padding-bottom:12px}
 </ul>
 <div class="note"><strong>Ojo con los signos.</strong> La diapositiva de rodadura usa giro positivo horario para que <i>v</i> y <i>ω</i> tengan el mismo signo cuando la rueda avanza a la derecha. Si usas antihorario positivo, la condición queda <i>v<sub>G</sub></i> = −<i>Rω</i>. Elige una convención al empezar y mantenla.</div>
 <div class="ex"><h3>Ejemplo 9: bola de bowling que desliza y luego rueda</h3>
-<p>Una esfera sólida se lanza con rapidez <i>v</i>₀ sin girar, sobre un piso con coeficiente de roce cinético <i>μ<sub>k</sub></i>. Al principio desliza, la fricción la frena y a la vez la hace girar, hasta que empieza a rodar sin deslizar. ¿Con qué velocidad termina?</p>
+<p>Una esfera sólida se lanza con rapidez <i>v</i>₀ sin girar, sobre un piso con coeficiente de roce cinético <i>μ<sub>k</sub></i>. Al principio desliza, la fricción la frena y a la vez la hace girar, hasta que empieza a rodar sin deslizar. ¿Cuánto tarda en dejar de deslizar y con qué velocidad termina?</p>
 <ol><li>Mientras desliza no se puede usar <i>v</i> = <i>Rω</i>. Las ecuaciones son <i>v</i> = <i>v</i>₀ − <i>μg t</i> y <i>Rω</i> = (5/2)<i>μ g t</i>, que salen de <i>fR</i> = (2/5)<i>MR</i>²<i>α</i>.</li>
 <li>Deja de deslizar cuando <i>v</i> = <i>Rω</i>: <strong><i>t</i> = 2<i>v</i>₀/(7<i>μg</i>)</strong>.</li>
 <li>Atajo elegante: respecto a un punto fijo del suelo, la fricción tiene brazo cero y los torques de peso y normal se cancelan. Por lo tanto <i>H</i> se conserva: <i>Mv</i>₀<i>R</i> = <i>MvR</i> + (2/5)<i>MR</i>²(<i>v</i>/<i>R</i>), así que <strong><i>v</i> = 5<i>v</i>₀/7</strong>. Esto vale para cualquier <i>μ</i>.</li></ol></div>
