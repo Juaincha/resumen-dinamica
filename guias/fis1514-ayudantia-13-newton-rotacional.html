@@ -173,19 +173,19 @@ details[open]{padding-bottom:12px}
 <p>Aquí (<i>x</i>, <i>y</i>) son las coordenadas del punto de aplicación medidas desde O. Esta fórmula evita la mayoría de los errores de signo.</p>
 <div class="note"><strong>Torque cero.</strong> Si la línea de acción pasa por O, el brazo es cero y τ<sub>O</sub> = 0, aunque la fuerza sea enorme. Esto es una herramienta: si eliges O sobre una fuerza desconocida (una reacción en un pasador, una tensión), esa fuerza desaparece de la ecuación de torques.</div>
 <div class="ex"><h3>Ejemplo 1: llave inglesa</h3>
-<p>Una llave de 0.25 m se empuja en su extremo con 80 N, formando 60° con la llave. ¿Cuál es el torque sobre la tuerca?</p>
-<ol><li><i>τ</i> = <i>rF</i> sin <i>φ</i> = 0.25 · 80 · sin 60° = <strong>17.3 N·m</strong>.</li>
-<li>Empujando perpendicular (φ = 90°) obtendrías 20 N·m, el máximo. Por eso conviene empujar perpendicular a la llave y lo más lejos posible de la tuerca.</li></ol></div>
+<p>Una llave de largo <i>r</i> se empuja en su extremo con una fuerza <i>F</i> que forma un ángulo <i>φ</i> con la llave. ¿Cuál es el torque sobre la tuerca?</p>
+<ol><li><strong><i>τ</i> = <i>rF</i> sin <i>φ</i></strong>.</li>
+<li>Empujando perpendicular (φ = 90°) obtendrías <i>rF</i>, el máximo. Por eso conviene empujar perpendicular a la llave y lo más lejos posible de la tuerca.</li></ol></div>
 <div class="ex"><h3>Ejemplo 2: con coordenadas</h3>
-<p>Una fuerza <b class="vec">F</b> = (3, −4) N actúa en el punto (2, 1) m. Calcula el torque respecto al origen.</p>
-<ol><li><i>τ<sub>z</sub></i> = <i>x F<sub>y</sub></i> − <i>y F<sub>x</sub></i> = 2·(−4) − 1·3 = <strong>−11 N·m</strong>.</li>
+<p>Una fuerza <b class="vec">F</b> = (<i>F</i>, −2<i>F</i>) actúa en el punto (2<i>a</i>, <i>a</i>). Calcula el torque respecto al origen.</p>
+<ol><li><i>τ<sub>z</sub></i> = <i>x F<sub>y</sub></i> − <i>y F<sub>x</sub></i> = 2<i>a</i>·(−2<i>F</i>) − <i>a</i>·<i>F</i> = <strong>−5<i>aF</i></strong>.</li>
 <li>El signo negativo indica giro horario. Haciendo un dibujo rápido se confirma: la fuerza apunta hacia abajo y a la derecha, y actúa a la derecha y arriba de O.</li></ol></div>
 <div class="ex"><h3>Ejemplo 3: varias fuerzas sobre una barra</h3>
-<p>Una barra de 2 m tiene un pasador en su extremo izquierdo O. Sobre ella actúan 10 N hacia arriba en el extremo derecho, 15 N hacia abajo en el medio y 20 N a lo largo de la barra en el extremo.</p>
-<ol><li>10 N hacia arriba a 2 m: +10·2 = +20 N·m (antihorario).</li>
-<li>15 N hacia abajo a 1 m: −15·1 = −15 N·m (horario).</li>
-<li>20 N a lo largo de la barra: su línea pasa por O, así que aporta 0.</li>
-<li>Torque neto: Σ<i>τ</i><sub>O</sub> = <strong>+5 N·m</strong>. La barra empieza a girar en sentido antihorario.</li></ol></div>
+<p>Una barra de largo <i>L</i> tiene un pasador en su extremo izquierdo O. Sobre ella actúan una fuerza <i>F</i> hacia arriba en el extremo derecho, una fuerza 3<i>F</i>/2 hacia abajo en el medio y una fuerza <i>P</i> a lo largo de la barra en el extremo.</p>
+<ol><li><i>F</i> hacia arriba a distancia <i>L</i>: +<i>FL</i> (antihorario).</li>
+<li>3<i>F</i>/2 hacia abajo a distancia <i>L</i>/2: −3<i>FL</i>/4 (horario).</li>
+<li><i>P</i> a lo largo de la barra: su línea pasa por O, así que aporta 0, sin importar cuánto valga.</li>
+<li>Torque neto: Σ<i>τ</i><sub>O</sub> = <strong>+<i>FL</i>/4</strong>. La barra empieza a girar en sentido antihorario.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-torque" style="min-height:clamp(320px,52vh,460px)" aria-label="Barra con bisagra en O, fuerza aplicada, línea de acción y brazo perpendicular"><svg></svg></div>
@@ -228,8 +228,8 @@ details[open]{padding-bottom:12px}
 <h3>Colección de partículas</h3>
 <p>Para un sistema se suman los aportes respecto al mismo O: <b class="vec">H</b><sub>O</sub> = Σ <b class="vec">r</b><sub>i</sub> × m<sub>i</sub><b class="vec">v</b><sub>i</sub>. En el plano los aportes antihorarios suman y los horarios restan, así que pueden cancelarse.</p>
 <div class="ex"><h3>Ejemplo 4: partícula y sistema</h3>
-<ol><li>Una partícula de 0.5 kg está en (3, 4) m con <b class="vec">v</b> = (2, −1) m/s. Entonces <i>H<sub>z</sub></i> = 0.5·(3·(−1) − 4·2) = <strong>−5.5 kg·m²/s</strong>, que es horario.</li>
-<li>Dos partículas de 1 kg: una en (1, 0) m con <b class="vec">v</b> = (0, 2) m/s, y otra en (−2, 0) m con <b class="vec">v</b> = (0, 3) m/s. Los aportes son +2 y −6, así que <strong><i>H</i> = −4 kg·m²/s</strong>. Ambas suben, pero respecto a O una gira antihorario y la otra horario.</li></ol></div>
+<ol><li>Una partícula de masa <i>m</i> está en (3<i>d</i>, 4<i>d</i>) con <b class="vec">v</b> = (2<i>u</i>, −<i>u</i>). Entonces <i>H<sub>z</sub></i> = <i>m</i>(<i>xv<sub>y</sub></i> − <i>yv<sub>x</sub></i>) = <i>m</i>(3<i>d</i>·(−<i>u</i>) − 4<i>d</i>·2<i>u</i>) = <strong>−11<i>mdu</i></strong>, que es horario.</li>
+<li>Dos partículas de masa <i>m</i>: una en (<i>d</i>, 0) con <b class="vec">v</b> = (0, 2<i>u</i>), y otra en (−2<i>d</i>, 0) con <b class="vec">v</b> = (0, 3<i>u</i>). Los aportes son +2<i>mdu</i> y −6<i>mdu</i>, así que <strong><i>H</i> = −4<i>mdu</i></strong>. Ambas suben, pero respecto a O una gira antihorario y la otra horario.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-mom" aria-label="Partícula en línea recta pasando cerca de O, con su velocidad descompuesta"><svg></svg></div>
@@ -274,15 +274,15 @@ details[open]{padding-bottom:12px}
 <h3>Radio de giro</h3>
 <p>Muchos enunciados dan el momento de inercia a través del <strong>radio de giro</strong> <i>k</i>: la distancia al eje a la que habría que concentrar toda la masa para tener el mismo <i>I</i>.</p>
 <div class="eq"><i>I</i> = <i>M k</i>²&nbsp;&nbsp; ⇔&nbsp;&nbsp; <i>k</i> = √(<i>I</i>/<i>M</i>)</div>
-<p>Por ejemplo, para un disco respecto a su eje, <i>k</i> = <i>R</i>/√2 ≈ 0.71<i>R</i>; para un aro, <i>k</i> = <i>R</i>. Si te dan <i>k<sub>G</sub></i> respecto al centro de masa, Steiner queda <i>I</i> = <i>M</i>(<i>k<sub>G</sub></i>² + <i>d</i>²).</p>
+<p>Por ejemplo, para un disco respecto a su eje, <i>k</i> = <i>R</i>/√2; para un aro, <i>k</i> = <i>R</i>. Si te dan <i>k<sub>G</sub></i> respecto al centro de masa, Steiner queda <i>I</i> = <i>M</i>(<i>k<sub>G</sub></i>² + <i>d</i>²).</p>
 <h3>Cuerpos compuestos</h3>
 <p>El momento de inercia se suma: el de un cuerpo formado por piezas es la suma de los de cada pieza, <strong>todos respecto al mismo eje</strong>. Para cada pieza tomas su <i>I<sub>G</sub></i> de la tabla y lo trasladas al eje con Steiner.</p>
 <div class="ex"><h3>Ejemplo: péndulo de varilla y disco</h3>
-<p>Una varilla de 1 kg y 1 m gira en torno a un eje en un extremo. En el otro extremo lleva soldado un disco de 2 kg y radio 0.1 m, con su centro justo en la punta de la varilla (el disco gira junto con la varilla, en el mismo plano).</p>
-<ol><li>Varilla respecto a su extremo: <i>ML</i>²/3 = 1·1²/3 = 0.333 kg·m².</li>
-<li>Disco: su <i>I<sub>G</sub></i> = ½<i>mR</i>² = 0.01 kg·m², y su centro está a 1 m del eje. Steiner: 0.01 + 2·1² = 2.01 kg·m².</li>
-<li>Total: <strong><i>I</i> = 2.34 kg·m²</strong>. Radio de giro del conjunto: <i>k</i> = √(2.34/3) = <strong>0.88 m</strong>.</li>
-<li>Casi todo el <i>I</i> viene del término <i>md</i>² del disco: tratarlo como una masa puntual en la punta (2 kg·m²) habría dado casi lo mismo.</li></ol></div>
+<p>Una varilla de masa <i>M</i> y largo <i>L</i> gira en torno a un eje en un extremo. En el otro extremo lleva soldado un disco de masa <i>m</i> y radio <i>r</i>, con su centro justo en la punta de la varilla (el disco gira junto con la varilla, en el mismo plano).</p>
+<ol><li>Varilla respecto a su extremo: <i>ML</i>²/3.</li>
+<li>Disco: su <i>I<sub>G</sub></i> = ½<i>mr</i>², y su centro está a distancia <i>L</i> del eje. Steiner: ½<i>mr</i>² + <i>mL</i>².</li>
+<li>Total: <strong><i>I</i> = <i>ML</i>²/3 + ½<i>mr</i>² + <i>mL</i>²</strong>. Radio de giro del conjunto: <strong><i>k</i> = √(<i>I</i>/(<i>M</i> + <i>m</i>))</strong>.</li>
+<li>Si el disco es chico (<i>r</i> ≪ <i>L</i>), el término ½<i>mr</i>² es despreciable frente a <i>mL</i>², y tratar el disco como una masa puntual en la punta da casi lo mismo.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig tall" id="f-st" aria-label="Varilla con eje desplazable y gráfico de I en función de d"><svg></svg></div>
@@ -305,12 +305,12 @@ details[open]{padding-bottom:12px}
 <div class="eq">Σ <i>τ</i><sub>ext,z</sub> = <i>I<sub>z</sub> α</i>,&nbsp;&nbsp; <i>α</i> = d<i>ω</i>/dt</div>
 <p>Es exactamente Σ<i>F</i> = <i>ma</i> con <i>τ</i> en lugar de <i>F</i>, <i>I</i> en lugar de <i>m</i> y <i>α</i> en lugar de <i>a</i>. Más torque produce más aceleración angular, y más inercia produce menos.</p>
 <div class="ex"><h3>Ejemplo 5: polea con masa (la figura)</h3>
-<p>Un bloque de masa <i>m</i> cuelga de una cuerda enrollada en una polea-disco de masa <i>M</i> y radio <i>R</i>, que gira sin roce en un eje fijo. Datos: <i>m</i> = 2 kg, <i>M</i> = 4 kg, <i>R</i> = 0.2 m, <i>g</i> = 9.8 m/s².</p>
+<p>Un bloque de masa <i>m</i> cuelga de una cuerda enrollada en una polea-disco de masa <i>M</i> y radio <i>R</i>, que gira sin roce en un eje fijo.</p>
 <ol><li><strong>Bloque</strong> (positivo hacia abajo): <i>mg</i> − <i>T</i> = <i>ma</i>.</li>
 <li><strong>Polea</strong> (torques respecto a su eje; la reacción del eje no aporta porque pasa por él): <i>TR</i> = ½<i>MR</i>²<i>α</i>.</li>
 <li><strong>Vínculo</strong> (la cuerda no desliza): <i>a</i> = <i>Rα</i>. Con eso la ecuación de la polea queda <i>T</i> = ½<i>Ma</i>.</li>
-<li>Sumando: <i>mg</i> = (<i>m</i> + <i>M</i>/2)<i>a</i>, así que <strong><i>a</i> = <i>mg</i>/(<i>m</i> + <i>M</i>/2) = 4.9 m/s²</strong>.</li>
-<li><i>T</i> = ½·4·4.9 = <strong>9.8 N</strong> (menor que <i>mg</i> = 19.6 N) y <i>α</i> = 4.9/0.2 = <strong>24.5 rad/s²</strong>.</li></ol>
+<li>Sumando: <i>mg</i> = (<i>m</i> + <i>M</i>/2)<i>a</i>, así que <strong><i>a</i> = 2<i>mg</i>/(2<i>m</i> + <i>M</i>)</strong>.</li>
+<li><strong><i>T</i> = ½<i>Ma</i> = <i>Mmg</i>/(2<i>m</i> + <i>M</i>)</strong>, menor que <i>mg</i>, y <strong><i>α</i> = <i>a</i>/<i>R</i> = 2<i>mg</i>/((2<i>m</i> + <i>M</i>)<i>R</i>)</strong>.</li></ol>
 <p style="margin:10px 0 0">Comprobación: con <i>M</i> = 0 sale <i>a</i> = <i>g</i>, caída libre. La polea actúa como si sumara <i>I</i>/<i>R</i>² = <i>M</i>/2 de masa extra que hay que acelerar.</p></div>
 </div>
 <div class="sticky">
@@ -338,9 +338,9 @@ details[open]{padding-bottom:12px}
 </div>
 <div>
 <div class="ex"><h3>Ejemplo 6: motor y freno</h3>
-<p>Una rueda con <i>I</i> = 0.8 kg·m² parte del reposo. Un motor le aplica 4 N·m durante 3 s, y después se aplica un freno de 2 N·m.</p>
-<ol><li>Fase motor: Δ<i>H</i> = 4·3 = 12 kg·m²/s, así que <i>ω</i> = 12/0.8 = <strong>15 rad/s</strong>.</li>
-<li>Fase freno: para llevar <i>H</i> de 12 a 0 con −2 N·m hace falta Δ<i>t</i> = 12/2 = <strong>6 s</strong>.</li>
+<p>Una rueda con momento de inercia <i>I</i> parte del reposo. Un motor le aplica un torque <i>τ<sub>m</sub></i> durante un tiempo <i>t</i><sub>1</sub>, y después se aplica un freno de torque <i>τ<sub>f</sub></i>.</p>
+<ol><li>Fase motor: Δ<i>H</i> = <i>τ<sub>m</sub>t</i><sub>1</sub>, así que <strong><i>ω</i> = <i>τ<sub>m</sub>t</i><sub>1</sub>/<i>I</i></strong>.</li>
+<li>Fase freno: para llevar <i>H</i> de <i>τ<sub>m</sub>t</i><sub>1</sub> a 0 con −<i>τ<sub>f</sub></i> hace falta <strong>Δ<i>t</i> = <i>τ<sub>m</sub>t</i><sub>1</sub>/<i>τ<sub>f</sub></i></strong>, sin importar <i>I</i>.</li>
 <li>No fue necesario calcular α ni usar cinemática angular: el impulso conecta directamente torque, tiempo y velocidad.</li></ol></div>
 </div>
 </div></section>
@@ -353,14 +353,14 @@ details[open]{padding-bottom:12px}
 <p>Cuando un cuerpo cambia su distribución de masa, I cambia y ω compensa. Alejar las masas del eje aumenta I y reduce ω. Acercarlas tiene el efecto contrario. Es la patinadora de la figura.</p>
 <div class="note"><strong>La energía generalmente no se conserva.</strong> En la figura H es fijo, pero <i>K</i> = <i>H</i>²/2<i>I</i> sube al recoger los brazos. Esa energía la aporta el trabajo de los músculos, que son fuerzas internas: cambian <i>K</i> pero no <i>H</i>. En acoplamientos y choques ocurre al revés: <i>H</i> se conserva y se pierde energía.</div>
 <div class="ex"><h3>Ejemplo 7: dos discos que se acoplan</h3>
-<p>Un disco A (<i>I</i> = 0.6 kg·m²) gira a 10 rad/s. Sobre él cae un disco B (<i>I</i> = 0.4 kg·m²) en reposo, en el mismo eje, y quedan girando juntos.</p>
-<ol><li>Las fuerzas de roce entre los discos son internas al sistema A+B, así que <i>H</i> se conserva: 0.6·10 = (0.6 + 0.4)<i>ω<sub>f</sub></i>, de donde <strong><i>ω<sub>f</sub></i> = 6 rad/s</strong>.</li>
-<li>Energía: <i>K<sub>i</sub></i> = ½·0.6·10² = 30 J y <i>K<sub>f</sub></i> = ½·1.0·6² = 18 J. Se pierden 12 J (40 %) en el roce. Es un "choque inelástico" rotacional.</li></ol></div>
+<p>Un disco A (momento de inercia <i>I<sub>A</sub></i>) gira con <i>ω</i><sub>0</sub>. Sobre él cae un disco B (momento de inercia <i>I<sub>B</sub></i>) en reposo, en el mismo eje, y quedan girando juntos.</p>
+<ol><li>Las fuerzas de roce entre los discos son internas al sistema A+B, así que <i>H</i> se conserva: <i>I<sub>A</sub>ω</i><sub>0</sub> = (<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>)<i>ω<sub>f</sub></i>, de donde <strong><i>ω<sub>f</sub></i> = <i>I<sub>A</sub>ω</i><sub>0</sub>/(<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>)</strong>.</li>
+<li>Energía: <i>K<sub>i</sub></i> = ½<i>I<sub>A</sub>ω</i><sub>0</sub>² y <i>K<sub>f</sub></i> = ½(<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>)<i>ω<sub>f</sub></i>² = <i>K<sub>i</sub></i>·<i>I<sub>A</sub></i>/(<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>). Se pierde la fracción <strong><i>I<sub>B</sub></i>/(<i>I<sub>A</sub></i> + <i>I<sub>B</sub></i>)</strong> en el roce. Es un "choque inelástico" rotacional.</li></ol></div>
 <div class="ex"><h3>Ejemplo 8: cuerda por un agujero (fuerza central)</h3>
-<p>Una masa de 0.2 kg gira sobre una mesa sin roce, atada a una cuerda que pasa por un agujero O. Gira a 2 m/s en un radio de 0.5 m, y desde abajo tiran la cuerda hasta que el radio es 0.25 m.</p>
+<p>Una masa <i>m</i> gira sobre una mesa sin roce, atada a una cuerda que pasa por un agujero O. Gira con rapidez <i>v</i>₁ en un radio <i>r</i>₁, y desde abajo tiran la cuerda hasta que el radio es <i>r</i>₂.</p>
 <ol><li>La tensión siempre apunta hacia O, así que su torque respecto a O es cero y <i>H</i><sub>O</sub> = <i>m v r</i> se conserva.</li>
-<li>0.2·2·0.5 = 0.2·<i>v</i>₂·0.25, de donde <strong><i>v</i>₂ = 4 m/s</strong>.</li>
-<li>La energía sube de 0.4 J a 1.6 J: la persona que tira de la cuerda hace 1.2 J de trabajo.</li></ol></div>
+<li><i>mv</i>₁<i>r</i>₁ = <i>mv</i>₂<i>r</i>₂, de donde <strong><i>v</i>₂ = <i>v</i>₁<i>r</i>₁/<i>r</i>₂</strong>. Si el radio baja a la mitad, la rapidez se duplica.</li>
+<li>La energía cinética se multiplica por (<i>r</i>₁/<i>r</i>₂)²: la persona que tira de la cuerda hace un trabajo <strong><i>W</i> = ½<i>mv</i>₁²[(<i>r</i>₁/<i>r</i>₂)² − 1]</strong>.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-sk" aria-label="Patinadora vista desde arriba con masas que se acercan o alejan del eje"><svg></svg></div>
@@ -389,7 +389,7 @@ details[open]{padding-bottom:12px}
 <li>Resultado: <strong><i>a</i> = <i>g</i> sin <i>θ</i> / (1 + <i>k</i>)</strong> y <i>f</i> = <i>Mg</i> sin <i>θ</i> · <i>k</i>/(1 + <i>k</i>).</li></ol>
 <p>La aceleración no depende de la masa ni del radio, solo de <i>k</i>, es decir, de cómo está repartida la masa. Cuanta más masa lejos del centro, más energía se va en hacer girar el cuerpo y más lento baja. El orden es siempre el mismo: esfera sólida, disco, esfera hueca, aro. Un bloque sin roce, que no gira, les gana a todos.</p>
 <div class="note"><strong>Con energía es más corto.</strong> Este mismo resultado sale en dos líneas con conservación de energía, contando la energía cinética de rotación. Está en la guía <a href="fis1514-energia-en-rotacion.html#rodadura">Energía en rotación</a>.</div>
-<p>Para que pueda rodar sin deslizar, la fricción estática debe alcanzar: <i>f</i> ≤ <i>μ<sub>s</sub>N</i> ⇒ <i>μ<sub>s</sub></i> ≥ tan <i>θ</i> · <i>k</i>/(1 + <i>k</i>). Para un disco a 30°, <i>μ<sub>s</sub></i> ≥ 0.19.</p>
+<p>Para que pueda rodar sin deslizar, la fricción estática debe alcanzar: <i>f</i> ≤ <i>μ<sub>s</sub>N</i> ⇒ <i>μ<sub>s</sub></i> ≥ tan <i>θ</i> · <i>k</i>/(1 + <i>k</i>). Para un disco (<i>k</i> = 1/2), <i>μ<sub>s</sub></i> ≥ (tan <i>θ</i>)/3.</p>
 </div>
 <div class="sticky">
 <div class="fig" id="f-race" style="min-height:360px" aria-label="Carrera de cinco cuerpos bajando un plano inclinado de 3 m"><svg></svg></div>
@@ -412,10 +412,10 @@ details[open]{padding-bottom:12px}
 </ul>
 <div class="note"><strong>Ojo con los signos.</strong> La diapositiva de rodadura usa giro positivo horario para que <i>v</i> y <i>ω</i> tengan el mismo signo cuando la rueda avanza a la derecha. Si usas antihorario positivo, la condición queda <i>v<sub>G</sub></i> = −<i>Rω</i>. Elige una convención al empezar y mantenla.</div>
 <div class="ex"><h3>Ejemplo 9: bola de bowling que desliza y luego rueda</h3>
-<p>Una esfera sólida se lanza a <i>v</i>₀ = 6 m/s sin girar, con <i>μ<sub>k</sub></i> = 0.2. Al principio desliza, la fricción la frena y a la vez la hace girar, hasta que empieza a rodar sin deslizar. ¿Con qué velocidad termina?</p>
+<p>Una esfera sólida se lanza con rapidez <i>v</i>₀ sin girar, sobre un piso con coeficiente de roce cinético <i>μ<sub>k</sub></i>. Al principio desliza, la fricción la frena y a la vez la hace girar, hasta que empieza a rodar sin deslizar. ¿Con qué velocidad termina?</p>
 <ol><li>Mientras desliza no se puede usar <i>v</i> = <i>Rω</i>. Las ecuaciones son <i>v</i> = <i>v</i>₀ − <i>μg t</i> y <i>Rω</i> = (5/2)<i>μ g t</i>, que salen de <i>fR</i> = (2/5)<i>MR</i>²<i>α</i>.</li>
-<li>Deja de deslizar cuando <i>v</i> = <i>Rω</i>: <i>t</i> = 2<i>v</i>₀/(7<i>μg</i>) = 0.87 s.</li>
-<li>Atajo elegante: respecto a un punto fijo del suelo, la fricción tiene brazo cero y los torques de peso y normal se cancelan. Por lo tanto <i>H</i> se conserva: <i>Mv</i>₀<i>R</i> = <i>MvR</i> + (2/5)<i>MR</i>²(<i>v</i>/<i>R</i>), así que <strong><i>v</i> = 5<i>v</i>₀/7 ≈ 4.29 m/s</strong>. Esto vale para cualquier <i>μ</i>.</li></ol></div>
+<li>Deja de deslizar cuando <i>v</i> = <i>Rω</i>: <strong><i>t</i> = 2<i>v</i>₀/(7<i>μg</i>)</strong>.</li>
+<li>Atajo elegante: respecto a un punto fijo del suelo, la fricción tiene brazo cero y los torques de peso y normal se cancelan. Por lo tanto <i>H</i> se conserva: <i>Mv</i>₀<i>R</i> = <i>MvR</i> + (2/5)<i>MR</i>²(<i>v</i>/<i>R</i>), así que <strong><i>v</i> = 5<i>v</i>₀/7</strong>. Esto vale para cualquier <i>μ</i>.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-roll" aria-label="Rueda rodando con vectores velocidad y trayectoria de un punto del borde"><svg></svg></div>
@@ -454,13 +454,13 @@ details[open]{padding-bottom:12px}
 
 <section class="band" id="ejercicios"><div class="wrap">
 <h2>Ejercicios para practicar</h2>
-<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<p>Primero intenta cada uno en papel y después abre la solución. Como en la prueba, todo se responde con expresiones en función de los datos y de <i>g</i>, sin valores numéricos.</p>
 <div class="grid2" id="exlist"></div>
 <h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
 <div class="grid2" id="quiz"></div>
 </div></section>
 
-<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 13 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Los momentos de inercia se usan desde la tabla, sin calcularlos con integrales, porque ese cálculo no entra en el examen. Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 13 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Los momentos de inercia se usan desde la tabla, sin calcularlos con integrales, porque ese cálculo no entra en el examen. Los ejemplos y ejercicios son de práctica, no vienen del material del curso y se resuelven con expresiones, sin valores numéricos, como en la prueba.</div></footer>
 
 <script>
 {
@@ -636,13 +636,13 @@ function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;
  requestAnimationFrame(loop);}
 
 const EX=[
-['Puerta','Empujas una puerta de 0.9 m de ancho con 50 N, a 0.8 m de la bisagra, formando 30° con el plano de la puerta. ¿Qué torque haces? ¿Dónde y cómo empujarías para lograr el mismo torque con la menor fuerza?','<i>τ</i> = <i>rF</i> sin <i>φ</i> = 0.8·50·sin 30° = <strong>20 N·m</strong>. La menor fuerza se logra con el mayor brazo: perpendicular a la puerta y en el borde (0.9 m), con <i>F</i> = 20/0.9 ≈ <strong>22.2 N</strong>.'],
-['Inercia de un sistema','Cuatro masas de 0.5 kg están en las esquinas de un cuadrado de lado 0.4 m, unidas por barras sin masa. Calcula <i>I</i> respecto a un eje perpendicular al cuadrado que pasa (a) por su centro y (b) por una esquina.','(a) Cada masa está a 0.4/√2 = 0.283 m del centro, así que <i>r</i>² = 0.08 m² e <i>I</i> = 4·0.5·0.08 = <strong>0.16 kg·m²</strong>. (b) Por Steiner, con <i>M</i> = 2 kg y <i>d</i>² = 0.08 m²: <i>I</i> = 0.16 + 2·0.08 = <strong>0.32 kg·m²</strong>. Comprobación directa: 0.5·(0 + 0.16 + 0.16 + 0.32) = 0.32.'],
-['Máquina de Atwood con polea pesada','Dos bloques de 3 kg y 1 kg cuelgan a ambos lados de una polea-disco de 2 kg y radio 0.1 m, que gira sin roce. La cuerda no desliza. Calcula la aceleración y las tensiones.','Bloque 1 (baja): 3<i>g</i> − <i>T</i>₁ = 3<i>a</i>. Bloque 2 (sube): <i>T</i>₂ − <i>g</i> = 1·<i>a</i>. Polea: (<i>T</i>₁ − <i>T</i>₂)<i>R</i> = ½<i>MR</i>²(<i>a</i>/<i>R</i>), así que <i>T</i>₁ − <i>T</i>₂ = <i>a</i>. Sumando: 2<i>g</i> = 5<i>a</i>, de donde <strong><i>a</i> = 3.92 m/s²</strong>. <i>T</i>₁ = 3(9.8 − 3.92) = <strong>17.64 N</strong> y <i>T</i>₂ = 9.8 + 3.92 = <strong>13.72 N</strong>. Las tensiones son distintas porque la polea necesita un torque neto para acelerar.'],
-['Niño en un carrusel','Un carrusel con <i>I</i> = 200 kg·m² gira libremente a 1 rad/s con un niño de 40 kg parado a 2 m del eje. El niño camina hasta el centro. ¿Cuál es la nueva ω? ¿Se conserva la energía?','No hay torque externo en el eje, así que <i>H</i> se conserva. <i>I<sub>i</sub></i> = 200 + 40·2² = 360 kg·m² e <i>I<sub>f</sub></i> = 200 kg·m². Entonces <i>ω<sub>f</sub></i> = 360·1/200 = <strong>1.8 rad/s</strong>. La energía no se conserva: sube de 180 J a 324 J. El niño hace trabajo al caminar hacia adentro.'],
-['Esfera en un plano','Una esfera sólida parte del reposo y rueda sin deslizar 2.8 m por un plano de 30°. ¿Con qué rapidez llega abajo? ¿Qué coeficiente de roce mínimo necesita?','<i>a</i> = <i>g</i> sin 30°/(1 + 2/5) = 4.9/1.4 = 3.5 m/s². Con <i>v</i>² = 2<i>ad</i>: <i>v</i> = √(2·3.5·2.8) = <strong>4.43 m/s</strong>. Roce mínimo: <i>μ<sub>s</sub></i> ≥ tan 30°·(2/5)/(7/5) = 0.577·2/7 ≈ <strong>0.165</strong>.'],
-['Yo-yo','Un yo-yo, que puedes tratar como cilindro sólido de masa m y radio R, tiene la cuerda enrollada y el extremo de la cuerda fijo en tu mano quieta. Al soltarlo, ¿con qué aceleración baja y cuánto vale la tensión?','Traslación (abajo positivo): <i>mg</i> − <i>T</i> = <i>ma</i>. Torques respecto a G: <i>TR</i> = ½<i>mR</i>²<i>α</i>. La cuerda se desenrolla sin deslizar: <i>a</i> = <i>Rα</i>. Entonces <i>T</i> = ½<i>ma</i> y <i>mg</i> = (3/2)<i>ma</i>, de donde <strong><i>a</i> = 2<i>g</i>/3 ≈ 6.53 m/s²</strong> y <strong><i>T</i> = <i>mg</i>/3</strong>.'],
-['Bala contra una varilla','Una bala de 10 g a 400 m/s se incrusta en el extremo libre de una varilla de 2 kg y 1 m que cuelga de un pasador en su otro extremo. La bala llega perpendicular a la varilla. ¿Con qué ω queda girando la varilla?','Durante el impacto el pasador hace una fuerza grande y desconocida, así que el momentum lineal no se conserva. Pero esa fuerza pasa por el pasador: respecto a ese punto <i>H</i> sí se conserva. <i>mvL</i> = (<i>ML</i>²/3 + <i>mL</i>²)<i>ω</i>, es decir 0.01·400·1 = (0.667 + 0.01)<i>ω</i>, de donde <strong><i>ω</i> ≈ 5.91 rad/s</strong>.']
+['Puerta','Empujas una puerta de ancho <i>w</i> con una fuerza <i>F</i>, a una distancia <i>d</i> de la bisagra, formando un ángulo <i>φ</i> con el plano de la puerta. ¿Qué torque haces? ¿Dónde y cómo empujarías para lograr el mismo torque con la menor fuerza?','<strong><i>τ</i> = <i>dF</i> sin <i>φ</i></strong>. La menor fuerza se logra con el mayor brazo: perpendicular a la puerta y en el borde, a distancia <i>w</i>, con <strong><i>F</i><sub>mín</sub> = <i>dF</i> sin <i>φ</i>/<i>w</i></strong>.'],
+['Inercia de un sistema','Cuatro masas <i>m</i> están en las esquinas de un cuadrado de lado <i>a</i>, unidas por barras sin masa. Calcula <i>I</i> respecto a un eje perpendicular al cuadrado que pasa (a) por su centro y (b) por una esquina.','(a) Cada masa está a <i>a</i>/√2 del centro, así que <i>r</i>² = <i>a</i>²/2 e <strong><i>I</i> = 4<i>m</i>·<i>a</i>²/2 = 2<i>ma</i>²</strong>. (b) Por Steiner, con masa total 4<i>m</i> y <i>d</i>² = <i>a</i>²/2: <strong><i>I</i> = 2<i>ma</i>² + 4<i>m</i>·<i>a</i>²/2 = 4<i>ma</i>²</strong>. Comprobación directa: <i>m</i>(0 + <i>a</i>² + <i>a</i>² + 2<i>a</i>²) = 4<i>ma</i>².'],
+['Máquina de Atwood con polea pesada','Dos bloques de masas <i>m</i>₁ > <i>m</i>₂ cuelgan a ambos lados de una polea-disco de masa <i>M</i> y radio <i>R</i>, que gira sin roce. La cuerda no desliza. Calcula la aceleración y las tensiones.','Bloque 1 (baja): <i>m</i>₁<i>g</i> − <i>T</i>₁ = <i>m</i>₁<i>a</i>. Bloque 2 (sube): <i>T</i>₂ − <i>m</i>₂<i>g</i> = <i>m</i>₂<i>a</i>. Polea: (<i>T</i>₁ − <i>T</i>₂)<i>R</i> = ½<i>MR</i>²(<i>a</i>/<i>R</i>), así que <i>T</i>₁ − <i>T</i>₂ = ½<i>Ma</i>. Sumando: <strong><i>a</i> = (<i>m</i>₁ − <i>m</i>₂)<i>g</i>/(<i>m</i>₁ + <i>m</i>₂ + <i>M</i>/2)</strong>. Luego <strong><i>T</i>₁ = <i>m</i>₁(<i>g</i> − <i>a</i>)</strong> y <strong><i>T</i>₂ = <i>m</i>₂(<i>g</i> + <i>a</i>)</strong>. Las tensiones son distintas porque la polea necesita un torque neto para acelerar; con <i>M</i> = 0 vuelven a ser iguales.'],
+['Niño en un carrusel','Un carrusel con momento de inercia <i>I</i><sub>0</sub> gira libremente con <i>ω</i><sub>0</sub>, con un niño de masa <i>m</i> parado a una distancia <i>r</i> del eje. El niño camina hasta el centro. ¿Cuál es la nueva ω? ¿Se conserva la energía?','No hay torque externo en el eje, así que <i>H</i> se conserva. <i>I<sub>i</sub></i> = <i>I</i><sub>0</sub> + <i>mr</i>² e <i>I<sub>f</sub></i> = <i>I</i><sub>0</sub>. Entonces <strong><i>ω<sub>f</sub></i> = (<i>I</i><sub>0</sub> + <i>mr</i>²)<i>ω</i><sub>0</sub>/<i>I</i><sub>0</sub></strong>. La energía no se conserva: <i>K<sub>f</sub></i>/<i>K<sub>i</sub></i> = (<i>I</i><sub>0</sub> + <i>mr</i>²)/<i>I</i><sub>0</sub> > 1. El niño hace trabajo al caminar hacia adentro.'],
+['Esfera en un plano','Una esfera sólida parte del reposo y rueda sin deslizar una distancia <i>d</i> por un plano de inclinación <i>θ</i>. ¿Con qué rapidez llega abajo? ¿Qué coeficiente de roce mínimo necesita?','<i>a</i> = <i>g</i> sin <i>θ</i>/(1 + 2/5) = (5/7)<i>g</i> sin <i>θ</i>. Con <i>v</i>² = 2<i>ad</i>: <strong><i>v</i> = √((10/7)<i>gd</i> sin <i>θ</i>)</strong>. Roce mínimo: <strong><i>μ<sub>s</sub></i> ≥ (2/7) tan <i>θ</i></strong>.'],
+['Yo-yo','Un yo-yo, que puedes tratar como cilindro sólido de masa m y radio R, tiene la cuerda enrollada y el extremo de la cuerda fijo en tu mano quieta. Al soltarlo, ¿con qué aceleración baja y cuánto vale la tensión?','Traslación (abajo positivo): <i>mg</i> − <i>T</i> = <i>ma</i>. Torques respecto a G: <i>TR</i> = ½<i>mR</i>²<i>α</i>. La cuerda se desenrolla sin deslizar: <i>a</i> = <i>Rα</i>. Entonces <i>T</i> = ½<i>ma</i> y <i>mg</i> = (3/2)<i>ma</i>, de donde <strong><i>a</i> = 2<i>g</i>/3</strong> y <strong><i>T</i> = <i>mg</i>/3</strong>.'],
+['Bala contra una varilla','Una bala de masa <i>m</i> y rapidez <i>v</i> se incrusta en el extremo libre de una varilla de masa <i>M</i> y largo <i>L</i> que cuelga de un pasador en su otro extremo. La bala llega perpendicular a la varilla. ¿Con qué ω queda girando la varilla?','Durante el impacto el pasador hace una fuerza grande y desconocida, así que el momentum lineal no se conserva. Pero esa fuerza pasa por el pasador: respecto a ese punto <i>H</i> sí se conserva. <i>mvL</i> = (<i>ML</i>²/3 + <i>mL</i>²)<i>ω</i>, de donde <strong><i>ω</i> = 3<i>mv</i>/((<i>M</i> + 3<i>m</i>)<i>L</i>)</strong>.']
 ];
 $('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');
 

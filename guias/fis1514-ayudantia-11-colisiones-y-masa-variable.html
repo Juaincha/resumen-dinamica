@@ -193,15 +193,15 @@ details[open]{padding-bottom:12px}
 <div class="eq"><i>v<sub>A,f</sub></i> = [<i>P</i> − <i>m<sub>B</sub> e</i>(<i>v<sub>A,i</sub></i> − <i>v<sub>B,i</sub></i>)]/(<i>m<sub>A</sub></i> + <i>m<sub>B</sub></i>),&nbsp;&nbsp; <i>v<sub>B,f</sub></i> = [<i>P</i> + <i>m<sub>A</sub> e</i>(<i>v<sub>A,i</sub></i> − <i>v<sub>B,i</sub></i>)]/(<i>m<sub>A</sub></i> + <i>m<sub>B</sub></i>)</div>
 <p>Aquí <i>P</i> = <i>m<sub>A</sub>v<sub>A,i</sub></i> + <i>m<sub>B</sub>v<sub>B,i</sub></i>. No hace falta memorizarlas: en una prueba es más seguro plantear las dos ecuaciones y resolver. Pero sirven para revisar, y la figura las usa. Prueba los botones: con masas iguales y <i>e</i> = 1 se intercambian las velocidades, y contra una pared la pelota rebota con <i>e</i> veces su rapidez.</p>
 <div class="ex"><h3>Ejemplo 1: choque frontal inelástico</h3>
-<p>A (2 kg) va a 4 m/s hacia la derecha y B (3 kg) a 1 m/s hacia la izquierda, con <i>e</i> = 0.5.</p>
-<ol><li>Momentum: 2·4 + 3·(−1) = 5 = 2<i>v<sub>A,f</sub></i> + 3<i>v<sub>B,f</sub></i>.</li>
-<li>Restitución: <i>v<sub>B,f</sub></i> − <i>v<sub>A,f</sub></i> = −0.5·(−1 − 4) = 2.5.</li>
-<li>Resolviendo: <strong><i>v<sub>A,f</sub></i> = −0.5 m/s</strong> (A rebota hacia la izquierda) y <strong><i>v<sub>B,f</sub></i> = 2 m/s</strong>.</li>
-<li>Energía: antes 17.5 J y después 6.25 J. Se pierden 11.25 J.</li></ol></div>
+<p>A (masa <i>m<sub>A</sub></i>) va con rapidez <i>v<sub>A</sub></i> hacia la derecha y B (masa <i>m<sub>B</sub></i>) con rapidez <i>v<sub>B</sub></i> hacia la izquierda, con coeficiente de restitución <i>e</i>. Positivo hacia la derecha.</p>
+<ol><li>Momentum: <i>m<sub>A</sub>v<sub>A</sub></i> − <i>m<sub>B</sub>v<sub>B</sub></i> = <i>m<sub>A</sub>v<sub>A,f</sub></i> + <i>m<sub>B</sub>v<sub>B,f</sub></i>.</li>
+<li>Restitución: <i>v<sub>B,f</sub></i> − <i>v<sub>A,f</sub></i> = −<i>e</i>(−<i>v<sub>B</sub></i> − <i>v<sub>A</sub></i>) = <i>e</i>(<i>v<sub>A</sub></i> + <i>v<sub>B</sub></i>).</li>
+<li>Resolviendo: <strong><i>v<sub>A,f</sub></i> = [<i>m<sub>A</sub>v<sub>A</sub></i> − <i>m<sub>B</sub>v<sub>B</sub></i> − <i>em<sub>B</sub></i>(<i>v<sub>A</sub></i> + <i>v<sub>B</sub></i>)]/(<i>m<sub>A</sub></i> + <i>m<sub>B</sub></i>)</strong> y <strong><i>v<sub>B,f</sub></i> = [<i>m<sub>A</sub>v<sub>A</sub></i> − <i>m<sub>B</sub>v<sub>B</sub></i> + <i>em<sub>A</sub></i>(<i>v<sub>A</sub></i> + <i>v<sub>B</sub></i>)]/(<i>m<sub>A</sub></i> + <i>m<sub>B</sub></i>)</strong>. Si <i>v<sub>A,f</sub></i> sale negativa, A rebota hacia la izquierda.</li>
+<li>Comprobación: restando ambas se recupera <i>v<sub>B,f</sub></i> − <i>v<sub>A,f</sub></i> = <i>e</i>(<i>v<sub>A</sub></i> + <i>v<sub>B</sub></i>). La energía perdida se calcula más abajo con una fórmula directa.</li></ol></div>
 <div class="ex"><h3>Ejemplo 2: pelota que rebota en el suelo</h3>
-<p>Una pelota cae desde 2 m sobre un suelo con <i>e</i> = 0.8. ¿Hasta qué altura sube?</p>
-<ol><li>Llega con <i>v</i> = √(2<i>gh</i>) = 6.26 m/s. El suelo no se mueve, así que sale con <i>e</i>·<i>v</i> = 5.01 m/s.</li>
-<li>Como la altura va con <i>v</i>², <i>h</i>' = <i>e</i>²<i>h</i> = 0.64·2 = <strong>1.28 m</strong>.</li>
+<p>Una pelota cae desde una altura <i>h</i> sobre un suelo con coeficiente de restitución <i>e</i>. ¿Hasta qué altura sube?</p>
+<ol><li>Llega con <i>v</i> = √(2<i>gh</i>). El suelo no se mueve, así que sale con <i>ev</i> = <i>e</i>√(2<i>gh</i>).</li>
+<li>Como la altura va con <i>v</i>²: <strong><i>h</i>' = <i>e</i>²<i>h</i></strong>.</li>
 <li>Al revés, midiendo dos alturas obtienes <i>e</i> = √(<i>h</i>'/<i>h</i>). Es la forma más simple de medirlo.</li></ol></div>
 </div>
 <div class="sticky">
@@ -236,12 +236,12 @@ details[open]{padding-bottom:12px}
 <p>Es decir: en la dirección n se resuelve un choque en línea, igual que en la sección anterior, y en la dirección t no pasa nada. El resumen de la ayudantía lo plantea con ejes <i>x</i>, <i>y</i> cualquiera: el momentum se conserva en ambas componentes, y con ejes n-t además se separa la información de la restitución.</p>
 <div class="note"><strong>Regla de los 90°.</strong> Si dos cuerpos de igual masa chocan elásticamente y uno estaba en reposo, salen formando 90° entre sí (salvo en un choque de frente, donde el que venía se detiene). Lo puedes comprobar en la figura con <i>e</i> = 1 y masas iguales: el ángulo entre las salidas marca 90°.</div>
 <div class="ex"><h3>Ejemplo 3: discos lisos</h3>
-<p>Un disco A (1 kg) llega a 3 m/s formando 30° con la línea de impacto. Un disco B (2 kg) llega a 1 m/s en sentido contrario, justo sobre la línea de impacto. <i>e</i> = 0.6.</p>
-<ol><li>Componentes iniciales: <i>v<sub>A,n</sub></i> = 3 cos 30° = 2.60, <i>v<sub>A,t</sub></i> = 3 sin 30° = 1.50; <i>v<sub>B,n</sub></i> = −1, <i>v<sub>B,t</sub></i> = 0.</li>
-<li>Momentum en n: 1·2.60 + 2·(−1) = 0.60 = <i>v<sub>A,n,f</sub></i> + 2<i>v<sub>B,n,f</sub></i>.</li>
-<li>Restitución: <i>v<sub>B,n,f</sub></i> − <i>v<sub>A,n,f</sub></i> = 0.6·3.60 = 2.16.</li>
-<li>Resolviendo: <i>v<sub>A,n,f</sub></i> = −1.24 m/s y <i>v<sub>B,n,f</sub></i> = 0.92 m/s. Las componentes t no cambian.</li>
-<li><strong>A sale a √(1.24² + 1.50²) = 1.95 m/s</strong>, formando 129.6° con el eje n. <strong>B sale a 0.92 m/s</strong> por la línea de impacto.</li></ol></div>
+<p>Un disco A (masa <i>m</i>) llega con rapidez <i>v</i> formando un ángulo <i>θ</i> con la línea de impacto. Un disco B (masa 2<i>m</i>) está en reposo. Coeficiente de restitución <i>e</i>.</p>
+<ol><li>Componentes iniciales: <i>v<sub>A,n</sub></i> = <i>v</i> cos <i>θ</i>, <i>v<sub>A,t</sub></i> = <i>v</i> sin <i>θ</i>; B parte quieto.</li>
+<li>Momentum en n: <i>mv</i> cos <i>θ</i> = <i>mv<sub>A,n,f</sub></i> + 2<i>mv<sub>B,n,f</sub></i>.</li>
+<li>Restitución: <i>v<sub>B,n,f</sub></i> − <i>v<sub>A,n,f</sub></i> = <i>ev</i> cos <i>θ</i>.</li>
+<li>Resolviendo: <i>v<sub>B,n,f</sub></i> = (1 + <i>e</i>)<i>v</i> cos <i>θ</i>/3 y <i>v<sub>A,n,f</sub></i> = (1 − 2<i>e</i>)<i>v</i> cos <i>θ</i>/3. Las componentes t no cambian.</li>
+<li><strong>A sale con rapidez <i>v</i>√([(1 − 2<i>e</i>) cos <i>θ</i>/3]² + sin² <i>θ</i>)</strong>; si <i>e</i> > 1/2 su componente n se invierte. <strong>B sale con (1 + <i>e</i>)<i>v</i> cos <i>θ</i>/3</strong> por la línea de impacto.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig tall" id="f-obl" aria-label="Dos discos que chocan de forma oblicua, con la línea de impacto y las trayectorias"><svg></svg></div>
@@ -271,20 +271,20 @@ details[open]{padding-bottom:12px}
 <li>Con <i>e</i> = 0 se pierde el máximo posible, pero no toda la energía: se conserva la que corresponde al movimiento del centro de masa, que ningún choque interno puede cambiar.</li>
 <li>Solo importa la velocidad relativa, no la de cada cuerpo por separado.</li>
 </ul>
-<p>Comprobación con el ejemplo 1: <i>μ</i> = 6/5 = 1.2 kg y <i>v</i><sub>rel</sub> = 5 m/s, así que Δ<i>K</i> = −½·1.2·0.75·25 = −11.25 J, igual que antes.</p>
+<p>En el ejemplo 1, como van en sentidos opuestos, <i>v</i><sub>rel</sub> = <i>v<sub>A</sub></i> + <i>v<sub>B</sub></i>, así que Δ<i>K</i> = −½<i>μ</i>(1 − <i>e</i>²)(<i>v<sub>A</sub></i> + <i>v<sub>B</sub></i>)², sin tener que calcular las velocidades finales. Con <i>e</i> = 1 no se pierde nada, y con <i>e</i> = 0 se pierde lo máximo.</p>
 <div class="note"><strong>Energía del centro de masa.</strong> <i>K</i> = ½<i>M v<sub>G</sub></i>² + ½<i>μ v</i><sub>rel</sub>². El primer término no cambia en un choque, porque <i>v<sub>G</sub></i> = <i>P</i>/<i>M</i> se conserva. Solo el segundo se multiplica por <i>e</i>². En la figura de la sección 2 las barras de energía muestran esta pérdida.</div>
 </div>
 <div>
 <div class="ex" style="margin-top:0"><h3>Ejemplo 4: péndulo balístico</h3>
-<p>Una bala de 10 g a 400 m/s se incrusta en un bloque de 2 kg que cuelga de una cuerda. ¿Cuánto sube el bloque?</p>
-<ol><li><strong>Choque</strong> (dura muy poco; la cuerda es vertical y no da impulso horizontal): 0.01·400 = 2.01<i>V</i>, así que <i>V</i> = 1.99 m/s.</li>
-<li><strong>Después del choque</strong> se conserva la energía, porque la cuerda no hace trabajo: <i>h</i> = <i>V</i>²/2<i>g</i> = <strong>0.202 m</strong>.</li>
-<li>Se perdió el 99.5 % de la energía de la bala en el choque. Es el error clásico: no se puede usar energía "a través" del choque, solo momentum.</li></ol></div>
+<p>Una bala de masa <i>m</i> y rapidez <i>v</i> se incrusta en un bloque de masa <i>M</i> que cuelga de una cuerda. ¿Cuánto sube el bloque?</p>
+<ol><li><strong>Choque</strong> (dura muy poco; la cuerda es vertical y no da impulso horizontal): <i>mv</i> = (<i>m</i> + <i>M</i>)<i>V</i>, así que <i>V</i> = <i>mv</i>/(<i>m</i> + <i>M</i>).</li>
+<li><strong>Después del choque</strong> se conserva la energía, porque la cuerda no hace trabajo: <strong><i>h</i> = <i>V</i>²/(2<i>g</i>) = <i>m</i>²<i>v</i>²/(2<i>g</i>(<i>m</i> + <i>M</i>)²)</strong>.</li>
+<li>En el choque solo queda la fracción <i>m</i>/(<i>m</i> + <i>M</i>) de la energía de la bala: si el bloque es mucho más pesado, se pierde casi toda. Es el error clásico: no se puede usar energía "a través" del choque, solo momentum.</li></ol></div>
 <div class="ex"><h3>Ejemplo 5: choque de autos en un cruce</h3>
-<p>Un auto de 1500 kg va al este a 20 m/s y choca con uno de 2000 kg que va al norte a 15 m/s. Quedan pegados.</p>
-<ol><li><i>P<sub>x</sub></i> = 1500·20 = 30 000 kg·m/s y <i>P<sub>y</sub></i> = 2000·15 = 30 000 kg·m/s.</li>
-<li><i>V</i> = √(30 000² + 30 000²)/3500 = <strong>12.1 m/s a 45°</strong>, hacia el noreste.</li>
-<li>Energía: 525 kJ antes y 257 kJ después. Se disipa el 51 %.</li></ol></div>
+<p>Un auto de masa <i>m</i>₁ va al este con rapidez <i>v</i>₁ y choca con uno de masa <i>m</i>₂ que va al norte con rapidez <i>v</i>₂. Quedan pegados.</p>
+<ol><li><i>P<sub>x</sub></i> = <i>m</i>₁<i>v</i>₁ y <i>P<sub>y</sub></i> = <i>m</i>₂<i>v</i>₂.</li>
+<li><strong><i>V</i> = √((<i>m</i>₁<i>v</i>₁)² + (<i>m</i>₂<i>v</i>₂)²)/(<i>m</i>₁ + <i>m</i>₂)</strong>, formando un ángulo <i>φ</i> al norte del este con <strong>tan <i>φ</i> = <i>m</i>₂<i>v</i>₂/(<i>m</i>₁<i>v</i>₁)</strong>.</li>
+<li>Energía disipada: la velocidad relativa es (<i>v</i>₁, −<i>v</i>₂) y el choque es plástico, así que se pierde ½<i>μ</i>(<i>v</i>₁² + <i>v</i>₂²), con <i>μ</i> = <i>m</i>₁<i>m</i>₂/(<i>m</i>₁ + <i>m</i>₂).</li></ol></div>
 </div>
 </div></section>
 
@@ -307,13 +307,13 @@ details[open]{padding-bottom:12px}
 
 <section class="band" id="ejercicios"><div class="wrap">
 <h2>Ejercicios para practicar</h2>
-<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<p>Primero intenta cada uno en papel y después abre la solución. Como en la prueba, todo se responde con expresiones en función de los datos y de <i>g</i>, sin valores numéricos.</p>
 <div class="grid2" id="exlist"></div>
 <h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
 <div class="grid2" id="quiz"></div>
 </div></section>
 
-<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 11 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Se omite la parte de masa variable, que no entra en el examen. Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 11 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Se omite la parte de masa variable, que no entra en el examen. Los ejemplos y ejercicios son de práctica, no vienen del material del curso y se resuelven con expresiones, sin valores numéricos, como en la prueba.</div></footer>
 
 <script>
 {
@@ -407,11 +407,11 @@ document.querySelectorAll('[data-p2]').forEach(b=>b.addEventListener('click',()=
 
 
 const EX=[
-['Medir e con un rebote','Una pelota se suelta desde 1.5 m y rebota hasta 0.96 m. ¿Cuál es el coeficiente de restitución? ¿Hasta qué altura llega en el segundo rebote?','<i>e</i> = √(<i>h</i>\'/<i>h</i>) = √(0.96/1.5) = <strong>0.8</strong>. En cada rebote la altura se multiplica por <i>e</i>² = 0.64: el segundo llega a 0.96·0.64 ≈ <strong>0.61 m</strong>.'],
-['Choque con un bloque en reposo','A (1 kg) a 6 m/s choca de frente con B (1 kg) en reposo, con <i>e</i> = 0.7. Encuentra las velocidades finales.','Momentum: 6 = <i>v<sub>A</sub></i> + <i>v<sub>B</sub></i>. Restitución: <i>v<sub>B</sub></i> − <i>v<sub>A</sub></i> = 0.7·6 = 4.2. Entonces <strong><i>v<sub>A</sub></i> = 0.9 m/s</strong> y <strong><i>v<sub>B</sub></i> = 5.1 m/s</strong>. Con <i>e</i> = 1 se intercambiarían: A quedaría quieto y B saldría a 6 m/s.'],
-['Péndulo balístico','Una bala de 10 g se incrusta en un bloque de 2 kg colgado de una cuerda, y el bloque sube 0.202 m. ¿A qué velocidad iba la bala?','Al revés que en el ejemplo 4. Después del choque: <i>V</i> = √(2<i>gh</i>) = √(2·9.8·0.202) ≈ 1.99 m/s. En el choque: 0.01<i>v</i> = 2.01·1.99, así que <strong><i>v</i> ≈ 400 m/s</strong>.'],
-['Choque en un cruce','Un auto de 1500 kg al este a 20 m/s choca con uno de 2000 kg al norte a 15 m/s, y quedan pegados. ¿Cuánta energía se disipa?','<i>V</i> = 12.12 m/s a 45°. <i>K</i> antes = ½·1500·20² + ½·2000·15² = 525 000 J. <i>K</i> después = ½·3500·12.12² ≈ 257 000 J. Se disipan <strong>≈ 268 000 J (51 %)</strong>.'],
-['Choque oblicuo, masas iguales','Una bola de billar a 2 m/s golpea a otra igual, en reposo, de modo que la línea de impacto forma 30° con la velocidad inicial. Choque elástico, bolas lisas. ¿Cómo salen?','En n: <i>v<sub>A,n</sub></i> = 2 cos 30° = 1.73 y <i>v<sub>A,t</sub></i> = 2 sin 30° = 1. Con masas iguales y <i>e</i> = 1, las componentes n se intercambian: <strong>B sale a 1.73 m/s</strong> por la línea de impacto y <strong>A sale a 1 m/s</strong> por la tangente. Forman 90°, como dice la regla.']
+['Medir e con un rebote','Una pelota se suelta desde una altura <i>h</i> y rebota hasta <i>h</i>₁. ¿Cuál es el coeficiente de restitución? ¿Hasta qué altura llega en el segundo rebote?','<strong><i>e</i> = √(<i>h</i>₁/<i>h</i>)</strong>. En cada rebote la altura se multiplica por <i>e</i>²: el segundo llega a <strong><i>h</i>₂ = <i>e</i>²<i>h</i>₁ = <i>h</i>₁²/<i>h</i></strong>.'],
+['Choque con un bloque en reposo','A (masa <i>m</i>) con rapidez <i>v</i>₀ choca de frente con B (masa <i>m</i>) en reposo, con coeficiente de restitución <i>e</i>. Encuentra las velocidades finales.','Momentum: <i>v</i>₀ = <i>v<sub>A</sub></i> + <i>v<sub>B</sub></i>. Restitución: <i>v<sub>B</sub></i> − <i>v<sub>A</sub></i> = <i>ev</i>₀. Entonces <strong><i>v<sub>A</sub></i> = (1 − <i>e</i>)<i>v</i>₀/2</strong> y <strong><i>v<sub>B</sub></i> = (1 + <i>e</i>)<i>v</i>₀/2</strong>. Con <i>e</i> = 1 se intercambian: A queda quieto y B sale con <i>v</i>₀.'],
+['Péndulo balístico','Una bala de masa <i>m</i> se incrusta en un bloque de masa <i>M</i> colgado de una cuerda, y el bloque sube una altura <i>h</i>. ¿A qué velocidad iba la bala?','Al revés que en el ejemplo 4. Después del choque: <i>V</i> = √(2<i>gh</i>). En el choque: <i>mv</i> = (<i>m</i> + <i>M</i>)<i>V</i>, así que <strong><i>v</i> = (<i>m</i> + <i>M</i>)√(2<i>gh</i>)/<i>m</i></strong>.'],
+['Choque en un cruce','En el ejemplo 5, ¿qué fracción de la energía cinética inicial se disipa?','<i>K<sub>i</sub></i> = ½(<i>m</i>₁<i>v</i>₁² + <i>m</i>₂<i>v</i>₂²) y se pierde ½<i>μ</i>(<i>v</i>₁² + <i>v</i>₂²). La fracción es <strong><i>m</i>₁<i>m</i>₂(<i>v</i>₁² + <i>v</i>₂²)/[(<i>m</i>₁ + <i>m</i>₂)(<i>m</i>₁<i>v</i>₁² + <i>m</i>₂<i>v</i>₂²)]</strong>. Con masas y rapideces iguales da 1/2.'],
+['Choque oblicuo, masas iguales','Una bola de billar con rapidez <i>v</i> golpea a otra igual, en reposo, de modo que la línea de impacto forma un ángulo <i>θ</i> con la velocidad inicial. Choque elástico, bolas lisas. ¿Cómo salen?','En n: <i>v<sub>A,n</sub></i> = <i>v</i> cos <i>θ</i> y <i>v<sub>A,t</sub></i> = <i>v</i> sin <i>θ</i>. Con masas iguales y <i>e</i> = 1, las componentes n se intercambian: <strong>B sale con <i>v</i> cos <i>θ</i></strong> por la línea de impacto y <strong>A sale con <i>v</i> sin <i>θ</i></strong> por la tangente. Forman 90°, como dice la regla.']
 ];
 $('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');
 const QZ=[

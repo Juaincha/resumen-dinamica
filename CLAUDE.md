@@ -66,6 +66,10 @@ El sitio es material para estudiar para el examen de FIS1514 Dinámica. Las guí
 - Cálculo integral del centro de masa de un cuerpo (sí entra el centro de masa de partículas y de cuerpos compuestos con centroides conocidos).
 - Cálculo integral del momento de inercia respecto a un eje que pasa por el centro de masa (sí entran la tabla de momentos de inercia y el teorema de Steiner).
 
+## Ejemplos y ejercicios sin números
+
+En la prueba no dan valores numéricos: todo se responde con expresiones. Por eso los ejemplos, los ejercicios y las preguntas rápidas usan solo datos simbólicos (m, M, L, R, h, θ, μ, e, v₀…) y dan resultados como expresiones. Nunca se da el valor de g (nada de "g = 9.8 m/s²"). Las simulaciones interactivas sí usan valores internos para animar.
+
 Si un resumen trae alguno de estos temas, se omite y se indica en una línea al pie de la guía. Las descripciones para compartir (`description`, `og:description`, `twitter:description`) empiezan con "Material para estudiar para el examen de FIS1514:".
 
 ## Reglas

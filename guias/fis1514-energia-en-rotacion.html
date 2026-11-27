@@ -164,15 +164,16 @@ details[open]{padding-bottom:12px}
 <li>Dos cuerpos con la misma masa y la misma <i>ω</i> pueden tener energías muy distintas: el que tiene la masa más lejos del eje guarda más energía. Por eso los volantes de inercia concentran la masa en el borde.</li>
 </ul>
 <div class="ex"><h3>Ejemplo 1: volante de inercia</h3>
-<p>Un volante con <i>I</i> = 2 kg·m² gira a 300 rpm. ¿Cuánta energía guarda?</p>
-<ol><li>Pasa a rad/s: <i>ω</i> = 300·2π/60 = 31.4 rad/s.</li>
-<li><i>K</i> = ½·2·31.4² = <strong>987 J</strong>. Es la energía de una persona de 70 kg corriendo a 5.3 m/s.</li></ol></div>
+<p>Un volante con momento de inercia <i>I</i> gira a <i>n</i> revoluciones por minuto. ¿Cuánta energía guarda?</p>
+<ol><li>Pasa a rad/s: <i>ω</i> = 2π<i>n</i>/60 = π<i>n</i>/30.</li>
+<li><i>K</i> = ½<i>Iω</i>² = <strong>π²<i>In</i>²/1800</strong>.</li>
+<li>La energía crece con el cuadrado de la rapidez de giro: si el volante gira el doble de rápido, guarda cuatro veces más energía.</li></ol></div>
 </div>
 <div>
 <div class="ex" style="margin-top:0"><h3>Ejemplo 2: misma masa, distinta energía</h3>
-<p>Un aro y un disco, ambos de 2 kg y 0.3 m de radio, giran a 10 rad/s en torno a su eje.</p>
-<ol><li>Aro: <i>I</i> = <i>MR</i>² = 0.18 kg·m², así que <i>K</i> = ½·0.18·100 = <strong>9 J</strong>.</li>
-<li>Disco: <i>I</i> = ½<i>MR</i>² = 0.09 kg·m², así que <i>K</i> = <strong>4.5 J</strong>.</li>
+<p>Un aro y un disco, ambos de masa <i>M</i> y radio <i>R</i>, giran con velocidad angular <i>ω</i> en torno a su eje.</p>
+<ol><li>Aro: <i>I</i> = <i>MR</i>², así que <i>K</i> = <strong>½<i>MR</i>²<i>ω</i>²</strong>.</li>
+<li>Disco: <i>I</i> = ½<i>MR</i>², así que <i>K</i> = <strong>¼<i>MR</i>²<i>ω</i>²</strong>.</li>
 <li>El aro guarda el doble porque toda su masa está en el borde, donde se mueve más rápido.</li></ol></div>
 </div>
 </div></section>
@@ -191,9 +192,9 @@ details[open]{padding-bottom:12px}
 </ul>
 <div class="note"><strong>¿Y el roce?</strong> En rodadura sin deslizar el roce es estático y actúa en el punto de contacto, que está quieto en ese instante. No hace trabajo, así que la energía mecánica se conserva aunque haya roce. Si el cuerpo desliza, el roce cinético sí disipa energía y ya no se puede usar <i>v<sub>G</sub></i> = <i>Rω</i>.</div>
 <div class="ex"><h3>Ejemplo 3: cilindro que baja rodando</h3>
-<p>Un cilindro sólido parte del reposo y baja rodando sin deslizar una altura de 1.5 m. ¿Qué rapidez tiene abajo?</p>
-<ol><li><i>Mgh</i> = ½<i>M</i>(1 + ½)<i>v</i>², así que <i>v</i> = √(2<i>gh</i>/1.5) = √(4·9.8·1.5/3) = <strong>4.43 m/s</strong>.</li>
-<li>Un bloque sin roce llegaría a √(2<i>gh</i>) = 5.42 m/s. El cilindro pierde rapidez porque un tercio de la energía queda en el giro.</li>
+<p>Un cilindro sólido parte del reposo y baja rodando sin deslizar una altura <i>h</i>. ¿Qué rapidez tiene abajo?</p>
+<ol><li><i>Mgh</i> = ½<i>M</i>(1 + ½)<i>v</i>² = ¾<i>Mv</i>², así que <strong><i>v</i> = √(4<i>gh</i>/3)</strong>.</li>
+<li>Un bloque sin roce llegaría a √(2<i>gh</i>): el cilindro llega √(2/3) veces más lento, porque un tercio de la energía queda en el giro.</li>
 <li>No depende de la masa, del radio ni del ángulo de la rampa: solo de la altura y de <i>k</i>.</li></ol></div>
 </div>
 <div class="sticky">
@@ -225,9 +226,9 @@ details[open]{padding-bottom:12px}
 <li>Error típico: usar la altura de la punta, o la del pivote.</li>
 </ul>
 <div class="ex"><h3>Ejemplo 4: barra que se levanta</h3>
-<p>Una barra uniforme de 3 kg y 1.2 m está en el suelo. ¿Cuánto trabajo cuesta pararla verticalmente sobre un extremo?</p>
-<ol><li>G sube de 0 a 0.6 m.</li>
-<li>Δ<i>U<sub>g</sub></i> = 3·9.8·0.6 = <strong>17.6 J</strong>. Es la mitad de lo que costaría subir los 3 kg completos a 1.2 m.</li></ol></div>
+<p>Una barra uniforme de masa <i>M</i> y largo <i>L</i> está en el suelo. ¿Cuánto trabajo cuesta pararla verticalmente sobre un extremo?</p>
+<ol><li>G sube de 0 a <i>L</i>/2.</li>
+<li><i>W</i> = Δ<i>U<sub>g</sub></i> = <strong><i>MgL</i>/2</strong>. Es la mitad de <i>MgL</i>, lo que costaría subir toda la masa hasta la altura de la punta.</li></ol></div>
 </div>
 <div class="ex" style="margin-top:0"><h3>Para qué se usa</h3>
 <p style="margin:0 0 10px">En los problemas de rotación aparece cada vez que un cuerpo extendido sube o baja mientras gira:</p>
@@ -252,15 +253,15 @@ details[open]{padding-bottom:12px}
 </ul>
 <p>Cuándo conviene: si te piden una <strong>rapidez</strong> o una <strong>velocidad angular</strong> en una posición dada. Si te piden una aceleración, una fuerza o un tiempo, vuelve a Σ<i>F</i> = <i>Ma</i> y Σ<i>τ</i> = <i>Iα</i>.</p>
 <div class="ex"><h3>Ejemplo 5: barra con pivote que cae</h3>
-<p>Una barra uniforme de 1.2 m gira sin roce en torno a un pivote en un extremo. Se suelta desde la horizontal. ¿Qué <i>ω</i> tiene al pasar por la vertical?</p>
+<p>Una barra uniforme de masa <i>M</i> y largo <i>L</i> gira sin roce en torno a un pivote en un extremo. Se suelta desde la horizontal. ¿Qué <i>ω</i> tiene al pasar por la vertical?</p>
 <ol><li>G baja <i>L</i>/2. La energía cinética es solo de rotación respecto al pivote: <i>I</i> = <i>ML</i>²/3.</li>
-<li><i>Mg</i>(<i>L</i>/2) = ½(<i>ML</i>²/3)<i>ω</i>², así que <i>ω</i> = √(3<i>g</i>/<i>L</i>) = <strong>4.95 rad/s</strong>.</li>
-<li>La punta va a <i>ωL</i> = 5.94 m/s: más rápido que un objeto que cae libremente 1.2 m (4.85 m/s). La barra "arrastra" la punta.</li></ol></div>
+<li><i>Mg</i>(<i>L</i>/2) = ½(<i>ML</i>²/3)<i>ω</i>², así que <strong><i>ω</i> = √(3<i>g</i>/<i>L</i>)</strong>. No depende de la masa.</li>
+<li>La punta va a <i>ωL</i> = √(3<i>gL</i>): más rápido que un objeto que cae libremente una altura <i>L</i>, que llega a √(2<i>gL</i>). La barra "arrastra" la punta.</li></ol></div>
 <div class="ex"><h3>Ejemplo 6: polea con masa, por energía</h3>
-<p>Un bloque de 2 kg cuelga de una cuerda enrollada en una polea-disco de 4 kg y 0.2 m de radio. Parte del reposo. ¿Qué rapidez tiene después de bajar 1 m?</p>
+<p>Un bloque de masa <i>m</i> cuelga de una cuerda enrollada en una polea-disco de masa <i>M</i> y radio <i>R</i>. Parte del reposo. ¿Qué rapidez tiene después de bajar una altura <i>h</i>?</p>
 <ol><li>Energía: <i>mgh</i> = ½<i>mv</i>² + ½(½<i>MR</i>²)(<i>v</i>/<i>R</i>)² = ½(<i>m</i> + <i>M</i>/2)<i>v</i>².</li>
-<li>2·9.8·1 = ½·4·<i>v</i>², así que <strong><i>v</i> = 3.13 m/s</strong>.</li>
-<li>Comprobación con la <a href="fis1514-ayudantia-13-newton-rotacional.html#newton">guía de Newton rotacional</a>: allí <i>a</i> = 4.9 m/s², y <i>v</i>² = 2·4.9·1 = 9.8 da lo mismo.</li></ol></div>
+<li>Despejando: <strong><i>v</i> = √(4<i>mgh</i>/(2<i>m</i> + <i>M</i>))</strong>. El radio de la polea se cancela.</li>
+<li>Comprobación con la <a href="fis1514-ayudantia-13-newton-rotacional.html#newton">guía de Newton rotacional</a>: allí <i>a</i> = 2<i>mg</i>/(2<i>m</i> + <i>M</i>), y <i>v</i>² = 2<i>ah</i> da lo mismo.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-bar" aria-label="Barra con pivote que cae desde la horizontal, con barras de energía"><svg></svg></div>
@@ -302,13 +303,13 @@ details[open]{padding-bottom:12px}
 
 <section class="band" id="ejercicios"><div class="wrap">
 <h2>Ejercicios para practicar</h2>
-<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<p>Primero intenta cada uno en papel y después abre la solución. Como en la prueba, todo se responde con expresiones en función de los datos y de <i>g</i>, sin valores numéricos.</p>
 <div class="grid2" id="exlist"></div>
 <h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
 <div class="grid2" id="quiz"></div>
 </div></section>
 
-<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Complemento de las Ayudantías 12 y 13 de FIS1514 Dinámica, para cubrir la energía en rotación. Los momentos de inercia se usan desde la tabla, sin calcularlos con integrales. Los ejemplos y ejercicios numéricos son de práctica.</div></footer>
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Complemento de las Ayudantías 12 y 13 de FIS1514 Dinámica, para cubrir la energía en rotación. Los momentos de inercia se usan desde la tabla, sin calcularlos con integrales. Los ejemplos y ejercicios se resuelven con expresiones, sin valores numéricos, como en la prueba.</div></footer>
 
 <script>
 {
@@ -369,12 +370,12 @@ function bOut(){B.L=+$('b-L').value;$('b-Lo').textContent=fx(B.L,1)+' m';const w
 $('b-L').addEventListener('input',bOut);$('b-go').addEventListener('click',()=>{B.phi=0.02;B.w=Math.sqrt(3*B.g*Math.sin(0.02)/B.L);B.run=true;});
 
 renderEx([
-['Esfera hueca','Una esfera hueca parte del reposo y baja rodando sin deslizar una altura de 2 m. ¿Qué rapidez tiene abajo?','<i>k</i> = 2/3: <i>v</i> = √(2<i>gh</i>/(1 + 2/3)) = √(39.2/1.667) = <strong>4.85 m/s</strong>.'],
-['Aro contra disco','Un aro y un disco bajan rodando desde 1 m de altura. ¿Con qué rapidez llega cada uno?','Aro (<i>k</i> = 1): <i>v</i> = √(<i>gh</i>) = <strong>3.13 m/s</strong>. Disco (<i>k</i> = 1/2): <i>v</i> = √(4<i>gh</i>/3) = <strong>3.61 m/s</strong>. El disco llega antes y más rápido.'],
-['Barra desde la vertical','Una barra de 1 m con pivote en su extremo inferior está en equilibrio vertical, hacia arriba, y se cae. ¿Qué ω tiene al quedar horizontal? ¿Y al llegar abajo, vertical hacia abajo?','Horizontal: G baja <i>L</i>/2, igual que en el ejemplo 5: <i>ω</i> = √(3<i>g</i>/<i>L</i>) = <strong>5.42 rad/s</strong>. Abajo: G baja <i>L</i>, así que <i>Mg</i><i>L</i> = ½(<i>ML</i>²/3)<i>ω</i>² y <i>ω</i> = √(6<i>g</i>/<i>L</i>) = <strong>7.67 rad/s</strong>.'],
-['Yo-yo por energía','Un yo-yo (cilindro sólido) se suelta con la cuerda fija arriba y baja 0.5 m. ¿Qué rapidez tiene?','Gira mientras baja, con <i>v</i> = <i>Rω</i>: <i>mgh</i> = ½<i>m</i>(1 + ½)<i>v</i>², así que <i>v</i> = √(4<i>gh</i>/3) = <strong>2.56 m/s</strong>. Coincide con <i>a</i> = 2<i>g</i>/3 de la guía de Newton rotacional.'],
-['Disco que sube una rampa','Un disco rueda sin deslizar a 4 m/s y sube por una rampa. ¿Hasta qué altura llega?','½<i>M</i>(1 + ½)<i>v</i>² = <i>Mgh</i>, así que <i>h</i> = 1.5·16/(2·9.8) = <strong>1.22 m</strong>. Un bloque sin roce a la misma rapidez subiría solo 0.82 m: la energía del giro también se convierte en altura.'],
-['Energía de una polea','En el ejemplo 6 (bloque de 2 kg, polea-disco de 4 kg), ¿qué fracción de la energía cinética final está en la polea?','Bloque: ½·2·<i>v</i>²; polea: ½(½·4·<i>R</i>²)(<i>v</i>/<i>R</i>)² = ½·2·<i>v</i>². Son iguales: <strong>la mitad</strong> de la energía cinética está en la polea.']
+['Esfera hueca','Una esfera hueca parte del reposo y baja rodando sin deslizar una altura <i>h</i>. ¿Qué rapidez tiene abajo?','<i>k</i> = 2/3: <i>v</i> = √(2<i>gh</i>/(1 + 2/3)) = <strong>√(6<i>gh</i>/5)</strong>.'],
+['Aro contra disco','Un aro y un disco bajan rodando desde una altura <i>h</i>. ¿Con qué rapidez llega cada uno?','Aro (<i>k</i> = 1): <strong><i>v</i> = √(<i>gh</i>)</strong>. Disco (<i>k</i> = 1/2): <strong><i>v</i> = √(4<i>gh</i>/3)</strong>. El disco llega antes y más rápido.'],
+['Barra desde la vertical','Una barra de masa <i>M</i> y largo <i>L</i> con pivote en su extremo inferior está en equilibrio vertical, hacia arriba, y se cae. ¿Qué ω tiene al quedar horizontal? ¿Y al llegar abajo, vertical hacia abajo?','Horizontal: G baja <i>L</i>/2, igual que en el ejemplo 5: <strong><i>ω</i> = √(3<i>g</i>/<i>L</i>)</strong>. Abajo: G baja <i>L</i>, así que <i>MgL</i> = ½(<i>ML</i>²/3)<i>ω</i>² y <strong><i>ω</i> = √(6<i>g</i>/<i>L</i>)</strong>.'],
+['Yo-yo por energía','Un yo-yo (cilindro sólido de masa <i>m</i> y radio <i>R</i>) se suelta con la cuerda fija arriba y baja una altura <i>h</i>. ¿Qué rapidez tiene?','Gira mientras baja, con <i>v</i> = <i>Rω</i>: <i>mgh</i> = ½<i>m</i>(1 + ½)<i>v</i>², así que <strong><i>v</i> = √(4<i>gh</i>/3)</strong>. Coincide con <i>a</i> = 2<i>g</i>/3 de la guía de Newton rotacional, usando <i>v</i>² = 2<i>ah</i>.'],
+['Disco que sube una rampa','Un disco rueda sin deslizar con rapidez <i>v</i><sub>0</sub> y sube por una rampa. ¿Hasta qué altura llega?','½<i>M</i>(1 + ½)<i>v</i><sub>0</sub>² = <i>Mgh</i>, así que <strong><i>h</i> = 3<i>v</i><sub>0</sub>²/(4<i>g</i>)</strong>. Un bloque sin roce con la misma rapidez subiría solo <i>v</i><sub>0</sub>²/(2<i>g</i>): el disco sube 3/2 veces más, porque la energía del giro también se convierte en altura.'],
+['Energía de una polea','En el ejemplo 6 (bloque de masa <i>m</i>, polea-disco de masa <i>M</i>), ¿qué fracción de la energía cinética final está en la polea? ¿Cuándo es la mitad?','Bloque: ½<i>mv</i>²; polea: ½(½<i>MR</i>²)(<i>v</i>/<i>R</i>)² = ¼<i>Mv</i>². Fracción en la polea: (<i>M</i>/4)/(<i>m</i>/2 + <i>M</i>/4) = <strong><i>M</i>/(2<i>m</i> + <i>M</i>)</strong>. Es la mitad cuando <i>M</i> = 2<i>m</i>.']
 ]);
 renderQuiz([
 ['Un aro y un disco de igual masa y radio giran con la misma ω. ¿Cuál tiene más energía cinética?',['El disco','El aro','Igual'],1,'El aro tiene mayor I = MR²; K = ½Iω².'],

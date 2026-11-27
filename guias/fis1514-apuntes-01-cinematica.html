@@ -146,7 +146,7 @@ details[open]{padding-bottom:12px}
 <tr><td data-l="Situación">Definiciones</td><td data-l="Ecuaciones"><b class="vec">v</b> = d<b class="vec">r</b>/dt, <b class="vec">a</b> = d<b class="vec">v</b>/dt</td></tr>
 <tr><td data-l="Situación">Aceleración constante (1D)</td><td data-l="Ecuaciones"><i>x</i> = <i>x</i>₀ + <i>v</i>₀<i>t</i> + ½<i>at</i>², <i>v</i> = <i>v</i>₀ + <i>at</i>, <i>v</i>² = <i>v</i>₀² + 2<i>a</i>Δ<i>x</i></td></tr>
 <tr><td data-l="Situación">Aceleración variable</td><td data-l="Ecuaciones"><i>v</i> − <i>v</i>₀ = ∫<i>a</i> d<i>t</i>, <i>x</i> − <i>x</i>₀ = ∫<i>v</i> d<i>t</i></td></tr>
-<tr><td data-l="Situación">Caída libre (y hacia arriba)</td><td data-l="Ecuaciones"><i>a</i> = −<i>g</i>, <i>g</i> ≈ 9.8 m/s²</td></tr>
+<tr><td data-l="Situación">Caída libre (y hacia arriba)</td><td data-l="Ecuaciones"><i>a</i> = −<i>g</i></td></tr>
 <tr><td data-l="Situación">Proyectil</td><td data-l="Ecuaciones"><i>x</i> = <i>x</i>₀ + <i>v</i>₀ₓ<i>t</i>; <i>y</i> = <i>y</i>₀ + <i>v</i>₀ᵧ<i>t</i> − ½<i>gt</i>²</td></tr>
 <tr><td data-l="Situación">Movimiento circular</td><td data-l="Ecuaciones"><i>v</i> = <i>rω</i>, <i>a<sub>c</sub></i> = <i>rω</i>² = <i>v</i>²/<i>r</i>, <i>a<sub>t</sub></i> = <i>rα</i></td></tr>
 <tr><td data-l="Situación">α constante</td><td data-l="Ecuaciones"><i>ω</i> = <i>ω</i>₀ + <i>αt</i>, <i>θ</i> = <i>θ</i>₀ + <i>ω</i>₀<i>t</i> + ½<i>αt</i>²</td></tr>
@@ -159,16 +159,16 @@ details[open]{padding-bottom:12px}
 <h2>1. Posición, velocidad y aceleración</h2>
 <ul>
 <li><strong>Desplazamiento:</strong> el vector Δ<b class="vec">r</b> = <b class="vec">r</b><sub>f</sub> − <b class="vec">r</b><sub>i</sub>, de la posición inicial a la final.</li>
-<li><strong>Distancia recorrida:</strong> un número que depende del camino. No siempre es el módulo del desplazamiento: si das una vuelta a una pista de 400 m, recorres 400 m pero tu desplazamiento es cero.</li>
+<li><strong>Distancia recorrida:</strong> un número que depende del camino. No siempre es el módulo del desplazamiento: si das una vuelta completa a una pista de largo <i>L</i>, recorres <i>L</i> pero tu desplazamiento es cero.</li>
 <li><strong>Velocidad promedio:</strong> <b class="vec">v</b><sub>prom</sub> = Δ<b class="vec">r</b>/Δ<i>t</i>. Es un vector, y en 1D puede ser positiva o negativa.</li>
 <li><strong>Rapidez promedio:</strong> distancia total dividida por el tiempo. Siempre es positiva o cero.</li>
 <li><strong>Velocidad instantánea:</strong> <b class="vec">v</b> = d<b class="vec">r</b>/dt. En un gráfico <i>x</i>(<i>t</i>) es la pendiente de la tangente. La rapidez instantánea es su módulo.</li>
 <li><strong>Aceleración:</strong> <b class="vec">a</b> = d<b class="vec">v</b>/dt, el cambio de la velocidad. La aceleración promedio es Δ<b class="vec">v</b>/Δ<i>t</i>.</li>
 </ul>
 <div class="ex"><h3>Ejemplo 1: velocidad y rapidez promedio</h3>
-<p>Un corredor avanza 3 km hacia el norte en 15 min y luego vuelve 1 km en 5 min.</p>
-<ol><li>Desplazamiento: 2 km al norte. Velocidad promedio: 2 km/20 min = <strong>6 km/h al norte</strong>.</li>
-<li>Distancia: 4 km. Rapidez promedio: 4 km/20 min = <strong>12 km/h</strong>.</li>
+<p>Un corredor avanza una distancia 3<i>d</i> hacia el norte en un tiempo 3<i>T</i> y luego vuelve una distancia <i>d</i> en un tiempo <i>T</i>.</p>
+<ol><li>Desplazamiento: 2<i>d</i> al norte, en un tiempo total 4<i>T</i>. Velocidad promedio: <strong><i>d</i>/(2<i>T</i>) al norte</strong>.</li>
+<li>Distancia: 4<i>d</i>. Rapidez promedio: <strong><i>d</i>/<i>T</i></strong>, el doble.</li>
 <li>Ninguna de las dos cuenta que se devolvió: para eso hacen falta los valores instantáneos.</li></ol></div>
 </div>
 <div class="sticky">
@@ -200,14 +200,14 @@ details[open]{padding-bottom:12px}
 </div>
 <div>
 <div class="ex" style="margin-top:0"><h3>Ejemplo 2: distancia de frenado</h3>
-<p>Un auto a 20 m/s frena con 4 m/s². ¿Qué distancia recorre hasta detenerse y en cuánto tiempo?</p>
-<ol><li>Sin tiempo: 0 = 20² + 2(−4)Δ<i>x</i>, así que <strong>Δ<i>x</i> = 50 m</strong>.</li>
-<li><i>t</i> = (0 − 20)/(−4) = <strong>5 s</strong>.</li>
+<p>Un auto con rapidez <i>v</i>₀ frena con una desaceleración constante de magnitud <i>a</i>. ¿Qué distancia recorre hasta detenerse y en cuánto tiempo?</p>
+<ol><li>Sin tiempo: 0 = <i>v</i>₀² − 2<i>a</i>Δ<i>x</i>, así que <strong>Δ<i>x</i> = <i>v</i>₀²/(2<i>a</i>)</strong>.</li>
+<li><strong><i>t</i> = <i>v</i>₀/<i>a</i></strong>.</li>
 <li>Si va al doble de rapidez, la distancia de frenado se cuadruplica: va con <i>v</i>².</li></ol></div>
 <div class="ex"><h3>Ejemplo 3: aceleración que depende del tiempo</h3>
-<p>Una partícula parte de <i>x</i> = 0 con <i>v</i>₀ = 2 m/s y tiene <i>a</i>(<i>t</i>) = 6<i>t</i> m/s². ¿Dónde está y qué velocidad tiene a los 2 s?</p>
-<ol><li><i>v</i>(<i>t</i>) = 2 + ∫₀<sup><i>t</i></sup> 6<i>t</i>' d<i>t</i>' = 2 + 3<i>t</i>², así que <i>v</i>(2) = <strong>14 m/s</strong>.</li>
-<li><i>x</i>(<i>t</i>) = ∫₀<sup><i>t</i></sup> (2 + 3<i>t</i>'²) d<i>t</i>' = 2<i>t</i> + <i>t</i>³, así que <i>x</i>(2) = <strong>12 m</strong>.</li>
+<p>Una partícula parte de <i>x</i> = 0 con velocidad <i>v</i>₀ y tiene <i>a</i>(<i>t</i>) = <i>ct</i>, con <i>c</i> constante. ¿Dónde está y qué velocidad tiene en un instante <i>t</i>?</p>
+<ol><li><i>v</i>(<i>t</i>) = <i>v</i>₀ + ∫₀<sup><i>t</i></sup> <i>ct</i>' d<i>t</i>', así que <strong><i>v</i>(<i>t</i>) = <i>v</i>₀ + <i>ct</i>²/2</strong>.</li>
+<li><i>x</i>(<i>t</i>) = ∫₀<sup><i>t</i></sup> (<i>v</i>₀ + <i>ct</i>'²/2) d<i>t</i>', así que <strong><i>x</i>(<i>t</i>) = <i>v</i>₀<i>t</i> + <i>ct</i>³/6</strong>.</li>
 <li>Usar <i>x</i> = <i>v</i>₀<i>t</i> + ½<i>at</i>² aquí daría un resultado incorrecto, porque <i>a</i> no es constante.</li></ol></div>
 </div>
 </div></section>
@@ -215,7 +215,7 @@ details[open]{padding-bottom:12px}
 <section class="band" id="caida"><div class="wrap duo">
 <div>
 <h2>3. Lanzamiento vertical y caída libre</h2>
-<p>Cerca de la superficie, todo objeto en el aire (sin roce del aire) tiene la misma aceleración: <i>g</i> ≈ 9.8 m/s² hacia abajo. Con <i>y</i> positivo hacia arriba:</p>
+<p>Cerca de la superficie, todo objeto en el aire (sin roce del aire) tiene la misma aceleración: <i>g</i> hacia abajo. Con <i>y</i> positivo hacia arriba:</p>
 <div class="eq"><i>y</i> = <i>y</i>₀ + <i>v</i>₀<i>t</i> − ½<i>gt</i>²,&nbsp;&nbsp; <i>v</i> = <i>v</i>₀ − <i>gt</i>,&nbsp;&nbsp; <i>v</i>² = <i>v</i>₀² − 2<i>g</i>(<i>y</i> − <i>y</i>₀)</div>
 <ul>
 <li><i>v</i>₀ es positiva si se lanza hacia arriba y negativa si se lanza hacia abajo.</li>
@@ -224,10 +224,10 @@ details[open]{padding-bottom:12px}
 </ul>
 </div>
 <div class="ex" style="margin-top:0"><h3>Ejemplo 4: lanzamiento desde un edificio</h3>
-<p>Desde 20 m de altura se lanza una pelota hacia arriba a 15 m/s. ¿Qué altura máxima alcanza, cuándo llega al suelo y con qué velocidad?</p>
-<ol><li>Altura máxima (<i>v</i> = 0): <i>y</i> = 20 + 15²/(2·9.8) = <strong>31.5 m</strong>.</li>
-<li>Suelo (<i>y</i> = 0): 0 = 20 + 15<i>t</i> − 4.9<i>t</i>². La raíz positiva es <strong><i>t</i> = 4.07 s</strong>.</li>
-<li><i>v</i> = 15 − 9.8·4.07 = <strong>−24.8 m/s</strong>, es decir, 24.8 m/s hacia abajo. Comprobación con la ecuación sin tiempo: <i>v</i>² = 15² + 2·9.8·20 = 617, y √617 = 24.8.</li></ol></div>
+<p>Desde una altura <i>h</i> se lanza una pelota hacia arriba con rapidez <i>v</i>₀. ¿Qué altura máxima alcanza, cuándo llega al suelo y con qué velocidad?</p>
+<ol><li>Altura máxima (<i>v</i> = 0): <strong><i>y</i><sub>máx</sub> = <i>h</i> + <i>v</i>₀²/(2<i>g</i>)</strong>.</li>
+<li>Suelo (<i>y</i> = 0): 0 = <i>h</i> + <i>v</i>₀<i>t</i> − ½<i>gt</i>². La raíz positiva es <strong><i>t</i> = [<i>v</i>₀ + √(<i>v</i>₀² + 2<i>gh</i>)]/<i>g</i></strong>.</li>
+<li><i>v</i> = <i>v</i>₀ − <i>gt</i> = <strong>−√(<i>v</i>₀² + 2<i>gh</i>)</strong>, es decir, hacia abajo. Comprobación con la ecuación sin tiempo: <i>v</i>² = <i>v</i>₀² + 2<i>gh</i>.</li></ol></div>
 </div></section>
 
 <section class="band" id="proyectiles"><div class="wrap duo">
@@ -240,16 +240,16 @@ details[open]{padding-bottom:12px}
 <h3>Resultados para lanzamientos desde el suelo</h3>
 <div class="eq"><i>t</i><sub>vuelo</sub> = 2<i>v</i>₀ sin <i>θ</i>/<i>g</i>,&nbsp;&nbsp; <i>h</i><sub>máx</sub> = (<i>v</i>₀ sin <i>θ</i>)²/2<i>g</i>,&nbsp;&nbsp; <i>R</i> = <i>v</i>₀² sin 2<i>θ</i>/<i>g</i></div>
 <p>El alcance es máximo a 45°, y dos ángulos complementarios (30° y 60°) llegan al mismo punto. Estas fórmulas solo valen si el proyectil sale y cae a la misma altura; si no, plantea las dos ecuaciones y resuelve el sistema.</p>
-<div class="ex"><h3>Ejemplo 5: lanzamiento a 30°</h3>
-<p>Se lanza un objeto desde el suelo a 20 m/s y 30°.</p>
-<ol><li><i>v</i>₀ₓ = 17.3 m/s y <i>v</i>₀ᵧ = 10 m/s.</li>
-<li>Tiempo de vuelo: 2·10/9.8 = <strong>2.04 s</strong>. Altura máxima: 10²/19.6 = <strong>5.10 m</strong>.</li>
-<li>Alcance: 17.3·2.04 = <strong>35.3 m</strong>.</li></ol></div>
+<div class="ex"><h3>Ejemplo 5: lanzamiento oblicuo</h3>
+<p>Se lanza un objeto desde el suelo con rapidez <i>v</i>₀ formando un ángulo <i>θ</i> con la horizontal.</p>
+<ol><li><i>v</i>₀ₓ = <i>v</i>₀ cos <i>θ</i> y <i>v</i>₀ᵧ = <i>v</i>₀ sin <i>θ</i>.</li>
+<li>Tiempo de vuelo: <strong>2<i>v</i>₀ sin <i>θ</i>/<i>g</i></strong>. Altura máxima: <strong><i>v</i>₀² sin² <i>θ</i>/(2<i>g</i>)</strong>.</li>
+<li>Alcance: <i>v</i>₀ cos <i>θ</i> · 2<i>v</i>₀ sin <i>θ</i>/<i>g</i> = <strong><i>v</i>₀² sin 2<i>θ</i>/<i>g</i></strong>.</li></ol></div>
 <div class="ex"><h3>Ejemplo 6: lanzamiento horizontal desde altura</h3>
-<p>Desde un acantilado de 45 m se lanza una piedra horizontalmente a 12 m/s.</p>
-<ol><li>Vertical (como si cayera desde el reposo): 45 = 4.9<i>t</i>², así que <i>t</i> = <strong>3.03 s</strong>.</li>
-<li>Horizontal: <i>x</i> = 12·3.03 = <strong>36.4 m</strong>.</li>
-<li>Velocidad al llegar: <i>v<sub>x</sub></i> = 12 y <i>v<sub>y</sub></i> = −29.7 m/s, así que <strong>|<b class="vec">v</b>| = 32.0 m/s</strong>.</li></ol></div>
+<p>Desde un acantilado de altura <i>H</i> se lanza una piedra horizontalmente con rapidez <i>v</i>₀.</p>
+<ol><li>Vertical (como si cayera desde el reposo): <i>H</i> = ½<i>gt</i>², así que <strong><i>t</i> = √(2<i>H</i>/<i>g</i>)</strong>.</li>
+<li>Horizontal: <strong><i>x</i> = <i>v</i>₀√(2<i>H</i>/<i>g</i>)</strong>.</li>
+<li>Velocidad al llegar: <i>v<sub>x</sub></i> = <i>v</i>₀ y <i>v<sub>y</sub></i> = −√(2<i>gH</i>), así que <strong>|<b class="vec">v</b>| = √(<i>v</i>₀² + 2<i>gH</i>)</strong>.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-proj" aria-label="Trayectoria de un proyectil con sus componentes de velocidad"><svg></svg></div>
@@ -281,10 +281,10 @@ details[open]{padding-bottom:12px}
 <p>Son el caso <i>r</i> constante de las coordenadas polares: <i>a<sub>r</sub></i> = <i>r̈</i> − <i>rω</i>² y <i>a<sub>θ</sub></i> = <i>rα</i> + 2<i>ṙω</i>. En 3D, las <strong>coordenadas cilíndricas</strong> agregan un eje <i>z</i> a las polares: <b class="vec">r</b> = <i>r</i><b class="vec">ê</b><sub>r</sub> + <i>z</i><b class="vec">k̂</b>, y a la velocidad y la aceleración se les suma <i>ż</i><b class="vec">k̂</b> y <i>z̈</i><b class="vec">k̂</b>. Un ejemplo es una partícula que sube por una hélice.</p>
 </div>
 <div class="ex" style="margin-top:0"><h3>Ejemplo 7: rueda que acelera</h3>
-<p>Una rueda de 0.3 m de radio parte del reposo con <i>α</i> = 2 rad/s². A los 3 s:</p>
-<ol><li><i>ω</i> = 2·3 = <strong>6 rad/s</strong> y <i>θ</i> = ½·2·3² = <strong>9 rad</strong> (1.43 vueltas).</li>
-<li>Un punto del borde va a <i>v</i> = 0.3·6 = <strong>1.8 m/s</strong>.</li>
-<li><i>a<sub>c</sub></i> = 0.3·6² = 10.8 m/s² y <i>a<sub>t</sub></i> = 0.3·2 = 0.6 m/s². La centrípeta domina y crece con <i>ω</i>².</li></ol></div>
+<p>Una rueda de radio <i>R</i> parte del reposo con aceleración angular constante <i>α</i>. En un instante <i>t</i>:</p>
+<ol><li><strong><i>ω</i> = <i>αt</i></strong> y <strong><i>θ</i> = ½<i>αt</i>²</strong>, es decir, <i>αt</i>²/(4π) vueltas.</li>
+<li>Un punto del borde va a <strong><i>v</i> = <i>Rαt</i></strong>.</li>
+<li><strong><i>a<sub>c</sub></i> = <i>Rω</i>² = <i>Rα</i>²<i>t</i>²</strong> y <strong><i>a<sub>t</sub></i> = <i>Rα</i></strong>. La tangencial es constante, pero la centrípeta crece con <i>t</i>² y termina dominando.</li></ol></div>
 </div></section>
 
 <section class="band" id="relativo"><div class="wrap duo">
@@ -299,9 +299,9 @@ details[open]{padding-bottom:12px}
 <li>Truco para no perderse: escribe los subíndices como "objeto respecto a observador" y encadénalos: <b class="vec">v</b><sub>bote/tierra</sub> = <b class="vec">v</b><sub>bote/agua</sub> + <b class="vec">v</b><sub>agua/tierra</sub>.</li>
 </ul>
 <div class="ex"><h3>Ejemplo 8: cruzar un río</h3>
-<p>Un bote va a 4 m/s respecto al agua; la corriente es de 3 m/s y el río mide 80 m de ancho.</p>
-<ol><li>Apuntando perpendicular a la orilla: <b class="vec">v</b><sub>bote/tierra</sub> = (3, 4) m/s, con rapidez 5 m/s. Cruza en 80/4 = <strong>20 s</strong> y la corriente lo arrastra 3·20 = <strong>60 m</strong> río abajo.</li>
-<li>Para llegar justo enfrente, debe apuntar río arriba con sin <i>φ</i> = 3/4, o sea <strong><i>φ</i> = 48.6°</strong> respecto a la perpendicular. Avanza a √(16 − 9) = 2.65 m/s y tarda <strong>30.2 s</strong>.</li></ol></div>
+<p>Un bote va con rapidez <i>u</i> respecto al agua; la corriente tiene rapidez <i>w</i> &lt; <i>u</i> y el río tiene ancho <i>D</i>.</p>
+<ol><li>Apuntando perpendicular a la orilla: <b class="vec">v</b><sub>bote/tierra</sub> = (<i>w</i>, <i>u</i>), con rapidez √(<i>u</i>² + <i>w</i>²). Cruza en <strong><i>D</i>/<i>u</i></strong> y la corriente lo arrastra <strong><i>wD</i>/<i>u</i></strong> río abajo.</li>
+<li>Para llegar justo enfrente, debe apuntar río arriba con <strong>sin <i>φ</i> = <i>w</i>/<i>u</i></strong> respecto a la perpendicular. Avanza a √(<i>u</i>² − <i>w</i>²) y tarda <strong><i>D</i>/√(<i>u</i>² − <i>w</i>²)</strong>, más que antes.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-rio" aria-label="Bote que cruza un río con corriente, con la suma de velocidades"><svg></svg></div>
@@ -344,13 +344,13 @@ details[open]{padding-bottom:12px}
 
 <section class="band" id="ejercicios"><div class="wrap">
 <h2>Ejercicios para practicar</h2>
-<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<p>Primero intenta cada uno en papel y después abre la solución. Como en la prueba, todo se responde con expresiones en función de los datos y de <i>g</i>, sin valores numéricos.</p>
 <div class="grid2" id="exlist"></div>
 <h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
 <div class="grid2" id="quiz"></div>
 </div></section>
 
-<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el capítulo 1 (Cinemática) de los apuntes del curso FIS1514 Dinámica, 2-2026. Los ejemplos y ejercicios numéricos son de práctica.</div></footer>
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el capítulo 1 (Cinemática) de los apuntes del curso FIS1514 Dinámica, 2-2026. Los ejemplos y ejercicios son de práctica y se resuelven con expresiones, sin valores numéricos, como en la prueba.</div></footer>
 
 <script>
 {
@@ -432,12 +432,12 @@ function rOut(){RV.phi=+$('r-phi').value;RV.c=+$('r-c').value;$('r-phio').textCo
 ['r-phi','r-c'].forEach(i=>$(i).addEventListener('input',rOut));
 
 renderEx([
-['Piedra que cae','Se suelta una piedra desde 80 m. ¿Cuánto tarda en llegar al suelo y con qué rapidez llega?','80 = 4.9<i>t</i>², así que <strong><i>t</i> = 4.04 s</strong> y <strong><i>v</i> = 9.8·4.04 = 39.6 m/s</strong>.'],
-['Alcance entre autos','Un auto A parte del reposo con <i>a</i> = 2 m/s² justo cuando lo pasa un auto B a 20 m/s constantes. ¿Cuándo y dónde lo alcanza?','<i>x<sub>A</sub></i> = <i>t</i>² y <i>x<sub>B</sub></i> = 20<i>t</i>. Igualando: <strong><i>t</i> = 20 s</strong> y <strong><i>x</i> = 400 m</strong>. En ese momento A va a 40 m/s, el doble que B.'],
-['Alcance máximo','¿A qué ángulo hay que lanzar desde el suelo para llegar lo más lejos posible, y cuánto se llega con 30 m/s?','<i>R</i> = <i>v</i>₀² sin 2<i>θ</i>/<i>g</i> es máximo con sin 2<i>θ</i> = 1: <strong><i>θ</i> = 45°</strong>. <i>R</i> = 900/9.8 = <strong>91.8 m</strong>.'],
-['Distancia con velocidad que cambia de signo','Una partícula tiene <i>v</i>(<i>t</i>) = 3<i>t</i>² − 12 m/s. ¿Cuándo se detiene? ¿Cuál es su desplazamiento y su distancia recorrida entre 0 y 3 s?','Se detiene cuando 3<i>t</i>² = 12: <strong><i>t</i> = 2 s</strong>. <i>x</i>(<i>t</i>) − <i>x</i>₀ = <i>t</i>³ − 12<i>t</i>. Desplazamiento: 27 − 36 = <strong>−9 m</strong>. Distancia: de 0 a 2 s recorre |8 − 24| = 16 m, y de 2 a 3 s, |−9 − (−16)| = 7 m. Total <strong>23 m</strong>.'],
-['Centrífuga','Una centrífuga gira a 3000 rpm con radio 0.1 m. ¿Qué aceleración siente una muestra?','<i>ω</i> = 3000·2π/60 = 314 rad/s. <i>a<sub>c</sub></i> = 0.1·314² ≈ <strong>9870 m/s²</strong>, unas 1000 veces <i>g</i>.'],
-['Lluvia vista desde un auto','La lluvia cae vertical a 8 m/s. Un auto avanza a 15 m/s. ¿Con qué ángulo y rapidez ve caer la lluvia el conductor?','<b class="vec">v</b><sub>lluvia/auto</sub> = <b class="vec">v</b><sub>lluvia/tierra</sub> − <b class="vec">v</b><sub>auto/tierra</sub> = (−15, −8) m/s. Rapidez <strong>17 m/s</strong>, inclinada <strong>61.9°</strong> respecto a la vertical, viniendo desde adelante.']
+['Piedra que cae','Se suelta una piedra desde una altura <i>H</i>. ¿Cuánto tarda en llegar al suelo y con qué rapidez llega?','<i>H</i> = ½<i>gt</i>², así que <strong><i>t</i> = √(2<i>H</i>/<i>g</i>)</strong> y <strong><i>v</i> = <i>gt</i> = √(2<i>gH</i>)</strong>.'],
+['Alcance entre autos','Un auto A parte del reposo con aceleración constante <i>a</i> justo cuando lo pasa un auto B con rapidez constante <i>v</i>. ¿Cuándo y dónde lo alcanza?','<i>x<sub>A</sub></i> = ½<i>at</i>² y <i>x<sub>B</sub></i> = <i>vt</i>. Igualando: <strong><i>t</i> = 2<i>v</i>/<i>a</i></strong> y <strong><i>x</i> = 2<i>v</i>²/<i>a</i></strong>. En ese momento A va a <i>at</i> = 2<i>v</i>, el doble que B.'],
+['Alcance máximo','¿A qué ángulo hay que lanzar desde el suelo para llegar lo más lejos posible, y cuánto se llega con rapidez <i>v</i>₀?','<i>R</i> = <i>v</i>₀² sin 2<i>θ</i>/<i>g</i> es máximo con sin 2<i>θ</i> = 1: <strong><i>θ</i> = 45°</strong> y <strong><i>R</i><sub>máx</sub> = <i>v</i>₀²/<i>g</i></strong>.'],
+['Distancia con velocidad que cambia de signo','Una partícula tiene <i>v</i>(<i>t</i>) = <i>c</i>(<i>t</i>² − <i>T</i>²), con <i>c</i> y <i>T</i> constantes positivas. ¿Cuándo se detiene? ¿Cuál es su desplazamiento y su distancia recorrida entre 0 y 3<i>T</i>/2?','Se detiene cuando <i>t</i>² = <i>T</i>²: <strong><i>t</i> = <i>T</i></strong>. <i>x</i>(<i>t</i>) − <i>x</i>₀ = <i>c</i>(<i>t</i>³/3 − <i>T</i>²<i>t</i>). Desplazamiento: <i>c</i>(9/8 − 3/2)<i>T</i>³ = <strong>−3<i>cT</i>³/8</strong>. Distancia: de 0 a <i>T</i> recorre 2<i>cT</i>³/3, y de <i>T</i> a 3<i>T</i>/2, −3<i>cT</i>³/8 − (−2<i>cT</i>³/3) = 7<i>cT</i>³/24. Total <strong>23<i>cT</i>³/24</strong>.'],
+['Centrífuga','Una centrífuga gira a <i>n</i> revoluciones por minuto con radio <i>r</i>. ¿Qué aceleración siente una muestra? ¿Cuántas veces <i>g</i> es?','<i>ω</i> = 2π<i>n</i>/60 = π<i>n</i>/30. <strong><i>a<sub>c</sub></i> = <i>rω</i>² = <i>r</i>(π<i>n</i>/30)²</strong>, que es <i>r</i>(π<i>n</i>/30)²/<i>g</i> veces <i>g</i>.'],
+['Lluvia vista desde un auto','La lluvia cae vertical con rapidez <i>u</i>. Un auto avanza con rapidez <i>v</i>. ¿Con qué ángulo y rapidez ve caer la lluvia el conductor?','<b class="vec">v</b><sub>lluvia/auto</sub> = <b class="vec">v</b><sub>lluvia/tierra</sub> − <b class="vec">v</b><sub>auto/tierra</sub> = (−<i>v</i>, −<i>u</i>). Rapidez <strong>√(<i>u</i>² + <i>v</i>²)</strong>, inclinada un ángulo <i>φ</i> respecto a la vertical con <strong>tan <i>φ</i> = <i>v</i>/<i>u</i></strong>, viniendo desde adelante.']
 ]);
 renderQuiz([
 ['En la altura máxima de un lanzamiento vertical:',['La velocidad y la aceleración son cero','La velocidad es cero y la aceleración es g hacia abajo','La aceleración cambia de signo'],1,'La gravedad actúa todo el vuelo; solo la velocidad se anula un instante.'],

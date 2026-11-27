@@ -167,12 +167,12 @@ details[open]{padding-bottom:12px}
 <li><strong><i>W</i> = 0</strong> (<i>θ</i> = 90°): la fuerza es perpendicular. La normal sobre un piso, la tensión en un movimiento circular y el peso en un desplazamiento horizontal no hacen trabajo.</li>
 </ul>
 <p>La figura calcula el trabajo de cada fuerza sobre un bloque que tiras con una cuerda inclinada, y suma todo para obtener la rapidez final. Fíjate en que inclinar la cuerda tiene dos efectos: baja el trabajo de <i>F</i> (por el cos <i>θ</i>) pero también reduce la normal, y con ella el roce.</p>
-<div class="ex"><h3>Ejemplo 1: caja arrastrada con una cuerda (el estado inicial de la figura)</h3>
-<p>Una caja de 10 kg, en reposo sobre un piso con <i>μ<sub>k</sub></i> = 0.2, se arrastra 5 m con una fuerza de 50 N que forma 30° con la horizontal.</p>
-<ol><li>Trabajo de <i>F</i>: 50·5·cos 30° = <strong>216.5 J</strong>.</li>
-<li>Normal: <i>N</i> = <i>mg</i> − <i>F</i> sin 30° = 98 − 25 = 73 N. Roce: <i>f</i> = 0.2·73 = 14.6 N, así que <i>W<sub>f</sub></i> = −14.6·5 = <strong>−73 J</strong>.</li>
+<div class="ex"><h3>Ejemplo 1: caja arrastrada con una cuerda</h3>
+<p>Una caja de masa <i>m</i>, en reposo sobre un piso con coeficiente de roce cinético <i>μ<sub>k</sub></i>, se arrastra una distancia <i>d</i> con una fuerza <i>F</i> que forma un ángulo <i>θ</i> con la horizontal.</p>
+<ol><li>Trabajo de <i>F</i>: <strong><i>W<sub>F</sub></i> = <i>Fd</i> cos <i>θ</i></strong>.</li>
+<li>Normal: <i>N</i> = <i>mg</i> − <i>F</i> sin <i>θ</i> (la cuerda levanta un poco la caja). Roce: <i>f</i> = <i>μ<sub>k</sub></i>(<i>mg</i> − <i>F</i> sin <i>θ</i>), así que <strong><i>W<sub>f</sub></i> = −<i>μ<sub>k</sub></i>(<i>mg</i> − <i>F</i> sin <i>θ</i>)<i>d</i></strong>.</li>
 <li>Peso y normal son perpendiculares al desplazamiento: no hacen trabajo.</li>
-<li><i>W</i><sub>neto</sub> = 143.5 J = ½·10·<i>v</i>², así que <strong><i>v</i> = 5.36 m/s</strong>.</li></ol></div>
+<li><i>W</i><sub>neto</sub> = ½<i>mv</i>², así que <strong><i>v</i> = √(2<i>d</i>[<i>F</i> cos <i>θ</i> − <i>μ<sub>k</sub></i>(<i>mg</i> − <i>F</i> sin <i>θ</i>)]/<i>m</i>)</strong>.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig tall" id="f-work" aria-label="Bloque sobre un plano con las fuerzas que actúan y el trabajo de cada una"><svg></svg></div>
@@ -202,13 +202,13 @@ details[open]{padding-bottom:12px}
 <li>Ida y vuelta entre las mismas posiciones da trabajo total cero. Por eso el resorte es una fuerza conservativa y tiene energía potencial (sección 4).</li>
 </ul>
 <div class="ex"><h3>Ejemplo 2: estirar un resorte</h3>
-<p>Un resorte de <i>k</i> = 200 N/m se estira de 0.1 m a 0.3 m. ¿Cuánto trabajo hace el resorte sobre el bloque?</p>
-<ol><li><i>W<sub>s</sub></i> = −½·200·(0.3² − 0.1²) = −100·0.08 = <strong>−8 J</strong>.</li>
-<li>No es −½·200·0.2²: el trabajo depende de las dos posiciones, no solo de cuánto se movió.</li></ol></div>
+<p>Un resorte de constante <i>k</i> se estira desde un estiramiento <i>x</i>₁ hasta <i>x</i>₂. ¿Cuánto trabajo hace el resorte sobre el bloque?</p>
+<ol><li><strong><i>W<sub>s</sub></i> = −½<i>k</i>(<i>x</i>₂² − <i>x</i>₁²)</strong>.</li>
+<li>No es −½<i>k</i>(<i>x</i>₂ − <i>x</i>₁)²: el trabajo depende de las dos posiciones, no solo de cuánto se movió.</li></ol></div>
 <div class="ex"><h3>Ejemplo 3: fuerza dada por una fórmula</h3>
-<p>Sobre un cuerpo de 1 kg en reposo actúa <i>F</i>(<i>x</i>) = 3<i>x</i>² N, de x = 0 a x = 2 m. ¿Qué rapidez alcanza?</p>
-<ol><li><i>W</i> = ∫₀² 3<i>x</i>² d<i>x</i> = <i>x</i>³|₀² = 8 J.</li>
-<li>½·1·<i>v</i>² = 8, así que <strong><i>v</i> = 4 m/s</strong>.</li></ol></div>
+<p>Sobre un cuerpo de masa <i>m</i> en reposo actúa <i>F</i>(<i>x</i>) = <i>cx</i>², con <i>c</i> constante, de x = 0 a x = <i>L</i>. ¿Qué rapidez alcanza?</p>
+<ol><li><i>W</i> = ∫₀<sup><i>L</i></sup> <i>cx</i>² d<i>x</i> = <i>cL</i>³/3.</li>
+<li>½<i>mv</i>² = <i>cL</i>³/3, así que <strong><i>v</i> = √(2<i>cL</i>³/(3<i>m</i>))</strong>.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig tall" id="f-spr" aria-label="Fuerza del resorte en función de la posición con el área igual al trabajo"><svg></svg></div>
@@ -237,7 +237,7 @@ details[open]{padding-bottom:12px}
 <li>Si <i>W</i><sub>neto</sub> = 0, la rapidez final es igual a la inicial, aunque la velocidad haya cambiado de dirección. Es el caso del movimiento circular uniforme.</li>
 <li>Sale de integrar la segunda ley de Newton a lo largo del camino: ∫<i>m</i><b class="vec">a</b>·d<b class="vec">r</b> = ∫<i>m v</i> d<i>v</i> = Δ(½<i>mv</i>²).</li>
 </ul>
-<div class="note"><strong>Cuándo conviene.</strong> Cuando el problema relaciona rapideces con posiciones (¿qué rapidez tiene después de recorrer 3 m?, ¿cuánto comprime el resorte?) y no pide tiempos. Si pide tiempos, normalmente vuelves a Newton o a impulso.</div>
+<div class="note"><strong>Cuándo conviene.</strong> Cuando el problema relaciona rapideces con posiciones (¿qué rapidez tiene después de recorrer una distancia <i>d</i>?, ¿cuánto comprime el resorte?) y no pide tiempos. Si pide tiempos, normalmente vuelves a Newton o a impulso.</div>
 </div>
 <div class="ex" style="margin-top:0"><h3>Método de la ayudantía, paso a paso</h3>
 <ol>
@@ -247,7 +247,7 @@ details[open]{padding-bottom:12px}
 <li>Aplica <i>W</i><sub>neto</sub> = ½<i>m</i>(<i>v<sub>f</sub></i>² − <i>v<sub>i</sub></i>²) y despeja la incógnita.</li>
 <li>Revisa el resultado: joules (1 J = 1 N·m), signos y unidades.</li>
 </ol>
-<p style="margin:12px 0 0">Ejemplo rápido: un auto de 1000 kg frena de 20 m/s a 0 en 40 m. El trabajo de los frenos es <i>K<sub>f</sub></i> − <i>K<sub>i</sub></i> = −200 000 J, así que la fuerza media de frenado es 200 000/40 = 5000 N.</p></div>
+<p style="margin:12px 0 0">Ejemplo rápido: un auto de masa <i>m</i> frena de <i>v</i>₀ a 0 en una distancia <i>d</i>. El trabajo de los frenos es <i>K<sub>f</sub></i> − <i>K<sub>i</sub></i> = −½<i>mv</i>₀², así que la fuerza media de frenado es <i>mv</i>₀²/(2<i>d</i>).</p></div>
 </div></section>
 
 <section class="band" id="mecanica"><div class="wrap duo">
@@ -259,11 +259,11 @@ details[open]{padding-bottom:12px}
 <p>La energía mecánica es <i>E<sub>m</sub></i> = <i>K</i> + <i>U</i>, con <i>U</i> sumando todas las potenciales. Las fuerzas que no tienen potencial, como el roce cinético o una persona que empuja, aparecen como trabajo no conservativo:</p>
 <div class="eq"><i>E<sub>m,i</sub></i> + <i>W<sub>nc</sub></i> = <i>E<sub>m,f</sub></i>&nbsp;&nbsp; ; si <i>W<sub>nc</sub></i> = 0: <i>K<sub>i</sub></i> + <i>U<sub>i</sub></i> = <i>K<sub>f</sub></i> + <i>U<sub>f</sub></i></div>
 <p>En la figura, un bloque baja por una rampa lisa, cruza un tramo con roce y choca con un resorte. Mira las barras: la suma siempre es la energía inicial, y lo que se pierde aparece como energía disipada por el roce, que es −<i>W<sub>nc</sub></i>.</p>
-<div class="ex"><h3>Ejemplo 4: rampa, roce y resorte (el estado inicial de la figura)</h3>
-<p>Un bloque de 2 kg baja desde 1.5 m de altura por una rampa lisa, cruza 2 m de piso con <i>μ<sub>k</sub></i> = 0.25 y comprime un resorte de 400 N/m. ¿Cuánto lo comprime?</p>
-<ol><li>Al pie de la rampa: <i>mgh</i> = ½<i>mv</i>², así que <i>v</i> = √(2·9.8·1.5) = 5.42 m/s, con 29.4 J.</li>
-<li>El roce hace <i>W<sub>nc</sub></i> = −<i>μmgL</i> = −0.25·2·9.8·2 = −9.8 J. Llegan 19.6 J al resorte.</li>
-<li>½·400·<i>x</i>² = 19.6, así que <strong><i>x</i> = 0.313 m</strong>.</li></ol></div>
+<div class="ex"><h3>Ejemplo 4: rampa, roce y resorte</h3>
+<p>Un bloque de masa <i>m</i> baja desde una altura <i>h</i> por una rampa lisa, cruza un tramo de piso de largo <i>L</i> con coeficiente de roce <i>μ<sub>k</sub></i> y comprime un resorte de constante <i>k</i>. ¿Cuánto lo comprime?</p>
+<ol><li>Al pie de la rampa: <i>mgh</i> = ½<i>mv</i>², así que <i>v</i> = √(2<i>gh</i>), con energía <i>mgh</i>.</li>
+<li>El roce hace <i>W<sub>nc</sub></i> = −<i>μ<sub>k</sub>mgL</i>. Llega <i>mg</i>(<i>h</i> − <i>μ<sub>k</sub>L</i>) al resorte.</li>
+<li>½<i>kx</i>² = <i>mg</i>(<i>h</i> − <i>μ<sub>k</sub>L</i>), así que <strong><i>x</i> = √(2<i>mg</i>(<i>h</i> − <i>μ<sub>k</sub>L</i>)/<i>k</i>)</strong>. Si <i>h</i> < <i>μ<sub>k</sub>L</i>, el bloque se detiene antes de llegar al resorte.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-track" aria-label="Bloque que baja por una rampa, cruza un tramo con roce y comprime un resorte, con barras de energía"><svg></svg></div>
@@ -295,14 +295,14 @@ details[open]{padding-bottom:12px}
 </div>
 <div>
 <div class="ex" style="margin-top:0"><h3>Ejemplo 5: motor de un ascensor</h3>
-<p>Un ascensor de 800 kg sube a 2 m/s constantes. El motor tiene eficiencia 0.8. ¿Qué potencia consume?</p>
-<ol><li>Velocidad constante: la tensión iguala al peso, <i>T</i> = 800·9.8 = 7840 N.</li>
-<li>Potencia útil: <i>Tv</i> = 7840·2 = <strong>15 680 W</strong>.</li>
-<li>Potencia de entrada: 15 680/0.8 = <strong>19 600 W</strong>, unos 19.6 kW.</li></ol></div>
+<p>Un ascensor de masa <i>m</i> sube con rapidez constante <i>v</i>. El motor tiene eficiencia <i>η</i>. ¿Qué potencia consume?</p>
+<ol><li>Velocidad constante: la tensión iguala al peso, <i>T</i> = <i>mg</i>.</li>
+<li>Potencia útil: <strong><i>Tv</i> = <i>mgv</i></strong>.</li>
+<li>Potencia de entrada: <strong><i>mgv</i>/<i>η</i></strong>, mayor que la útil porque <i>η</i> < 1.</li></ol></div>
 <div class="ex"><h3>Ejemplo 6: auto a velocidad constante</h3>
-<p>Un auto viaja a 30 m/s constantes con su motor entregando 60 kW a las ruedas. ¿Cuánto vale la fuerza de resistencia total (aire y rodadura)?</p>
+<p>Un auto viaja con rapidez constante <i>v</i> y su motor entrega una potencia <i>P</i> a las ruedas. ¿Cuánto vale la fuerza de resistencia total (aire y rodadura)?</p>
 <ol><li>A velocidad constante la fuerza motriz iguala a la resistencia, y <i>P</i> = <i>Fv</i>.</li>
-<li><i>F</i> = 60 000/30 = <strong>2000 N</strong>.</li>
+<li><strong><i>F</i> = <i>P</i>/<i>v</i></strong>.</li>
 <li>A la misma potencia, una velocidad mayor exige que la resistencia sea menor. Por eso la velocidad máxima de un auto la fija su potencia.</li></ol></div>
 </div>
 </div></section>
@@ -349,13 +349,13 @@ details[open]{padding-bottom:12px}
 
 <section class="band" id="ejercicios"><div class="wrap">
 <h2>Ejercicios para practicar</h2>
-<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<p>Primero intenta cada uno en papel y después abre la solución. Como en la prueba, todo se responde con expresiones en función de los datos y de <i>g</i>, sin valores numéricos.</p>
 <div class="grid2" id="exlist"></div>
 <h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
 <div class="grid2" id="quiz"></div>
 </div></section>
 
-<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en los resúmenes de las Ayudantías 8 y 9 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Se omite el movimiento armónico simple, que no entra en el examen. Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en los resúmenes de las Ayudantías 8 y 9 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Se omite el movimiento armónico simple, que no entra en el examen. Los ejemplos y ejercicios son de práctica, no vienen del material del curso y se resuelven con expresiones, sin valores numéricos, como en la prueba.</div></footer>
 
 <script>
 {
@@ -451,13 +451,13 @@ function eOut(){E.h=+$('e-h').value;E.mu=+$('e-mu').value;E.k=+$('e-k').value;$(
 ['e-h','e-mu','e-k'].forEach(i=>$(i).addEventListener('input',eOut));$('e-go').addEventListener('click',()=>{eRes();E.run=true;});
 
 const EX=[
-['Peso en un plano inclinado','Un bloque de 3 kg sube 4 m por un plano inclinado de 30°. ¿Cuánto trabajo hace el peso?','El desplazamiento forma 120° con el peso (o: el bloque sube 4 sin 30° = 2 m). <strong><i>W<sub>g</sub></i> = −3·9.8·2 = −58.8 J</strong>. Negativo, porque el peso se opone a la subida.'],
-['Trabajo desde un gráfico','Una fuerza vale 10 N de x = 0 a 2 m, baja linealmente hasta 0 en x = 4 m y vale −5 N de x = 4 a 5 m. ¿Cuánto trabajo hace?','Área con signo: rectángulo 10·2 = 20 J, triángulo ½·10·2 = 10 J y rectángulo −5·1 = −5 J. <strong><i>W</i> = 25 J</strong>.'],
-['Bloque lanzado plano arriba','Un bloque de 2 kg se lanza a 6 m/s hacia arriba por un plano de 30° con <i>μ<sub>k</sub></i> = 0.2. ¿Qué distancia sube?','Energía: ½<i>mv</i>² = <i>mgd</i> sin 30° + <i>μmg</i> cos 30° <i>d</i>. La masa se cancela: <i>d</i> = 36/[2·9.8·(0.5 + 0.2·0.866)] ≈ <strong>2.73 m</strong>.'],
-['Masa que cae sobre un resorte','Una masa de 0.5 kg se suelta 0.2 m por encima de un resorte vertical de <i>k</i> = 500 N/m. ¿Cuánto lo comprime como máximo?','Desde la suelta hasta la compresión máxima (<i>K</i> = 0 en ambos): <i>mg</i>(0.2 + <i>x</i>) = ½·500·<i>x</i>². Queda 250<i>x</i>² − 4.9<i>x</i> − 0.98 = 0, así que <strong><i>x</i> ≈ 0.073 m</strong>. El peso sigue haciendo trabajo mientras comprime: por eso la altura es 0.2 + <i>x</i>.'],
-['Potencia con vectores','Una fuerza <b class="vec">F</b> = (3, 4) N actúa sobre un cuerpo que se mueve con <b class="vec">v</b> = (2, −1) m/s. ¿Qué potencia entrega?','<i>P</i> = <b class="vec">F</b>·<b class="vec">v</b> = 3·2 + 4·(−1) = <strong>2 W</strong>. Solo cuenta la parte de la fuerza en la dirección de la velocidad.'],
-['Bomba de agua','Una bomba sube 50 kg de agua por minuto a 20 m de altura, con eficiencia 0.6. ¿Qué potencia consume?','Potencia útil: (50/60)·9.8·20 ≈ 163 W. Entrada: 163/0.6 ≈ <strong>272 W</strong>.'],
-['Resorte y roce','Un bloque de 1 kg comprime 0.1 m un resorte de 800 N/m y se suelta sobre un piso con <i>μ<sub>k</sub></i> = 0.3. ¿Qué distancia recorre desde que se suelta hasta detenerse?','Toda la energía del resorte se disipa en roce: ½·800·0.1² = 4 J = 0.3·1·9.8·<i>d</i>, así que <strong><i>d</i> ≈ 1.36 m</strong>, contando el tramo en que el resorte se descomprime.']
+['Peso en un plano inclinado','Un bloque de masa <i>m</i> sube una distancia <i>d</i> por un plano inclinado en un ángulo <i>θ</i>. ¿Cuánto trabajo hace el peso?','El desplazamiento forma 90° + <i>θ</i> con el peso (o: el bloque sube una altura <i>d</i> sin <i>θ</i>). <strong><i>W<sub>g</sub></i> = −<i>mgd</i> sin <i>θ</i></strong>. Negativo, porque el peso se opone a la subida.'],
+['Trabajo desde un gráfico','Una fuerza vale <i>F</i>₀ de x = 0 a <i>a</i>, baja linealmente hasta 0 en x = 2<i>a</i> y vale −<i>F</i>₀/2 de x = 2<i>a</i> a 5<i>a</i>/2. ¿Cuánto trabajo hace?','Área con signo: rectángulo <i>F</i>₀<i>a</i>, triángulo ½<i>F</i>₀<i>a</i> y rectángulo −(<i>F</i>₀/2)(<i>a</i>/2) = −<i>F</i>₀<i>a</i>/4. <strong><i>W</i> = 5<i>F</i>₀<i>a</i>/4</strong>.'],
+['Bloque lanzado plano arriba','Un bloque de masa <i>m</i> se lanza con rapidez <i>v</i>₀ hacia arriba por un plano de inclinación <i>θ</i> con coeficiente de roce <i>μ<sub>k</sub></i>. ¿Qué distancia sube?','Energía: ½<i>mv</i>₀² = <i>mgd</i> sin <i>θ</i> + <i>μ<sub>k</sub>mg</i> cos <i>θ</i> <i>d</i>. La masa se cancela: <strong><i>d</i> = <i>v</i>₀²/[2<i>g</i>(sin <i>θ</i> + <i>μ<sub>k</sub></i> cos <i>θ</i>)]</strong>.'],
+['Masa que cae sobre un resorte','Una masa <i>m</i> se suelta a una altura <i>h</i> por encima de un resorte vertical de constante <i>k</i>. ¿Cuánto lo comprime como máximo?','Desde la suelta hasta la compresión máxima (<i>K</i> = 0 en ambos): <i>mg</i>(<i>h</i> + <i>x</i>) = ½<i>kx</i>². Es una cuadrática en <i>x</i>; la raíz positiva es <strong><i>x</i> = [<i>mg</i> + √(<i>m</i>²<i>g</i>² + 2<i>mghk</i>)]/<i>k</i></strong>. El peso sigue haciendo trabajo mientras comprime: por eso la altura es <i>h</i> + <i>x</i>.'],
+['Potencia con vectores','Una fuerza <b class="vec">F</b> = <i>F</i>₀(3, 4) actúa sobre un cuerpo que se mueve con <b class="vec">v</b> = <i>u</i>(2, −1). ¿Qué potencia entrega?','<i>P</i> = <b class="vec">F</b>·<b class="vec">v</b> = <i>F</i>₀<i>u</i>(3·2 + 4·(−1)) = <strong>2<i>F</i>₀<i>u</i></strong>. Solo cuenta la parte de la fuerza en la dirección de la velocidad.'],
+['Bomba de agua','Una bomba sube una masa <i>m</i> de agua cada intervalo Δ<i>t</i> hasta una altura <i>h</i>, con eficiencia <i>η</i>. ¿Qué potencia consume?','Potencia útil: <i>mgh</i>/Δ<i>t</i>. Entrada: <strong><i>P</i> = <i>mgh</i>/(<i>η</i>Δ<i>t</i>)</strong>.'],
+['Resorte y roce','Un bloque de masa <i>m</i> comprime una distancia <i>x</i> un resorte de constante <i>k</i> y se suelta sobre un piso con coeficiente de roce <i>μ<sub>k</sub></i>. ¿Qué distancia recorre desde que se suelta hasta detenerse, si se despega del resorte?','Toda la energía del resorte se disipa en roce: ½<i>kx</i>² = <i>μ<sub>k</sub>mgd</i>, así que <strong><i>d</i> = <i>kx</i>²/(2<i>μ<sub>k</sub>mg</i>)</strong>, contando el tramo en que el resorte se descomprime.']
 ];
 $('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');
 const QZ=[
@@ -465,7 +465,7 @@ const QZ=[
 ['Un cuerpo da una vuelta completa con rapidez constante. Su trabajo neto es:',['Cero','Positivo','Depende del radio'],0,'K no cambia, así que el trabajo neto es cero.'],
 ['Estiras un resorte desde el largo natural hasta x. El resorte hace un trabajo:',['½kx²','−½kx²','−kx'],1,'El resorte se opone al estiramiento: W = −½k(x² − 0).'],
 ['¿Cuál de estas fuerzas NO tiene energía potencial?',['El peso','La fuerza de un resorte ideal','El roce cinético'],2,'El trabajo del roce depende del camino recorrido: no es conservativa.'],
-['Un motor entrega 800 W útiles con eficiencia 0.8. ¿Cuánta potencia consume?',['640 W','800 W','1000 W'],2,'P_entrada = P_salida/η = 800/0.8.'],
+['Un motor entrega una potencia útil P con eficiencia η. ¿Cuánta potencia consume?',['ηP','P','P/η'],2,'P_entrada = P_salida/η, mayor que P porque η < 1.'],
 ['Un auto duplica su rapidez. Su energía cinética:',['Se duplica','Se cuadruplica','No cambia'],1,'K va con v²: (2v)² = 4v².']
 ];
 $('quiz').innerHTML=QZ.map((q,i)=>`<div class="q" id="q${i}"><p>${q[0]}</p><div class="opts">${q[1].map((o,j)=>`<button data-q="${i}" data-o="${j}">${o}</button>`).join('')}</div><div class="fb" aria-live="polite"></div></div>`).join('');

@@ -169,14 +169,14 @@ details[open]{padding-bottom:12px}
 </div>
 <div>
 <div class="ex" style="margin-top:0"><h3>Ejemplo 1: momentum de un sistema</h3>
-<p>Un cuerpo de 2 kg se mueve a (3, 0) m/s y otro de 3 kg a (0, −2) m/s.</p>
-<ol><li><b class="vec">P</b> = 2·(3, 0) + 3·(0, −2) = <strong>(6, −6) kg·m/s</strong>, con magnitud 8.49 kg·m/s.</li>
-<li><b class="vec">v</b><sub>CM</sub> = <b class="vec">P</b>/<i>M</i> = (6, −6)/5 = <strong>(1.2, −1.2) m/s</strong>.</li>
-<li>Ojo: no se suman las rapideces (3 + 2), se suman vectores.</li></ol></div>
+<p>Un cuerpo de masa 2<i>m</i> se mueve con velocidad (3<i>u</i>, 0) y otro de masa 3<i>m</i> con (0, −2<i>u</i>).</p>
+<ol><li><b class="vec">P</b> = 2<i>m</i>(3<i>u</i>, 0) + 3<i>m</i>(0, −2<i>u</i>) = <strong>(6<i>mu</i>, −6<i>mu</i>)</strong>, con magnitud 6√2 <i>mu</i>.</li>
+<li><b class="vec">v</b><sub>CM</sub> = <b class="vec">P</b>/<i>M</i> = (6<i>mu</i>, −6<i>mu</i>)/5<i>m</i> = <strong>(6<i>u</i>/5, −6<i>u</i>/5)</strong>.</li>
+<li>Ojo: no se suman las rapideces (3<i>u</i> + 2<i>u</i>), se suman vectores.</li></ol></div>
 <div class="ex"><h3>Ejemplo 2: dos bloques unidos por un resorte</h3>
-<p>Dos bloques de 2 y 3 kg, unidos por un resorte, están sobre un piso sin roce. Se empuja el primero con 10 N horizontales, y los bloques oscilan entre sí mientras avanzan.</p>
+<p>Dos bloques de masas <i>m</i>₁ y <i>m</i>₂, unidos por un resorte, están sobre un piso sin roce. Se empuja el primero con una fuerza horizontal <i>F</i> constante, y los bloques oscilan entre sí mientras avanzan.</p>
 <ol><li>El resorte es interno: no aparece en Σ<b class="vec">F</b><sub>ext</sub>.</li>
-<li><i>a</i><sub>CM</sub> = 10/5 = <strong>2 m/s²</strong>, constante, aunque cada bloque acelere y frene por su cuenta.</li>
+<li><strong><i>a</i><sub>CM</sub> = <i>F</i>/(<i>m</i>₁ + <i>m</i>₂)</strong>, constante, aunque cada bloque acelere y frene por su cuenta.</li>
 <li>Para saber cómo se mueve cada bloque sí hace falta el resorte; para el centro de masa, no.</li></ol></div>
 </div>
 </div></section>
@@ -191,17 +191,17 @@ details[open]{padding-bottom:12px}
 <ul>
 <li><strong>Fuerzas que no conoces en detalle.</strong> En un golpe no sabes cómo varía la fuerza, pero sí puedes medir cuánto cambió la velocidad. El impulso conecta ambas cosas.</li>
 <li><strong>Fuerza media.</strong> <i>F</i><sub>media</sub> = <i>J</i>/Δ<i>t</i>. Por eso un airbag o una rodilla flexionada reducen la fuerza: alargan el tiempo para el mismo Δ<i>p</i>.</li>
-<li><strong>Preguntas con tiempos.</strong> "¿Qué velocidad tiene después de 3 s?" con una fuerza variable se resuelve integrando la fuerza, sin pasar por la aceleración.</li>
+<li><strong>Preguntas con tiempos.</strong> "¿Qué velocidad tiene después de un tiempo <i>T</i>?" con una fuerza variable se resuelve integrando la fuerza, sin pasar por la aceleración.</li>
 </ul>
 <div class="ex"><h3>Ejemplo 3: fuerza dada por una fórmula</h3>
-<p>Sobre un bloque de 3 kg en reposo, sin roce, actúa <i>F</i>(<i>t</i>) = 6<i>t</i>² N entre t = 0 y t = 2 s. ¿Qué velocidad tiene al final?</p>
-<ol><li><i>J</i> = ∫₀² 6<i>t</i>² d<i>t</i> = 2<i>t</i>³|₀² = 16 N·s.</li>
-<li><i>v<sub>f</sub></i> = 0 + 16/3 = <strong>5.33 m/s</strong>.</li></ol></div>
-<div class="ex"><h3>Ejemplo 4: golpe de un bate (el preset "Bate")</h3>
-<p>Una pelota de 0.15 kg llega a 30 m/s hacia el bate. La fuerza del bate crece linealmente hasta 1200 N y vuelve a cero, en total 0.02 s. ¿Con qué velocidad sale?</p>
-<ol><li>Positivo hacia donde sale la pelota: <i>v<sub>i</sub></i> = −30 m/s.</li>
-<li><i>J</i> = área del triángulo = ½·1200·0.02 = 12 N·s.</li>
-<li><i>v<sub>f</sub></i> = −30 + 12/0.15 = <strong>50 m/s</strong>. La fuerza media fue 12/0.02 = 600 N, unas 400 veces el peso de la pelota.</li></ol></div>
+<p>Sobre un bloque de masa <i>m</i> en reposo, sin roce, actúa <i>F</i>(<i>t</i>) = <i>ct</i>², con <i>c</i> constante, entre t = 0 y t = <i>T</i>. ¿Qué velocidad tiene al final?</p>
+<ol><li><i>J</i> = ∫₀<sup><i>T</i></sup> <i>ct</i>² d<i>t</i> = <i>cT</i>³/3.</li>
+<li><strong><i>v<sub>f</sub></i> = <i>cT</i>³/(3<i>m</i>)</strong>.</li></ol></div>
+<div class="ex"><h3>Ejemplo 4: golpe de un bate</h3>
+<p>Una pelota de masa <i>m</i> llega con rapidez <i>v</i>₀ hacia el bate. La fuerza del bate crece linealmente hasta <i>F</i><sub>máx</sub> y vuelve a cero, en un tiempo total Δ<i>t</i>. ¿Con qué velocidad sale?</p>
+<ol><li>Positivo hacia donde sale la pelota: <i>v<sub>i</sub></i> = −<i>v</i>₀.</li>
+<li><i>J</i> = área del triángulo = ½<i>F</i><sub>máx</sub>Δ<i>t</i>.</li>
+<li><strong><i>v<sub>f</sub></i> = −<i>v</i>₀ + <i>F</i><sub>máx</sub>Δ<i>t</i>/(2<i>m</i>)</strong>. La fuerza media es <i>J</i>/Δ<i>t</i> = <i>F</i><sub>máx</sub>/2.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-ft" aria-label="Gráfico de fuerza en función del tiempo con puntos que se pueden arrastrar"><svg style="touch-action:none"></svg></div>
@@ -230,11 +230,11 @@ details[open]{padding-bottom:12px}
 <li>Con <i>e</i> &lt; 1 la pelota sale más "tendida": el ángulo con la normal aumenta.</li>
 </ul>
 <div class="ex"><h3>Ejemplo 5: pelota contra una pared lisa</h3>
-<p>Una pelota de 0.4 kg llega a 10 m/s formando 30° con la normal de una pared lisa. <i>e</i> = 0.8 y el contacto dura 5 ms.</p>
-<ol><li>Componentes: <i>v<sub>n</sub></i> = 10 cos 30° = 8.66 m/s y <i>v<sub>t</sub></i> = 10 sin 30° = 5 m/s.</li>
-<li>Después: <i>v<sub>n</sub></i>' = 0.8·8.66 = 6.93 m/s, alejándose de la pared, y <i>v<sub>t</sub></i>' = 5 m/s.</li>
-<li>Sale a √(6.93² + 5²) = <strong>8.54 m/s</strong>, formando <strong>35.8°</strong> con la normal.</li>
-<li>Impulso: <i>J</i> = 0.4·(8.66 + 6.93) = <strong>6.24 N·s</strong>, perpendicular a la pared. Fuerza media: 6.24/0.005 ≈ <strong>1250 N</strong>.</li></ol></div>
+<p>Una pelota de masa <i>m</i> llega con rapidez <i>v</i> formando un ángulo <i>θ</i> con la normal de una pared lisa. El coeficiente de restitución es <i>e</i> y el contacto dura Δ<i>t</i>.</p>
+<ol><li>Componentes: <i>v<sub>n</sub></i> = <i>v</i> cos <i>θ</i> y <i>v<sub>t</sub></i> = <i>v</i> sin <i>θ</i>.</li>
+<li>Después: <i>v<sub>n</sub></i>' = <i>ev</i> cos <i>θ</i>, alejándose de la pared, y <i>v<sub>t</sub></i>' = <i>v</i> sin <i>θ</i>.</li>
+<li>Sale con rapidez <strong><i>v</i>√(<i>e</i>² cos² <i>θ</i> + sin² <i>θ</i>)</strong>, formando con la normal un ángulo <i>φ</i> con <strong>tan <i>φ</i> = tan <i>θ</i>/<i>e</i></strong>: más rasante que al llegar.</li>
+<li>Impulso: <strong><i>J</i> = <i>m</i>(1 + <i>e</i>)<i>v</i> cos <i>θ</i></strong>, perpendicular a la pared. Fuerza media: <strong><i>m</i>(1 + <i>e</i>)<i>v</i> cos <i>θ</i>/Δ<i>t</i></strong>.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig tall" id="f-wall" aria-label="Pelota que rebota en una pared lisa y triángulo de vectores del impulso"><svg></svg></div>
@@ -265,12 +265,12 @@ details[open]{padding-bottom:12px}
 </ul>
 <div class="note"><strong>Conservación por componentes.</strong> Puede conservarse una componente y no otra. Un proyectil en el aire tiene la gravedad como fuerza externa vertical: <i>P<sub>y</sub></i> cambia, pero <i>P<sub>x</sub></i> se conserva. Y durante una explosión, que dura un instante, el impulso de la gravedad es despreciable: se conservan ambas componentes justo antes y justo después.</div>
 <div class="ex"><h3>Ejemplo 6: retroceso</h3>
-<ol><li>Un cañón de 1000 kg dispara horizontalmente una bala de 10 kg a 300 m/s (respecto al suelo). 0 = 10·300 + 1000<i>V</i>, así que el cañón retrocede a <strong>3 m/s</strong>.</li>
-<li>Una persona de 70 kg salta desde un bote de 140 kg, en reposo, a 3 m/s hacia adelante. El bote sale a 70·3/140 = <strong>1.5 m/s hacia atrás</strong>, si el roce con el agua es despreciable.</li></ol></div>
+<ol><li>Un cañón de masa <i>M</i> dispara horizontalmente una bala de masa <i>m</i> con rapidez <i>v</i> (respecto al suelo). 0 = <i>mv</i> + <i>MV</i>, así que el cañón retrocede con <strong><i>V</i> = <i>mv</i>/<i>M</i></strong>.</li>
+<li>Una persona de masa <i>m</i> salta desde un bote de masa <i>M</i>, en reposo, con rapidez <i>v</i> hacia adelante respecto al agua. El bote sale con <strong><i>mv</i>/<i>M</i> hacia atrás</strong>, si el roce con el agua es despreciable.</li></ol></div>
 <div class="ex"><h3>Ejemplo 7: explosión en el punto más alto</h3>
-<p>Un proyectil de 6 kg, en el punto más alto de su trayectoria, va a 20 m/s horizontales y explota en dos trozos de 2 y 4 kg. El de 2 kg queda con velocidad cero justo después de la explosión.</p>
-<ol><li>Momentum horizontal: 6·20 = 2·0 + 4<i>v</i>, así que <strong><i>v</i> = 30 m/s</strong>.</li>
-<li>El trozo de 2 kg cae vertical y el de 4 kg sigue más rápido. El centro de masa de ambos cae justo donde habría caído el proyectil entero, siempre que los dos trozos lleguen al suelo a la vez.</li></ol></div>
+<p>Un proyectil de masa <i>M</i>, en el punto más alto de su trayectoria, va con rapidez horizontal <i>v</i> y explota en dos trozos de masas <i>M</i>/3 y 2<i>M</i>/3. El trozo de <i>M</i>/3 queda con velocidad cero justo después de la explosión.</p>
+<ol><li>Momentum horizontal: <i>Mv</i> = (<i>M</i>/3)·0 + (2<i>M</i>/3)<i>v</i>', así que <strong><i>v</i>' = 3<i>v</i>/2</strong>.</li>
+<li>El trozo liviano cae vertical y el pesado sigue más rápido. El centro de masa de ambos cae justo donde habría caído el proyectil entero, siempre que los dos trozos lleguen al suelo a la vez.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig" id="f-exp" aria-label="Proyectil que explota en dos fragmentos en el punto más alto; el centro de masa sigue la parábola"><svg></svg></div>
@@ -304,15 +304,15 @@ details[open]{padding-bottom:12px}
 </div>
 <div>
 <div class="ex" style="margin-top:0"><h3>Ejemplo 8: bala que atraviesa un bloque</h3>
-<p>Una bala de 20 g a 500 m/s atraviesa un bloque de 1 kg en reposo, sobre una superficie sin roce, y sale a 200 m/s.</p>
-<ol><li>Momentum: 0.02·500 = 0.02·200 + 1·<i>V</i>, así que <strong><i>V</i> = 6 m/s</strong>.</li>
-<li>Energía: la bala pierde ½·0.02·(500² − 200²) = 2100 J y el bloque gana solo 18 J. Casi toda la energía se va en romper y calentar el bloque.</li>
+<p>Una bala de masa <i>m</i> con rapidez <i>v</i>₀ atraviesa un bloque de masa <i>M</i> en reposo, sobre una superficie sin roce, y sale con rapidez <i>v</i>₁.</p>
+<ol><li>Momentum: <i>mv</i>₀ = <i>mv</i>₁ + <i>MV</i>, así que <strong><i>V</i> = <i>m</i>(<i>v</i>₀ − <i>v</i>₁)/<i>M</i></strong>.</li>
+<li>Energía: la bala pierde ½<i>m</i>(<i>v</i>₀² − <i>v</i>₁²) y el bloque gana solo ½<i>MV</i>² = <i>m</i>²(<i>v</i>₀ − <i>v</i>₁)²/(2<i>M</i>). Si el bloque es mucho más pesado que la bala, casi toda la energía se va en romper y calentar el bloque.</li>
 <li>No se usa <i>e</i>: aquí no hay rebote, y el dato de la velocidad de salida reemplaza a la restitución.</li></ol></div>
 <div class="ex"><h3>Ejemplo 9: rebote frontal en una pared</h3>
-<p>Una pelota de 0.2 kg golpea una pared perpendicularmente a 12 m/s, con <i>e</i> = 0.75. El contacto dura 0.01 s.</p>
-<ol><li>Sale a 0.75·12 = 9 m/s en sentido contrario.</li>
-<li><i>J</i> = 0.2·(9 − (−12)) = <strong>4.2 N·s</strong>. Las velocidades tienen signos opuestos, así que sus magnitudes se suman.</li>
-<li>Fuerza media: 4.2/0.01 = <strong>420 N</strong>.</li></ol></div>
+<p>Una pelota de masa <i>m</i> golpea una pared perpendicularmente con rapidez <i>v</i>, con coeficiente de restitución <i>e</i>. El contacto dura Δ<i>t</i>.</p>
+<ol><li>Sale con rapidez <i>ev</i> en sentido contrario.</li>
+<li><strong><i>J</i> = <i>m</i>(<i>ev</i> − (−<i>v</i>)) = <i>m</i>(1 + <i>e</i>)<i>v</i></strong>. Las velocidades tienen signos opuestos, así que sus magnitudes se suman.</li>
+<li>Fuerza media: <strong><i>m</i>(1 + <i>e</i>)<i>v</i>/Δ<i>t</i></strong>.</li></ol></div>
 </div>
 </div></section>
 
@@ -324,7 +324,7 @@ details[open]{padding-bottom:12px}
 <li><strong>Olvidar el signo</strong> de la velocidad inicial o de un tramo de fuerza negativo en el gráfico.</li>
 <li><strong>Conservar momentum con una fuerza externa grande actuando,</strong> como el suelo o un pasador en un choque.</li>
 <li><strong>Usar energía a través de un choque o una explosión.</strong> Primero momentum; la energía, solo antes o después.</li>
-<li><strong>Mezclar marcos de referencia</strong> en los retrocesos: "a 3 m/s respecto al bote" no es lo mismo que "a 3 m/s respecto al agua".</li>
+<li><strong>Mezclar marcos de referencia</strong> en los retrocesos: "con rapidez <i>v</i> respecto al bote" no es lo mismo que "con rapidez <i>v</i> respecto al agua".</li>
 <li><strong>Aplicar la restitución a rapideces totales</strong> en un choque oblicuo, en vez de solo a las componentes normales.</li>
 </ol>
 </div>
@@ -341,13 +341,13 @@ details[open]{padding-bottom:12px}
 
 <section class="band" id="ejercicios"><div class="wrap">
 <h2>Ejercicios para practicar</h2>
-<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<p>Primero intenta cada uno en papel y después abre la solución. Como en la prueba, todo se responde con expresiones en función de los datos y de <i>g</i>, sin valores numéricos.</p>
 <div class="grid2" id="exlist"></div>
 <h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
 <div class="grid2" id="quiz"></div>
 </div></section>
 
-<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 10 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Los ejemplos y ejercicios numéricos son de práctica y no vienen del material del curso.</div></footer>
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Basada en el resumen de la Ayudantía 10 de FIS1514 Dinámica (Prof. Iván Muñoz, ayudante Cristóbal García Ovalle). Los ejemplos y ejercicios son de práctica, no vienen del material del curso y se resuelven con expresiones, sin valores numéricos, como en la prueba.</div></footer>
 
 <script>
 {
@@ -445,13 +445,13 @@ const xp={ej7:[2,40],sym:[3,30]};
 document.querySelectorAll('[data-px]').forEach(b=>b.addEventListener('click',()=>{const q=xp[b.dataset.px];$('x-f').value=q[0];$('x-j').value=q[1];xOut();X.t=0;}));
 
 const EX=[
-['Fuerza por tramos','Una fuerza sobre una pelota de 0.5 kg en reposo sube linealmente de 0 a 800 N en 0.01 s, se mantiene en 800 N durante 0.02 s y baja linealmente a 0 en 0.01 s. ¿Con qué velocidad sale la pelota? ¿Cuál fue la fuerza media?','<i>J</i> = área: ½·800·0.01 + 800·0.02 + ½·800·0.01 = 4 + 16 + 4 = 24 N·s. <strong><i>v</i> = 24/0.5 = 48 m/s</strong>. Fuerza media: 24/0.04 = <strong>600 N</strong>.'],
-['Fuerza que cambia de signo','Sobre un cuerpo de 2 kg que va a 1 m/s actúa <i>F</i>(<i>t</i>) = 20 − 5<i>t</i> N entre 0 y 6 s. ¿Qué velocidad tiene a los 6 s?','<i>J</i> = ∫₀⁶ (20 − 5<i>t</i>) d<i>t</i> = 120 − 90 = 30 N·s. Ojo: después de t = 4 s la fuerza es negativa y ese tramo resta. <strong><i>v</i> = 1 + 30/2 = 16 m/s</strong>.'],
-['Golpe a un disco de hockey','Un disco de 0.16 kg pasa de (4, 0) m/s a (0, 3) m/s tras un golpe con el palo que dura 0.05 s. ¿Cuál es el impulso y la fuerza media?','Δ<b class="vec">p</b> = 0.16·[(0, 3) − (4, 0)] = (−0.64, 0.48) N·s. |<b class="vec">J</b>| = <strong>0.8 N·s</strong>, apuntando hacia atrás y hacia arriba. Fuerza media: 0.8/0.05 = <strong>16 N</strong>, en la misma dirección que <b class="vec">J</b>.'],
-['Astronauta que lanza una herramienta','Un astronauta de 80 kg, en reposo, lanza una herramienta de 2 kg a 5 m/s. ¿Con qué velocidad se mueve él?','<b class="vec">P</b> = 0 antes y después: 0 = 2·5 + 80<i>V</i>, así que <strong><i>V</i> = −0.125 m/s</strong>, en sentido opuesto a la herramienta.'],
-['Explosión en tres trozos','Un cuerpo de 3 kg en reposo explota en tres trozos de 1 kg. Uno sale a 10 m/s en +x y otro a 10 m/s en +y. ¿Cómo sale el tercero?','Momentum cero: <b class="vec">v</b>₃ = −[(10, 0) + (0, 10)] = (−10, −10) m/s. Rapidez <strong>14.1 m/s</strong>, a 225° (hacia abajo y a la izquierda).'],
-['Bala que atraviesa un bloque','Una bala de 20 g a 500 m/s atraviesa un bloque de 1 kg en reposo y sale a 200 m/s. ¿Qué velocidad toma el bloque y cuánta energía se disipa?','0.02·500 = 0.02·200 + <i>V</i>, así que <strong><i>V</i> = 6 m/s</strong>. Energía disipada: ½·0.02·(500² − 200²) − ½·1·6² = 2100 − 18 = <strong>2082 J</strong>.'],
-['Rebote frontal','Una pelota de 0.2 kg golpea una pared de frente a 12 m/s con <i>e</i> = 0.75, y el contacto dura 0.01 s. Calcula el impulso y la fuerza media.','Sale a 9 m/s en sentido contrario. <i>J</i> = 0.2·(9 + 12) = <strong>4.2 N·s</strong> y <strong><i>F</i><sub>media</sub> = 420 N</strong>.']
+['Fuerza por tramos','Una fuerza sobre una pelota de masa <i>m</i> en reposo sube linealmente de 0 a <i>F</i>₀ en un tiempo <i>τ</i>, se mantiene en <i>F</i>₀ durante 2<i>τ</i> y baja linealmente a 0 en <i>τ</i>. ¿Con qué velocidad sale la pelota? ¿Cuál fue la fuerza media?','<i>J</i> = área: ½<i>F</i>₀<i>τ</i> + 2<i>F</i>₀<i>τ</i> + ½<i>F</i>₀<i>τ</i> = 3<i>F</i>₀<i>τ</i>. <strong><i>v</i> = 3<i>F</i>₀<i>τ</i>/<i>m</i></strong>. Fuerza media: 3<i>F</i>₀<i>τ</i>/(4<i>τ</i>) = <strong>3<i>F</i>₀/4</strong>.'],
+['Fuerza que cambia de signo','Sobre un cuerpo de masa <i>m</i> que va con rapidez <i>v</i>₀ actúa <i>F</i>(<i>t</i>) = <i>F</i>₀(1 − <i>t</i>/<i>T</i>) entre 0 y 3<i>T</i>/2. ¿Qué velocidad tiene al final?','<i>J</i> = ∫₀<sup>3<i>T</i>/2</sup> <i>F</i>₀(1 − <i>t</i>/<i>T</i>) d<i>t</i> = <i>F</i>₀(3<i>T</i>/2 − 9<i>T</i>/8) = 3<i>F</i>₀<i>T</i>/8. Ojo: después de t = <i>T</i> la fuerza es negativa y ese tramo resta. <strong><i>v</i> = <i>v</i>₀ + 3<i>F</i>₀<i>T</i>/(8<i>m</i>)</strong>.'],
+['Golpe a un disco de hockey','Un disco de masa <i>m</i> pasa de una velocidad (<i>v</i>₁, 0) a (0, <i>v</i>₂) tras un golpe con el palo que dura Δ<i>t</i>. ¿Cuál es el impulso y la fuerza media?','Δ<b class="vec">p</b> = <i>m</i>[(0, <i>v</i>₂) − (<i>v</i>₁, 0)] = <i>m</i>(−<i>v</i>₁, <i>v</i>₂). <strong>|<b class="vec">J</b>| = <i>m</i>√(<i>v</i>₁² + <i>v</i>₂²)</strong>, apuntando hacia atrás y hacia arriba. Fuerza media: <strong><i>m</i>√(<i>v</i>₁² + <i>v</i>₂²)/Δ<i>t</i></strong>, en la misma dirección que <b class="vec">J</b>.'],
+['Astronauta que lanza una herramienta','Un astronauta de masa <i>M</i>, en reposo, lanza una herramienta de masa <i>m</i> con rapidez <i>v</i>. ¿Con qué velocidad se mueve él?','<b class="vec">P</b> = 0 antes y después: 0 = <i>mv</i> + <i>MV</i>, así que <strong><i>V</i> = −<i>mv</i>/<i>M</i></strong>, en sentido opuesto a la herramienta.'],
+['Explosión en tres trozos','Un cuerpo de masa 3<i>m</i> en reposo explota en tres trozos de masa <i>m</i>. Uno sale con rapidez <i>v</i> en +x y otro con rapidez <i>v</i> en +y. ¿Cómo sale el tercero?','Momentum cero: <b class="vec">v</b>₃ = −[(<i>v</i>, 0) + (0, <i>v</i>)] = (−<i>v</i>, −<i>v</i>). Rapidez <strong>√2 <i>v</i></strong>, a 225° (hacia abajo y a la izquierda).'],
+['Bala que atraviesa un bloque','En el ejemplo 8, ¿cuánta energía se disipa?','<i>V</i> = <i>m</i>(<i>v</i>₀ − <i>v</i>₁)/<i>M</i>. Energía disipada: <strong>½<i>m</i>(<i>v</i>₀² − <i>v</i>₁²) − <i>m</i>²(<i>v</i>₀ − <i>v</i>₁)²/(2<i>M</i>)</strong>, la energía que pierde la bala menos la que gana el bloque.'],
+['Rebote oblicuo sin roce','En el ejemplo 5, ¿qué fracción de su energía cinética conserva la pelota después del rebote?','La componente tangente no cambia y la normal se multiplica por <i>e</i>: <strong><i>K</i>\'/<i>K</i> = <i>e</i>² cos² <i>θ</i> + sin² <i>θ</i></strong>. Con <i>e</i> = 1 conserva toda; si llega casi rasante (<i>θ</i> cerca de 90°), conserva casi toda aunque <i>e</i> sea chico.']
 ];
 $('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');
 const QZ=[
