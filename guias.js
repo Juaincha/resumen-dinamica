@@ -57,5 +57,13 @@ window.GUIAS = [
     fuente: "Apuntes, capítulo 2",
     fecha: "2026-09-03",
     temas: ["Leyes de Newton", "Diagrama de cuerpo libre", "Roce", "Poleas", "Fuerza centrípeta"]
+  },
+  {
+    archivo: "guias/fis1514-energia-en-rotacion.html",
+    curso: "FIS1514 Dinámica",
+    titulo: "Energía en rotación",
+    fuente: "Complemento de las Ayudantías 12 y 13",
+    fecha: "2026-11-11",
+    temas: ["Energía de rotación", "Rodadura", "Potencial de un cuerpo", "Conservación de energía"]
   }
 ];

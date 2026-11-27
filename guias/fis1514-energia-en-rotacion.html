@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M876QPX4');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energía en rotación</title>
+<meta name="description" content="Material para estudiar para el examen de FIS1514: energía cinética de rotación, energía de un cuerpo que rueda, energía potencial de un cuerpo extendido y conservación de energía con cuerpos que giran.">
+<link rel="canonical" href="https://juaincha.github.io/resumen-dinamica/guias/fis1514-energia-en-rotacion.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Guías de estudio">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Energía en rotación · FIS1514">
+<meta property="og:description" content="Material para estudiar para el examen de FIS1514: energía cinética de rotación, energía de un cuerpo que rueda, energía potencial de un cuerpo extendido y conservación de energía con cuerpos que giran.">
+<meta property="og:url" content="https://juaincha.github.io/resumen-dinamica/guias/fis1514-energia-en-rotacion.html">
+<meta property="og:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-energia-en-rotacion.jpg">
+<meta property="og:image:secure_url" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-energia-en-rotacion.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Disco que baja rodando por una rampa con barras de energía">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Energía en rotación · FIS1514">
+<meta name="twitter:description" content="Material para estudiar para el examen de FIS1514: energía cinética de rotación, energía de un cuerpo que rueda, energía potencial de un cuerpo extendido y conservación de energía con cuerpos que giran.">
+<meta name="twitter:image" content="https://juaincha.github.io/resumen-dinamica/img/og-fis1514-energia-en-rotacion.jpg">
+<meta name="theme-color" content="#0f5fa8">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="guia-curso" content="FIS1514 Dinámica">
+<meta name="guia-titulo" content="Energía en rotación">
+<meta name="guia-fuente" content="Complemento de las Ayudantías 12 y 13">
+<meta name="guia-fecha" content="2026-11-11">
+<meta name="guia-temas" content="Energía de rotación, Rodadura, Potencial de un cuerpo, Conservación de energía">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=STIX+Two+Text:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday study: calm, exact, like a good textbook chapter
+   IDEA the course's own Beamer slides and textbook figure plates: blue title band, peach bodies, blue axes
+   PICTURE a hinged bar you push: force, line of action, lever arm and the bar actually swinging
+   COLOUR white ground, Beamer blue band, peach bodies, red forces, green lever arms, violet components
+   TYPE Archivo 800 titles + Source Sans 3 text + STIX Two for equations
+   LAYOUT blue band with title and section links; lab under it (figure left, controls right; stacked on phones) */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0c131d);--ink:light-dark(#14171c,#e6ecf3);--mute:light-dark(#566070,#9aa7b8);
+--line:light-dark(#d8dee7,#2a3749);--panel:light-dark(#f2f6fb,#121c29);--band:light-dark(#0f5fa8,#0d3a6a);
+--blue:light-dark(#1167c4,#62b2ff);--axis:light-dark(#1597dc,#4cc3ff);--body:light-dark(#f6b896,#a8603f);
+--edge:light-dark(#c4673e,#f0a882);--force:light-dark(#d4361c,#ff7a5c);--arm:light-dark(#14844a,#4fd18b);
+--perp:light-dark(#6a3fc8,#b49dff);--ok:light-dark(#e3f5ea,#123222);--bad:light-dark(#fde8e4,#3a1712)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Source Sans 3',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,5vw,50px);font-weight:800}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:600;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px;max-width:68ch}
+.band{padding-block:clamp(28px,4vw,56px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.top{background:var(--band);color:#fff;padding-bottom:22px}
+.top p{color:#dbe9f8;max-width:60ch;margin-top:12px}
+nav{position:sticky;top:0;z-index:5;background:var(--band);padding-inline:max(5vw,16px);border-bottom:1px solid #ffffff22}
+nav .scroll{display:flex;gap:4px;max-width:1240px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+nav a{flex:none;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 10px;border-bottom:3px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:#9fd3ff;outline:none}
+section{border-top:1px solid var(--line)}
+.duo{display:grid;gap:28px}
+@media(min-width:980px){.duo{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}.duo .sticky{position:sticky;top:76px}}
+.fig{position:relative;min-height:340px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.tall{min-height:400px}
+svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round;font:600 14px 'Source Sans 3',sans-serif}
+.eq{font-family:'STIX Two Text',serif;font-size:20px;background:var(--panel);border-radius:8px;padding:12px 16px;margin:12px 0 16px;overflow-x:auto;line-height:1.7}
+.eq i,.v i,td i{font-family:'STIX Two Text',serif}
+b.vec{font-family:'STIX Two Text',serif;font-weight:700;font-style:normal}
+.note{border-left:4px solid var(--blue);background:var(--panel);padding:12px 16px;margin:16px 0;max-width:68ch}
+.ctl{display:grid;gap:12px;margin-top:14px}
+.row{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) 4.8em;gap:12px;align-items:center;font-size:15px}
+.row output{font-weight:600;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;height:44px;accent-color:var(--blue);margin:0}
+button{font:600 15px 'Source Sans 3',sans-serif;min-height:44px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--blue);background:var(--bg);color:var(--blue);cursor:pointer}
+button:hover{background:var(--panel)}button:focus-visible{outline:3px solid var(--axis);outline-offset:2px}
+button.main{background:var(--blue);color:var(--bg)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--panel);border-radius:8px;padding:10px 14px}
+.stat span{display:block;font-size:14px;color:var(--mute)}
+.stat strong{font-size:clamp(20px,2.4vw,24px);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.lab{display:grid;gap:24px;padding-bottom:clamp(28px,4vw,48px);align-items:start}
+@media(min-width:900px){.lab{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.lab .fig{min-height:0;height:clamp(340px,40vw,470px)}
+.labside{background:var(--bg);color:var(--ink);border-radius:10px;padding:18px}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--mute);margin-top:10px}
+.key i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+table{border-collapse:collapse;width:100%;font-size:16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:Archivo,sans-serif;font-weight:600;font-size:15px}
+.scroll{overflow-x:auto}
+details{border:1px solid var(--line);border-radius:10px;padding:0 16px;margin:12px 0}
+summary{cursor:pointer;font-weight:600;padding:12px 0;min-height:44px}
+details[open]{padding-bottom:12px}
+.ex{background:var(--panel);border-radius:10px;padding:16px 18px;margin:16px 0}
+.ex h3{margin-top:0}
+.ex ol{margin:0;padding-left:22px}.ex li{margin-bottom:6px}
+.q{border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px}
+.q p{font-weight:600}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;border-color:var(--line);color:var(--ink)}
+.opts button.right{background:var(--ok);border-color:var(--arm)}
+.opts button.wrong{background:var(--bad);border-color:var(--force)}
+.fb{margin-top:10px;font-size:16px}
+.grid2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(15em,1fr))}
+.small{font-size:14px;color:var(--mute)}
+@media(max-width:600px){table{font-size:14px}th,td{padding:6px 4px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);color:var(--mute);font-weight:600}.row{grid-template-columns:minmax(0,1fr) 4.8em}.row label{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M876QPX4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="band top">
+<div class="wrap">
+<a href="../index.html" style="display:inline-block;color:#dbe9f8;text-decoration:none;font-weight:600;font-size:15px;margin-bottom:14px;padding:10px 0">← Todas las guías</a>
+<h1>Energía en rotación</h1>
+<p>Material para el examen de FIS1514 Dinámica, complemento de las Ayudantías 12 y 13. Energía cinética de rotación, energía de un cuerpo que rueda, energía potencial de un cuerpo extendido y conservación de energía con cuerpos que giran.</p>
+</div>
+</header>
+<nav aria-label="Secciones"><div class="scroll">
+<a href="#resumen">Resumen</a><a href="#cinetica">Energía de rotación</a><a href="#rodadura">Rodadura</a><a href="#potencial">Potencial de un cuerpo</a><a href="#conservacion">Conservación</a><a href="#errores">Errores</a><a href="#ejercicios">Ejercicios</a>
+</div></nav>
+
+<section class="band" id="resumen"><div class="wrap duo">
+<div>
+<h2>Resumen: la energía también gira</h2>
+<p>Un cuerpo que gira tiene energía cinética aunque su centro de masa esté quieto: cada trozo se mueve en círculo. Contar esa energía permite resolver con energía los problemas de rotación, que suele ser mucho más corto que con fuerzas y torques.</p>
+<p>Usa lo visto en la guía de <a href="fis1514-ayudantia-08-09-trabajo-y-energia.html#mecanica">trabajo y energía</a> (balance de energía mecánica), en la de <a href="fis1514-ayudantia-12-centro-de-masa-y-rotacion.html#cm">centro de masa</a> y en la de <a href="fis1514-ayudantia-13-newton-rotacional.html#inercia">Newton rotacional</a> (momentos de inercia y rodadura).</p>
+</div>
+<div class="scroll"><table class="stack">
+<thead><tr><th>Concepto</th><th>Ecuación</th></tr></thead>
+<tbody>
+<tr><td data-l="Concepto">Rotación en torno a un eje fijo</td><td data-l="Ecuación"><i>K</i> = ½<i>I</i><sub>eje</sub><i>ω</i>²</td></tr>
+<tr><td data-l="Concepto">Traslación más rotación</td><td data-l="Ecuación"><i>K</i> = ½<i>Mv<sub>G</sub></i>² + ½<i>I<sub>G</sub>ω</i>²</td></tr>
+<tr><td data-l="Concepto">Rodadura sin deslizar (<i>v<sub>G</sub></i> = <i>Rω</i>, <i>I<sub>G</sub></i> = <i>kMR</i>²)</td><td data-l="Ecuación"><i>K</i> = ½<i>M</i>(1 + <i>k</i>)<i>v<sub>G</sub></i>²</td></tr>
+<tr><td data-l="Concepto">Potencial de un cuerpo extendido</td><td data-l="Ecuación"><i>U<sub>g</sub></i> = <i>Mg z<sub>G</sub></i></td></tr>
+<tr><td data-l="Concepto">Balance de energía</td><td data-l="Ecuación"><i>K<sub>i</sub></i> + <i>U<sub>i</sub></i> + <i>W<sub>nc</sub></i> = <i>K<sub>f</sub></i> + <i>U<sub>f</sub></i></td></tr>
+<tr><td data-l="Concepto">Bajar rodando una altura <i>h</i></td><td data-l="Ecuación"><i>v</i> = √(2<i>gh</i>/(1 + <i>k</i>))</td></tr>
+<tr><td data-l="Concepto">Barra con pivote que cae desde la horizontal</td><td data-l="Ecuación"><i>ω</i> = √(3<i>g</i>/<i>L</i>) al pasar por la vertical</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="band" id="cinetica"><div class="wrap duo">
+<div>
+<h2>1. Energía cinética de rotación</h2>
+<p>Si un cuerpo gira con velocidad angular <i>ω</i> en torno a un eje fijo, cada partícula se mueve en un círculo de radio <i>r</i><sub>i⊥</sub> con rapidez <i>v<sub>i</sub></i> = <i>r</i><sub>i⊥</sub><i>ω</i>. Sumando la energía cinética de todas:</p>
+<div class="eq"><i>K</i> = Σ ½<i>m<sub>i</sub></i>(<i>r</i><sub>i⊥</sub><i>ω</i>)² = ½(Σ<i>m<sub>i</sub>r</i><sub>i⊥</sub>²)<i>ω</i>² = ½<i>Iω</i>²</div>
+<p>Es la misma forma que ½<i>mv</i>², con <i>I</i> en lugar de <i>m</i> y <i>ω</i> en lugar de <i>v</i>. Se mide en joules, y <i>ω</i> tiene que estar en rad/s.</p>
+<ul>
+<li>El <i>I</i> es respecto al eje de giro. Si el eje no pasa por el centro de masa, usa Steiner.</li>
+<li>Dos cuerpos con la misma masa y la misma <i>ω</i> pueden tener energías muy distintas: el que tiene la masa más lejos del eje guarda más energía. Por eso los volantes de inercia concentran la masa en el borde.</li>
+</ul>
+<div class="ex"><h3>Ejemplo 1: volante de inercia</h3>
+<p>Un volante con <i>I</i> = 2 kg·m² gira a 300 rpm. ¿Cuánta energía guarda?</p>
+<ol><li>Pasa a rad/s: <i>ω</i> = 300·2π/60 = 31.4 rad/s.</li>
+<li><i>K</i> = ½·2·31.4² = <strong>987 J</strong>. Es la energía de una persona de 70 kg corriendo a 5.3 m/s.</li></ol></div>
+</div>
+<div>
+<div class="ex" style="margin-top:0"><h3>Ejemplo 2: misma masa, distinta energía</h3>
+<p>Un aro y un disco, ambos de 2 kg y 0.3 m de radio, giran a 10 rad/s en torno a su eje.</p>
+<ol><li>Aro: <i>I</i> = <i>MR</i>² = 0.18 kg·m², así que <i>K</i> = ½·0.18·100 = <strong>9 J</strong>.</li>
+<li>Disco: <i>I</i> = ½<i>MR</i>² = 0.09 kg·m², así que <i>K</i> = <strong>4.5 J</strong>.</li>
+<li>El aro guarda el doble porque toda su masa está en el borde, donde se mueve más rápido.</li></ol></div>
+</div>
+</div></section>
+
+<section class="band" id="rodadura"><div class="wrap duo">
+<div>
+<h2>2. Energía de un cuerpo que rueda</h2>
+<p>Un cuerpo que se traslada y gira a la vez tiene dos términos de energía cinética: la del centro de masa moviéndose y la de la rotación en torno al centro de masa.</p>
+<div class="eq"><i>K</i> = ½<i>Mv<sub>G</sub></i>² + ½<i>I<sub>G</sub>ω</i>²</div>
+<p>En rodadura sin deslizar, <i>v<sub>G</sub></i> = <i>Rω</i>. Escribiendo <i>I<sub>G</sub></i> = <i>kMR</i>² (con <i>k</i> = 1 para un aro, 1/2 para un disco, 2/5 para una esfera sólida y 2/3 para una esfera hueca):</p>
+<div class="eq"><i>K</i> = ½<i>Mv<sub>G</sub></i>² + ½<i>kMR</i>²(<i>v<sub>G</sub></i>/<i>R</i>)² = ½<i>M</i>(1 + <i>k</i>)<i>v<sub>G</sub></i>²</div>
+<ul>
+<li>La fracción de la energía que está en la rotación es <i>k</i>/(1 + <i>k</i>): la mitad en un aro, un tercio en un disco y 2/7 en una esfera sólida.</li>
+<li>Por eso, a igual altura, el aro llega más lento: gasta más de su energía en girar. Es la misma carrera de la <a href="fis1514-ayudantia-13-newton-rotacional.html#rigido">guía de Newton rotacional</a>, ahora explicada con energía.</li>
+<li>Forma equivalente: el cuerpo gira en torno al punto de contacto, así que <i>K</i> = ½<i>I<sub>P</sub>ω</i>², con <i>I<sub>P</sub></i> = <i>I<sub>G</sub></i> + <i>MR</i>² por Steiner. Da lo mismo.</li>
+</ul>
+<div class="note"><strong>¿Y el roce?</strong> En rodadura sin deslizar el roce es estático y actúa en el punto de contacto, que está quieto en ese instante. No hace trabajo, así que la energía mecánica se conserva aunque haya roce. Si el cuerpo desliza, el roce cinético sí disipa energía y ya no se puede usar <i>v<sub>G</sub></i> = <i>Rω</i>.</div>
+<div class="ex"><h3>Ejemplo 3: cilindro que baja rodando</h3>
+<p>Un cilindro sólido parte del reposo y baja rodando sin deslizar una altura de 1.5 m. ¿Qué rapidez tiene abajo?</p>
+<ol><li><i>Mgh</i> = ½<i>M</i>(1 + ½)<i>v</i>², así que <i>v</i> = √(2<i>gh</i>/1.5) = √(4·9.8·1.5/3) = <strong>4.43 m/s</strong>.</li>
+<li>Un bloque sin roce llegaría a √(2<i>gh</i>) = 5.42 m/s. El cilindro pierde rapidez porque un tercio de la energía queda en el giro.</li>
+<li>No depende de la masa, del radio ni del ángulo de la rampa: solo de la altura y de <i>k</i>.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-roll" aria-label="Cuerpo que baja rodando por una rampa con barras de energía potencial, de traslación y de rotación"><svg></svg></div>
+<div class="btns" style="margin-top:14px" role="group" aria-label="Cuerpo">
+<button data-b="1">Aro</button><button data-b="0.5" class="main">Disco</button><button data-b="0.6667">Esfera hueca</button><button data-b="0.4">Esfera sólida</button>
+</div>
+<div class="ctl" data-keep>
+<div class="row"><label for="r-h">Altura de la rampa</label><input type="range" id="r-h" min="0.5" max="3" step="0.1" value="1.5"><output id="r-ho"></output></div>
+</div>
+<div id="r-bars" style="margin-top:12px"></div>
+<div class="stats">
+<div class="stat"><span>Rapidez al llegar abajo</span><strong id="r-v"></strong></div>
+<div class="stat"><span>Fracción en rotación</span><strong id="r-fr"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Cuerpo de 2 kg que parte del reposo y rueda sin deslizar.</p>
+</div>
+</div></section>
+
+<section class="band" id="potencial"><div class="wrap duo">
+<div>
+<h2>3. Energía potencial de un cuerpo extendido</h2>
+<p>Un cuerpo extendido no está a una sola altura: cada trozo tiene la suya. Sumando la energía potencial de todos los trozos:</p>
+<div class="eq"><i>U<sub>g</sub></i> = Σ <i>m<sub>i</sub>g z<sub>i</sub></i> = <i>g</i> Σ <i>m<sub>i</sub>z<sub>i</sub></i> = <i>Mg z<sub>G</sub></i></div>
+<p>porque Σ<i>m<sub>i</sub>z<sub>i</sub></i> = <i>Mz<sub>G</sub></i> es justamente la definición de centro de masa. Es decir, <strong>el cuerpo se comporta como si toda su masa estuviera en G</strong>.</p>
+<ul>
+<li>Para una barra uniforme, G está en el centro: al pasar de horizontal a vertical colgando de un extremo, G baja <i>L</i>/2, no <i>L</i>.</li>
+<li>Si el cuerpo es compuesto, calcula primero <i>z<sub>G</sub></i>, o suma <i>m<sub>i</sub>gz<sub>i</sub></i> pieza por pieza con el centro de cada una.</li>
+<li>Error típico: usar la altura de la punta, o la del pivote.</li>
+</ul>
+<div class="ex"><h3>Ejemplo 4: barra que se levanta</h3>
+<p>Una barra uniforme de 3 kg y 1.2 m está en el suelo. ¿Cuánto trabajo cuesta pararla verticalmente sobre un extremo?</p>
+<ol><li>G sube de 0 a 0.6 m.</li>
+<li>Δ<i>U<sub>g</sub></i> = 3·9.8·0.6 = <strong>17.6 J</strong>. Es la mitad de lo que costaría subir los 3 kg completos a 1.2 m.</li></ol></div>
+</div>
+<div class="ex" style="margin-top:0"><h3>Para qué se usa</h3>
+<p style="margin:0 0 10px">En los problemas de rotación aparece cada vez que un cuerpo extendido sube o baja mientras gira:</p>
+<ul style="margin:0;padding-left:22px">
+<li>Una barra o una puerta que cae girando en torno a un pivote.</li>
+<li>Un péndulo físico (una barra, o una barra con un disco) que oscila.</li>
+<li>Una varilla que, después de recibir un golpe, sube girando hasta detenerse.</li>
+<li>Un cuerpo que rueda subiendo o bajando una rampa: ahí G sube o baja lo mismo que la rampa.</li>
+</ul></div>
+</div></section>
+
+<section class="band" id="conservacion"><div class="wrap duo">
+<div>
+<h2>4. Conservación de energía con cuerpos que giran</h2>
+<p>El balance de energía mecánica es el mismo de siempre, pero ahora <i>K</i> incluye la rotación y <i>U<sub>g</sub></i> usa la altura del centro de masa:</p>
+<div class="eq"><i>K<sub>i</sub></i> + <i>U<sub>i</sub></i> + <i>W<sub>nc</sub></i> = <i>K<sub>f</sub></i> + <i>U<sub>f</sub></i></div>
+<p>Se conserva la energía (<i>W<sub>nc</sub></i> = 0) cuando no hay fuerzas no conservativas que hagan trabajo:</p>
+<ul>
+<li>Un pivote o un eje sin roce: su fuerza actúa en un punto que no se mueve.</li>
+<li>Rodadura sin deslizar: el roce estático no trabaja.</li>
+<li>Cuerdas ideales que no deslizan sobre la polea: la tensión hace trabajo positivo sobre un cuerpo y negativo sobre el otro, y se cancelan.</li>
+</ul>
+<p>Cuándo conviene: si te piden una <strong>rapidez</strong> o una <strong>velocidad angular</strong> en una posición dada. Si te piden una aceleración, una fuerza o un tiempo, vuelve a Σ<i>F</i> = <i>Ma</i> y Σ<i>τ</i> = <i>Iα</i>.</p>
+<div class="ex"><h3>Ejemplo 5: barra con pivote que cae</h3>
+<p>Una barra uniforme de 1.2 m gira sin roce en torno a un pivote en un extremo. Se suelta desde la horizontal. ¿Qué <i>ω</i> tiene al pasar por la vertical?</p>
+<ol><li>G baja <i>L</i>/2. La energía cinética es solo de rotación respecto al pivote: <i>I</i> = <i>ML</i>²/3.</li>
+<li><i>Mg</i>(<i>L</i>/2) = ½(<i>ML</i>²/3)<i>ω</i>², así que <i>ω</i> = √(3<i>g</i>/<i>L</i>) = <strong>4.95 rad/s</strong>.</li>
+<li>La punta va a <i>ωL</i> = 5.94 m/s: más rápido que un objeto que cae libremente 1.2 m (4.85 m/s). La barra "arrastra" la punta.</li></ol></div>
+<div class="ex"><h3>Ejemplo 6: polea con masa, por energía</h3>
+<p>Un bloque de 2 kg cuelga de una cuerda enrollada en una polea-disco de 4 kg y 0.2 m de radio. Parte del reposo. ¿Qué rapidez tiene después de bajar 1 m?</p>
+<ol><li>Energía: <i>mgh</i> = ½<i>mv</i>² + ½(½<i>MR</i>²)(<i>v</i>/<i>R</i>)² = ½(<i>m</i> + <i>M</i>/2)<i>v</i>².</li>
+<li>2·9.8·1 = ½·4·<i>v</i>², así que <strong><i>v</i> = 3.13 m/s</strong>.</li>
+<li>Comprobación con la <a href="fis1514-ayudantia-13-newton-rotacional.html#newton">guía de Newton rotacional</a>: allí <i>a</i> = 4.9 m/s², y <i>v</i>² = 2·4.9·1 = 9.8 da lo mismo.</li></ol></div>
+</div>
+<div class="sticky">
+<div class="fig" id="f-bar" aria-label="Barra con pivote que cae desde la horizontal, con barras de energía"><svg></svg></div>
+<div class="btns" style="margin-top:14px"><button class="main" id="b-go">Soltar la barra</button></div>
+<div class="ctl" data-keep>
+<div class="row"><label for="b-L">Largo de la barra L</label><input type="range" id="b-L" min="0.4" max="2" step="0.1" value="1.2"><output id="b-Lo"></output></div>
+</div>
+<div id="b-bars" style="margin-top:12px"></div>
+<div class="stats">
+<div class="stat"><span>ω al pasar por la vertical</span><strong id="b-w"></strong></div>
+<div class="stat"><span>Rapidez de la punta</span><strong id="b-tip"></strong></div>
+<div class="stat"><span>Caída libre desde L</span><strong id="b-ff"></strong></div>
+</div>
+<p class="small" style="margin-top:8px">Barra uniforme de 3 kg. La cruz marca el centro de masa: la energía potencial depende solo de su altura.</p>
+</div>
+</div></section>
+
+<section class="band" id="errores"><div class="wrap duo">
+<div>
+<h2>Errores típicos</h2>
+<ol>
+<li><strong>Olvidar la energía de rotación</strong> en un cuerpo que rueda o en una polea con masa.</li>
+<li><strong>Contar la rotación dos veces:</strong> usar ½<i>I<sub>P</sub>ω</i>² respecto al contacto y además sumar ½<i>Mv<sub>G</sub></i>².</li>
+<li><strong>Usar el <i>I</i> respecto al centro</strong> cuando el cuerpo gira en torno a un pivote en un extremo.</li>
+<li><strong>Medir la altura de la punta</strong> en vez de la del centro de masa en <i>U<sub>g</sub></i>.</li>
+<li><strong>Poner <i>ω</i> en rpm</strong> en ½<i>Iω</i>²: tiene que estar en rad/s.</li>
+<li><strong>Restar trabajo de roce en la rodadura sin deslizar.</strong> El roce estático ahí no hace trabajo.</li>
+</ol>
+</div>
+<div class="ex" style="margin-top:0"><h3>Receta</h3>
+<ol>
+<li>Elige el estado inicial y el final, y el nivel cero de altura.</li>
+<li>Para cada cuerpo, escribe su <i>K</i>: ½<i>Mv<sub>G</sub></i>² si se traslada, ½<i>I<sub>G</sub>ω</i>² si gira, o ½<i>I</i><sub>eje</sub><i>ω</i>² si gira en torno a un eje fijo.</li>
+<li>Escribe <i>U<sub>g</sub></i> = <i>Mgz<sub>G</sub></i> de cada cuerpo, y <i>U<sub>s</sub></i> si hay resortes.</li>
+<li>Relaciona las velocidades con los vínculos: <i>v</i> = <i>Rω</i> en cuerdas que no deslizan y en la rodadura.</li>
+<li>Revisa si hay trabajo no conservativo (roce cinético, motores) y plantea el balance.</li>
+</ol></div>
+</div></section>
+
+<section class="band" id="ejercicios"><div class="wrap">
+<h2>Ejercicios para practicar</h2>
+<p>Primero intenta cada uno en papel y después abre la solución. Usa <i>g</i> = 9.8 m/s².</p>
+<div class="grid2" id="exlist"></div>
+<h3 style="margin-top:36px">Preguntas rápidas de concepto</h3>
+<div class="grid2" id="quiz"></div>
+</div></section>
+
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap small">Complemento de las Ayudantías 12 y 13 de FIS1514 Dinámica, para cubrir la energía en rotación. Los momentos de inercia se usan desde la tabla, sin calcularlos con integrales. Los ejemplos y ejercicios numéricos son de práctica.</div></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const css=n=>`var(--${n})`;
+const fx=(v,n=1)=>(Math.abs(v)<0.5*10**-n?0:v).toFixed(n).replace(/^-/,'−');
+const defs=(id)=>'<defs>'+['force','blue','arm','perp','mute','ink'].map(c=>`<marker id="${id}${c}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" style="fill:${css(c)}"/></marker>`).join('')+'</defs>';
+const ar=(id,c,x1,y1,x2,y2,w=2.5,dash='')=>Math.hypot(x2-x1,y2-y1)<4?'':`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''} marker-end="url(#${id}${c})"/>`;
+const ln=(x1,y1,x2,y2,c,w=1,dash='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${css(c)};stroke-width:${w}" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
+const tx=(x,y,t,c='ink',a='start',sz=14)=>`<text x="${x}" y="${y}" text-anchor="${a}" style="fill:${css(c)};font-size:${sz}px">${t}</text>`;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function view(id,draw){const box=$(id),s=box.querySelector('svg');const v={box,s,draw:()=>draw(s,box.clientWidth,box.clientHeight)};const ro=new ResizeObserver(()=>v.draw());ro.observe(box);return v;}
+function renderEx(EX){$('exlist').innerHTML=EX.map((e,i)=>`<div class="ex" style="margin:0"><h3>Ejercicio ${i+1}. ${e[0]}</h3><p>${e[1]}</p><details><summary>Ver solución</summary><p style="margin:0">${e[2]}</p></details></div>`).join('');}
+function renderQuiz(QZ){$('quiz').innerHTML=QZ.map((q,i)=>`<div class="q" id="q${i}"><p>${q[0]}</p><div class="opts">${q[1].map((o,j)=>`<button data-q="${i}" data-o="${j}">${o}</button>`).join('')}</div><div class="fb" aria-live="polite"></div></div>`).join('');
+ $('quiz').addEventListener('click',e=>{const b=e.target.closest('button[data-q]');if(!b)return;const q=QZ[+b.dataset.q],box=$('q'+b.dataset.q);
+ box.querySelectorAll('button').forEach(x=>x.classList.remove('right','wrong'));const ok=+b.dataset.o===q[2];b.classList.add(ok?'right':'wrong');
+ if(!ok)box.querySelectorAll('button')[q[2]].classList.add('right');box.querySelector('.fb').textContent=(ok?'Correcto. ':'No. ')+q[3];});}
+function fitStickyInit(){const stk=[...document.querySelectorAll('.sticky')];
+const fitSticky=()=>{for(const el of stk){const k=el.querySelector('[data-keep]'),h=k?k.getBoundingClientRect().bottom-el.getBoundingClientRect().top:el.offsetHeight;el.style.top=Math.min(76,innerHeight-h-12)+'px';}};
+const stkRo=new ResizeObserver(fitSticky);stk.forEach(e=>stkRo.observe(e));addEventListener('resize',fitSticky);fitSticky();}
+
+const bars=(rows,mx)=>rows.map(([n,v,c,b])=>`<div style="display:grid;grid-template-columns:minmax(0,8.5em) minmax(0,1fr) 5em;gap:10px;align-items:center;font-size:15px;margin:5px 0;${b?'font-weight:600':''}"><span>${n}</span><span style="position:relative;height:12px;background:var(--panel);border-radius:6px"><span style="position:absolute;left:0;top:0;bottom:0;width:${Math.min(100,Math.max(0,v)/mx*100)}%;background:var(--${c});border-radius:6px"></span></span><span style="text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600">${fx(v,1)} J</span></div>`).join('');
+const R={k:0.5,h:1.5,M:2,g:9.8,beta:30*Math.PI/180,t:0};
+const rL=()=>R.h/Math.sin(R.beta),rA=()=>R.g*Math.sin(R.beta)/(1+R.k);
+const rv=view('f-roll',(s,W,H)=>{
+ const L=rL(),a=rA(),T=Math.sqrt(2*L/a),t=Math.min(R.t,T),sp=0.5*a*t*t,v=a*t;
+ const x0=30,y0=H-30,sc=Math.min((W-80)/(L*Math.cos(R.beta)+0.6),(H-70)/(R.h+0.4)),rr=Math.max(12,0.22*sc),ux=Math.cos(R.beta),uy=Math.sin(R.beta);
+ const top={x:x0,y:y0-R.h*sc},bot={x:x0+L*ux*sc,y:y0};
+ let h=`<polygon points="${top.x},${top.y} ${bot.x},${bot.y} ${x0},${y0}" style="fill:${css('panel')};stroke:${css('mute')};stroke-width:1.5"/>`+ln(x0,y0,W-10,y0,'mute',2);
+ const px=top.x+sp*sc*ux,py=top.y+sp*sc*uy;
+ const Gx=px+rr*Math.sin(R.beta)*1, Gy=py-rr*Math.cos(R.beta);
+ const ang=sp/(rr/sc)*180/Math.PI,hol=R.k>=0.6;
+ h+=`<g transform="translate(${Gx},${Gy}) rotate(${ang})"><circle r="${rr}" style="fill:${hol?'none':css('body')};stroke:${css('edge')};stroke-width:${hol?5:2}"/><line x1="0" y1="0" x2="${rr}" y2="0" style="stroke:${css('ink')};stroke-width:2"/></g>`;
+ h+=tx(top.x+6,top.y-8,'h = '+fx(R.h,1)+' m','mute','start',13);
+ s.innerHTML=h;
+ const E=R.M*R.g*R.h,z=Math.max(0,R.h-sp*Math.sin(R.beta)),Ug=R.M*R.g*z,Kt=0.5*R.M*v*v,Kr=0.5*R.k*R.M*v*v;
+ $('r-bars').innerHTML=bars([['Potencial U<sub>g</sub>',Ug,'blue'],['Traslación ½Mv²',Kt,'force'],['Rotación ½I<sub>G</sub>ω²',Kr,'perp'],['Total',Ug+Kt+Kr,'ink',1]],E);
+});
+function rOut(){R.h=+$('r-h').value;$('r-ho').textContent=fx(R.h,1)+' m';$('r-v').textContent=fx(Math.sqrt(2*R.g*R.h/(1+R.k)),2)+' m/s';$('r-fr').textContent=Math.round(R.k/(1+R.k)*100)+' %';R.t=0;rv.draw();}
+$('r-h').addEventListener('input',rOut);
+document.querySelectorAll('[data-b]').forEach(b=>b.addEventListener('click',()=>{R.k=+b.dataset.b;document.querySelectorAll('[data-b]').forEach(x=>x.classList.toggle('main',x===b));rOut();}));
+
+const B={L:1.2,M:3,g:9.8,phi:0,w:0,run:false};
+const bv=view('f-bar',(s,W,H)=>{
+ const sc=Math.min((W-80)/B.L,(H-60)/(B.L+0.1)),px=W/2-B.L*sc/2,py=40,ex=px+B.L*sc*Math.cos(B.phi),ey=py+B.L*sc*Math.sin(B.phi),gx=(px+ex)/2,gy=(py+ey)/2;
+ let h=ln(px-30,py,px+B.L*sc+30,py,'mute',1,'4 5')+ln(px,py+B.L*sc,px+B.L*sc,py+B.L*sc,'line',1);
+ let arc='';for(let i=0;i<=30;i++){const a=Math.PI/2*i/30;arc+=(i?'L':'M')+(px+B.L*sc*Math.cos(a))+' '+(py+B.L*sc*Math.sin(a));}
+ h+=`<path d="${arc}" style="fill:none;stroke:${css('mute')};stroke-width:1" stroke-dasharray="3 5"/>`;
+ h+=ln(px,py,ex,ey,'edge',10)+ln(px,py,ex,ey,'body',6);
+ h+=`<circle cx="${px}" cy="${py}" r="8" style="fill:${css('bg')};stroke:${css('axis')};stroke-width:3"/>`;
+ h+=`<g style="stroke:${css('ink')};stroke-width:2.5"><line x1="${gx-8}" y1="${gy-8}" x2="${gx+8}" y2="${gy+8}"/><line x1="${gx-8}" y1="${gy+8}" x2="${gx+8}" y2="${gy-8}"/></g>`;
+ h+=ln(px+B.L*sc+40,py,px+B.L*sc+40,gy,'blue',2)+tx(px+B.L*sc+46,(py+gy)/2+5,'G baja','blue','start',13);
+ s.innerHTML=h;
+ const I=B.M*B.L*B.L/3,E=B.M*B.g*B.L/2,Ug=-B.M*B.g*(B.L/2)*Math.sin(B.phi)+E,Kr=0.5*I*B.w*B.w;
+ $('b-bars').innerHTML=bars([['Potencial (cero abajo)',Ug,'blue'],['Rotación ½Iω²',Kr,'perp'],['Total',Ug+Kr,'ink',1]],E);
+});
+function bOut(){B.L=+$('b-L').value;$('b-Lo').textContent=fx(B.L,1)+' m';const w=Math.sqrt(3*B.g/B.L);$('b-w').textContent=fx(w,2)+' rad/s';$('b-tip').textContent=fx(w*B.L,2)+' m/s';$('b-ff').textContent=fx(Math.sqrt(2*B.g*B.L),2)+' m/s';B.phi=0;B.w=0;B.run=false;bv.draw();}
+$('b-L').addEventListener('input',bOut);$('b-go').addEventListener('click',()=>{B.phi=0.02;B.w=Math.sqrt(3*B.g*Math.sin(0.02)/B.L);B.run=true;});
+
+renderEx([
+['Esfera hueca','Una esfera hueca parte del reposo y baja rodando sin deslizar una altura de 2 m. ¿Qué rapidez tiene abajo?','<i>k</i> = 2/3: <i>v</i> = √(2<i>gh</i>/(1 + 2/3)) = √(39.2/1.667) = <strong>4.85 m/s</strong>.'],
+['Aro contra disco','Un aro y un disco bajan rodando desde 1 m de altura. ¿Con qué rapidez llega cada uno?','Aro (<i>k</i> = 1): <i>v</i> = √(<i>gh</i>) = <strong>3.13 m/s</strong>. Disco (<i>k</i> = 1/2): <i>v</i> = √(4<i>gh</i>/3) = <strong>3.61 m/s</strong>. El disco llega antes y más rápido.'],
+['Barra desde la vertical','Una barra de 1 m con pivote en su extremo inferior está en equilibrio vertical, hacia arriba, y se cae. ¿Qué ω tiene al quedar horizontal? ¿Y al llegar abajo, vertical hacia abajo?','Horizontal: G baja <i>L</i>/2, igual que en el ejemplo 5: <i>ω</i> = √(3<i>g</i>/<i>L</i>) = <strong>5.42 rad/s</strong>. Abajo: G baja <i>L</i>, así que <i>Mg</i><i>L</i> = ½(<i>ML</i>²/3)<i>ω</i>² y <i>ω</i> = √(6<i>g</i>/<i>L</i>) = <strong>7.67 rad/s</strong>.'],
+['Yo-yo por energía','Un yo-yo (cilindro sólido) se suelta con la cuerda fija arriba y baja 0.5 m. ¿Qué rapidez tiene?','Gira mientras baja, con <i>v</i> = <i>Rω</i>: <i>mgh</i> = ½<i>m</i>(1 + ½)<i>v</i>², así que <i>v</i> = √(4<i>gh</i>/3) = <strong>2.56 m/s</strong>. Coincide con <i>a</i> = 2<i>g</i>/3 de la guía de Newton rotacional.'],
+['Disco que sube una rampa','Un disco rueda sin deslizar a 4 m/s y sube por una rampa. ¿Hasta qué altura llega?','½<i>M</i>(1 + ½)<i>v</i>² = <i>Mgh</i>, así que <i>h</i> = 1.5·16/(2·9.8) = <strong>1.22 m</strong>. Un bloque sin roce a la misma rapidez subiría solo 0.82 m: la energía del giro también se convierte en altura.'],
+['Energía de una polea','En el ejemplo 6 (bloque de 2 kg, polea-disco de 4 kg), ¿qué fracción de la energía cinética final está en la polea?','Bloque: ½·2·<i>v</i>²; polea: ½(½·4·<i>R</i>²)(<i>v</i>/<i>R</i>)² = ½·2·<i>v</i>². Son iguales: <strong>la mitad</strong> de la energía cinética está en la polea.']
+]);
+renderQuiz([
+['Un aro y un disco de igual masa y radio giran con la misma ω. ¿Cuál tiene más energía cinética?',['El disco','El aro','Igual'],1,'El aro tiene mayor I = MR²; K = ½Iω².'],
+['En rodadura sin deslizar, el roce estático:',['Disipa energía','No hace trabajo','Hace trabajo positivo'],1,'Actúa en el punto de contacto, que está quieto en ese instante.'],
+['La energía potencial de una barra inclinada depende de:',['La altura de su punta','La altura de su centro de masa','La altura del pivote'],1,'U_g = M g z_G.'],
+['¿Qué fracción de la energía cinética de un disco que rueda está en la rotación?',['1/2','1/3','2/7'],1,'k/(1 + k) con k = 1/2 da 1/3.'],
+['Para calcular ½Iω², ω debe estar en:',['rpm','grados por segundo','rad/s'],2,'Las fórmulas de rotación usan radianes.'],
+['Un cuerpo baja rodando por una rampa. Su rapidez abajo depende de:',['Su masa','Su radio','Cómo está repartida su masa (k)'],2,'v = √(2gh/(1 + k)): ni la masa ni el radio importan.']
+]);
+let last=null;
+function loop(t){const dt=last===null?0:Math.min((t-last)/1000,0.05);last=t;
+ if(!reduce){R.t+=dt*0.7;const T=Math.sqrt(2*rL()/rA());if(R.t>T+1.2)R.t=0;rv.draw();}
+ if(B.run){const n=20,h=dt*0.8/n;for(let i=0;i<n;i++){B.phi+=B.w*h;B.w=Math.sqrt(3*B.g*Math.sin(Math.min(B.phi,Math.PI/2))/B.L);}if(B.phi>=Math.PI/2){B.phi=Math.PI/2;B.run=false;}bv.draw();}
+ requestAnimationFrame(loop);}
+rOut();bOut();fitStickyInit();requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>

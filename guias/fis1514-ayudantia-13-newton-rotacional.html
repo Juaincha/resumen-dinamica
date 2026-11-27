@@ -149,6 +149,9 @@ details[open]{padding-bottom:12px}
 <tr><td data-l="Traslación">Σ<b class="vec">F</b> = d<b class="vec">p</b>/dt = m<b class="vec">a</b></td><td data-l="Rotación">Newton rotacional</td><td data-l="Relación">Σ<b class="vec">τ</b> = d<b class="vec">H</b>/dt ; eje fijo: Σ<i>τ</i> = <i>Iα</i></td></tr>
 <tr><td data-l="Traslación">Impulso ∫<b class="vec">F</b>dt = Δ<b class="vec">p</b></td><td data-l="Rotación">Impulso angular</td><td data-l="Relación">∫<b class="vec">τ</b>dt = Δ<b class="vec">H</b></td></tr>
 <tr><td data-l="Traslación">Σ<b class="vec">F</b> = 0 ⇒ <b class="vec">p</b> constante</td><td data-l="Rotación">Conservación</td><td data-l="Relación">Σ<b class="vec">τ</b> = 0 ⇒ <b class="vec">H</b> constante</td></tr>
+<tr><td data-l="Traslación">Energía cinética ½<i>mv</i>²</td><td data-l="Rotación">Energía cinética de rotación</td><td data-l="Relación"><i>K</i> = ½<i>Iω</i>²; rodadura: ½<i>Mv<sub>G</sub></i>² + ½<i>I<sub>G</sub>ω</i>²</td></tr>
+<tr><td data-l="Traslación">Trabajo <i>W</i> = <i>F</i>Δ<i>x</i></td><td data-l="Rotación">Trabajo de un torque</td><td data-l="Relación"><i>W</i> = <i>τ</i>Δ<i>θ</i> (torque constante)</td></tr>
+<tr><td data-l="Traslación">Potencia <i>P</i> = <i>Fv</i></td><td data-l="Rotación">Potencia en rotación</td><td data-l="Relación"><i>P</i> = <i>τω</i></td></tr>
 <tr><td data-l="Traslación"><i>v</i>, <i>a</i></td><td data-l="Rotación"><i>ω</i>, <i>α</i></td><td data-l="Relación">rodadura: <i>v<sub>G</sub></i> = <i>Rω</i>, <i>a<sub>G</sub></i> = <i>Rα</i></td></tr>
 </tbody></table></div>
 </div></section>
@@ -268,6 +271,18 @@ details[open]{padding-bottom:12px}
 <tr><td>i) Esfera hueca de pared delgada</td><td>por el centro</td><td>2<i>MR</i>²/3</td></tr>
 </tbody></table></div>
 <p class="small" style="margin-top:8px">Patrón útil: en el aro toda la masa está a distancia R (<i>I</i> = <i>MR</i>²). En el disco hay masa más cerca del eje, así que el coeficiente baja a 1/2.</p>
+<h3>Radio de giro</h3>
+<p>Muchos enunciados dan el momento de inercia a través del <strong>radio de giro</strong> <i>k</i>: la distancia al eje a la que habría que concentrar toda la masa para tener el mismo <i>I</i>.</p>
+<div class="eq"><i>I</i> = <i>M k</i>²&nbsp;&nbsp; ⇔&nbsp;&nbsp; <i>k</i> = √(<i>I</i>/<i>M</i>)</div>
+<p>Por ejemplo, para un disco respecto a su eje, <i>k</i> = <i>R</i>/√2 ≈ 0.71<i>R</i>; para un aro, <i>k</i> = <i>R</i>. Si te dan <i>k<sub>G</sub></i> respecto al centro de masa, Steiner queda <i>I</i> = <i>M</i>(<i>k<sub>G</sub></i>² + <i>d</i>²).</p>
+<h3>Cuerpos compuestos</h3>
+<p>El momento de inercia se suma: el de un cuerpo formado por piezas es la suma de los de cada pieza, <strong>todos respecto al mismo eje</strong>. Para cada pieza tomas su <i>I<sub>G</sub></i> de la tabla y lo trasladas al eje con Steiner.</p>
+<div class="ex"><h3>Ejemplo: péndulo de varilla y disco</h3>
+<p>Una varilla de 1 kg y 1 m gira en torno a un eje en un extremo. En el otro extremo lleva soldado un disco de 2 kg y radio 0.1 m, con su centro justo en la punta de la varilla (el disco gira junto con la varilla, en el mismo plano).</p>
+<ol><li>Varilla respecto a su extremo: <i>ML</i>²/3 = 1·1²/3 = 0.333 kg·m².</li>
+<li>Disco: su <i>I<sub>G</sub></i> = ½<i>mR</i>² = 0.01 kg·m², y su centro está a 1 m del eje. Steiner: 0.01 + 2·1² = 2.01 kg·m².</li>
+<li>Total: <strong><i>I</i> = 2.34 kg·m²</strong>. Radio de giro del conjunto: <i>k</i> = √(2.34/3) = <strong>0.88 m</strong>.</li>
+<li>Casi todo el <i>I</i> viene del término <i>md</i>² del disco: tratarlo como una masa puntual en la punta (2 kg·m²) habría dado casi lo mismo.</li></ol></div>
 </div>
 <div class="sticky">
 <div class="fig tall" id="f-st" aria-label="Varilla con eje desplazable y gráfico de I en función de d"><svg></svg></div>
@@ -373,6 +388,7 @@ details[open]{padding-bottom:12px}
 <li>Rodadura: <i>a</i> = <i>Rα</i>, así que <i>f</i> = <i>kMa</i>.</li>
 <li>Resultado: <strong><i>a</i> = <i>g</i> sin <i>θ</i> / (1 + <i>k</i>)</strong> y <i>f</i> = <i>Mg</i> sin <i>θ</i> · <i>k</i>/(1 + <i>k</i>).</li></ol>
 <p>La aceleración no depende de la masa ni del radio, solo de <i>k</i>, es decir, de cómo está repartida la masa. Cuanta más masa lejos del centro, más energía se va en hacer girar el cuerpo y más lento baja. El orden es siempre el mismo: esfera sólida, disco, esfera hueca, aro. Un bloque sin roce, que no gira, les gana a todos.</p>
+<div class="note"><strong>Con energía es más corto.</strong> Este mismo resultado sale en dos líneas con conservación de energía, contando la energía cinética de rotación. Está en la guía <a href="fis1514-energia-en-rotacion.html#rodadura">Energía en rotación</a>.</div>
 <p>Para que pueda rodar sin deslizar, la fricción estática debe alcanzar: <i>f</i> ≤ <i>μ<sub>s</sub>N</i> ⇒ <i>μ<sub>s</sub></i> ≥ tan <i>θ</i> · <i>k</i>/(1 + <i>k</i>). Para un disco a 30°, <i>μ<sub>s</sub></i> ≥ 0.19.</p>
 </div>
 <div class="sticky">
